@@ -1,0 +1,205 @@
+\documentclass[12pt,a4paper,openright,oneside]{article}
+\usepackage{amsfonts, amsmath, amssymb,latexsym,amsthm, mathrsfs, enumerate}
+\usepackage[catalan]{babel}
+\usepackage{epsfig}
+
+\parskip=5pt
+\parindent=15pt
+\usepackage[margin=1.2in]{geometry}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage[latin1]{inputenc}
+
+\setcounter{page}{0}
+
+
+\numberwithin{equation}{section}
+\newtheorem{teo}{Teorema}[subsubsection]
+\newtheorem*{teo*}{Teorema}
+\newtheorem*{prop*}{Proposició}
+\newtheorem*{corol*}{Corol·lari}
+\newtheorem{prop}{Proposició}[subsubsection]
+\newtheorem{corol}{Corol·lari}[subsubsection]
+\newtheorem{lema}{Lema}[subsubsection]
+\newtheorem{defi}{Definició}[subsubsection]
+\newtheorem{nota}{Notació}
+
+\theoremstyle{definition}
+\newtheorem{prob}{Problema}
+\newtheorem*{sol}{Solució}
+\newtheorem{ex}{Exemple}
+\newtheorem{exs}{Exemples}
+\newtheorem{obs}{Observació}
+\newtheorem{obss}{Observacions}
+
+\def\qed{\hfill $\square$}
+
+\renewcommand{\refname}{Bibliografia}
+% --------------------------------------------------
+\usepackage{fancyhdr}
+
+\lhead{}
+\lfoot{}
+\rhead{}
+\cfoot{}
+\rfoot{\thepage}
+
+\begin{document}
+
+\bibstyle{plain}
+
+\thispagestyle{empty}
+
+\begin{titlepage}
+\begin{center}
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=6cm]{ub_color.pdf}
+\end{center}
+\end{figure}
+
+\textbf{\LARGE Treball final de grau} \\
+\vspace*{.5cm}
+\textbf{\LARGE GRAU DE MATEM\`{A}TIQUES } \\
+\vspace*{.5cm}
+\textbf{\LARGE Facultat de Matem\`atiques i Inform\`atica \\ Universitat de Barcelona} \\
+\vspace*{1.5cm}
+\rule{16cm}{0.1mm}\\
+\begin{Huge}
+\textbf{MACHINE LEARNING APLICAT A  LA GENERACIÓ DE MOODBOARDS} \\
+\end{Huge}
+\rule{16cm}{0.1mm}\\
+
+\vspace{1cm}
+
+\begin{flushright}
+\textbf{\LARGE Autor: Ferrer Margarit, Marc}
+
+\vspace*{2cm}
+
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{ll}
+\textbf{\Large Director:} & \textbf{\Large David Buchaca } \\
+\textbf{\Large Realitzat a:} & \textbf{\Large  Departament....   } \\
+ & \textbf{\Large (nom del departament)} \\
+\\
+\textbf{\Large Barcelona,} & \textbf{\Large \today }
+\end{tabular}
+
+\end{flushright}
+
+\end{center}
+
+
+
+
+
+
+
+
+
+
+\end{titlepage}
+
+
+\newpage
+\pagenumbering{roman} 
+
+\section*{Abstract}
+
+Moodboards are currently used to represent objects that are formed by the composition of others and seek to obtain a cohesive result among them and generate a new image.
+Machine learning allows us to train a machine so that it is capable of generating the values ??with the data that we have entered previously. The combination of the two elements allows the generation of new images, with totally correct and cohesive objects and different from the images used to train the machine.
+
+\section*{Resum}
+Actualment els moodboards s'utilitzen per representar objectes que estan formats per la composició d'altres i preten obtenir un resultat de cohesió entre ells i generar una imatge nova.
+El machine learning ens permet entrenar una màquina per tal de que aquesta sigui capaça de generar els valors amb les dades que li hem entrat prèviament. La combinaicó dels dos elements permet la generació de noves imatges, amb objectes totalment correctes i cohesionats i diferents a les imatges utilitzades per entrenar la màquina.
+\newpage 
+
+
+\section*{Agraïments}
+
+Vull agrair a ... 
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\pagenumbering{arabic} 
+\setcounter{page}{1}
+\section{Introducció}
+\subsection*{El projecte}
+
+
+L'objectiu del projecte és la generació automàtica de moodboards utilitzant técniques de machine learning per tal de crear una màquina capaç de generar correctament aquestes imatges. El projecte es divideix en dos parts essencials, una la generació de moodboards, mitjançant eines ja creades i la segona la creació d'una màquina capaç de llegir els moodboards creats anteriorment, aprendre com estan formats i de quina forma i generar-ne de nous. \\\\
+Un moodboard és una combinació d'imatges relacionades entre elles que juntes formen una sola imatge. Normalment és creen aquestes combinacions per generar imatges de paisatges, d'aplicacions, decoració i creació d'habitacions. En aquest cas els moodboards que utilitzarem serán representacions d'estàncies d'una casa, dormitori, bany... Seran una combinació de diferents mobles i objectes que junts representarán una estància amb un estil concret, és a dir, cada imatge generada tindrà un nom que serà l'estil d'aquesta imatge, l'estil que té l'estància si fos real.\\\\
+El machine learning ens ha de permetre donada una sèria de imatges generades correctament importar-les a la màquina i que aquesta aprengui com estan formades i sigui capaç de generar-ne de noves i que siguin correctes. L'objectiu de tot aquest procés és automatitzar la generació d'imatges i d'aquesta manera estalviar molt de temps ja que la generació d'una imatge d'aquestes pot tardar molt de temps degut a la complicada feina de relacionar i triar correctament les imatges. Així doncs el que es vol evaluar és l'optimització de generació de imatges, moodboards, correctes utilitzant una màquina intel·ligent que anirà aprenent cada cop més.
+ 
+\subsection*{Estructura de la Memòria}
+En primer lloc explicarem com es generen les imatges originals per el entrenament de la màquina, quines eines s'utilitzen per tal de crearles. \\
+Després analitzarem com són les dades d'entrada, com obtenim les dades que necessitem de les imatges i com les convertim per tal que la màquina les pugui llegir. També analitzarem les dades de sortida, com han de ser per tal de que després les poguem convertir a una imatge. \\
+Seguidament explicarem l'algorisme que s'aplica per a la màquina i el seu funcionament al llarg del temps. I finalment s'explicarà com són les dades de sortida de la màquinai els resultats obtinguts, si les imatges que es generen són correctes, la precisió de la màquina...
+\newpage
+
+\section{Generació de Moodboards}
+
+\subsection{Moodboards}
+\subsection{Eines}
+\subsection{Exemples}
+
+\section{Dades}
+
+\subsection{Dades d'entrada}
+\[[ x^1_1, x^1_2, x^1_3, ..., x_{48}^1 ][y^1]\]
+\[[ x^2_1, x^2_2, x^2_3, ..., x_{48}^2 ][y^2]\]
+\[.\]
+\[.\]
+\[.\]
+\[[ x^M_1, x^M_2, x^M_3, ..., x_{48}^M ][y^M]\]
+
+On ~$M$ es el nombre total de graelles etiquetades, ~$y^M$ és la etiqueta de la graella ~$M$, ~$x^M$ és la graella ~$M$, ~$x_i^M$ és el i-essim objecte de la graella on $i \in [1,2,...,48]$ i ~$x_i^M$ és en realitat un vector amb 4 valors:
+\[x_i^M = (x_i^M["id"], x_i^M["type"], x_i^M["cat"],x_i^M["subcat"])\]
+\subsection{Dades de sortida}
+
+\section{Machine Learning}
+
+\subsection{Introducció}
+\subsection{Algoritme}
+
+\section{Resultats}
+
+\section{Conclusions}
+
+\normalfont
+
+\newpage
+
+\begin{thebibliography}{25}
+\bibitem{pari} Batut, C.; Belabas, K.; Bernardi, D.; Cohen, H.; Olivier, M.: User's guide to \textit{PARI-GP},  \newline \texttt{pari.math.u-bordeaux.fr/pub/pari/manuals/2.3.3/users.pdf}, 2000.
+\bibitem{cw} Chen, J. R.; Wang, T. Z.: On the Goldbach problem, \textit{Acta Math. Sinica}, 32(5):702-718, 1989.
+\bibitem{desh} Deshouillers, J. M.: Sur la constante de $\check{\text{S}}\text{nirel}^{\prime} \text{man}$, \textit{Séminaire Delange-Pisot-Poitou, 17e année: (1975/76), Théorie des nombres: Fac. 2, Exp. No.} G16, pàg. 6, Secrétariat Math., Paris, 1977.
+\bibitem{derz} Deshouillers, J. M.; Effinger, G.; te Riele, H.; Zinoviev, D.: A complete Vinogradov 3-primes theorem under the Riemann hypothesis, \textit{Electron. Res. Announc. Amer. Math. Soc.}, 3:99-104, 1997.
+\bibitem{dick} Dickson, L. E.: \textit{History of the theory of numbers. Vol. I: Divisibility and primality}, Chelsea Publishing Co., New York, 1966.
+\bibitem{hl} Hardy, G. H.; Littlewood, J. E.: Some problems of \textquoteleft Partitio numerorum\textquoteright; III: On the expression of a number as a sum of primes, \textit{Acta Math.}, 44(1):1-70, 1923.
+\bibitem{hara} Hardy, G. H.; Ramanujan, S.: Asymptotic formulae in combinatory analysis, \textit{Proc. Lond. Math. Soc.}, 17:75-115, 1918.
+\bibitem{haw} Hardy, G. H.; Wright, E. M.: \textit{An introduction to the theory of numbers}, 5a edició, Oxford University Press, 1979.
+\bibitem{minarc} Helfgott, H. A.: Minor arcs for Goldbach's problem, \newline \texttt{arXiv:1205.5252v4 [math.NT]}, desembre de 2013.
+\bibitem{majarc} Helfgott, H. A.: Major arcs for Goldbach's problem, \newline \texttt{arXiv:1305.2897v4 [math.NT]}, abril de 2014.
+\bibitem{istrue} Helfgott, H. A.: The ternary Goldbach conjecture is true, \newline \texttt{arXiv:1312.7748v2 [math.NT]}, gener de 2014.
+\bibitem{HP} Helfgott, H. A.; Platt, D.: Numerical verification of the ternary Goldbach conjecture up to $8.875 \cdot 10^{30}$, \texttt{arXiv:1305.3062v2 [math.NT]}, abril de 2014.
+\bibitem{KPS} Klimov, N. I.; $\text{Pil}^{\prime} \text{tja}\breve{\imath}$, G. Z.; $\check{\text{S}}\text{eptickaja}$, T. A.: An estimate of the absolute constant in the Goldbach-$\check{\text{S}}\text{nirel}^{\prime} \text{man}$ problem, \textit{Studies in number theory, No. 4}, pàg. 35-51, Izdat. Saratov. Univ., Saratov, 1972.
+\bibitem{lw} Liu, M. C.; Wang, T.: On the Vinogradov bound in the three primes Goldbach conjecture, \textit{Acta Arith.}, 105(2):133-175, 2002.
+\bibitem{OSHP} Oliveira e Silva, T.; Herzog, S.; Pardi, S.: Empirical verification of the even Goldbach conjecture and computation of prime gaps up to $4\cdot10^{18}$, \textit{Math. Comp.}, 83:2033-2060, 2014.
+\bibitem{ram} Ramaré, O.: On $\check{\text{S}}\text{nirel}^{\prime} \text{man's}$ constant, \textit{Ann. Scuola Norm. Sup. Pisa Cl. Sci.}, 22(4):645-706, 1995.
+\bibitem{riva} Riesel, H.; Vaughan, R. C.: On sums of primes, \textit{Ark. Mat.}, 21(1):46-74, 1983.
+\bibitem{RS} Rosser, J. B.; Schoenfeld, L.: Approximate formulas for some functions of prime numbers, \textit{Illinois J. Math.}, 6:64-94, 1962.
+\bibitem{sch} Schnirelmann, L.: Über additive Eigenschaften von Zahlen, \textit{Math. Ann.}, 107(1):649-690, 1933.
+\bibitem{tao} Tao, T.: Every odd number greater than $1$ is the sum of at most five primes, \textit{Math. Comp.}, 83:997-1038, 2014.
+\bibitem{ari} Travesa, A.: \textit{Aritmètica}, Col·lecció UB, No. 25, Barcelona, 1998.
+\bibitem{vau} Vaughan, R. C.: On the estimation of Schnirelman's constant, \textit{J. Reine Angew. Math.}, 290:93-108, 1977.
+\bibitem{vgn} Vaughan, R. C.: \textit{The Hardy-Littlewood method}, Cambridge Tracts in Mathematics, No. 125, 2a edició, Cambridge University Press, 1997.
+\bibitem{vino} Vinogradov, I. M.: Sur le théorème de Waring, \textit{C. R. Acad. Sci. URSS}, 393-400, 1928.
+\bibitem{vin} Vinogradov, I. M.: Representation of an odd number as a sum of three primes, \textit{Dokl. Akad. Nauk. SSSR}, 15:291-294, 1937.
+\end{thebibliography}
+\end{document} 
+

@@ -1,0 +1,14 @@
+\select@language {catalan}
+\contentsline {section}{\numberline {1}Introducci\'o}{1}
+\contentsline {section}{\numberline {2}Generaci\'o de Moodboards}{2}
+\contentsline {subsection}{\numberline {2.1}Moodboards}{2}
+\contentsline {subsection}{\numberline {2.2}Eines}{2}
+\contentsline {subsection}{\numberline {2.3}Exemples}{2}
+\contentsline {section}{\numberline {3}Dades}{2}
+\contentsline {subsection}{\numberline {3.1}Dades d'entrada}{2}
+\contentsline {subsection}{\numberline {3.2}Dades de sortida}{2}
+\contentsline {section}{\numberline {4}Machine Learning}{2}
+\contentsline {subsection}{\numberline {4.1}Introducci\'o}{2}
+\contentsline {subsection}{\numberline {4.2}Algoritme}{2}
+\contentsline {section}{\numberline {5}Resultats}{2}
+\contentsline {section}{\numberline {6}Conclusions}{2}
