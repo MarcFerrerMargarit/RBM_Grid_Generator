@@ -90,15 +90,6 @@
 
 \end{center}
 
-
-
-
-
-
-
-
-
-
 \end{titlepage}
 
 
@@ -108,11 +99,27 @@
 \section*{Abstract}
 
 Moodboards are currently used to represent objects that are formed by the composition of others and seek to obtain a cohesive result among them and generate a new image.
-Machine learning allows us to train a machine so that it is capable of generating the values ??with the data that we have entered previously. The combination of the two elements allows the generation of new images, with totally correct and cohesive objects and different from the images used to train the machine.
+Machine learning allows us to train a machine so that it can generate values from the data that we have entered previously, which must be correct.
+\\\
+What we want to obtain is a combination between the two parties to achieve the generation of new images, with totally correct and cohesive objects and different from the images used to train the machine.
+\\\
+So the objective of this project is to create a machine that allows us, based on correct data, moodboards generated correctly, generate correct moodboards without the need for a person to generate them, create an automated system to replace a task Slow and mechanical that a series of people realize.
+\\\
+Apart from creating this system, it will also ease your efficiency with respect to the non-automated system or the generation of data in a random way, so we can establish whether the system created is sufficiently effective, fast and accurate when it comes to performing, in this case, new moodboards.
+\\\
+Finally, these tests will be carried out by supervising expert people in order to improve the evaluation.
 
 \section*{Resum}
 Actualment els moodboards s'utilitzen per representar objectes que estan formats per la composició d'altres i preten obtenir un resultat de cohesió entre ells i generar una imatge nova.
-El machine learning ens permet entrenar una màquina per tal de que aquesta sigui capaça de generar els valors amb les dades que li hem entrat prèviament. La combinaicó dels dos elements permet la generació de noves imatges, amb objectes totalment correctes i cohesionats i diferents a les imatges utilitzades per entrenar la màquina.
+El machine learning ens permet entrenar una màquina per tal de que aquesta sigui capaç de generar els valors amb les dades que li hem entrat prèviament, les quals han de ser dades correctes.
+\\\
+El que volem obtenir es una combinació entre les dues parts per aconseguir la generació de noves imatges, amb objectes totalment correctes i cohesionats i diferents a les imatges utilitzades per entrenar la màquina.
+\\\
+Així doncs l'objectiu d'aquest projecte es crear una máquina que ens permeti, a partir de dades correctes, moodboards generats correctament, generar moodboards correctes sense la necessitat que una persona els hagi de generar, crear un sistema automatitzat per a reemplaçar una tasca lenta i mecánica que realitzen una série de persones.
+\\\
+A part de crear aquest sistema, també s'anilitzará la seva eficiència respecte el sistema no automitzat o la generació de dades d'una forma aleatòria, així podrem establir si el sistema creat es el suficientment eficaç, ràpid i precís a la hora de realitzar, en aquest cas, nous moodboards. 
+\\\
+Finalment, aquestes proves es realitzarán mitjançant la supervisió de persones expertes per a tal de millorar la evaluació. 
 \newpage 
 
 
@@ -130,41 +137,56 @@ Vull agrair a ...
 \section{Introducció}
 \subsection*{El projecte}
 
-
-L'objectiu del projecte és la generació automàtica de moodboards utilitzant técniques de machine learning per tal de crear una màquina capaç de generar correctament aquestes imatges. El projecte es divideix en dos parts essencials, una la generació de moodboards, mitjançant eines ja creades i la segona la creació d'una màquina capaç de llegir els moodboards creats anteriorment, aprendre com estan formats i de quina forma i generar-ne de nous. \\\\
-Un moodboard és una combinació d'imatges relacionades entre elles que juntes formen una sola imatge. Normalment és creen aquestes combinacions per generar imatges de paisatges, d'aplicacions, decoració i creació d'habitacions. En aquest cas els moodboards que utilitzarem serán representacions d'estàncies d'una casa, dormitori, bany... Seran una combinació de diferents mobles i objectes que junts representarán una estància amb un estil concret, és a dir, cada imatge generada tindrà un nom que serà l'estil d'aquesta imatge, l'estil que té l'estància si fos real.\\\\
-El machine learning ens ha de permetre donada una sèria de imatges generades correctament importar-les a la màquina i que aquesta aprengui com estan formades i sigui capaç de generar-ne de noves i que siguin correctes. L'objectiu de tot aquest procés és automatitzar la generació d'imatges i d'aquesta manera estalviar molt de temps ja que la generació d'una imatge d'aquestes pot tardar molt de temps degut a la complicada feina de relacionar i triar correctament les imatges. Així doncs el que es vol evaluar és l'optimització de generació de imatges, moodboards, correctes utilitzant una màquina intel·ligent que anirà aprenent cada cop més.
- 
+Avui en dia, tot i que depenem de les màquines i dels programes per a realitzar tasques que poden ser pesades i lentes encara en queden moltes que es realitzen a má i que en algun punt haurán de ser automatizades per tal que es puguin realitzar més rápidament i de una forma més precisa.
+\\\\
+Així doncs aquest projecte el que es vol aconseguir és que una tasca que actualment costa temps, dedicació i concentració es transformi amb un tasca mecánica, senzilla de realitzar, ràpida i amb bons resultats. Que la persona que l'hagi de realitzar no es trobi amb problemes que no pot solucionar o en dedicar-hi masses hores. Aquesta transformació que volem aconseguir, s'ha de realitzar partir de la tasca original, de la informació que es necessita i en què es basa.
+\\\\
+Aquesta tasca consisteix en la generació de moodboards. La pregunta és: \textbf{Què és un moodboard?}\\\
+Un moodboard és una combinació d'imatges relacionades entre elles que juntes formen una sola imatge. Normalment és creen aquestes combinacions per generar imatges de paisatges, d'aplicacions, decoració i creació d'habitacions. \\\\
+La tasca que volem substituir, més ben dit, millorar, evolucionar, és la tasca de la generació de moodboards. Actualment per generar moodboards es necessita fer una cerca de totes les imatges que es desitgen col·locar. Un cop triades s'han de col·locar de forma que formin un sol conjunt i anar-les editant per tal de generar una sola imatge. \\\
+Aquest procés pot ser molt lent i tediós ja que buscar totes les imatges necessàries pot portar molt de temps igual que col·locar-les correctament i editar-les per tal que totes s'ajuntin i formin una sola imatge.\\\
+Aquest procés es substituirà per un altre de més ràpid conservant alguns aspectes tot i que el procediment canviarà per tal que tot sigui més mecanic i més rápid. \\\\
+Com hem dit anteriorment poden haver-hi moodboards de molts tipus, però per aquest projecte ens centrarem amb els moodboards d'interiorisme, és a dir, els que defineixen una estància d'una casa, un dormitori, un bany, una cuina, etc. A part de definir una estància també definirán un estil, cada moodboard pertenyerà a un estil determinat. Així, cada moodboard serà una combinació de mobles i objectes que junts representarán l'estil d'una zona de la casa.\\\\
+Un cop explicat tota la base de la qual partirem l'objectiu que ens proposem és crear un sistema automatitzat que ens permeti la generació automàtica de moodobards, sense la necessitat de editar imatges, facilitant la cerca dels mobles i objectes necessaris que es necessiten per a cada zona i generant imatges d'una forma més rápida i eficient.\\\\
+Per tal de poder crear aquest sistema utilitzarem técniques de machine learning per tal de crear una màquina capaç d'aprendre i de generar a partir de les dades que ha apres. D'aquesta forma podem estructurar el projecte amb dues part essencials, una la generació de moodboards mitjançant eines, ja creades i que explicarem és endavant, per tal d'entrenar la màquina i la segona la creació d'una màquina capaça de llegir els moodboards creats anteriorment, aprendre com estan generats, és a dir, com es distribueixen els diferent elements a cada un ells i generar-ne de nous que siguin correctes.
+\\\\
+Com bé he mencionat, farem servir técniques de machine learning, és a dir algorismes d'aprenentage automàtic. \textbf{Però que entenem per aprenentatge automàtic?}\\\
+L'aprenentatge automàtic és un camp de la intel·ligència artificial que està dedicat al disseny, l'anàlisi i el desenvolupament d'algorismes i tècniques que permeten que les màquines evolucionin. Es tracta de crear programes capaços de generalitzar comportaments a partir del reconeixement de patrons o classificació, d'aquesta manera nosaltre el que volem fer és una màquina que sigui capaç de classificar per després poder generar a partir de les dades que ha classificat.\\\\
+El machine learning ens ha de permetre donada una sèrie de imatges generades correctament importar-les a la màquina i que aquesta aprengui com estan formades, l'ordre que segueix la distribució de cada imatge dins del moodboard. També ha de capaç de generar noves sèries de imatges que han de ser correctes.\\\
+Aquest tipus de màquines necessiten moltes dades per tal necessitarem generar moltes dades per tal que siguem capaç de entrenar la màquina correctament.\\\\
+Finalment, tot i que l'objectiu és crear un sistema automatizat per a millorar la realització d'una tasca, l'objectiu també és analitzar com és de millor aquest sistema, és a dir, com millora respecte l'altre sistema. Per tal de saber-ho, al final de tot el projecte evaluarem el sistema mitjançant l'ajuda humana, en aquest cas, persones expertes que han generat molts de moodboards i que també han generat els correctes per entrenar la màquina i d'aquesta forma podrem validar les qualitats del sistema mitjançant diverses proves que s'explicarán més endavant.
+\newpage
 \subsection*{Estructura de la Memòria}
-En primer lloc explicarem com es generen les imatges originals per el entrenament de la màquina, quines eines s'utilitzen per tal de crearles. \\
-Després analitzarem com són les dades d'entrada, com obtenim les dades que necessitem de les imatges i com les convertim per tal que la màquina les pugui llegir. També analitzarem les dades de sortida, com han de ser per tal de que després les poguem convertir a una imatge. \\
-Seguidament explicarem l'algorisme que s'aplica per a la màquina i el seu funcionament al llarg del temps. I finalment s'explicarà com són les dades de sortida de la màquinai els resultats obtinguts, si les imatges que es generen són correctes, la precisió de la màquina...
+En primer lloc ens centrarem com generem els moodboards, amb quines eines i alguns exemples per tal de crear-los. Aquests moodboards serán els que posteriorment servirán per entrenar la màquina. També explicarem el funcionament de les eines i les diferencies amb el métode "tradicional".\\\\
+Seguidament explicarem quin tipus de màquina farem, és a dir, el tipus d'algorisme d'aprenentage automàtic que aplicarem, els motius per els quals em decidit escollir aquest algorisme i quines son les seves propietats bàsiques per aquest sistema.\\\
+Després analitzarem com són les dades d'entrada, com a partir del moodboards generats obtenim, com tranformem aquestes imatges per tal d'obtenir dades vàlides per a entrenar la màquina. També definirem com han de ser aquestes dades i com han de ser les dades que volem obtenir de sortida i com les transformarem en imatges de nou. \\\\
+I finalment analitzarem els resultats obtinguts i els evaluarem mitjançant diferents proves que realitzarem per comprovar la seva eficiència i els resultats envers els moodboards creats prèviament per experts.
 \newpage
 
 \section{Generació de Moodboards}
 
 \subsection{Moodboards}
+Explicar com son els moodboards i quines propietats tenen
 \subsection{Eines}
+funcionament bàsic de la eina
+diferencies
 \subsection{Exemples}
-
-\section{Dades}
-
-\subsection{Dades d'entrada}
-\[[ x^1_1, x^1_2, x^1_3, ..., x_{48}^1 ][y^1]\]
-\[[ x^2_1, x^2_2, x^2_3, ..., x_{48}^2 ][y^2]\]
-\[.\]
-\[.\]
-\[.\]
-\[[ x^M_1, x^M_2, x^M_3, ..., x_{48}^M ][y^M]\]
-
-On ~$M$ es el nombre total de graelles etiquetades, ~$y^M$ és la etiqueta de la graella ~$M$, ~$x^M$ és la graella ~$M$, ~$x_i^M$ és el i-essim objecte de la graella on $i \in [1,2,...,48]$ i ~$x_i^M$ és en realitat un vector amb 4 valors:
-\[x_i^M = (x_i^M["id"], x_i^M["type"], x_i^M["cat"],x_i^M["subcat"])\]
-\subsection{Dades de sortida}
-
+imatege
 \section{Machine Learning}
-
 \subsection{Introducció}
+resum dels diferents algorismes
 \subsection{Algoritme}
+explicaicó rbm
+motius elecció
+funcionament
+\section{Dades}
+resum de com son les dades
+\subsection{Dades d'entrada}
+dades exportades de l'eina
+\subsection{Dades d'entrament}
+transformar dades
+\subsection{Dades de sortida}
+transformació de les dades
 
 \section{Resultats}
 
