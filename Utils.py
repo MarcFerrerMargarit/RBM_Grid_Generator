@@ -42,13 +42,13 @@ def cleaningOutput(vector):
 
 
 # Generate grid from data
-def generateGrid(nubmer_grids):
+def generateGrid(number_grids):
     pickle_in = open("OneHotData.pickle", "rb")
     data = pickle.load(pickle_in)
     pickle_in_rbm = open("RBM.pickle", "rb")
     RBM = pickle.load(pickle_in_rbm)
     all_grids = []
-    for j in range(nubmer_grids):
+    for j in range(number_grids):
         final_output = []
         for i in range(50):
             x_visible = RBM.gibbs(data[random.randint(0, data.shape[0])])

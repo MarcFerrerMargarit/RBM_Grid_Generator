@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ecff7cb2-33c0-4da4-86a9-23a412ae51c1" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/other.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Generate_Grid.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Transform_Moodboard.py" />
-      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Grid_Generator-checkpoint.ipynb" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Grid_Generator-checkpoint.ipynb" />
-      <change beforePath="$PROJECT_DIR$/Grid_Generator.ipynb" afterPath="$PROJECT_DIR$/Grid_Generator.ipynb" />
-      <change beforePath="$PROJECT_DIR$/LaTex/TFG_Document.aux" afterPath="$PROJECT_DIR$/LaTex/TFG_Document.aux" />
-      <change beforePath="$PROJECT_DIR$/LaTex/TFG_Document.log" afterPath="$PROJECT_DIR$/LaTex/TFG_Document.log" />
-      <change beforePath="$PROJECT_DIR$/LaTex/TFG_Document.pdf" afterPath="$PROJECT_DIR$/LaTex/TFG_Document.pdf" />
-      <change beforePath="$PROJECT_DIR$/LaTex/TFG_Document.synctex.gz" afterPath="$PROJECT_DIR$/LaTex/TFG_Document.synctex.gz" />
-      <change beforePath="$PROJECT_DIR$/LaTex/TFG_Document.tex" afterPath="$PROJECT_DIR$/LaTex/TFG_Document.tex" />
-      <change beforePath="$PROJECT_DIR$/LaTex/TFG_Document.toc" afterPath="$PROJECT_DIR$/LaTex/TFG_Document.toc" />
       <change beforePath="$PROJECT_DIR$/Utils.py" afterPath="$PROJECT_DIR$/Utils.py" />
-      <change beforePath="$PROJECT_DIR$/output_grid.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/output_grid_2.json" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,8 +16,8 @@
       <file leaf-file-name="Utils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="600">
+              <caret line="30" column="17" lean-forward="true" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -42,8 +28,8 @@
       <file leaf-file-name="Generate_Grid.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Generate_Grid.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+            <state relative-caret-position="220">
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -66,7 +52,7 @@
       <file leaf-file-name="Transformed_Moodboards.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Transformed_Moodboards.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-19881">
+            <state relative-caret-position="-19761">
               <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding>
                 <element signature="e#17803#22125#0" expanded="false" />
@@ -254,8 +240,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Generate_Grid.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+        <state relative-caret-position="220">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -264,8 +250,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="600">
+          <caret line="30" column="17" lean-forward="true" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
@@ -274,7 +260,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Transformed_Moodboards.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-19881">
+        <state relative-caret-position="-19761">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
             <element signature="e#17803#22125#0" expanded="false" />
