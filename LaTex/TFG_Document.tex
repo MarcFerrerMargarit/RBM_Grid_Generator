@@ -2,11 +2,12 @@
 \usepackage{amsfonts, amsmath, amssymb,latexsym,amsthm, mathrsfs, enumerate}
 \usepackage[catalan]{babel}
 \usepackage{epsfig}
-
+\usepackage{tikz}
 \parskip=5pt
 \parindent=15pt
 \usepackage[margin=1.2in]{geometry}
 \usepackage{graphicx}
+\graphicspath{{./Images/}}
 \usepackage{listings}
 \usepackage[latin1]{inputenc}
 
@@ -157,6 +158,7 @@ Aquest tipus de màquines necessiten moltes dades per tal necessitarem generar mo
 Finalment, tot i que l'objectiu és crear un sistema automatizat per a millorar la realització d'una tasca, l'objectiu també és analitzar com és de millor aquest sistema, és a dir, com millora respecte l'altre sistema. Per tal de saber-ho, al final de tot el projecte evaluarem el sistema mitjançant l'ajuda humana, en aquest cas, persones expertes que han generat molts de moodboards i que també han generat els correctes per entrenar la màquina i d'aquesta forma podrem validar les qualitats del sistema mitjançant diverses proves que s'explicarán més endavant.
 \newpage
 \subsection*{Estructura de la Memòria}
+
 En primer lloc ens centrarem com generem els moodboards, amb quines eines i alguns exemples per tal de crear-los. Aquests moodboards serán els que posteriorment servirán per entrenar la màquina. També explicarem el funcionament de les eines i les diferencies amb el métode "tradicional".\\\\
 Seguidament explicarem quin tipus de màquina farem, és a dir, el tipus d'algorisme d'aprenentage automàtic que aplicarem, els motius per els quals em decidit escollir aquest algorisme i quines son les seves propietats bàsiques per aquest sistema.\\\
 Després analitzarem com són les dades d'entrada, com a partir del moodboards generats obtenim, com tranformem aquestes imatges per tal d'obtenir dades vàlides per a entrenar la màquina. També definirem com han de ser aquestes dades i com han de ser les dades que volem obtenir de sortida i com les transformarem en imatges de nou. \\\\
@@ -164,13 +166,58 @@ I finalment analitzarem els resultats obtinguts i els evaluarem mitjançant difer
 \newpage
 
 \section{Generació de Moodboards}
-total 10 pàg
-Explicar de què anira l'apartat i en que ens centrarem
+
+Abans de començar a explicar les dades, el funcionament de l'algorisme i els resultats ens hem de centrar en la primera part del projecte i una de les més importants, la generació de dades.\\\
+Com hem comentat a la introducció les nostres dades són moodboards que defineixen diferentes estàncies d'un habitatge d'un estil concret. \\\
+A continuació explicarem com són els moodboards, és a dir, com estan formats els moodboards actuals i com serán els nostres moodboards que generarem amb la nostra eina. També explicarem com està dissenyada la nostra eina, amb quines eines s'ha realitzat i com es creen moodboards seguin l'estàndard que hem decidit.
 \subsection{Moodboards}
-Explicar com son els moodboards, els normals i els que generarem i quines propietats tenen.
-\subsection{Eines}
-funcionament bàsic de la eina, imatges
-diferencies
+
+Com bé ja hem explicat moodboard és una combinació d'imatges relacionades entre elles que juntes formen una sola imatge. Aquesta imatge que formen es una imatge ben generada, és a dir, que hi ha cohesió amb tots els elements de forma que sembli que sigui una fotografia mentres que es tracta una composició de diferents objectes editats manualment mitjançant eines d'edició d'imatge per formar una sola imatge coherent i compacta, la qual mostrarà una habitació d'una casa.\\\\
+Realitzar moodboards amb aquesta tècnica té avantatges i inconvenients. Un dels problemes més gran que suposa és el temps. Generar un moodboard utitlizant aquest tipus de composició pot suposar una gran quantitat de temps ja que en primer lloc necessitem buscar aquelles imatges que necessitem, és a dir, dintre d'un rang enorme el qual esta format per milers de mobles i objectes escollir els adients segons l'estil i la estància desitjada. \\\\
+Un cop seleccionats els elements necessaris cal editar-los un per un per tal de poder combinar-los entre ells i que sembli una fotografia. Tot plegat suposa un esforç i un gran quantitat de temps per a generar un moodboard.\\\\
+Per altra banda uns dels millors aspectes és la cohesió que s'aconsegueix i la impressió que provoca ja que sembla una fotografia. Aixó el que ens permet imaginar-nos molt millor com seria aquella habitació. Ens proporciona una visió molt més real que un conjunt de imatges ajuntades aleatòriament.\\\\
+La qüestió que ens plantejem és si la gran quantitat de temps invertida per a generar una sola imatge compensa el resultat obtingut. Per tal de respondre aquest pregunta, hem consultat a experts que una de les seves principals tasques és la generació de moodboards.\\\\
+Segons ells invertir una gran quantitat de temps per a generar una imatge compensa ja que el resultat que obtenen es una reflexió de com seria veure en directe, com fer una fotografia de l'habitació per tal de poder-la mostrar. 
+També afirmen que alhora de mostrar habitacions a clients o empreses és una de les formes de captar més la seva atenció ja que en aquestes imatges es reflexa la realitat del futur, és a dir, es reflexa el que un dia podrá ser aquesta habitació en una casa qualsevol.\\\\ També han apuntat que al realitzar aquestes composicions els hi permeten crear diferents habitacions, diferentes formes en ambients totalment diferents i poder afegir una història a redere de cada composició que permeti a la persona que está veien aquella imatge entendre, adentrar-se dintre d'aquell ambien fictisi fins a fer-lo real en la seva ment.\\\
+Així doncs, la generació de moodboards utilitzat aquesta tècnica genera molt bons resultats però tè com a conseqüencia dedicar-hi molt de temps per tal de obtenir un bon resultat i que captivi aquelles persones a les qual va dirigit. \\\\
+A partir d'aquest punt el que ens hem de plantejar si utitlizar l'esquema de la técnica anterior és adient per el nostre projecte, és a dir, si ens podem permetre generar una gran quantitat d'imatges dedican-t'hi molt de temps per després utilitzar-les per entrenar una màquina.\\\\
+La resposta és simple, aquest tipus de tècnica no es serveix per aquest cas ja que necessitem generar, amb un període curt de temps, una gran quantitat de moodboards. Per tal de solucionar s'ha de plantejar una solució que ens permeti organitzar en un moodboard els elements d'una forma ràpida i que més o menys formin una imatge cohesionada. \\\
+Partint d'aquesta premisa es van agafar diferents estudis realitzats sobre moodboards anteriorment generats de cada estància i es van treure una sèrie d'especificacions que cada moodboard hauria de cumplir, així podriem definir un model per dissenyar un plantilla per a generar moodboards d'una forma més mecànica i més rápida.\\\\
+Així doncs una de les especificacions més importants que es va arribar és que cada estància que es volia generar tenia una sèrie d'elements fixes, és a dir, una sèrie de mobles i objectes que sempre hi haurien de ser. D'aquesta forma es va establir un numero d'objectes per a cada estància i quins havien de ser. Aixó solucionava una part del problema que era saber quants objectes podíem colocar a cada moodboard. L'altre problema que va sorgir era com combinar imatges per tal d'aconseguir una imatge cohesionada semblant a les imatges que s'obtenien amb l'altra tècnica. \\\
+En aquest cas el rang de objectes disponible era bastant gran, es tractava d'un conjunt d'uns 3000 objectes, i les imatges per a cada objecte eren \textit{thumbs}, imatges amb un fons blanc i l'objecte en petit centrat al mig del fons blanc. La solució de treure el fons blanc editant la imatge no era viable ja que es tardaria molt i no era l'objectiu que voliem aconseguir. \\\\
+Partint de tot aixó, es va arribar a trobar una solució que cumplia amb les especificacion i més o menys s'obtenia un resultat coherent. Partint de les solucions anteriors es va establir una grealla per a cada estància. Aquesta graella contindria a cada casella un tipus d'objecte, la qual més endavant contindria la imatge, el \textit{thumb}, de l'objecte que fos d'aquell tipus. D'aquesta forma s'aconsegueix una certa cohesió ja que totes les imatges al tenir el mateix format es formaria una imatge de fons blanc amb petites imatges de cada objecte. Tot i això, sempre hi ha la condició que a una cel·la no hi hagi cap element i quedi de color blanc. \\\\
+Aquesta solució serviria per a totes les estàncies disponibles d'un habitatge però si ens centrem amb el projecte, només analitzarem una estància, el dormitori per tant en aquest cas tindrem una sola graella d'imatges que corresponene als objectes que es troben en la estància. Així doncs es va establir que, en aquest cas, la grealla del dormitori tindria 48 elements els quals correspondrien als diferents mobles i objectes que es poden col·locar.\\\
+\begin{figure}[h!]
+\begin{center}
+\begin{tikzpicture}
+\draw[step=1cm,gray,very thin] (-2,-2) grid (6,4);
+\draw[thick,->] (-3,-3) -- (6,-3) node[anchor=north west] {8};
+\draw[thick,->] (-3,-3) -- (-3,4) node[anchor=south east] {6};
+\end{tikzpicture}	
+\caption{Exemple de la graella de la estància dormitori}
+\end{center}
+\end{figure}
+\\\\
+Cada casella d'aquesta graella contindrà internament, és a dir, d'una forma que no es veurà visualment uns valors que indicaràn quines objectes poden anar aquella casella. D'altra banda cada casella també contindrá una o més d'una paraula que descriurà els valors anteriors, d'aquesta forma la persona que hagi d'emplenar la graella amb objetes ha de saber quins poden i quins no. A continuació es mostra la graella final que s'utilitzarà per la generació de moodboards.
+\newpage
+\begin{figure}[h!]
+\begin{center}
+\frame{\includegraphics[scale=0.38]{graella}}
+\caption{Graella final de la estància dormitori}
+\end{center}
+\end{figure}
+A partir d'aquest punt ja tenim una solució que ens permet generar moodboards de forma rápida tot i que el resultat no sigui el mateix que utilitzant la primera técnica descrita. Tot i aixó, en aquest cas preferim velocitat a la hora de generar que més cohesió ja que tampoc tenim forma que una cop la màquina generi graelles pugui editar aquestes imatges per tal que s'assemblin al model de la primera tècnica. A partir d'ara necessitem una forma de poder colocar els objectes disponibles a la graella d'una forma senzilla i eficient.\\\
+\subsection{Eina}
+
+Per tal de poder aplicar el métode anteriorment explicat necessitem alguna eina que ens permeti accedir a tots els objectes disponibles d'una forma fácil per tal de poder crear moodboards seguin la grealla prèviament definida. Així doncs necesstiem crear un eina per realitzar aquesta tasca. \\\\
+Aquesta eina que volem desenvolupar ha de ser fàcil de fer servir, intuïtiva i ràpida. Partint d'aixo s'ha de decidir quines tecnologies utilitzar per desenvoluparla. En aquest cas, com que ja s'havien creat altres eines per altres coses es va decidir aplicar les mateixes tecnologies que en aquest cas són utilitzar Unity i el llenguatge de programació C sharp.\\\\
+Aquestes dos tecnologies combinades ens permetrán desenvolupar una eina capaç de generar moodboards d'una forma ràpida i eficient.\\\\
+En primer lloc tenim la part de Unity que ens permetrà crear tot el disseny de la interfície i les interaccion necessaries per tal que l'usuari pugui colocar els objectes i així generar moodboards. També ens permetra visualitzar tots els objectes i tota la informaicó que necessitem per a la generació. \\\\
+I en segon lloc la part de C Sharp que controlarà tot a la lògica que hi ha darrera de la interfície. Però el paper més important és la conexió amb la base de dades. Els objectes que tenim disponibles, la seva informació, la graella creada i tots els moodboards generats es guarden en una base de dades que es troba en un servidor. Així doncs per tal de poder accedir a aquesta informació, s'han realitzar crides constants per obtenir-la i això s'en encarrega la part de la lògica de l'aplicació. \\\\
+Pensant en un esquema model-vista-controlador(MVC), la part de model i vista correspondrien a Unity mentres que tota la part del controlador estaria gestionada per fitxers, scripts, amb C Sharp els qual s'han de comunicar amb la base de dades per tal de proporciona la informació necessària per a mostrar tots els objectes, la graella i altres funcions que ja explicarem.\\\\
+\subsubsection{Funcionalitats bàsiques}
+\subsubsection{Disseny}
+\subsubsection{Funcionament}
 \subsection{Exemples}
 imatges d'un moodboard original i el que nosaltres generem
 \section{Machine Learning}

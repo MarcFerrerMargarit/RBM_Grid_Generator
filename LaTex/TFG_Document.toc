@@ -1,15 +1,18 @@
-\babel@toc {catalan}{}
+\select@language {catalan}
 \contentsline {section}{\numberline {1}Introducci\'o}{1}
 \contentsline {section}{\numberline {2}Generaci\'o de Moodboards}{4}
 \contentsline {subsection}{\numberline {2.1}Moodboards}{4}
-\contentsline {subsection}{\numberline {2.2}Eines}{4}
-\contentsline {subsection}{\numberline {2.3}Exemples}{4}
-\contentsline {section}{\numberline {3}Machine Learning}{4}
-\contentsline {subsection}{\numberline {3.1}Introducci\'o}{4}
-\contentsline {subsection}{\numberline {3.2}Algoritme}{4}
-\contentsline {section}{\numberline {4}Dades}{4}
-\contentsline {subsection}{\numberline {4.1}Dades d'entrada}{4}
-\contentsline {subsection}{\numberline {4.2}Dades d'entrament}{4}
-\contentsline {subsection}{\numberline {4.3}Dades de sortida}{5}
-\contentsline {section}{\numberline {5}Resultats}{5}
-\contentsline {section}{\numberline {6}Conclusions}{5}
+\contentsline {subsection}{\numberline {2.2}Eina}{7}
+\contentsline {subsubsection}{\numberline {2.2.1}Funcionalitats b\`asiques}{8}
+\contentsline {subsubsection}{\numberline {2.2.2}Disseny}{8}
+\contentsline {subsubsection}{\numberline {2.2.3}Funcionament}{8}
+\contentsline {subsection}{\numberline {2.3}Exemples}{8}
+\contentsline {section}{\numberline {3}Machine Learning}{8}
+\contentsline {subsection}{\numberline {3.1}Introducci\'o}{8}
+\contentsline {subsection}{\numberline {3.2}Algoritme}{8}
+\contentsline {section}{\numberline {4}Dades}{9}
+\contentsline {subsection}{\numberline {4.1}Dades d'entrada}{9}
+\contentsline {subsection}{\numberline {4.2}Dades d'entrament}{9}
+\contentsline {subsection}{\numberline {4.3}Dades de sortida}{9}
+\contentsline {section}{\numberline {5}Resultats}{9}
+\contentsline {section}{\numberline {6}Conclusions}{10}
