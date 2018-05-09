@@ -135,8 +135,7 @@ Vull agrair a ...
 
 \pagenumbering{arabic} 
 \setcounter{page}{1}
-\section{Introducció}
-\subsection*{El projecte}
+\section{Introducció i objectius}
 
 Avui en dia, tot i que depenem de les màquines i dels programes per a realitzar tasques que poden ser pesades i lentes encara en queden moltes que es realitzen a má i que en algun punt haurán de ser automatizades per tal que es puguin realitzar més rápidament i de una forma més precisa.
 \\\\
@@ -165,12 +164,12 @@ Després analitzarem com són les dades d'entrada, com a partir del moodboards gen
 I finalment analitzarem els resultats obtinguts i els evaluarem mitjançant diferents proves que realitzarem per comprovar la seva eficiència i els resultats envers els moodboards creats prèviament per experts.
 \newpage
 
-\section{Generació de Moodboards}
+\section{Moodboards}
 
 Abans de començar a explicar les dades, el funcionament de l'algorisme i els resultats ens hem de centrar en la primera part del projecte i una de les més importants, la generació de dades.\\\
 Com hem comentat a la introducció les nostres dades són moodboards que defineixen diferentes estàncies d'un habitatge d'un estil concret. \\\
 A continuació explicarem com són els moodboards, és a dir, com estan formats els moodboards actuals i com serán els nostres moodboards que generarem amb la nostra eina. També explicarem com està dissenyada la nostra eina, amb quines eines s'ha realitzat i com es creen moodboards seguin l'estàndard que hem decidit.
-\subsection{Moodboards}
+\subsection{Disseny dels moodboards}
 
 Com bé ja hem explicat moodboard és una combinació d'imatges relacionades entre elles que juntes formen una sola imatge. Aquesta imatge que formen es una imatge ben generada, és a dir, que hi ha cohesió amb tots els elements de forma que sembli que sigui una fotografia mentres que es tracta una composició de diferents objectes editats manualment mitjançant eines d'edició d'imatge per formar una sola imatge coherent i compacta, la qual mostrarà una habitació d'una casa.\\\\
 Realitzar moodboards amb aquesta tècnica té avantatges i inconvenients. Un dels problemes més gran que suposa és el temps. Generar un moodboard utitlizant aquest tipus de composició pot suposar una gran quantitat de temps ja que en primer lloc necessitem buscar aquelles imatges que necessitem, és a dir, dintre d'un rang enorme el qual esta format per milers de mobles i objectes escollir els adients segons l'estil i la estància desitjada. \\\\
@@ -208,7 +207,7 @@ Cada casella d'aquesta graella contindrà internament, és a dir, d'una forma que 
 \end{figure}
 A partir d'aquest punt ja tenim una solució que ens permet generar moodboards de forma rápida tot i que el resultat no sigui el mateix que utilitzant la primera técnica descrita. Tot i aixó, en aquest cas preferim velocitat a la hora de generar que més cohesió ja que tampoc tenim forma que una cop la màquina generi graelles pugui editar aquestes imatges per tal que s'assemblin al model de la primera tècnica. A partir d'ara necessitem una forma de poder colocar els objectes disponibles a la graella d'una forma senzilla i eficient.\\\
 \newpage
-\subsection{Eina}
+\subsection{Desenvolupament de l'eina}
 
 Per tal de poder aplicar el métode anteriorment explicat necessitem alguna eina que ens permeti accedir a tots els objectes disponibles d'una forma fácil per tal de poder crear moodboards seguin la grealla prèviament definida. Així doncs necesstiem crear un eina per realitzar aquesta tasca. \\\\
 Aquesta eina que volem desenvolupar ha de ser fàcil de fer servir, intuïtiva i ràpida. Partint d'aixo s'ha de decidir quines tecnologies utilitzar per desenvoluparla. En aquest cas, com que ja s'havien creat altres eines per altres coses es va decidir aplicar les mateixes tecnologies que en aquest cas són utilitzar Unity i el llenguatge de programació C sharp.\\\\
@@ -219,28 +218,27 @@ Pensant en un esquema model-vista-controlador(MVC), la part de model i vista cor
 \subsubsection{Funcionalitats bàsiques}
 \subsubsection{Disseny}
 \subsubsection{Funcionament}
-\subsection{Exemples}
-imatges d'un moodboard original i el que nosaltres generem
-\section{Machine Learning}
-total 10-11 pàg
+\section{Desenvolupament del Machine Learning}
 \subsection{Introducció}
-resum dels diferents algorismes
-\subsection{Algoritme}
+resum del machine learning, l'estat acutal i les seves utilitats
+\subsection{Plantejament de l'algoritme}
+explicar que es el que volem que faci l'algoritme
+\subsection{Tipus d'algoritmes}
+explicació dels diferents algoritmes que es poden aplicar i quins s'escull per aplicar-lo
+\subsection{Màquina de Boltzmann Restrictiva (RBM)}
 explicaicó rbm
-motius elecció
 funcionament
-\section{Dades}
-total 7 pàg
-resum de com son les dades
+\section{Desenvolupament de l'algoritme aplicat al problema}
+com aplicarem l'algorisem en el projecte. Com seran les dades.
 \subsection{Dades d'entrada}
-dades exportades de l'eina
+format de les dades obtingutdes de l'eina
 \subsection{Dades d'entrament}
-transformar dades
+format de les dades dentrenament per a la màquina
+\subsection{Ànalisi de l'algoritme amb les dades}
+analisitzar el temps, l'eficiencia i les propietats de la màquina
 \subsection{Dades de sortida}
-transformació de les dades
-
-\section{Resultats}
-total 7 pàg
+format de les dades de sortida
+\section{Resultats i conclusions i línies de continuació}
 Evaluation Quantitativa
 
 Evaluar models generatius és en general molt complicat.
@@ -272,8 +270,6 @@ orta la eina
     - Podries vendre-ho com una "help tool" que a un disenyador li genera 25 graelles i ell sols ha de triar
       quina li agrada més. I si vol variar alguna cosa de la graella.
     
-\section{Conclusions}
-
 \normalfont
 
 \newpage
