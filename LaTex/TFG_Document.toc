@@ -1,19 +1,19 @@
-\select@language {catalan}
+\babel@toc {catalan}{}
 \contentsline {section}{\numberline {1}Introducci\'o i objectius}{1}
 \contentsline {section}{\numberline {2}Moodboards}{4}
 \contentsline {subsection}{\numberline {2.1}Disseny dels moodboards}{4}
 \contentsline {subsection}{\numberline {2.2}Desenvolupament de l'eina}{8}
 \contentsline {subsubsection}{\numberline {2.2.1}Funcionalitats b\`asiques}{8}
-\contentsline {subsubsection}{\numberline {2.2.2}Disseny i funcionament de l'aplicaci\'o}{8}
-\contentsline {subsubsection}{\numberline {2.2.3}Proc\'es de generaci\'o d'un moodboard}{10}
-\contentsline {section}{\numberline {3}Desenvolupament del Machine Learning}{10}
-\contentsline {subsection}{\numberline {3.1}Introducci\'o}{10}
-\contentsline {subsection}{\numberline {3.2}Plantejament de l'algoritme}{11}
-\contentsline {subsection}{\numberline {3.3}Tipus d'algoritmes}{11}
-\contentsline {subsection}{\numberline {3.4}M\`aquina de Boltzmann Restrictiva (RBM)}{11}
-\contentsline {section}{\numberline {4}Desenvolupament de l'algoritme aplicat al problema}{11}
-\contentsline {subsection}{\numberline {4.1}Dades d'entrada}{11}
-\contentsline {subsection}{\numberline {4.2}Dades d'entrament}{11}
-\contentsline {subsection}{\numberline {4.3}\`Analisi de l'algoritme amb les dades}{11}
-\contentsline {subsection}{\numberline {4.4}Dades de sortida}{11}
-\contentsline {section}{\numberline {5}Resultats i conclusions i l\IeC {\'\i }nies de continuaci\'o}{11}
+\contentsline {subsubsection}{\numberline {2.2.2}Disseny i funcionament de l'aplicaci\'o}{9}
+\contentsline {subsubsection}{\numberline {2.2.3}Proc\'es de generaci\'o d'un moodboard}{11}
+\contentsline {section}{\numberline {3}Desenvolupament del Machine Learning}{11}
+\contentsline {subsection}{\numberline {3.1}Introducci\'o}{11}
+\contentsline {subsection}{\numberline {3.2}Plantejament de l'algoritme}{12}
+\contentsline {subsection}{\numberline {3.3}Tipus d'algoritmes}{12}
+\contentsline {subsection}{\numberline {3.4}M\`aquina de Boltzmann Restrictiva (RBM)}{12}
+\contentsline {section}{\numberline {4}Desenvolupament de l'algoritme aplicat al problema}{12}
+\contentsline {subsection}{\numberline {4.1}Dades d'entrada}{12}
+\contentsline {subsection}{\numberline {4.2}Dades d'entrament}{12}
+\contentsline {subsection}{\numberline {4.3}\`Analisi de l'algoritme amb les dades}{12}
+\contentsline {subsection}{\numberline {4.4}Dades de sortida}{12}
+\contentsline {section}{\numberline {5}Resultats i conclusions i l\IeC {\'\i }nies de continuaci\'o}{12}
