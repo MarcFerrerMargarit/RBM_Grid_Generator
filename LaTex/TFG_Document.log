@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.5.8)  10 MAY 2018 07:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.5.8)  14 MAY 2018 12:43
 entering extended mode
 **./TFG_Document.tex
 (TFG_Document.tex
@@ -974,69 +974,143 @@ Underfull \hbox (badness 10000) in paragraph at lines 224--227
 
  []
 
-<./Images/eina.png, id=140, 1925.1925pt x 1021.8175pt>
+[9]
+<./Images/eina.png, id=144, 1925.1925pt x 1021.8175pt>
 File: ./Images/eina.png Graphic file (type png)
 <use ./Images/eina.png>
 Package pdftex.def Info: ./Images/eina.png  used on input line 235.
 (pdftex.def)             Requested size: 424.06033pt x 225.0656pt.
-<./Images/edit.png, id=142, 852.18375pt x 453.695pt>
+<./Images/edit.png, id=146, 852.18375pt x 453.695pt>
 File: ./Images/edit.png Graphic file (type png)
 <use ./Images/edit.png>
 Package pdftex.def Info: ./Images/edit.png  used on input line 248.
 (pdftex.def)             Requested size: 424.06033pt x 225.76698pt.
+<./Images/filter.png, id=147, 480.79625pt x 1020.81375pt>
+File: ./Images/filter.png Graphic file (type png)
+<use ./Images/filter.png>
+Package pdftex.def Info: ./Images/filter.png  used on input line 263.
+(pdftex.def)             Requested size: 240.39752pt x 510.40562pt.
+<./Images/topbar.png, id=148, 1448.41125pt x 71.26625pt>
+File: ./Images/topbar.png Graphic file (type png)
+<use ./Images/topbar.png>
+Package pdftex.def Info: ./Images/topbar.png  used on input line 271.
+(pdftex.def)             Requested size: 424.06033pt x 20.86458pt.
+<./Images/name.png, id=149, 444.91219pt x 222.8325pt>
+File: ./Images/name.png Graphic file (type png)
+<use ./Images/name.png>
+Package pdftex.def Info: ./Images/name.png  used on input line 285.
+(pdftex.def)             Requested size: 424.06033pt x 212.3901pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--254
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 232--254
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 232--254
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 232--254
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 232--254
+Underfull \hbox (badness 10000) in paragraph at lines 232--290
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--254
+Underfull \hbox (badness 10000) in paragraph at lines 232--290
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--254
+Underfull \hbox (badness 10000) in paragraph at lines 232--290
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--254
+Underfull \hbox (badness 10000) in paragraph at lines 232--290
 
  []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Underfull \hbox (badness 10000) in paragraph at lines 232--290
 
-[9] [10 <./Images/eina.png>] [11 <./Images/edit.png>] [12] [13] [14] [15]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--290
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--290
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--290
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--290
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--290
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--290
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--290
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--290
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--290
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--290
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--290
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--290
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--290
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--290
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--290
+
+ []
+
+[10 <./Images/eina.png>] [11 <./Images/edit.png>] [12] [13 <./Images/filter.png
+>] [14 <./Images/topbar.png>] [15 <./Images/name.png>] [16] [17] [18] [19]
 (TFG_Document.aux) ) 
 Here is how much of TeX's memory you used:
- 15118 strings out of 493303
- 288266 string characters out of 3128915
- 340985 words of memory out of 3000000
- 18340 multiletter control sequences out of 15000+200000
+ 15132 strings out of 493303
+ 288567 string characters out of 3128915
+ 347986 words of memory out of 3000000
+ 18352 multiletter control sequences out of 15000+200000
  12044 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,9n,54p,703b,688s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,9n,54p,707b,688s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/mferrer/AppData/Local/Programs/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmbx12.pfb><C:/Users/mferrer/AppData/Local/Programs/MiK
 TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/mferrer/AppData/Loc
@@ -1047,9 +1121,9 @@ m/cmsy10.pfb><C:/Users/mferrer/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/cm/cmsy8.pfb><C:/Users/mferrer/AppData/Local/Programs/MiKTeX 2.9/
 fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/mferrer/AppData/Local/Progr
 ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on TFG_Document.pdf (19 pages, 1721933 bytes).
+Output written on TFG_Document.pdf (23 pages, 1888028 bytes).
 PDF statistics:
- 198 PDF objects out of 1000 (max. 8388607)
+ 216 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 33 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 48 words of extra memory for PDF output out of 10000 (max. 10000000)
 

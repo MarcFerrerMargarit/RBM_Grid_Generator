@@ -221,12 +221,12 @@ Com hem comentat aquesta eina ha de tenir unes funcionalitats bàsiques i essenci
 \item Categoritzar graella predefinida. Com hem dit anteriorment, la graella la qual estableix quin objecte pot anar a cada casella, està organitzada de forma que cada una d'elles conté una sèrie identificadors els quals cada un és una subcategoria, un tipus d'objecte de la base de dades. Aquests identificadors no es veuen a la graella ja que no tenen importància visualment però el que si que es veu és un resum d'aquestes categories que especifica de forma més general la casella.\\\\
 Aquests noms i aquests valors s'han de poder modificar per si en algun moment s'ha classificat una casella incorrectament. Així doncs, l'eina ens ha de permetre modificar cada una de les caselles, tant la part visual com els valors que no es mostren que en permeten filtrar objectes.\\\
 \item Carregar objectes. Com hem mencionat repetidament necessitem objectes per a col·locar. Aquests objectes es troben a una base de dades i el que l'eina ha de fer es obtenir la informació d'aquests i mostrar-la en forma de imatges per tal que l'usuari pugui col·locar-los correctament a la graella. Així doncs ha d'implementar un sistema de crides a servidor per obtenir les dades i transformar-les per tal que es mostrin correctament i s'emmagatzemi d'alguna forma la informació que posteriorment ens serà útil.\\\
-\item Filtrar objectes. Elrang disponible d'objectes és molt ampli i el que no volem és que l'usuari es pasi molt de temps buscant un objecte per a col·locarlo a una casella. Per tant, el que es necessita es implementar un sistema de filtrar ràpid i fàcil de fer servir.\\\
+\item Filtrar objectes. El rang disponible d'objectes és molt ampli i el que no volem és que l'usuari es pasi molt de temps buscant un objecte per a col·locarlo a una casella. Per tant, el que es necessita es implementar un sistema de filtrar ràpid i fàcil de fer servir.\\\
 Per tal d'implementar aquest sistema utilitzarem els valors que amaguen les caselles que són els que ens indiquen aquells objectes que poden anar en ella. Així doncs cada cop que es vulgui colocar un objecte a una casella nomes es mostraràn aquells objectes que la base de dades retornarà aplicant el filtre amb els valors de la casella. D'aquesta forma aconseguim que l'usuari no s'hagi de trencar al cap buscant objectes i sempre coloqui objectes vàlids a cada casella. \\\
 A part també s'han de poder filtrar aquests objectes, els que ja han estat filtrats, segons cada valor de la casella, és a dir, ha d'haver-hi l'opció de mostrar tots els objectes disponibles de la casella o només els de un tipus determinat de la casella, els filtrats només utiltizant un valor de la casella.\\\
-\item Colocar objectes
-\item Guardar graella
-\item Crear pdf
+\item Colocar objectes. L'aplicació ha de permetre a l'usuari poder col·locar objectes a la graella. Així doncs, la mecànica és que pugui arrastrar la imatge de l'objecte a la graella. També ha de permetre que un cop col·locat l'objecte aquest es pugui treure i/o eleminar.
+\item Guardar graella. Com que el principal objectiu de l'aplicació és generar moodboards per després entrenar una màquina amb els moodboards generats, l'aplicació ens ha de permetre guardar d'alguna forma el moodboard generat amb tota la distribució d'objectes creada per l'usuari. El format d'aquestes dades que s'exportaran ha de ser l'adient per tal que la màquina pugui llegir-les.
+\item Crear pdf. Tot i que només necesstiem exportar les dades per la màquina també s'ha demanat una forma de visualitzar els moodboards generats i la informació que contenen. Així doncs, l'aplicació ha de permetre generar d'alguna forma un fitxer on hi figuri tota la informació. La solució és generar un PDF. Aquest fitxer, en primer lloc contindrà una captura de la graella i els seus elements i a continuació a cada pàgina contindrà l'objecte amb tota la seva informació, així obtenim un fitxer fàcil de compartir i el qual conté tota la informació del moodboard generat.
 \end{itemize}
 \subsubsection{Disseny i funcionament de l'aplicació}
 A continuació explicarem el disseny de l'aplicació, és a dir, com és la interficíe gràfica, per a què serveix cada part que s'ens mostra. Per explicar-ho millor partirem d'una imatge de l'eina ja que ens servirà per anar assenyalant millor les parts i indicant que fa cada part. Més endavant explicarem quin procés s'ha de seguir per a crear un moodboard. A continuació es mostra la imatge de l'eina.\\\\
@@ -242,7 +242,7 @@ Com podem observar l'eina es divideix en tres parts essencials els quals cadascu
 Primer de tot començarem per la zona 3, la graella. Aquesta graella és la mateixa que s'ha mostrat prèviament i s'ha explicat com estava formada. Podem observar que aquesta graella és lo suficienment grossa per tal que al col·locar un objecte aquest no sigui ni molt petit ni molt gros sino la mida justa per tal que es pugui veure de quin objecte es tracti. Cada casella de la graella és clickable, és a dir, podem fer click sobre la casella i aquesta quedarà resaltada de color verd. El que ens permet és que al seleccionar una casella els objectes es filtrin segons les categories de la casella. \\\\
 Una altra funcionalitat de les caselles és que si en comptes de fer click amb el botó esquerra del ratolí el realitzem amb el botó dret, eliminarem l'objecte que es troba a la casella. Aquest funcionament permet a l'usuari una rápida manipulació de les graelles per tal de poder trobar els objectes adients per a cada una i la facilitat de eliminar i/o modificar sense la necessitat de realitzar més moviments dels necessàris. \\\\
 Tal i com hem mencionat abans la graella és pot modificar, es poden canviar les categories. Per tal de modificar-la necessitem entrar en el mode edició, en aquest mode, al fer click amb el botó esquerra ens apareixerà una finestra la qual haurem de indicar el nom que volem que es mostri i escollir les subcategories que desitgem. Per a escollir una subcategori primer s'ha de seleccionar el tipus, després la categoria i despres la subcategoria. \\\
-Per entrar i sortir del mode edició l'usuari només ha de prèmer la tecla "F1". Un cop acabada l'edició de les graelles, es guardarà la configuració i es mantindrá fins que no torni a ser modificada de nou per l'usuari. A continuació es mostra una imatge de la finestra que apareix quan ens trobem en el mode edició.\\\\
+Per entrar i sortir del mode edició l'usuari només ha de prèmer la tecla "F1". Un cop acabada l'edició de les graelles, es guardarà la configuració i es mantindrá fins que no torni a ser modificada de nou per l'usuari. A continuació es mostra una imatge de la finestra que apareix quan ens trobem en el mode edició.
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=\textwidth]{edit}
@@ -251,7 +251,44 @@ Per entrar i sortir del mode edició l'usuari només ha de prèmer la tecla "F1". U
 \end{figure}
 \\\\
 La graella es pot emplenar del tot o deixar caselles buides. No hi ha cap restricció sobre els elements mínims necessàris per a generar un moodboard.
+\\\\
+Un cop ja hem explicat l'elemnt princpial de l'eina a cotinuació ens centrarem amb la zona 1, la zona del objectes. Com hem dit, necessitem visualitzar els diferents objectes que es troben a la base de dades, així doncs necesstiem una zona en la qual podem veure i filtrar els diferents objectes. \\\
+Només de iniciar l'aplicació els objectes que es mostrarán són tots els objectes disponibles que tenim ja que no s'ha seleccionat cap cel·la en concret. El rang d'objectes que tenim és molt gran i cada objecte conté una imatge que l'aplicació ha descarregar. Aixó ens presenta un problema important que haurem de gestionar d'una forma especial.\\\\ El problema que se'ns presenta és que no podem carregar tots els objectes amb les seves corresponents imatges ja que aquesta carrega trigaria molt i podria fer lent la tasca de generació de moodboards. \\\
+Per tal de solucionar aquest problema crearem un sistema de càrrega semblant als buscadors de les pàgines web, les imatges s'aniràn carregant a mesura que es mogui la barra de desplaçament o s'utilitzi la rodeta del ratolí per baixar la barra. Aquest sistema ens permet una càrrega ràpida i flüida de les imatges sense la necessitat de carregar totes le s imatges. Així doncs, al iniciar l'aplicació es mostraran un numerò finit de imatges, aquest número dependrà del tamany de la finestra ja que com més gran més imatges es mostraràn al princpi, i a mesura que es vagi desplaçant cap avall s'aniran carregant les següents imatges. \\\\
+També s'ha implementat que un cop la imatge s'ha descarregat no es torni a descarregar, es vol imitar el sistema de memòria caché pero en aquest cas les imatges es guarden internament en l'aplicació el que ens permet que un cop carregada una imatge ja no es tornara a descarregar, conseqüentment, si s'han carregat tots els objecte amb les seves imatges ja no es descarregaran més imatges i el filtratge d'objectes serà més ràpid. Aquesta informació desapareixerà un cop l'aplicació es tanqui. \\\\
+El filtratge d'objectes es realitzarà quan es seleccioni una cel·la. Les diferents opcions de filtratge es mostrarán en el desplegable que es troba a la part superior. En tots el casos hi haurà una opció que serà el filtratge de totes les categories, és a dir, de tots els objectes que poden anar a la cel·la i les altres opcions serán per filtrar per categoria, per escurçar el rang d'objectes a col·locar. Els sistema de carrega de imatges del filtratge és el mateix que s'ha explicat anteriorment ja que si ja tenim imatges descarregades només les hem de mostrar i en cas contrari, les descarreguem i les guardem per posteriors usos. \\\\
+Tot el filtratge d'objectes s'obte mitjançant crides a la base de dades aplicant els filtres que té la cel·la. Un altre sistema seria filtrar a partir de la llista d'objectes descarregats inicialment pero això pot suposar que en algun moment s'afegeixi o es modifiqui un objecte mentres s'esta utilitzant l'aplicació i aquest no apareixeria en el filtratge per aixó utilitzem les crides a base de dades per obtenir la informació actualitzada. A continuació es mostra un exemple de com fucniona el filtre un cop es selecciona una cel·la. Podem veure com la primer opció és la general, la que engloba les dos categories i després podem filtrar per cada una d'elles.
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.5]{filter}
+\caption{Captura del filtratge després de seleccionar una cel·la.}
+\end{center}
+\end{figure}
+\\\\
+Un cop ja explicades dos de les parts de l'eina, finalment explicarem la part superior la qual es composa dels diferents botons de l'aplicació per a realitzar diferents accións. A continuació es mostra una imatge de la barra superior de botons. A partir d'aquesta imatges explicarem la funcionalitat de cada boto a dins l'eina i les diferents part que la formen.
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=\textwidth]{topbar}
+\caption{Barra superior de l'aplicació.}
+\end{center}
+\end{figure}
+\\\\
+Seguint un ordre de esquerra a dreta tenim en primer lloc dos botons que són els botons de desfer i refer. L'aplicació té implementat un sistema de gestió d'accions, és a dir, cada cop que es realitza una acció aquesta queda registrada a dins l'apliació. Això el que ens permet es tenir un control sobre elles i en qualsevol moment saber quines accions s'han realitzat. \\\\
+A partir d'aquest sistema de gestió hem implementat un sistema de desfer i refer que desfa o torna a refer les accions que s'han realitzat. Això permet que si en un punt ens hem equivocat i volem tornar enrera no tinguem problema o si s'ha guardat pero ens hem equivocat poguem tornar a un punt anterior per seguir endavant. \\\
+Aquest sistema gaurda totes les accions que es realitza l'usuari amb el ratolí. Aquestes dos icones s'aniran iluminant a mesura que sigui possible realitzar les accions, és a dir, si no es pot retrocedir o no es pot refer, no es podrá interectuar amb el botó, així s'evita que es realitzin accions no permeses. \\\\
+Cada cop que es reinicia l'aplicació és reseteja el sistema i es netegen les accions, quan es guarda un moodboard definitiu també es netegen tot i que es pot seguir realitzant accions que seràn afegides al sistema com a noves accions, és a dir, com si es tornes a crear el sistema de gestío. Aixó permet indicar a l'usuari que ha guardat el que ha realitzat i que a partir d'aquest punt tot el que realitzi serà  un nou moodboard.\\\\
+Després del botons de desfer i refer tenim el nom del moodboard. Aquí és on ens apareixera el nom del moodboard que estem generant. En el desplegable també ens apareixerà el nom dels moodboards anteriors que hem creat. Seleccionar un nom d'un moodboard que ja hem creat ens permet crear un nou moodboard amb el mateix o carregar-ne un de nou per a visualitzar-lo. \\\\
+Per tal de crear un nou moodboard hem de prèmer el botó amb el símbol més. Al prèmer aquest botó ens apareixerà una nova finestra en el qual ens demanarà que entrem unes dades. En primer lloc en demanarà el nom de l'estil, que potser qualsevol nom que l'usuari desitji. Després utitlizant un desplegable l'usuari ha de seleccionar a quina habitació correspon l'estil i finalment haurà de del tipus que correspon. \\\
+El tipus es refereix a la distribució d'atrezzo, és a dir, la distribució d'objectes que es podrien posar a cada moble, a sobre, a sota, els complements per a cada moble que es podrien col·locar per acabar de completar el moodboard. Hi ha sis tipus respecte si estan orndenats o poc i amb quina quantitat. Quan s'afegeix un nou moodboard aquest s'afegirà automàticament al desplegable. A continuació es mostra la pantalla per afegir un nou moodboard. 
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=\textwidth]{name}
+\caption{Barra superior de l'aplicació.}
+\end{center}
+\end{figure}
+\\\\
 \subsubsection{Procés de generació d'un moodboard}
+\newpage
 \section{Desenvolupament del Machine Learning}
 \subsection{Introducció}
 resum del machine learning, l'estat acutal i les seves utilitats
@@ -296,8 +333,7 @@ Posar imatge de la eina
 
 Interficie grafica de la imatge.
 
-- Que ap
-orta la eina
+- Que aporta la eina
 - Temps que triguen els humans a generar una graella amb photoshop
 - Temps que triguen els humans a generar una graella amb eina
 - Temps que triguen els humans a generar una graella amb RBM
