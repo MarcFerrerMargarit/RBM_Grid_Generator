@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.5.8)  14 MAY 2018 12:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.5.8)  15 MAY 2018 14:56
 entering extended mode
 **./TFG_Document.tex
 (TFG_Document.tex
@@ -1001,129 +1001,198 @@ File: ./Images/name.png Graphic file (type png)
 Package pdftex.def Info: ./Images/name.png  used on input line 285.
 (pdftex.def)             Requested size: 424.06033pt x 212.3901pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--290
+Underfull \hbox (badness 10000) in paragraph at lines 232--301
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--290
+Underfull \hbox (badness 10000) in paragraph at lines 232--301
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--290
+Underfull \hbox (badness 10000) in paragraph at lines 232--301
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--290
+Underfull \hbox (badness 10000) in paragraph at lines 232--301
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--290
+Underfull \hbox (badness 10000) in paragraph at lines 232--301
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--290
+Underfull \hbox (badness 10000) in paragraph at lines 232--301
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--290
+Underfull \hbox (badness 10000) in paragraph at lines 232--301
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--290
+Underfull \hbox (badness 10000) in paragraph at lines 232--301
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--290
+Underfull \hbox (badness 10000) in paragraph at lines 232--301
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--290
+Underfull \hbox (badness 10000) in paragraph at lines 232--301
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--290
+Underfull \hbox (badness 10000) in paragraph at lines 232--301
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--290
+Underfull \hbox (badness 10000) in paragraph at lines 232--301
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--290
+Underfull \hbox (badness 10000) in paragraph at lines 232--301
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--290
+Underfull \hbox (badness 10000) in paragraph at lines 232--301
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--290
+Underfull \hbox (badness 10000) in paragraph at lines 232--301
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--290
+Underfull \hbox (badness 10000) in paragraph at lines 232--301
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--290
+Underfull \hbox (badness 10000) in paragraph at lines 232--301
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--290
+Underfull \hbox (badness 10000) in paragraph at lines 232--301
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--290
+Underfull \hbox (badness 10000) in paragraph at lines 232--301
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--290
+Underfull \hbox (badness 10000) in paragraph at lines 232--301
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--301
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--301
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--301
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--301
 
  []
 
 [10 <./Images/eina.png>] [11 <./Images/edit.png>] [12] [13 <./Images/filter.png
->] [14 <./Images/topbar.png>] [15 <./Images/name.png>] [16] [17] [18] [19]
-(TFG_Document.aux) ) 
+>] [14 <./Images/topbar.png>] [15 <./Images/name.png>] [16]
+<./Images/diagram.png, id=177, 743.77875pt x 251.94125pt>
+File: ./Images/diagram.png Graphic file (type png)
+<use ./Images/diagram.png>
+Package pdftex.def Info: ./Images/diagram.png  used on input line 314.
+(pdftex.def)             Requested size: 424.06033pt x 143.64644pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 311--319
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 311--319
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 311--319
+
+ []
+
+[17 <./Images/diagram.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 322--328
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 322--328
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 322--328
+
+ []
+
+[18] [19]
+Underfull \hbox (badness 10000) in paragraph at lines 383--386
+
+ []
+
+[20]
+Overfull \hbox (9.83655pt too wide) in paragraph at lines 407--413
+\OT1/cmr/m/n/12 explicaico rbm fun-ci-o-na-ment https://deeplearning4j.org/res
+trictedboltzmannmachine
+ []
+
+
+Overfull \hbox (106.77304pt too wide) in paragraph at lines 407--413
+\OT1/cmr/m/n/12 http://deeplearning.net/tutorial/rbm.html http://eric-yuan.me/r
+bm/ https://www.cs.toronto.edu/ hin-
+ []
+
+[21] [22] [23] (TFG_Document.aux) ) 
 Here is how much of TeX's memory you used:
- 15132 strings out of 493303
- 288567 string characters out of 3128915
- 347986 words of memory out of 3000000
- 18352 multiletter control sequences out of 15000+200000
+ 15114 strings out of 493303
+ 288561 string characters out of 3128915
+ 355874 words of memory out of 3000000
+ 18333 multiletter control sequences out of 15000+200000
  12044 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,9n,54p,707b,688s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/mferrer/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmbx12.pfb><C:/Users/mferrer/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/mferrer/AppData/Loc
+ 55i,9n,54p,710b,688s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/mferrer/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/mferrer/AppData/Loc
 al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/mferr
-er/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C
-:/Users/mferrer/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb><C:/Users/mferrer/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmsy8.pfb><C:/Users/mferrer/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/mferrer/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on TFG_Document.pdf (23 pages, 1888028 bytes).
+er/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+<C:/Users/mferrer/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmti12.pfb><C:/Users/mferrer/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmtt12.pfb>
+Output written on TFG_Document.pdf (27 pages, 1870422 bytes).
 PDF statistics:
- 216 PDF objects out of 1000 (max. 8388607)
+ 219 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 48 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 

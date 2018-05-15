@@ -111,16 +111,16 @@ Apart from creating this system, it will also ease your efficiency with respect 
 Finally, these tests will be carried out by supervising expert people in order to improve the evaluation.
 
 \section*{Resum}
-Actualment els moodboards s'utilitzen per representar objectes que estan formats per la composició d'altres i preten obtenir un resultat de cohesió entre ells i generar una imatge nova.
-El machine learning ens permet entrenar una màquina per tal de que aquesta sigui capaç de generar els valors amb les dades que li hem entrat prèviament, les quals han de ser dades correctes.
+Actualment els moodboards s'utilitzen per representar objectes que estan formats per la composició d'altres i pretén obtenir un resultat de cohesió entre ells i generar una imatge nova.
+El machine learning ens permet entrenar una màquina per tal que aquesta sigui capaç de generar els valors amb les dades que li hem entrat prèviament, les quals han de ser dades correctes.
 \\\
-El que volem obtenir es una combinació entre les dues parts per aconseguir la generació de noves imatges, amb objectes totalment correctes i cohesionats i diferents a les imatges utilitzades per entrenar la màquina.
+El que volem obtenir és una combinació entre les dues parts per aconseguir la generació de noves imatges, amb objectes totalment correctes i cohesionats i diferents de les imatges utilitzades per entrenar la màquina.
 \\\
-Així doncs l'objectiu d'aquest projecte es crear una máquina que ens permeti, a partir de dades correctes, moodboards generats correctament, generar moodboards correctes sense la necessitat que una persona els hagi de generar, crear un sistema automatitzat per a reemplaçar una tasca lenta i mecánica que realitzen una série de persones.
+Així doncs l'objectiu d'aquest projecte és crear una màquina que ens permeti, a partir de dades correctes, moodboards generats correctament, generar moodboards correctes sense la necessitat que una persona els hagi de generar, crear un sistema automatitzat per a reemplaçar una tasca lenta i mecànica que realitzen una série de persones.
 \\\
-A part de crear aquest sistema, també s'anilitzará la seva eficiència respecte el sistema no automitzat o la generació de dades d'una forma aleatòria, així podrem establir si el sistema creat es el suficientment eficaç, ràpid i precís a la hora de realitzar, en aquest cas, nous moodboards. 
+A part de crear aquest sistema, també s'analitzarà la seva eficiència, respecte al sistema no automatitzat o la generació de dades d'una forma aleatòria, així podrem establir si el sistema creat és prou eficaç, ràpid i precís a l'hora de realitzar, en aquest cas, nous moodboards.
 \\\
-Finalment, aquestes proves es realitzarán mitjançant la supervisió de persones expertes per a tal de millorar la evaluació. 
+Finalment, aquestes proves es realitzaran mitjançant la supervisió de persones expertes per a tal de millorar l'avaluació. 
 \newpage 
 
 
@@ -137,112 +137,112 @@ Vull agrair a ...
 \setcounter{page}{1}
 \section{Introducció i objectius}
 
-Avui en dia, tot i que depenem de les màquines i dels programes per a realitzar tasques que poden ser pesades i lentes encara en queden moltes que es realitzen a má i que en algun punt haurán de ser automatizades per tal que es puguin realitzar més rápidament i de una forma més precisa.
+Avui en dia, tot i que depenem de les màquines i dels programes per a realitzar tasques que poden ser pesades i lentes encara en queden moltes que es realitzen a mà i que en algun punt hauran de ser automatitzades per tal que es puguin realitzar més ràpidament i d'una forma més precisa.
 \\\\
-Així doncs aquest projecte el que es vol aconseguir és que una tasca que actualment costa temps, dedicació i concentració es transformi amb un tasca mecánica, senzilla de realitzar, ràpida i amb bons resultats. Que la persona que l'hagi de realitzar no es trobi amb problemes que no pot solucionar o en dedicar-hi masses hores. Aquesta transformació que volem aconseguir, s'ha de realitzar partir de la tasca original, de la informació que es necessita i en què es basa.
+Així doncs aquest projecte el que es vol aconseguir és que una tasca que actualment costa temps, dedicació i concentració es transformi amb una tasca mecànica, senzilla de realitzar, ràpida i amb bons resultats. Que la persona que l'hagi de realitzar no es trobi amb problemes que no pot solucionar o en dedicar-hi masses hores. Aquesta transformació que volem aconseguir, s'ha de realitzar partir de la tasca original, de la informació que es necessita i en què es basa.
 \\\\
 Aquesta tasca consisteix en la generació de moodboards. La pregunta és: \textbf{Què és un moodboard?}\\\
-Un moodboard és una combinació d'imatges relacionades entre elles que juntes formen una sola imatge. Normalment és creen aquestes combinacions per generar imatges de paisatges, d'aplicacions, decoració i creació d'habitacions. \\\\
+Un moodboard és una combinació d'imatges relacionades entre elles que juntes formen una sola imatge. Normalment es creen aquestes combinacions per generar imatges de paisatges, d'aplicacions, decoració i creació d'habitacions. \\\\
 La tasca que volem substituir, més ben dit, millorar, evolucionar, és la tasca de la generació de moodboards. Actualment per generar moodboards es necessita fer una cerca de totes les imatges que es desitgen col·locar. Un cop triades s'han de col·locar de forma que formin un sol conjunt i anar-les editant per tal de generar una sola imatge. \\\
-Aquest procés pot ser molt lent i tediós ja que buscar totes les imatges necessàries pot portar molt de temps igual que col·locar-les correctament i editar-les per tal que totes s'ajuntin i formin una sola imatge.\\\
-Aquest procés es substituirà per un altre de més ràpid conservant alguns aspectes tot i que el procediment canviarà per tal que tot sigui més mecanic i més rápid. \\\\
-Com hem dit anteriorment poden haver-hi moodboards de molts tipus, però per aquest projecte ens centrarem amb els moodboards d'interiorisme, és a dir, els que defineixen una estància d'una casa, un dormitori, un bany, una cuina, etc. A part de definir una estància també definirán un estil, cada moodboard pertenyerà a un estil determinat. Així, cada moodboard serà una combinació de mobles i objectes que junts representarán l'estil d'una zona de la casa.\\\\
-Un cop explicat tota la base de la qual partirem l'objectiu que ens proposem és crear un sistema automatitzat que ens permeti la generació automàtica de moodobards, sense la necessitat de editar imatges, facilitant la cerca dels mobles i objectes necessaris que es necessiten per a cada zona i generant imatges d'una forma més rápida i eficient.\\\\
-Per tal de poder crear aquest sistema utilitzarem técniques de machine learning per tal de crear una màquina capaç d'aprendre i de generar a partir de les dades que ha apres. D'aquesta forma podem estructurar el projecte amb dues part essencials, una la generació de moodboards mitjançant eines, ja creades i que explicarem és endavant, per tal d'entrenar la màquina i la segona la creació d'una màquina capaça de llegir els moodboards creats anteriorment, aprendre com estan generats, és a dir, com es distribueixen els diferent elements a cada un ells i generar-ne de nous que siguin correctes.
+Aquest procés pot ser molt lent i tediós, ja que buscar totes les imatges necessàries pot necessitar igual que col·locar-les correctament i editar-les per tal que totes s'ajuntin i formin una sola imatge.\\\
+Aquest procés se substituirà per un altre de més ràpid conservant alguns aspectes tot i que el procediment canviarà per tal que tot sigui més mecànic i més ràpid. \\\\
+Com hem dit anteriorment poden haver-hi moodboards de molts tipus, però per aquest projecte ens centrarem amb els moodboards d'interiorisme, és a dir, els que defineixen una estança d'una casa, un dormitori, un bany, una cuina, etc. A part de definir una estança també definiran un estil, cada moodboard pertanyerà a un estil determinat. Així, cada moodboard serà una combinació de mobles i objectes que junts representaran l'estil d'una zona de la casa.\\\\
+Un cop explicat tota la base de la qual partirem l'objectiu que ens proposem és crear un sistema automatitzat que ens permeti la generació automàtica de moodobards, sense la necessitat d'editar imatges, facilitant la cerca dels mobles i objectes necessaris que es necessiten per a cada zona i generant imatges d'una forma més ràpida i eficient.\\\\
+Per tal de poder crear aquest sistema utilitzarem tècniques de machine learning per tal de crear una màquina capaç d'aprendre i de generar a partir de les dades que ha après. D'aquesta forma podem estructurar el projecte amb dues parts essencials, una la generació de moodboards mitjançant eines, ja creades i que explicarem és endavant, per tal d'entrenar la màquina i la segona la creació d'una màquina capaç de llegir els moodboards creats anteriorment, aprendre com estan generats, és a dir, com es distribueixen els diferents elements a cada un ells i generar-ne de nous que siguin correctes.
 \\\\
-Com bé he mencionat, farem servir técniques de machine learning, és a dir algorismes d'aprenentage automàtic. \textbf{Però que entenem per aprenentatge automàtic?}\\\
-L'aprenentatge automàtic és un camp de la intel·ligència artificial que està dedicat al disseny, l'anàlisi i el desenvolupament d'algorismes i tècniques que permeten que les màquines evolucionin. Es tracta de crear programes capaços de generalitzar comportaments a partir del reconeixement de patrons o classificació, d'aquesta manera nosaltre el que volem fer és una màquina que sigui capaç de classificar per després poder generar a partir de les dades que ha classificat.\\\\
-El machine learning ens ha de permetre donada una sèrie de imatges generades correctament importar-les a la màquina i que aquesta aprengui com estan formades, l'ordre que segueix la distribució de cada imatge dins del moodboard. També ha de capaç de generar noves sèries de imatges que han de ser correctes.\\\
-Aquest tipus de màquines necessiten moltes dades per tal necessitarem generar moltes dades per tal que siguem capaç de entrenar la màquina correctament.\\\\
-Finalment, tot i que l'objectiu és crear un sistema automatizat per a millorar la realització d'una tasca, l'objectiu també és analitzar com és de millor aquest sistema, és a dir, com millora respecte l'altre sistema. Per tal de saber-ho, al final de tot el projecte evaluarem el sistema mitjançant l'ajuda humana, en aquest cas, persones expertes que han generat molts de moodboards i que també han generat els correctes per entrenar la màquina i d'aquesta forma podrem validar les qualitats del sistema mitjançant diverses proves que s'explicarán més endavant.
+Com bé he mencionat, farem servir tècniques de machine learning, és a dir algorismes d'aprenentatge automàtic. \textbf{Però que entenem per aprenentatge automàtic?}\\\
+L'aprenentatge automàtic és un camp de la intel·ligència artificial que està dedicat al disseny, l'anàlisi i el desenvolupament d'algorismes i tècniques que permeten que les màquines evolucionin. Es tracta de crear programes capaços de generalitzar comportaments a partir del reconeixement de patrons o classificació, d'aquesta manera nosaltres el que volem fer és una màquina que sigui capaç de classificar per després poder generar a partir de les dades que ha classificat.\\\\
+El machine learning ens ha de permetre donada una sèrie d'imatges generades correctament importar-les a la màquina i que aquesta aprengui com estan formades, l'ordre que segueix la distribució de cada imatge dins del moodboard. També ha de capaç de generar noves sèries d'imatges que han de ser correctes.\\\
+Aquest tipus de màquines necessiten moltes dades per tal necessitarem generar moltes dades per tal que siguem capaç d'entrenar la màquina correctament.\\\\
+Finalment, tot i que l'objectiu és crear un sistema automatitzat per a millorar la realització d'una tasca, l'objectiu també és analitzar com és de millor aquest sistema, és a dir, com millora respecte de l'altre sistema. Per tal de saber-ho, al final de tot el projecte avaluarem el sistema mitjançant l'ajuda humana, en aquest cas, persones expertes que han generat molts de moodboards i que també han generat els correctes per entrenar la màquina i d'aquesta forma podrem validar les qualitats del sistema mitjançant diverses proves que s'explicaran més endavant.
 \newpage
 \subsection*{Estructura de la Memòria}
 
-En primer lloc ens centrarem com generem els moodboards, amb quines eines i alguns exemples per tal de crear-los. Aquests moodboards serán els que posteriorment servirán per entrenar la màquina. També explicarem el funcionament de les eines i les diferencies amb el métode "tradicional".\\\\
-Seguidament explicarem quin tipus de màquina farem, és a dir, el tipus d'algorisme d'aprenentage automàtic que aplicarem, els motius per els quals em decidit escollir aquest algorisme i quines son les seves propietats bàsiques per aquest sistema.\\\
-Després analitzarem com són les dades d'entrada, com a partir del moodboards generats obtenim, com tranformem aquestes imatges per tal d'obtenir dades vàlides per a entrenar la màquina. També definirem com han de ser aquestes dades i com han de ser les dades que volem obtenir de sortida i com les transformarem en imatges de nou. \\\\
-I finalment analitzarem els resultats obtinguts i els evaluarem mitjançant diferents proves que realitzarem per comprovar la seva eficiència i els resultats envers els moodboards creats prèviament per experts.
+En primer lloc ens centrarem com generem els moodboards, amb quines eines i alguns exemples per tal de crear-los. Aquests moodboards seran els que posteriorment serviran per entrenar la màquina. També explicarem el funcionament de les eines i les diferencies amb el mètode "tradicional".\\\\
+Seguidament explicarem quin tipus de màquina farem, és a dir, el tipus d'algorisme d'aprenentatge automàtic que aplicarem, els motius pels quals hem decidit escollir aquest algorisme i quines són les seves propietats bàsiques per aquest sistema.\\\
+Després analitzarem com són les dades d'entrada, com a partir del moodboards generats obtenim, com transformem aquestes imatges per tal d'obtenir dades vàlides per a entrenar la màquina. També definirem com han de ser aquestes dades i com han de ser les dades que volem obtenir de sortida i com les transformarem en imatges de nou. \\\\
+I finalment analitzarem els resultats obtinguts i els avaluarem mitjançant diferents proves que realitzarem per comprovar la seva eficiència i els resultats envers els moodboards creats prèviament per experts.
 \newpage
 
 \section{Moodboards}
 
 Abans de començar a explicar les dades, el funcionament de l'algorisme i els resultats ens hem de centrar en la primera part del projecte i una de les més importants, la generació de dades.\\\
-Com hem comentat a la introducció les nostres dades són moodboards que defineixen diferentes estàncies d'un habitatge d'un estil concret. \\\
-A continuació explicarem com són els moodboards, és a dir, com estan formats els moodboards actuals i com serán els nostres moodboards que generarem amb la nostra eina. També explicarem com està dissenyada la nostra eina, amb quines eines s'ha realitzat i com es creen moodboards seguin l'estàndard que hem decidit.
+Com hem comentat a la introducció les nostres dades són moodboards que defineixen diferents estances d'un habitatge d'un estil concret. \\\
+A continuació explicarem com són els moodboards, és a dir, com estan formats els moodboards actuals i com seran els nostres moodboards que generarem amb la nostra eina. També explicarem com està dissenyada la nostra eina, amb quines eines s'ha realitzat i com es creen moodboards seguin l'estàndard que hem decidit.
 \subsection{Disseny dels moodboards}
 
-Com bé ja hem explicat moodboard és una combinació d'imatges relacionades entre elles que juntes formen una sola imatge. Aquesta imatge que formen es una imatge ben generada, és a dir, que hi ha cohesió amb tots els elements de forma que sembli que sigui una fotografia mentres que es tracta una composició de diferents objectes editats manualment mitjançant eines d'edició d'imatge per formar una sola imatge coherent i compacta, la qual mostrarà una habitació d'una casa.\\\\
-Realitzar moodboards amb aquesta tècnica té avantatges i inconvenients. Un dels problemes més gran que suposa és el temps. Generar un moodboard utitlizant aquest tipus de composició pot suposar una gran quantitat de temps ja que en primer lloc necessitem buscar aquelles imatges que necessitem, és a dir, dintre d'un rang enorme el qual esta format per milers de mobles i objectes escollir els adients segons l'estil i la estància desitjada. \\\\
-Un cop seleccionats els elements necessaris cal editar-los un per un per tal de poder combinar-los entre ells i que sembli una fotografia. Tot plegat suposa un esforç i un gran quantitat de temps per a generar un moodboard.\\\\
-Per altra banda uns dels millors aspectes és la cohesió que s'aconsegueix i la impressió que provoca ja que sembla una fotografia. Aixó el que ens permet imaginar-nos molt millor com seria aquella habitació. Ens proporciona una visió molt més real que un conjunt de imatges ajuntades aleatòriament.\\\\
-La qüestió que ens plantejem és si la gran quantitat de temps invertida per a generar una sola imatge compensa el resultat obtingut. Per tal de respondre aquest pregunta, hem consultat a experts que una de les seves principals tasques és la generació de moodboards.\\\\
-Segons ells invertir una gran quantitat de temps per a generar una imatge compensa ja que el resultat que obtenen es una reflexió de com seria veure en directe, com fer una fotografia de l'habitació per tal de poder-la mostrar. 
-També afirmen que alhora de mostrar habitacions a clients o empreses és una de les formes de captar més la seva atenció ja que en aquestes imatges es reflexa la realitat del futur, és a dir, es reflexa el que un dia podrá ser aquesta habitació en una casa qualsevol.\\\\ També han apuntat que al realitzar aquestes composicions els hi permeten crear diferents habitacions, diferentes formes en ambients totalment diferents i poder afegir una història a redere de cada composició que permeti a la persona que está veien aquella imatge entendre, adentrar-se dintre d'aquell ambien fictisi fins a fer-lo real en la seva ment.\\\
-Així doncs, la generació de moodboards utilitzat aquesta tècnica genera molt bons resultats però tè com a conseqüencia dedicar-hi molt de temps per tal de obtenir un bon resultat i que captivi aquelles persones a les qual va dirigit. \\\\
-A partir d'aquest punt el que ens hem de plantejar si utitlizar l'esquema de la técnica anterior és adient per el nostre projecte, és a dir, si ens podem permetre generar una gran quantitat d'imatges dedican-t'hi molt de temps per després utilitzar-les per entrenar una màquina.\\\\
-La resposta és simple, aquest tipus de tècnica no es serveix per aquest cas ja que necessitem generar, amb un període curt de temps, una gran quantitat de moodboards. Per tal de solucionar s'ha de plantejar una solució que ens permeti organitzar en un moodboard els elements d'una forma ràpida i que més o menys formin una imatge cohesionada. \\\
-Partint d'aquesta premisa es van agafar diferents estudis realitzats sobre moodboards anteriorment generats de cada estància i es van treure una sèrie d'especificacions que cada moodboard hauria de cumplir, així podriem definir un model per dissenyar un plantilla per a generar moodboards d'una forma més mecànica i més rápida.\\\\
-Així doncs una de les especificacions més importants que es va arribar és que cada estància que es volia generar tenia una sèrie d'elements fixes, és a dir, una sèrie de mobles i objectes que sempre hi haurien de ser. D'aquesta forma es va establir un numero d'objectes per a cada estància i quins havien de ser. Aixó solucionava una part del problema que era saber quants objectes podíem colocar a cada moodboard. L'altre problema que va sorgir era com combinar imatges per tal d'aconseguir una imatge cohesionada semblant a les imatges que s'obtenien amb l'altra tècnica. \\\
-En aquest cas el rang de objectes disponible era bastant gran, es tractava d'un conjunt d'uns 3000 objectes, i les imatges per a cada objecte eren \textit{thumbs}, imatges amb un fons blanc i l'objecte en petit centrat al mig del fons blanc. La solució de treure el fons blanc editant la imatge no era viable ja que es tardaria molt i no era l'objectiu que voliem aconseguir. \\\\
-Partint de tot aixó, es va arribar a trobar una solució que cumplia amb les especificacion i més o menys s'obtenia un resultat coherent. Partint de les solucions anteriors es va establir una grealla per a cada estància. Aquesta graella contindria a cada casella un tipus d'objecte, la qual més endavant contindria la imatge, el \textit{thumb}, de l'objecte que fos d'aquell tipus. D'aquesta forma s'aconsegueix una certa cohesió ja que totes les imatges al tenir el mateix format es formaria una imatge de fons blanc amb petites imatges de cada objecte. Tot i això, sempre hi ha la condició que a una cel·la no hi hagi cap element i quedi de color blanc. \\\\
-Aquesta solució serviria per a totes les estàncies disponibles d'un habitatge però si ens centrem amb el projecte, només analitzarem una estància, el dormitori per tant en aquest cas tindrem una sola graella d'imatges que corresponene als objectes que es troben en la estància. Així doncs es va establir que, en aquest cas, la grealla del dormitori tindria 48 elements els quals correspondrien als diferents mobles i objectes que es poden col·locar.\\\
+Com bé ja hem explicat moodboard és una combinació d'imatges relacionades entre elles que juntes formen una sola imatge. Aquesta imatge que formen és una imatge ben generada, és a dir, que hi ha cohesió amb tots els elements de forma que sembli que sigui una fotografia mentre que es tracta una composició de diferents objectes editats manualment mitjançant eines d'edició d'imatge per formar una sola imatge coherent i compacta, la qual mostrarà una habitació d'una casa.\\\\
+Realitzar moodboards amb aquesta tècnica té avantatges i inconvenients. Un dels problemes més gran que suposa és el temps. Generar un moodboard utilitzant aquest tipus de composició pot suposar una gran quantitat de temps, ja que en primer lloc necessitem buscar aquelles imatges que necessitem, és a dir, dintre d'un rang enorme el qual està format per milers de mobles i objectes escollir els adients segons l'estil i l'estança desitjada. \\\\
+Un cop seleccionats els elements necessaris cal editar-los un per un per tal de poder combinar-los entre ells i que sembli una fotografia. Tot plegat suposa un esforç i una gran quantitat de temps per a generar un moodboard.\\\\
+Per altra banda uns dels millors aspectes és la cohesió que s'aconsegueix i la impressió que provoca, ja que sembla una fotografia. Això el que ens permet imaginar-nos molt millor com seria aquella habitació. Ens proporciona una visió molt més real que un conjunt d'imatges ajuntades aleatòriament.\\\\
+La qüestió que ens plantegem és si la gran quantitat de temps invertida per a generar una sola imatge compensa el resultat obtingut. Per tal de respondre aquest pregunta, hem consultat a experts que una de les seves principals tasques és la generació de moodboards.\\\\
+Segons ells invertir una gran quantitat de temps per a generar una imatge compensa, ja que el resultat que obtenen és una reflexió de com seria veure en directe, com fer una fotografia de l'habitació per tal de poder-la mostrar.
+També afirmen que a l'hora de mostrar habitacions a clients o empreses és una de les formes de captar més la seva atenció perquè en aquestes imatges es reflecteix la realitat del futur, és a dir, es reflecteix el que un dia podrà ser aquesta habitació en una casa qualsevol.\\\\ També han apuntat que en realitzar aquestes composicions els hi permeten crear diferents habitacions, diferents formes en ambients totalment diferents i poder afegir una història a darrere de cada composició que permeti a la persona que està veient aquella imatge entendre, endinsar-se dintre d'aquell ambient fictici fins a fer-lo real en la seva ment.\\\
+Així doncs, la generació de moodboards utilitzat aquesta tècnica genera molt bons resultats però té com a conseqüència dedicar-hi molt de temps per tal d'obtenir un bon resultat i que captivi aquelles persones a les quals va dirigit. \\\\
+A partir d'aquest punt el que ens hem de plantejar si utilitzar l'esquema de la tècnica anterior és adient pel nostre projecte, és a dir, si ens podem permetre generar una gran quantitat d'imatges dedicant-hi molt de temps per després utilitzar-les per entrenar una màquina.\\\\
+La resposta és simple, aquest tipus de tècnica no serveix per a aquest cas, ja que necessitem generar, amb un període curt de temps, una gran quantitat de moodboards. Per tal de solucionar s'ha de plantejar una solució que ens permeti organitzar en un moodboard els elements d'una forma ràpida i que més o menys formin una imatge cohesionada. \\\
+Partint d'aquesta premissa es van agafar diferents estudis realitzats sobre moodboards anteriorment generats de cada estança i es van treure una sèrie d'especificacions que cada moodboard hauria de complir, així podríem definir un model per dissenyar una plantilla per a generar moodboards d'una forma més mecànica i més ràpida.\\\\
+Així doncs una de les especificacions més importants que es va arribar és que cada estança que es volia generar tenia una sèrie d'elements fixes, és a dir, una sèrie de mobles i objectes que sempre hi haurien de ser. D'aquesta forma es va establir un nombre d'objectes per a cada estança i quins havien de ser. Això solucionava una part del problema que era saber quants objectes podíem col·locar a cada moodboard. L'altre problema que va sorgir era com combinar imatges per tal d'aconseguir una imatge cohesionada semblant a les imatges que s'obtenien amb l'altra tècnica. \\\
+En aquest cas el rang d'objectes disponible era bastant gran, es tractava d'un conjunt d'uns 3000 objectes, i les imatges per a cada objecte eren \textit{thumbs}, imatges amb un fons blanc i l'objecte en petit centrat al mig del fons blanc. La solució de treure el fons blanc editant la imatge no era viable, ja que es tardaria molt i no era l'objectiu que volíem aconseguir. \\\\
+Partint de tot això, es va arribar a trobar una solució que complia amb les especificacions i més o menys s'obtenia un resultat coherent. Partint de les solucions anteriors es va establir una graella per a cada estança. Aquesta graella contindria a cada casella un tipus d'objecte, la qual més endavant contindria la imatge, el \textit{thumb}, de l'objecte que fos d'aquell tipus. D'aquesta forma s'aconsegueix una certa cohesió, ja que totes les imatges en tenir el mateix format es formaria una imatge de fons blanc amb petites imatges de cada objecte. Tot i això, sempre hi ha la condició que a una cel·la no hi hagi cap element i quedi de color blanc. \\\\
+Aquesta solució serviria per a totes les estances disponibles d'un habitatge però si ens centrem amb el projecte, només analitzarem una estança, el dormitori per tant en aquest cas tindrem una sola graella d'imatges que corresponent als objectes que es troben en l'estança. Així doncs es va establir que, en aquest cas, la graella del dormitori tindria 48 elements els quals correspondrien als diferents mobles i objectes que es poden col·locar.\\\
 \begin{figure}[h!]
 \begin{center}
 \begin{tikzpicture}
 \draw[step=1cm,gray,very thin] (-2,-2) grid (6,4);
-\draw[thick,->] (-3,-3) -- (6,-3) node[anchor=north west] {8};
-\draw[thick,->] (-3,-3) -- (-3,4) node[anchor=south east] {6};
-\end{tikzpicture}	
-\caption{Exemple de la graella de la estància dormitori.}
+\draw[thick,->] (-3,-3) -- (6,-3) node[anchor=north west] {8}; 
+\draw[thick,->] (-3,-3) -- (-3,4) node[anchor=south east] {6}; 
+\end{tikzpicture}
+\caption{Exemple de la graella de l'estança dormitori.}
 \end{center}
 \end{figure}
 \\\\
-Cada casella d'aquesta graella contindrà internament, és a dir, d'una forma que no es veurà visualment uns valors que indicaràn quines objectes poden anar aquella casella. D'altra banda cada casella també contindrá una o més d'una paraula que descriurà els valors anteriors, d'aquesta forma la persona que hagi d'emplenar la graella amb objetes ha de saber quins poden i quins no. A continuació es mostra la graella final que s'utilitzarà per la generació de moodboards.
+Cada casella d'aquesta graella tindrà internament, és a dir, d'una forma que no es veurà visualment uns valors que indicaran quins objectes poden anar aquella casella. D'altra banda cada casella també contindrà una o més d'una paraula que descriurà els valors anteriors, d'aquesta forma la persona que hagi d'emplenar la graella amb objectes ha de saber quins poden i quins no. A continuació es mostra la graella final que s'utilitzarà per a la generació de moodboards.
 \newpage
 \begin{figure}[h!]
 \begin{center}
 \frame{\includegraphics[width=\textwidth]{graella}}
-\caption{Graella final de la estància dormitori.}
+\caption{Graella final de l'estança dormitori.}
 \end{center}
 \end{figure}
-A partir d'aquest punt ja tenim una solució que ens permet generar moodboards de forma rápida tot i que el resultat no sigui el mateix que utilitzant la primera técnica descrita. Tot i aixó, en aquest cas preferim velocitat a la hora de generar que més cohesió ja que tampoc tenim forma que una cop la màquina generi graelles pugui editar aquestes imatges per tal que s'assemblin al model de la primera tècnica. A partir d'ara necessitem una forma de poder colocar els objectes disponibles a la graella d'una forma senzilla i eficient.\\\
+A partir d'aquest punt ja tenim una solució que ens permet generar moodboards de forma ràpida encara que el resultat no sigui el mateix que utilitzant la primera tècnica descrita. Tot i això, en aquest cas preferim velocitat a l'hora de generar que més cohesió, ja que tampoc tenim forma que un cop la màquina generi graelles pugui editar aquestes imatges per tal que s'assemblin al model de la primera tècnica. A partir d'ara necessitem una forma de poder col·locar els objectes disponibles a la graella d'una forma senzilla i eficient.\\\
 \newpage
 \subsection{Desenvolupament de l'eina}
 
-Per tal de poder aplicar el métode anteriorment explicat necessitem alguna eina que ens permeti accedir a tots els objectes disponibles d'una forma fácil per tal de poder crear moodboards seguin la grealla prèviament definida. Així doncs necesstiem crear un eina per realitzar aquesta tasca. \\\\
-Aquesta eina que volem desenvolupar ha de ser fàcil de fer servir, intuïtiva i ràpida. Partint d'aixo s'ha de decidir quines tecnologies utilitzar per desenvoluparla. En aquest cas, com que ja s'havien creat altres eines per altres coses es va decidir aplicar les mateixes tecnologies que en aquest cas són utilitzar Unity i el llenguatge de programació C sharp.\\\\
-Aquestes dos tecnologies combinades ens permetrán desenvolupar una eina capaç de generar moodboards d'una forma ràpida i eficient.\\\\
-En primer lloc tenim la part de Unity que ens permetrà crear tot el disseny de la interfície i les interaccion necessaries per tal que l'usuari pugui colocar els objectes i així generar moodboards. També ens permetra visualitzar tots els objectes i tota la informaicó que necessitem per a la generació. \\\\
-I en segon lloc la part de C Sharp que controlarà tot a la lògica que hi ha darrera de la interfície. Però el paper més important és la conexió amb la base de dades. Els objectes que tenim disponibles, la seva informació, la graella creada i tots els moodboards generats es guarden en una base de dades que es troba en un servidor. Així doncs per tal de poder accedir a aquesta informació, s'han realitzar crides constants per obtenir-la i això s'en encarrega la part de la lògica de l'aplicació. \\\\
-Pensant en un esquema model-vista-controlador(MVC), la part de model i vista correspondrien a Unity mentres que tota la part del controlador estaria gestionada per fitxers, scripts, amb C Sharp els qual s'han de comunicar amb la base de dades per tal de proporciona la informació necessària per a mostrar tots els objectes, la graella i altres funcions que ja explicarem.
+Per tal de poder aplicar el mètode anteriorment explicat necessitem alguna eina que ens permeti accedir a tots els objectes disponibles d'una forma fàcil per tal de poder crear moodboards seguin la graella prèviament definida. Així doncs necessitem crear una eina per realitzar aquesta tasca. \\\\
+Aquesta eina que volem desenvolupar ha de ser fàcil de fer servir, intuïtiva i ràpida. Partint d'això s'ha de decidir quines tecnologies utilitzar per desenvolupar-la. En aquest cas, com que ja s'havien creat altres eines per altres coses es va decidir aplicar les mateixes tecnologies que en aquest cas són utilitzar Unity i el llenguatge de programació C sharp.\\\\
+Aquestes dues tecnologies combinades ens permetran desenvolupar una eina capaç de generar moodboards d'una forma ràpida i eficient.\\\\
+En primer lloc tenim la part de Unity que ens permetrà crear tot el disseny de la interfície i les interaccions necessàries perquè l'usuari pugui col·locar els objectes i així generar moodboards. També ens permetrà visualitzar tots els objectes i tota la informació que necessitem per a la generació. \\\\
+I en segon lloc la part de C Sharp que controlarà tot a la lògica que hi ha darrere de la interfície. Però el paper més important és la connexió amb la base de dades. Els objectes que tenim disponibles, la seva informació, la graella creada i tots els moodboards generats es guarden en una base de dades que es troba en un servidor. Així doncs per tal de poder accedir a aquesta informació, s'han realitzat crides constants per obtenir-la i això se n'encarrega la part de la lògica de l'aplicació. \\\\
+Pensant en un esquema model-vista-controlador (MVC), la part de model i vista correspondrien a Unity mentre que tota la part del controlador seria gestionada per fitxers, scripts, amb C Sharp els quals s'han de comunicar amb la base de dades per tal de proporciona la informació necessària per a mostrar tots els objectes, la graella i altres funcions que ja explicarem.
 \subsubsection{Funcionalitats bàsiques}
 Com hem comentat aquesta eina ha de tenir unes funcionalitats bàsiques i essencials per a obtenir un bon resultat. Aquestes funcionalitats són les següents:
 \begin{itemize}
-\item Categoritzar graella predefinida. Com hem dit anteriorment, la graella la qual estableix quin objecte pot anar a cada casella, està organitzada de forma que cada una d'elles conté una sèrie identificadors els quals cada un és una subcategoria, un tipus d'objecte de la base de dades. Aquests identificadors no es veuen a la graella ja que no tenen importància visualment però el que si que es veu és un resum d'aquestes categories que especifica de forma més general la casella.\\\\
+\item Categoritzar graella predefinida. Com hem dit anteriorment, la graella la qual estableix quin objecte pot anar a cada casella, està organitzada de forma que cada una d'elles conté una sèrie d'identificadors els quals cada un és una subcategoria, un tipus d'objecte de la base de dades. Aquests identificadors no es veuen a la graella, ja que no tenen importància visualment però el que sí que es veu és un resum d'aquestes categories que especifica de forma més general la casella.\\\\
 Aquests noms i aquests valors s'han de poder modificar per si en algun moment s'ha classificat una casella incorrectament. Així doncs, l'eina ens ha de permetre modificar cada una de les caselles, tant la part visual com els valors que no es mostren que en permeten filtrar objectes.\\\
-\item Carregar objectes. Com hem mencionat repetidament necessitem objectes per a col·locar. Aquests objectes es troben a una base de dades i el que l'eina ha de fer es obtenir la informació d'aquests i mostrar-la en forma de imatges per tal que l'usuari pugui col·locar-los correctament a la graella. Així doncs ha d'implementar un sistema de crides a servidor per obtenir les dades i transformar-les per tal que es mostrin correctament i s'emmagatzemi d'alguna forma la informació que posteriorment ens serà útil.\\\
-\item Filtrar objectes. El rang disponible d'objectes és molt ampli i el que no volem és que l'usuari es pasi molt de temps buscant un objecte per a col·locarlo a una casella. Per tant, el que es necessita es implementar un sistema de filtrar ràpid i fàcil de fer servir.\\\
-Per tal d'implementar aquest sistema utilitzarem els valors que amaguen les caselles que són els que ens indiquen aquells objectes que poden anar en ella. Així doncs cada cop que es vulgui colocar un objecte a una casella nomes es mostraràn aquells objectes que la base de dades retornarà aplicant el filtre amb els valors de la casella. D'aquesta forma aconseguim que l'usuari no s'hagi de trencar al cap buscant objectes i sempre coloqui objectes vàlids a cada casella. \\\
-A part també s'han de poder filtrar aquests objectes, els que ja han estat filtrats, segons cada valor de la casella, és a dir, ha d'haver-hi l'opció de mostrar tots els objectes disponibles de la casella o només els de un tipus determinat de la casella, els filtrats només utiltizant un valor de la casella.\\\
-\item Colocar objectes. L'aplicació ha de permetre a l'usuari poder col·locar objectes a la graella. Així doncs, la mecànica és que pugui arrastrar la imatge de l'objecte a la graella. També ha de permetre que un cop col·locat l'objecte aquest es pugui treure i/o eleminar.
+\item Carregar objectes. Com hem mencionat repetidament necessitem objectes per a col·locar. Aquests objectes es troben a una base de dades i el que l'eina ha de fer és obtenir la informació d'aquests i mostrar-la en forma d'imatges per tal que l'usuari pugui col·locar-los correctament a la graella. Així doncs ha d'implementar un sistema de crides a servidor per obtenir les dades i transformar-les per tal que es mostrin correctament i s'emmagatzemi d'alguna forma la informació que posteriorment ens serà útil.\\\
+\item Filtrar objectes. El rang disponible d'objectes és molt ampli i el que no volem és que l'usuari es passi molt de temps buscant un objecte per a col·locar-lo a una casella. Per tant, el que es necessita és implementar un sistema de filtratge ràpid i fàcil de fer servir.\\\
+Per tal d'implementar aquest sistema utilitzarem els valors que amaguen les caselles que són els que ens indiquen aquells objectes que poden anar en ella. Així doncs cada cop que es vulgui col·locar un objecte a una casella només es mostraran aquells objectes que la base de dades retornarà aplicant el filtre amb els valors de la casella. D'aquesta forma aconseguim que l'usuari no s'hagi de trencar al cap buscant objectes i sempre coloqui objectes vàlids a cada casella. \\\
+A part també s'han de poder filtrar aquests objectes, els que ja han estat filtrats, segons cada valor de la casella, és a dir, ha d'haver-hi l'opció de mostrar tots els objectes disponibles de la casella o només els d'un tipus determinat de la casella, només utilitzant un valor de la casella.\\\
+\item Col·locar objectes. L'aplicació ha de permetre a l'usuari poder col·locar objectes a la graella. Així doncs, la mecànica és que pugui arrossegar la imatge de l'objecte a la graella. També ha de permetre que un cop col·locat l'objecte aquest es pugui treure i/o eliminar.
 \item Guardar graella. Com que el principal objectiu de l'aplicació és generar moodboards per després entrenar una màquina amb els moodboards generats, l'aplicació ens ha de permetre guardar d'alguna forma el moodboard generat amb tota la distribució d'objectes creada per l'usuari. El format d'aquestes dades que s'exportaran ha de ser l'adient per tal que la màquina pugui llegir-les.
-\item Crear pdf. Tot i que només necesstiem exportar les dades per la màquina també s'ha demanat una forma de visualitzar els moodboards generats i la informació que contenen. Així doncs, l'aplicació ha de permetre generar d'alguna forma un fitxer on hi figuri tota la informació. La solució és generar un PDF. Aquest fitxer, en primer lloc contindrà una captura de la graella i els seus elements i a continuació a cada pàgina contindrà l'objecte amb tota la seva informació, així obtenim un fitxer fàcil de compartir i el qual conté tota la informació del moodboard generat.
+\item Crear PDF. Tot i que només necessitem exportar les dades per la màquina també s'ha demanat una forma de visualitzar els moodboards generats i la informació que contenen. Així doncs, l'aplicació ha de permetre generar d'alguna forma un fitxer on figuri tota la informació. La solució és generar un PDF. Aquest fitxer, en primer lloc contindrà una captura de la graella i els seus elements i a continuació a cada pàgina contindrà l'objecte amb tota la seva informació, així obtenim un fitxer fàcil de compartir i el qual conté tota la informació del moodboard generat.
 \end{itemize}
 \subsubsection{Disseny i funcionament de l'aplicació}
-A continuació explicarem el disseny de l'aplicació, és a dir, com és la interficíe gràfica, per a què serveix cada part que s'ens mostra. Per explicar-ho millor partirem d'una imatge de l'eina ja que ens servirà per anar assenyalant millor les parts i indicant que fa cada part. Més endavant explicarem quin procés s'ha de seguir per a crear un moodboard. A continuació es mostra la imatge de l'eina.\\\\
+A continuació explicarem el disseny de l'aplicació, és a dir, com és la interfície gràfica, per a què serveix cada part que se'ns mostra. Per explicar-ho millor partirem d'una imatge de l'eina, ja que ens servirà per anar assenyalant millor les parts i indicant que fa cada part. Més endavant explicarem quin procés s'ha de seguir per a crear un moodboard. A continuació es mostra la imatge de l'eina.\\\\
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=\textwidth]{eina}
-\caption{Captura de la eina.}
+\caption{Captura de l'eina.}
 \end{center}
 \end{figure}
 \\\\
-Podem observar que es tracta d'una interfície senzilla i ben organitzada. Alhora de dissenyar l'eina es van tenir en compte totes les normes de diseny i de usabilitat per tal que la distribució de la informació i dels botons fós la més adient per tal que l'usuari pogués treballar d'una forma ràpida i mecànica.\\\\
-Com podem observar l'eina es divideix en tres parts essencials els quals cadascuna correspon alguna de les necessitats més importants que s'han mencionat anteriorment. A continuació analitzarem les 3 zone per separat explicant el seu objectiu i el funcionament dintre de l'eina.\\\\
-Primer de tot començarem per la zona 3, la graella. Aquesta graella és la mateixa que s'ha mostrat prèviament i s'ha explicat com estava formada. Podem observar que aquesta graella és lo suficienment grossa per tal que al col·locar un objecte aquest no sigui ni molt petit ni molt gros sino la mida justa per tal que es pugui veure de quin objecte es tracti. Cada casella de la graella és clickable, és a dir, podem fer click sobre la casella i aquesta quedarà resaltada de color verd. El que ens permet és que al seleccionar una casella els objectes es filtrin segons les categories de la casella. \\\\
-Una altra funcionalitat de les caselles és que si en comptes de fer click amb el botó esquerra del ratolí el realitzem amb el botó dret, eliminarem l'objecte que es troba a la casella. Aquest funcionament permet a l'usuari una rápida manipulació de les graelles per tal de poder trobar els objectes adients per a cada una i la facilitat de eliminar i/o modificar sense la necessitat de realitzar més moviments dels necessàris. \\\\
-Tal i com hem mencionat abans la graella és pot modificar, es poden canviar les categories. Per tal de modificar-la necessitem entrar en el mode edició, en aquest mode, al fer click amb el botó esquerra ens apareixerà una finestra la qual haurem de indicar el nom que volem que es mostri i escollir les subcategories que desitgem. Per a escollir una subcategori primer s'ha de seleccionar el tipus, després la categoria i despres la subcategoria. \\\
-Per entrar i sortir del mode edició l'usuari només ha de prèmer la tecla "F1". Un cop acabada l'edició de les graelles, es guardarà la configuració i es mantindrá fins que no torni a ser modificada de nou per l'usuari. A continuació es mostra una imatge de la finestra que apareix quan ens trobem en el mode edició.
+Podem observar que es tracta d'una interfície senzilla i ben organitzada. A l'hora de dissenyar l'eina es van tenir en compte totes les normes de disseny i d'usabilitat per tal que la distribució de la informació i dels botons fos la més adient per tal que l'usuari pogués treballar d'una forma ràpida i mecànica.\\\\
+Com podem observar l'eina es divideix en tres parts essencials els quals cadascuna correspon alguna de les necessitats més importants que s'han mencionat anteriorment. A continuació analitzarem les 3 zones per separat explicant el seu objectiu i el funcionament dintre de l'eina.\\\\
+Primer de tot començarem per la zona 3, la graella. Aquesta graella és la mateixa que s'ha mostrat prèviament i s'ha explicat com estava formada. Podem observar que aquesta graella és prou gran perquè en col·locar un objecte aquest no sigui ni molt petit ni molt gros sinó la mida justa per tal que es pugui veure de quin objecte es tracti. Cada casella de la graella és clicable, és a dir, podem fer clic sobre la casella i aquesta quedarà ressaltada de color verd. El que ens permet és que en seleccionar una casella els objectes es filtrin segons les categories de la casella. \\\\
+Una altra funcionalitat de les caselles és que si en comptes de fer clic amb el botó esquerre del ratolí el realitzem amb el botó dret, eliminarem l'objecte que es troba a la casella. Aquest funcionament permet a l'usuari una ràpida manipulació de les graelles per tal de poder trobar els objectes adients per a cada una i la facilitat d'eliminar i/o modificar sense la necessitat de realitzar més moviments dels necessaris. \\\\
+Tal com hem mencionat abans la graella es pot modificar, es poden canviar les categories. Per tal de modificar-la necessitem entrar en el mode edició, en aquest mode, en fer clic amb el botó esquerre ens apareixerà una finestra la qual haurem d'indicar el nom que volem que es mostri i escollir les subcategories que desitgem. Per a escollir una subcategoria primer s'ha de seleccionar el tipus, després la categoria i després la subcategoria. \\\
+Per entrar i sortir del mode edició l'usuari només ha de prémer la tecla "F1". Un cop acabada l'edició de les graelles, es guardarà la configuració i es mantindrà fins que no torni a ser modificada de nou per l'usuari. A continuació es mostra una imatge de la finestra que apareix quan ens trobem en el mode edició.
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=\textwidth]{edit}
@@ -250,14 +250,14 @@ Per entrar i sortir del mode edició l'usuari només ha de prèmer la tecla "F1". U
 \end{center}
 \end{figure}
 \\\\
-La graella es pot emplenar del tot o deixar caselles buides. No hi ha cap restricció sobre els elements mínims necessàris per a generar un moodboard.
+La graella es pot emplenar del tot o deixar caselles buides. No hi ha cap restricció sobre els elements mínims necessaris per a generar un moodboard.
 \\\\
-Un cop ja hem explicat l'elemnt princpial de l'eina a cotinuació ens centrarem amb la zona 1, la zona del objectes. Com hem dit, necessitem visualitzar els diferents objectes que es troben a la base de dades, així doncs necesstiem una zona en la qual podem veure i filtrar els diferents objectes. \\\
-Només de iniciar l'aplicació els objectes que es mostrarán són tots els objectes disponibles que tenim ja que no s'ha seleccionat cap cel·la en concret. El rang d'objectes que tenim és molt gran i cada objecte conté una imatge que l'aplicació ha descarregar. Aixó ens presenta un problema important que haurem de gestionar d'una forma especial.\\\\ El problema que se'ns presenta és que no podem carregar tots els objectes amb les seves corresponents imatges ja que aquesta carrega trigaria molt i podria fer lent la tasca de generació de moodboards. \\\
-Per tal de solucionar aquest problema crearem un sistema de càrrega semblant als buscadors de les pàgines web, les imatges s'aniràn carregant a mesura que es mogui la barra de desplaçament o s'utilitzi la rodeta del ratolí per baixar la barra. Aquest sistema ens permet una càrrega ràpida i flüida de les imatges sense la necessitat de carregar totes le s imatges. Així doncs, al iniciar l'aplicació es mostraran un numerò finit de imatges, aquest número dependrà del tamany de la finestra ja que com més gran més imatges es mostraràn al princpi, i a mesura que es vagi desplaçant cap avall s'aniran carregant les següents imatges. \\\\
-També s'ha implementat que un cop la imatge s'ha descarregat no es torni a descarregar, es vol imitar el sistema de memòria caché pero en aquest cas les imatges es guarden internament en l'aplicació el que ens permet que un cop carregada una imatge ja no es tornara a descarregar, conseqüentment, si s'han carregat tots els objecte amb les seves imatges ja no es descarregaran més imatges i el filtratge d'objectes serà més ràpid. Aquesta informació desapareixerà un cop l'aplicació es tanqui. \\\\
-El filtratge d'objectes es realitzarà quan es seleccioni una cel·la. Les diferents opcions de filtratge es mostrarán en el desplegable que es troba a la part superior. En tots el casos hi haurà una opció que serà el filtratge de totes les categories, és a dir, de tots els objectes que poden anar a la cel·la i les altres opcions serán per filtrar per categoria, per escurçar el rang d'objectes a col·locar. Els sistema de carrega de imatges del filtratge és el mateix que s'ha explicat anteriorment ja que si ja tenim imatges descarregades només les hem de mostrar i en cas contrari, les descarreguem i les guardem per posteriors usos. \\\\
-Tot el filtratge d'objectes s'obte mitjançant crides a la base de dades aplicant els filtres que té la cel·la. Un altre sistema seria filtrar a partir de la llista d'objectes descarregats inicialment pero això pot suposar que en algun moment s'afegeixi o es modifiqui un objecte mentres s'esta utilitzant l'aplicació i aquest no apareixeria en el filtratge per aixó utilitzem les crides a base de dades per obtenir la informació actualitzada. A continuació es mostra un exemple de com fucniona el filtre un cop es selecciona una cel·la. Podem veure com la primer opció és la general, la que engloba les dos categories i després podem filtrar per cada una d'elles.
+Un cop ja hem explicat l'element principal de l'eina a continuació ens centrarem amb la zona 1, la zona dels objectes. Com hem dit, necessitem visualitzar els diferents objectes que es troben a la base de dades, així doncs necessitem una zona en la qual podem veure i filtrar els diferents objectes. \\\
+Només d'iniciar l'aplicació els objectes que es mostraran són tots els objectes disponibles que tenim, ja que no s'ha seleccionat cap cel·la en concret. El rang d'objectes que tenim és molt gran i cada objecte conté una imatge que l'aplicació ha de descarregar. Això ens presenta un problema important que haurem de gestionar d'una forma especial.\\\\ El problema que se'ns presenta és que no podem carregar tots els objectes amb les seves corresponents imatges, ja que aquesta càrrega trigaria molt i podria fer lent la tasca de generació de moodboards. \\\
+Per tal de solucionar aquest problema crearem un sistema de càrrega semblant als buscadors de les pàgines web, les imatges s'aniran carregant a mesura que es mogui la barra de desplaçament o s'utilitzi la rodeta del ratolí per baixar la barra. Aquest sistema ens permet una càrrega ràpida i fluida de les imatges sense la necessitat de carregar totes les imatges. Així doncs, en iniciar l'aplicació es mostraran un nombre finit d'imatges, aquest número dependrà de la mida de la finestra, ja que com més gran més imatges es mostraran al principi, i a mesura que es vagi desplaçant cap avall s'aniran carregant les següents imatges. \\\\
+També s'ha implementat que un cop la imatge s'ha descarregat no es torni a descarregar, es vol imitar el sistema de memòria caché pero en aquest cas les imatges es guarden internament en l'aplicació el que ens permet que un cop carregada una imatge ja no es tornarà a descarregar, conseqüentment, si s'han carregat tots els objectes amb les seves imatges, ja no es descarregaran més imatges i el filtratge d'objectes serà més ràpid. Aquesta informació desapareixerà un cop l'aplicació es tanqui. \\\\
+El filtratge d'objectes es realitzarà quan se seleccioni una cel·la. Les diferents opcions de filtratge es mostraran en el desplegable que es troba a la part superior. En tots els casos hi haurà una opció que serà el filtratge de totes les categories, és a dir, de tots els objectes que poden anar a la cel·la i les altres opcions seran per filtrar per categoria, per escurçar el rang d'objectes a col·locar. El sistema de càrrega d'imatges del filtratge és el mateix que s'ha explicat anteriorment, ja que si ja tenim imatges descarregades només les hem de mostrar i en cas contrari, les descarreguem i les guardem per posteriors usos. \\\\
+Tot el filtratge d'objectes s'obté mitjançant crides a la base de dades aplicant els filtres que té la cel·la. Un altre sistema seria, filtrar a partir de la llista d'objectes descarregats inicialment, però això pot suposar que en algun moment s'afegeixi o es modifiqui un objecte mentre s'està utilitzant l'aplicació i aquest no apareixeria en el filtratge per això utilitzem les crides a base de dades per obtenir la informació actualitzada. A continuació es mostra un exemple de com funciona el filtre un cop se selecciona una cel·la. Podem veure com la primera opció és la general, la que engloba les dues categories i després podem filtrar per cada una d'elles.
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[scale=0.5]{filter}
@@ -265,7 +265,7 @@ Tot el filtratge d'objectes s'obte mitjançant crides a la base de dades aplicant
 \end{center}
 \end{figure}
 \\\\
-Un cop ja explicades dos de les parts de l'eina, finalment explicarem la part superior la qual es composa dels diferents botons de l'aplicació per a realitzar diferents accións. A continuació es mostra una imatge de la barra superior de botons. A partir d'aquesta imatges explicarem la funcionalitat de cada boto a dins l'eina i les diferents part que la formen.
+Un cop ja explicades dues de les parts de l'eina, finalment explicarem la part superior la qual es compon dels diferents botons de l'aplicació per a realitzar diferents accions. A continuació es mostra una imatge de la barra superior de botons. A partir d'aquestes imatges explicarem la funcionalitat de cada botó a dins l'eina i les diferents parts que la formen.
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=\textwidth]{topbar}
@@ -273,13 +273,13 @@ Un cop ja explicades dos de les parts de l'eina, finalment explicarem la part su
 \end{center}
 \end{figure}
 \\\\
-Seguint un ordre de esquerra a dreta tenim en primer lloc dos botons que són els botons de desfer i refer. L'aplicació té implementat un sistema de gestió d'accions, és a dir, cada cop que es realitza una acció aquesta queda registrada a dins l'apliació. Això el que ens permet es tenir un control sobre elles i en qualsevol moment saber quines accions s'han realitzat. \\\\
-A partir d'aquest sistema de gestió hem implementat un sistema de desfer i refer que desfa o torna a refer les accions que s'han realitzat. Això permet que si en un punt ens hem equivocat i volem tornar enrera no tinguem problema o si s'ha guardat pero ens hem equivocat poguem tornar a un punt anterior per seguir endavant. \\\
-Aquest sistema gaurda totes les accions que es realitza l'usuari amb el ratolí. Aquestes dos icones s'aniran iluminant a mesura que sigui possible realitzar les accions, és a dir, si no es pot retrocedir o no es pot refer, no es podrá interectuar amb el botó, així s'evita que es realitzin accions no permeses. \\\\
-Cada cop que es reinicia l'aplicació és reseteja el sistema i es netegen les accions, quan es guarda un moodboard definitiu també es netegen tot i que es pot seguir realitzant accions que seràn afegides al sistema com a noves accions, és a dir, com si es tornes a crear el sistema de gestío. Aixó permet indicar a l'usuari que ha guardat el que ha realitzat i que a partir d'aquest punt tot el que realitzi serà  un nou moodboard.\\\\
-Després del botons de desfer i refer tenim el nom del moodboard. Aquí és on ens apareixera el nom del moodboard que estem generant. En el desplegable també ens apareixerà el nom dels moodboards anteriors que hem creat. Seleccionar un nom d'un moodboard que ja hem creat ens permet crear un nou moodboard amb el mateix o carregar-ne un de nou per a visualitzar-lo. \\\\
-Per tal de crear un nou moodboard hem de prèmer el botó amb el símbol més. Al prèmer aquest botó ens apareixerà una nova finestra en el qual ens demanarà que entrem unes dades. En primer lloc en demanarà el nom de l'estil, que potser qualsevol nom que l'usuari desitji. Després utitlizant un desplegable l'usuari ha de seleccionar a quina habitació correspon l'estil i finalment haurà de del tipus que correspon. \\\
-El tipus es refereix a la distribució d'atrezzo, és a dir, la distribució d'objectes que es podrien posar a cada moble, a sobre, a sota, els complements per a cada moble que es podrien col·locar per acabar de completar el moodboard. Hi ha sis tipus respecte si estan orndenats o poc i amb quina quantitat. Quan s'afegeix un nou moodboard aquest s'afegirà automàticament al desplegable. A continuació es mostra la pantalla per afegir un nou moodboard. 
+Seguint un ordre d'esquerra a dreta tenim en primer lloc dos botons que són els botons de desfer i refer. L'aplicació té implementat un sistema de gestió d'accions, és a dir, cada cop que es realitza una acció aquesta queda registrada a dins l'aplicació. Això el que ens permet és tenir un control sobre elles i en qualsevol moment saber quines accions s'han realitzat. \\\\
+A partir d'aquest sistema de gestió hem implementat un sistema de desfer i refer que desfà o torna a fer les accions que s'han realitzat. Això permet que si en un punt ens hem equivocat i volem tornar endarrere no tinguem problema o si s'ha guardat pero ens hem equivocat puguem tornar a un punt anterior per seguir endavant. \\\
+Aquest sistema guarda totes les accions que es realitza l'usuari amb el ratolí. Aquestes dues icones s'aniran il·luminant a mesura que sigui possible realitzar les accions, és a dir, si no es pot retrocedir o no es pot refer, no es podrà interactuar amb el botó, així s'evita que es realitzin accions no permeses. \\\\
+Cada cop que es reinicia l'aplicació és reseteja el sistema i es netegen les accions, quan es guarda un moodboard definitiu també es netegen tot i que es pot seguir realitzant accions que seran afegides al sistema com a noves accions, és a dir, com si es tornés a crear el sistema de gestió. Això permet indicar a l'usuari que ha guardat el que ha realitzat i que a partir d'aquest punt tot el que realitzi serà un nou moodboard.\\\\
+Després dels botons de desfer i refer tenim el nom del moodboard. Aquí és on ens apareixerà el nom del moodboard que estem generant. En el desplegable també ens apareixerà el nom dels moodboards anteriors que hem creat. Seleccionar un nom d'un moodboard que ja hem creat ens permet crear un nou moodboard amb el mateix o carregar-ne un de nou per a visualitzar-lo. \\\\
+Per tal de crear un nou moodboard hem de prémer el botó amb el símbol més. En prémer aquest botó ens apareixerà una nova finestra en el qual ens demanarà que entrem unes dades. En primer lloc en demanarà el nom de l'estil, que potser qualsevol nom que l'usuari desitgi. Després utilitzant un desplegable l'usuari ha de seleccionar a quina habitació correspon l'estil i finalment haurà de seleccionar el tipus que correspon. \\\
+El tipus es refereix a la distribució d'attrezzo, és a dir, la distribució d'objectes que es podrien posar a cada moble, a sobre, a sota, els complements per a cada moble que es podrien col·locar per acabar de completar el moodboard. Hi ha sis tipus respecte si estan ordenats o poc i amb quina quantitat. Quan s'afegeix un nou moodboard aquest s'afegirà automàticament al desplegable. A continuació es mostra la pantalla per afegir un nou moodboard.
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=\textwidth]{name}
@@ -287,18 +287,129 @@ El tipus es refereix a la distribució d'atrezzo, és a dir, la distribució d'obje
 \end{center}
 \end{figure}
 \\\\
+A continuació segueix el botó per a carregar moodboards ja creats. Això ens permet visualitzar moodboards creats prèviament. Per tal de poder carregar un moodboard correctament s'ha de seleccionar un moodboard. Per fer-ho només cal obrir el desplegable i seleccionar el nom del moodboard desitjat. Si no se selecciona cap nom, la icona no estarà activa, ja que seleccionar un nom és un requisit indispensable per tal de fer la càrrega correctament. \\\\
+Un cop es premi el botó apareixeran els objectes a la graella segons la distribució del moodboard carregat. L'aparició dels objectes pot ser una mica lenta, ja que per a cada casella ha de buscar l'objecte que hi ha d'anar i si aquest no té imatge descarregar-la. Aquest procés pot ser lent, però si tenim en compte que prèviament s'han carregat totes les imatges de tots els objectes, la col·locació d'aquest ha de ser ràpida. \\\\
+Com hem dit anteriorment, un moodboard pot contenir diferents distribucions d'objectes, així doncs, en carregar aquest moodboard també hem de poder visualitzar totes les distribucions disponibles. Els dos botons del costat del botó de carregar moodboards ens permetran mostrar les diferents distribucions que té el moodboard. Només de carregar el moodbard es mostrarà la primera distribució de totes. \\\
+Si només es disposa d'una distribució, els dos botons es trobaran inactius mentre que si hi ha més d'una distribució els botons s'aniran activant per permetre l'avanç o el retrocés de les distribucions. En qualsevol dels casos, les distribucions si per algun motiu està malament o s'han de modificar és poder canviar els objectes que les formen. En cas de modificació, la distribució es guardarà segons el nom escollit, si es dóna el cas que és el mateix nom, s'afegirà a la distribució corresponen i aquesta podrà ser carregada i visualitzada més endavant.
+\\\\
+Seguidament ens trobem amb el botó de generació de PDF. Aquest botó ens permetrà generar un PDF del moodboard actual en el qual apareixerà una captura de la graella amb els elements, amb el nom del moodboard i a continuació a cada una de les pàgines del fitxer, cada objecte amb la seva informació corresponent. \\\\
+En fer clic sobre el botó ens apareixerà una finestra en la qual ens indicarà a on volem guardar el PDF que es generarà. Un cop seleccionada la ruta només hem de prémer el botó de guardar i a continuació es generarà el PDF. Aquest procés pot tardar una miqueta, ja que generar un fitxer amb molta informació pot ser lent, d'aquesta forma, per indicar que el fitxer s'ha generat correctament, la icona es desactivarà, indicant que s'ha creat el fitxer correctament i que el PDF del moodboard actual ja s'ha generat. En cas de modificació del moodboard, es tornarà a activar la icona per a generar un nou fitxer del moodboard.
+\\\\
+Finalment trobem el botó de guardar. Aquest botó ens permet guardar el moodboard generat de forma que s'exporta en un format que després serà tractat per utilitzar-lo amb la màquina. Per tal de poder guardar un moodboard és necessari que aquest tingui un nom si no la icona de guardar no es trobarà activa.\\\
+Si en guardar, no existeix cap moodboard amb el nom escollit, es crearà un nou fitxer en el qual s'emmagatzemaran els moodboards amb el mateix nom. En cas contrari, que ja existeixin moodboards amb el mateix nom, s'afegirà la distribució d'objectes al fitxer. D'aquesta forma, per un sol moodboard podem tenir diferents distribucions.\\\
+S'ha desenvolupat d'aquesta forma per tal d'assegurar que el format en el qual cada moodboard és exportat és fàcilment manipulable per transformar-lo per un posterior tractament per entrenar la màquina.
 \subsubsection{Procés de generació d'un moodboard}
+En aquest punt explicarem els passos a seguir per crear un moodboard correctament, per a generar un moodboard pas a pas utilitzant tota la informació prèviament explicada. A continuació s'enumerarà cada pas i en acabat es mostrarà un diagrama de seqüència per tal d'entendre-ho millor.
+\begin{enumerate}
+\item \textbf{Obrir correctament l'aplicació i comprovar que es carreguen tots els objectes i la graella.} En cas contrari pot ser culpa de la connexió a internet o la connexió a base de dades.
+\item \textbf{Categoritzar la graella.} En cas que la graella estigui buida categoritzar-la per tal de fer el filtratge d'objectes correctament.
+\item \textbf{Escollir un nom o afegir-ne un de nou.} Escollir un nom pel moodboard per tal de poder guardar i generar el PDF en qualsevol moment.
+\item \textbf{Emplenar graella.} Emplenar la graella amb els objectes necessaris fins a obtenir un moodboard correcte. Utilitzar les funcions de filtratge per tal de poder col·locar els objectes amb més precisió i més eficaçment.
+\item \textbf{Guardar moodbaord.} Un cop s'hagi acabat d'emplenar el moodboard guardar el moodboard correctament per tal de no perdre els canvis realitzats.
+\item \textbf{Generar PDF.} Un cop guardat el moodboard guardar el PDF per tenir una referència i una visualització ràpida del moodboard generat.
+\end{enumerate}
+A continuació es mostra un esquema de seqüència dels passos a realitzar de completar els passos anteriors. \\\\
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=\textwidth]{diagram}
+\caption{Digrama de seqüència per a generar un moodboard.}
+\end{center}
+\end{figure}
+\\\\
 \newpage
 \section{Desenvolupament del Machine Learning}
-\subsection{Introducció}
+\subsection{Introducció i antecedents}
+https://blog.adext.com/es/machine-learning-guia-completa
 resum del machine learning, l'estat acutal i les seves utilitats
-\subsection{Plantejament de l'algoritme}
-explicar que es el que volem que faci l'algoritme
+\\\\
+El machine learning, conocido en español como aprendizaje automático o aprendizaje de máquina, nació como una idea ambiciosa de la IA en la década de los 60. Para ser más exactos, fue una subdisciplina de la IA, producto de las ciencias de la computación y las neurociencias.\\\\
+Lo que esta rama pretendía estudiar era el reconocimiento de patrones (en los procesos de ingeniería, matemáticas, computación, etc.) y el aprendizaje por parte de las computadoras. En los albores de la IA, los investigadores estaban ávidos por encontrar una forma en la cual las computadoras pudieran aprender únicamente basándose en datos.\\\\
+Sucedió con el paso de los años que el machine learning comenzó a enfocarse en diferentes asuntos, tales como el razonamiento probabilístico, investigación basada en la estadística, recuperación de información, y continuó profundizando cada vez más en el reconocimiento de patrones (todos estos asuntos aplicados a procesos de ingeniería, matemáticas, computación y otros campos relacionados con objetos físicos o abstractos).
+
+Esto ocasionó que en los 90 se separara de la IA para convertirse en una disciplina por sí sola, aunque muchos puristas aún la consideran como parte de la IA. Ahora, el principal objetivo del machine learning es abordar y resolver problemas prácticos en donde se aplique cualquiera de las disciplinas numéricas antes mencionadas.
+
+Como establecimos previamente, es un campo de las ciencias de la computación que, de acuerdo a Arthur Samuel en 1959, le da a las computadoras la habilidad de aprender sin ser explícitamente programadas.
+
+Si esta definición resultó muy trivial, pongámoslo de esta forma: es la idea de que existen algoritmos que pueden darte hallazgos o conclusiones relevantes obtenidas de un conjunto de datos, sin que el ser humano tenga que escribir instrucciones o códigos para esto.
+
+De acuerdo, pero ¿qué es un algoritmo? Pues no es otra cosa que una secuencia o serie de instrucciones, que representan la solución a un determinado problema
+
+El propósito del machine learning es que las personas y las máquinas trabajen de la mano, al éstas ser capaces de aprender como un humano lo haría. Precisamente esto es lo que hacen los algoritmos, permiten que las máquinas ejecuten tareas, tanto generales como específicas.
+Si bien al principio sus funciones eran básicas y se limitaban a filtrar emails, hoy en día puede hacer cosas tan complejas como predicciones de tráfico en intersecciones muy transitadas, detectar cáncer, mapear sitios para generar proyectos de construcción en tiempo real, e incluso, definir la compatibilidad entre dos personas.
+El principal objetivo de todo aprendiz (learner) es desarrollar la capacidad de generalizar y asociar. Cuando traducimos esto a una máquina o computadora, significa que éstas deberían poder desempeñarse con precisión y exactitud, tanto en tareas familiares, como en actividades nuevas o imprevistas.
+
+¿Y cómo es posible esto?
+
+Haciendo que repliquen las facultades cognitivas del ser humano, formando modelos que "generalicen" la información que se les presenta para realizar sus predicciones. Y el ingrediente clave en toda esta cuestión son los datos.
+
+En realidad, el origen y el formato de los datos no es tan relevante, dado que el machine learning es capaz de asimilar una amplia gama de éstos, lo que se conoce como big data, pero éste no los percibe como datos, sino como una enorme lista de ejemplos prácticos.
+
+Podríamos decir que sus algoritmos se dividen principalmente en tres grandes categorías: supervised learning (aprendizaje supervisado), unsupervised learning (aprendizaje no supervisado) y reinforcement learning (aprendizaje por refuerzo). A continuación, detallaremos las diferencias entre éstas.
+
+
+Una vez que compruebas lo fácil y práctico que resulta aplicar las técnicas de machine learning a problemas que creías serían imposibles, es cuando empiezas a creer que podría resolver prácticamente cualquier problema* -siempre y cuando existan suficientes datos-.
+
+Para el consumidor moderno, el machine learning es un facilitador clave de muchas de sus tareas cotidianas. Desde servicios de traducción, a predicciones climáticas, hasta adivinar lo que los usuarios quieren con base a sus actividades recientes; las prestaciones que ofrece son incomparables.
+
+En lo que respecta a los negocios, muchas compañías han empezado a incorporar esta tecnología a sus sistemas operativos, con grandes expectativas de mejorar y automatizar sus procesos.
+
+Dado que el machine learning es un sistema basado en el procesamiento y análisis de datos que son traducidos a hallazgos, se puede aplicar a cualquier campo que cuente con bases de datos lo suficientemente grandes. De momento, algunos de sus usos más populares y desarrollados son:
+
+Clasificación de secuencias de DNA
+Predicciones económicas y fluctuaciones en el mercado bursátil
+Mapeos y modelados 3D
+Detección de fraudes
+Diagnósticos médicos
+Buscadores en Internet
+Sistemas de reconocimiento de voz
+Optimización e implementación de campañas digitales publicitarias 
+Un ejemplo del último punto es Adext. Adext es el primer y único AMaaS (Audience Management as a Service) que aplica Inteligencia Artificial y Machine Learning a la publicidad digital para encontrar la mejor audiencia o grupo demográfico para cualquier anuncio. Maneja de forma automática los presupuestos alrededor de 16 públicos distintos, en 3 plataformas (Google AdWords, Facebook e Instagram), optimizándolos varias veces al día.
+
+Además, se les garantiza bajo contrato a las agencias que sean Adext Partners superar el costo por conversión actual (costo por venta o costo por lead más bajo) de todas las cuentas o campañas que lleven como agencia. De lo contrario, el servicio será GRATIS y no se cobra el fee correspondiente.
+
+Aunque ya hemos visto lo que la IA es capaz de aportar a nuestras actividades del día a día, ¿cómo podría esto beneficiar el mundo de los negocios?
+
+Bueno, puesto que las conversaciones y comentarios de un sinfín de consumidores digitales -cuyo número día con día sigue incrementando- le ofrecen a este tipo de tecnologías una cantidad de información abrumadora, éstas continuamente obtienen conocimientos nuevos y detectan tendencias más rápido de lo que cualquier humano podría hacerlo.
+
+Si bien es cierto que esta enorme cantidad de datos la volverá mucho más eficiente, requerirá necesariamente de mucho talento humano para perfeccionarse, ya que finalmente las computadoras no tienen un dominio tan elevado del lenguaje aplicado al razonamiento. O lo que es, no son precisamente hábiles para determinar contextos. 
+
+Lo que significa que para que el machine learning se desarrolle en estas áreas, los expertos en cada campo de trabajo tendrán que tomarse el tiempo para entrenar a las máquinas e irlas incorporando paulatinamente a cada uno de los procesos que deseen afinar.
+
+Finalmente, como sucede con todas las tecnologías, los negocios tendrán que empezar por entender los principios básicos de esta tecnología, para poder usarla a su favor. Por lo pronto, se estima que ésta -como muchos otros derivados de la IA- va a transformar por completo el mundo como lo conocemos...
+
+Como verás, esto fue sólo una introducción al intrincado mundo del machine learning. En una época donde emergen tecnologías innovadoras cada vez que parpadeamos, es fácil perderse en la avalancha de información y nuevos conceptos.
+
 \subsection{Tipus d'algoritmes}
-explicació dels diferents algoritmes que es poden aplicar i quins s'escull per aplicar-lo
+explicació dels diferents algoritmes que es poden aplicar\\\\
+Supervised learning
+Depende de datos previamente etiquetados, como podría ser el que una computadora logré distinguir imágenes de coches, de las de aviones. Para esto, lo normal es que estas etiquetas o rótulos sean colocadas por seres humanos para asegurar la efectividad y calidad de los datos.
+
+En otras palabras, son problemas que ya hemos resuelto, pero que seguirán surgiendo en un futuro. La idea es que las computadoras aprendan de una multitud de ejemplos, y a partir de ahí puedan hacer el resto de cálculos necesarios para que nosotros no tengamos que volver a ingresar ninguna información.
+
+Ejemplos: reconocimiento de voz, detección de spam, reconocimiento de escritura, entre otros.
+
+Unsupervised learning
+En esta categoría lo que sucede es que al algoritmo se le despoja de cualquier etiqueta, de modo que no cuenta con ninguna indicación previa. En cambio, se le provee de una enorme cantidad de datos con las características propias de un objeto (aspectos o partes que conforman a un avión o a un coche, por ej.), para que pueda determinar qué es, a partir de la información recopilada.
+
+Ejemplos: detectar morfología en oraciones, clasificar información, etc.
+
+Reinforcement learning
+En este caso particular, la base del aprendizaje es el refuerzo. La máquina es capaz de aprender con base a pruebas y errores en un número de diversas situaciones.
+
+Aunque conoce los resultados desde el principio, no sabe cuáles son las mejores decisiones para llegar a obtenerlos. Lo que sucede es que el algoritmo progresivamente va asociando los patrones de éxito, para repetirlos una y otra vez hasta perfeccionarlos y volverse infalible.
+
+Ejemplos: navegación de un vehículo en automático, toma de decisiones, etc.
+
+Existen otros enfoques más complejos para tareas más específicas, pero no vale la pena ahondar en éstos.
+\subsection{Plantejament de l'algoritme}
+explicar que es el que volem que faci l'algoritme i quin hem escollit
 \subsection{Màquina de Boltzmann Restrictiva (RBM)}
 explicaicó rbm
 funcionament
+https://deeplearning4j.org/restrictedboltzmannmachine
+http://deeplearning.net/tutorial/rbm.html
+http://eric-yuan.me/rbm/
+https://www.cs.toronto.edu/~hinton/csc2535/notes/lec4new.pdf
 \section{Desenvolupament de l'algoritme aplicat al problema}
 com aplicarem l'algorisem en el projecte. Com seran les dades.
 \subsection{Dades d'entrada}
@@ -346,30 +457,6 @@ Interficie grafica de la imatge.
 
 \begin{thebibliography}{25}
 \bibitem{pari} Batut, C.; Belabas, K.; Bernardi, D.; Cohen, H.; Olivier, M.: User's guide to \textit{PARI-GP},  \newline \texttt{pari.math.u-bordeaux.fr/pub/pari/manuals/2.3.3/users.pdf}, 2000.
-\bibitem{cw} Chen, J. R.; Wang, T. Z.: On the Goldbach problem, \textit{Acta Math. Sinica}, 32(5):702-718, 1989.
-\bibitem{desh} Deshouillers, J. M.: Sur la constante de $\check{\text{S}}\text{nirel}^{\prime} \text{man}$, \textit{Séminaire Delange-Pisot-Poitou, 17e année: (1975/76), Théorie des nombres: Fac. 2, Exp. No.} G16, pàg. 6, Secrétariat Math., Paris, 1977.
-\bibitem{derz} Deshouillers, J. M.; Effinger, G.; te Riele, H.; Zinoviev, D.: A complete Vinogradov 3-primes theorem under the Riemann hypothesis, \textit{Electron. Res. Announc. Amer. Math. Soc.}, 3:99-104, 1997.
-\bibitem{dick} Dickson, L. E.: \textit{History of the theory of numbers. Vol. I: Divisibility and primality}, Chelsea Publishing Co., New York, 1966.
-\bibitem{hl} Hardy, G. H.; Littlewood, J. E.: Some problems of \textquoteleft Partitio numerorum\textquoteright; III: On the expression of a number as a sum of primes, \textit{Acta Math.}, 44(1):1-70, 1923.
-\bibitem{hara} Hardy, G. H.; Ramanujan, S.: Asymptotic formulae in combinatory analysis, \textit{Proc. Lond. Math. Soc.}, 17:75-115, 1918.
-\bibitem{haw} Hardy, G. H.; Wright, E. M.: \textit{An introduction to the theory of numbers}, 5a edició, Oxford University Press, 1979.
-\bibitem{minarc} Helfgott, H. A.: Minor arcs for Goldbach's problem, \newline \texttt{arXiv:1205.5252v4 [math.NT]}, desembre de 2013.
-\bibitem{majarc} Helfgott, H. A.: Major arcs for Goldbach's problem, \newline \texttt{arXiv:1305.2897v4 [math.NT]}, abril de 2014.
-\bibitem{istrue} Helfgott, H. A.: The ternary Goldbach conjecture is true, \newline \texttt{arXiv:1312.7748v2 [math.NT]}, gener de 2014.
-\bibitem{HP} Helfgott, H. A.; Platt, D.: Numerical verification of the ternary Goldbach conjecture up to $8.875 \cdot 10^{30}$, \texttt{arXiv:1305.3062v2 [math.NT]}, abril de 2014.
-\bibitem{KPS} Klimov, N. I.; $\text{Pil}^{\prime} \text{tja}\breve{\imath}$, G. Z.; $\check{\text{S}}\text{eptickaja}$, T. A.: An estimate of the absolute constant in the Goldbach-$\check{\text{S}}\text{nirel}^{\prime} \text{man}$ problem, \textit{Studies in number theory, No. 4}, pàg. 35-51, Izdat. Saratov. Univ., Saratov, 1972.
-\bibitem{lw} Liu, M. C.; Wang, T.: On the Vinogradov bound in the three primes Goldbach conjecture, \textit{Acta Arith.}, 105(2):133-175, 2002.
-\bibitem{OSHP} Oliveira e Silva, T.; Herzog, S.; Pardi, S.: Empirical verification of the even Goldbach conjecture and computation of prime gaps up to $4\cdot10^{18}$, \textit{Math. Comp.}, 83:2033-2060, 2014.
-\bibitem{ram} Ramaré, O.: On $\check{\text{S}}\text{nirel}^{\prime} \text{man's}$ constant, \textit{Ann. Scuola Norm. Sup. Pisa Cl. Sci.}, 22(4):645-706, 1995.
-\bibitem{riva} Riesel, H.; Vaughan, R. C.: On sums of primes, \textit{Ark. Mat.}, 21(1):46-74, 1983.
-\bibitem{RS} Rosser, J. B.; Schoenfeld, L.: Approximate formulas for some functions of prime numbers, \textit{Illinois J. Math.}, 6:64-94, 1962.
-\bibitem{sch} Schnirelmann, L.: Über additive Eigenschaften von Zahlen, \textit{Math. Ann.}, 107(1):649-690, 1933.
-\bibitem{tao} Tao, T.: Every odd number greater than $1$ is the sum of at most five primes, \textit{Math. Comp.}, 83:997-1038, 2014.
-\bibitem{ari} Travesa, A.: \textit{Aritmètica}, Col·lecció UB, No. 25, Barcelona, 1998.
-\bibitem{vau} Vaughan, R. C.: On the estimation of Schnirelman's constant, \textit{J. Reine Angew. Math.}, 290:93-108, 1977.
-\bibitem{vgn} Vaughan, R. C.: \textit{The Hardy-Littlewood method}, Cambridge Tracts in Mathematics, No. 125, 2a edició, Cambridge University Press, 1997.
-\bibitem{vino} Vinogradov, I. M.: Sur le théorème de Waring, \textit{C. R. Acad. Sci. URSS}, 393-400, 1928.
-\bibitem{vin} Vinogradov, I. M.: Representation of an odd number as a sum of three primes, \textit{Dokl. Akad. Nauk. SSSR}, 15:291-294, 1937.
 \end{thebibliography}
 \end{document} 
 
