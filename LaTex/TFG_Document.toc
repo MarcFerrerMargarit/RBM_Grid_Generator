@@ -8,12 +8,12 @@
 \contentsline {subsubsection}{\numberline {2.2.3}Proc\'es de generaci\'o d'un moodboard}{16}
 \contentsline {section}{\numberline {3}Desenvolupament del Machine Learning}{18}
 \contentsline {subsection}{\numberline {3.1}Introducci\'o i antecedents}{18}
-\contentsline {subsection}{\numberline {3.2}Tipus d'algoritmes}{20}
-\contentsline {subsection}{\numberline {3.3}Plantejament de l'algoritme}{21}
-\contentsline {subsection}{\numberline {3.4}M\`aquina de Boltzmann Restrictiva (RBM)}{21}
-\contentsline {section}{\numberline {4}Desenvolupament de l'algoritme aplicat al problema}{21}
-\contentsline {subsection}{\numberline {4.1}Dades d'entrada}{21}
-\contentsline {subsection}{\numberline {4.2}Dades d'entrament}{21}
-\contentsline {subsection}{\numberline {4.3}\`Analisi de l'algoritme amb les dades}{22}
-\contentsline {subsection}{\numberline {4.4}Dades de sortida}{22}
-\contentsline {section}{\numberline {5}Resultats i conclusions i l\IeC {\'\i }nies de continuaci\'o}{22}
+\contentsline {subsection}{\numberline {3.2}Tipus d'algoritmes}{21}
+\contentsline {subsection}{\numberline {3.3}Plantejament de l'algoritme}{22}
+\contentsline {subsection}{\numberline {3.4}M\`aquina de Boltzmann Restrictiva (RBM)}{22}
+\contentsline {section}{\numberline {4}Desenvolupament de l'algoritme aplicat al problema}{22}
+\contentsline {subsection}{\numberline {4.1}Dades d'entrada}{22}
+\contentsline {subsection}{\numberline {4.2}Dades d'entrament}{22}
+\contentsline {subsection}{\numberline {4.3}\`Analisi de l'algoritme amb les dades}{23}
+\contentsline {subsection}{\numberline {4.4}Dades de sortida}{23}
+\contentsline {section}{\numberline {5}Resultats i conclusions i l\IeC {\'\i }nies de continuaci\'o}{23}

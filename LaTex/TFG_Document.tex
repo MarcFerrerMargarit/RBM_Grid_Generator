@@ -61,7 +61,7 @@
 
 \textbf{\LARGE Treball final de grau} \\
 \vspace*{.5cm}
-\textbf{\LARGE GRAU DE MATEM\`{A}TIQUES } \\
+\textbf{\LARGE GRAU EN INFORMÀTICA } \\
 \vspace*{.5cm}
 \textbf{\LARGE Facultat de Matem\`atiques i Inform\`atica \\ Universitat de Barcelona} \\
 \vspace*{1.5cm}
@@ -81,9 +81,8 @@
 \renewcommand{\arraystretch}{1.5}
 \begin{tabular}{ll}
 \textbf{\Large Director:} & \textbf{\Large David Buchaca } \\
-\textbf{\Large Realitzat a:} & \textbf{\Large  Departament....   } \\
- & \textbf{\Large (nom del departament)} \\
-\\
+\textbf{\Large Realitzat a:} & \textbf{\Large  Interiorvista   } \\
+ & \textbf{\Large} \\
 \textbf{\Large Barcelona,} & \textbf{\Large \today }
 \end{tabular}
 
@@ -318,66 +317,69 @@ A continuació es mostra un esquema de seqüència dels passos a realitzar de compl
 \\\\
 \newpage
 \section{Desenvolupament del Machine Learning}
-\subsection{Introducció i antecedents}
 https://blog.adext.com/es/machine-learning-guia-completa
-resum del machine learning, l'estat acutal i les seves utilitats
+resum del machine learning, l'estat acutal i les seves utilitats\\\\
+La part més important de projecte no és el desenvolupament de l'eina i el seu funcionament, sinó que és la part del algorisme. L'algorisme és el que ens permetrà generar automàticament moodboards un cop aquest s'hagi entrenat i és el que ens permetrá, que la genereació de moodboards sigui ràpida i automàtica.\\\\
+Així doncs, a continuació explicarem en què es basa l'algorisme que realitzarem, explicant una mica d'introducció i història per posar en context. També explicarem els diferents tipus i quin d'ells s'ha escollit i com s'ha desenvolupat.
+\subsection{Introducció i antecedents}
+Parlar avui d'Intel·ligència Artificial no és una novetat. Ni per a la gent ni per a les empreses o governs.\\\
+Si bé sembla una qüestió d'allò més naturalitzada per aquests dies, fins fa no molts anys enrere, parlar d'intel·ligència artificial era un assumpte distant, difícil d'abordar, reservat només per a entesos.\\\\
+Avui en dia, es parla i s'aplica per qüestions tan bàsiques com l'ús del homebanking, veure pel·lícules en streaming o escoltar música. Fins als cercadors com Google o Yahoo la utilitzen. I a les xarxes socials, els exemples de Facebook i Twitter lideren el segment.\\\
+Cada vegada més, es llegeix i es comenta sobre intel·ligència artificial en mitjans massius de comunicació, amb tota facilitat. Fins i tot, comença a guanyar un espai dintre del pressupost propi de les empreses al país: la recerca per la reducció dels costos i l'augment de la productivitat vénen impulsant l'avanç en l'ús de solucions que involucren robots capaços de conversar amb els clients i de sistemes que analitzen milers de dades en pocs segons. En alguns casos, el volum de recursos destinats a aquest segment està previst que augmenti en més de cinc vegades en 2018, en relació a l'aplicat l'any passat.\\\\
+Dins de l'ampli espectre que abasta la intel·ligència artificial, es troba Machine Learning. \textbf{Però que és el Machine Learnig?}
 \\\\
-El machine learning, conocido en español como aprendizaje automático o aprendizaje de máquina, nació como una idea ambiciosa de la IA en la década de los 60. Para ser más exactos, fue una subdisciplina de la IA, producto de las ciencias de la computación y las neurociencias.\\\\
-Lo que esta rama pretendía estudiar era el reconocimiento de patrones (en los procesos de ingeniería, matemáticas, computación, etc.) y el aprendizaje por parte de las computadoras. En los albores de la IA, los investigadores estaban ávidos por encontrar una forma en la cual las computadoras pudieran aprender únicamente basándose en datos.\\\\
-Sucedió con el paso de los años que el machine learning comenzó a enfocarse en diferentes asuntos, tales como el razonamiento probabilístico, investigación basada en la estadística, recuperación de información, y continuó profundizando cada vez más en el reconocimiento de patrones (todos estos asuntos aplicados a procesos de ingeniería, matemáticas, computación y otros campos relacionados con objetos físicos o abstractos).
-
-Esto ocasionó que en los 90 se separara de la IA para convertirse en una disciplina por sí sola, aunque muchos puristas aún la consideran como parte de la IA. Ahora, el principal objetivo del machine learning es abordar y resolver problemas prácticos en donde se aplique cualquiera de las disciplinas numéricas antes mencionadas.
-
-Como establecimos previamente, es un campo de las ciencias de la computación que, de acuerdo a Arthur Samuel en 1959, le da a las computadoras la habilidad de aprender sin ser explícitamente programadas.
-
-Si esta definición resultó muy trivial, pongámoslo de esta forma: es la idea de que existen algoritmos que pueden darte hallazgos o conclusiones relevantes obtenidas de un conjunto de datos, sin que el ser humano tenga que escribir instrucciones o códigos para esto.
-
-De acuerdo, pero ¿qué es un algoritmo? Pues no es otra cosa que una secuencia o serie de instrucciones, que representan la solución a un determinado problema
-
-El propósito del machine learning es que las personas y las máquinas trabajen de la mano, al éstas ser capaces de aprender como un humano lo haría. Precisamente esto es lo que hacen los algoritmos, permiten que las máquinas ejecuten tareas, tanto generales como específicas.
-Si bien al principio sus funciones eran básicas y se limitaban a filtrar emails, hoy en día puede hacer cosas tan complejas como predicciones de tráfico en intersecciones muy transitadas, detectar cáncer, mapear sitios para generar proyectos de construcción en tiempo real, e incluso, definir la compatibilidad entre dos personas.
-El principal objetivo de todo aprendiz (learner) es desarrollar la capacidad de generalizar y asociar. Cuando traducimos esto a una máquina o computadora, significa que éstas deberían poder desempeñarse con precisión y exactitud, tanto en tareas familiares, como en actividades nuevas o imprevistas.
-
-¿Y cómo es posible esto?
-
-Haciendo que repliquen las facultades cognitivas del ser humano, formando modelos que "generalicen" la información que se les presenta para realizar sus predicciones. Y el ingrediente clave en toda esta cuestión son los datos.
-
-En realidad, el origen y el formato de los datos no es tan relevante, dado que el machine learning es capaz de asimilar una amplia gama de éstos, lo que se conoce como big data, pero éste no los percibe como datos, sino como una enorme lista de ejemplos prácticos.
-
-Podríamos decir que sus algoritmos se dividen principalmente en tres grandes categorías: supervised learning (aprendizaje supervisado), unsupervised learning (aprendizaje no supervisado) y reinforcement learning (aprendizaje por refuerzo). A continuación, detallaremos las diferencias entre éstas.
-
-
-Una vez que compruebas lo fácil y práctico que resulta aplicar las técnicas de machine learning a problemas que creías serían imposibles, es cuando empiezas a creer que podría resolver prácticamente cualquier problema* -siempre y cuando existan suficientes datos-.
-
-Para el consumidor moderno, el machine learning es un facilitador clave de muchas de sus tareas cotidianas. Desde servicios de traducción, a predicciones climáticas, hasta adivinar lo que los usuarios quieren con base a sus actividades recientes; las prestaciones que ofrece son incomparables.
-
-En lo que respecta a los negocios, muchas compañías han empezado a incorporar esta tecnología a sus sistemas operativos, con grandes expectativas de mejorar y automatizar sus procesos.
-
-Dado que el machine learning es un sistema basado en el procesamiento y análisis de datos que son traducidos a hallazgos, se puede aplicar a cualquier campo que cuente con bases de datos lo suficientemente grandes. De momento, algunos de sus usos más populares y desarrollados son:
-
-Clasificación de secuencias de DNA
-Predicciones económicas y fluctuaciones en el mercado bursátil
-Mapeos y modelados 3D
-Detección de fraudes
-Diagnósticos médicos
-Buscadores en Internet
-Sistemas de reconocimiento de voz
-Optimización e implementación de campañas digitales publicitarias 
-Un ejemplo del último punto es Adext. Adext es el primer y único AMaaS (Audience Management as a Service) que aplica Inteligencia Artificial y Machine Learning a la publicidad digital para encontrar la mejor audiencia o grupo demográfico para cualquier anuncio. Maneja de forma automática los presupuestos alrededor de 16 públicos distintos, en 3 plataformas (Google AdWords, Facebook e Instagram), optimizándolos varias veces al día.
-
-Además, se les garantiza bajo contrato a las agencias que sean Adext Partners superar el costo por conversión actual (costo por venta o costo por lead más bajo) de todas las cuentas o campañas que lleven como agencia. De lo contrario, el servicio será GRATIS y no se cobra el fee correspondiente.
-
-Aunque ya hemos visto lo que la IA es capaz de aportar a nuestras actividades del día a día, ¿cómo podría esto beneficiar el mundo de los negocios?
-
-Bueno, puesto que las conversaciones y comentarios de un sinfín de consumidores digitales -cuyo número día con día sigue incrementando- le ofrecen a este tipo de tecnologías una cantidad de información abrumadora, éstas continuamente obtienen conocimientos nuevos y detectan tendencias más rápido de lo que cualquier humano podría hacerlo.
-
-Si bien es cierto que esta enorme cantidad de datos la volverá mucho más eficiente, requerirá necesariamente de mucho talento humano para perfeccionarse, ya que finalmente las computadoras no tienen un dominio tan elevado del lenguaje aplicado al razonamiento. O lo que es, no son precisamente hábiles para determinar contextos. 
-
-Lo que significa que para que el machine learning se desarrolle en estas áreas, los expertos en cada campo de trabajo tendrán que tomarse el tiempo para entrenar a las máquinas e irlas incorporando paulatinamente a cada uno de los procesos que deseen afinar.
-
-Finalmente, como sucede con todas las tecnologías, los negocios tendrán que empezar por entender los principios básicos de esta tecnología, para poder usarla a su favor. Por lo pronto, se estima que ésta -como muchos otros derivados de la IA- va a transformar por completo el mundo como lo conocemos...
-
-Como verás, esto fue sólo una introducción al intrincado mundo del machine learning. En una época donde emergen tecnologías innovadoras cada vez que parpadeamos, es fácil perderse en la avalancha de información y nuevos conceptos.
+El machine learning, conegut en espanyol com aprenentatge automàtic o aprenentatge de màquina, va néixer com una idea ambiciosa de la IA en la dècada dels 60. Per ser més exactes, va ser una subdisciplina de la IA, producte de les ciències de la computació i les neurociències. \\\\
+El que aquesta branca pretenia estudiar era el reconeixement de patrons (en els processos d'enginyeria, matemàtiques, computació, etc.) i l'aprenentatge per part de les computadores. En les albors de la IA, els investigadors estaven àvids per trobar una forma en la qual els ordinadors poguessin aprendre únicament des de dades. \\\\
+Va succeir amb el pas dels anys que el machine learning començar a enfocar-se en diferents assumptes, com ara el raonament probabilístic, investigació basada en l'estadística, recuperació d'informació, i va continuar aprofundint cada vegada més en el reconeixement de patrons (tots aquests assumptes aplicats a processos d'enginyeria, matemàtiques, computació i altres camps relacionats amb objectes físics o abstractes).\\\\
+Això va ocasionar que en els 90 es separés de la IA per convertir-se en una disciplina per si sola, encara que molts puristes encara la consideren com a part de la IA. Ara, el principal objectiu del machine learning és abordar i resoldre problemes pràctics en on s'apliqui qualsevol de les disciplines numèriques abans esmentades.\\\
+Com vam establir prèviament, és un camp de les ciències de la computació que, d'acord a Arthur Samuel el 1959, li dóna a les computadores l'habilitat d'aprendre sense ser explícitament programades.
+\\\\
+Si aquesta definició va resultar molt trivial, posem-d'aquesta manera: és la idea que hi ha algoritmes que poden donar-te troballes o conclusions rellevants obtingudes d'un conjunt de dades, sense que l'ésser humà hagi d'escriure instruccions o codis per això.
+\\\
+D'acord, però ¿què és un algoritme? Doncs no és altra cosa que una seqüència o sèrie d'instruccions, que representen la solució a un determinat problema
+\\\\
+El propòsit del machine learning és que les persones i les màquines treballin de la mà, a l'aquestes ser capaços d'aprendre com un humà ho faria. Precisament això és el que fan els algoritmes, permeten que les màquines executin tasques, tant generals com específiques.
+Si bé al principi les seves funcions eren bàsiques i es limitaven a filtrar emails, avui dia pot fer coses tan complexes com prediccions de trànsit en interseccions molt transitades, detectar càncer, mapejar llocs per generar projectes de construcció en temps real, i fins i tot, definir la compatibilitat entre dues persones.\\\
+El principal objectiu de tot aprenent (learner) és desenvolupar la capacitat de generalitzar i associar. Quan traduïm això a una màquina o ordinador, significa que aquestes haurien de poder exercir-se amb precisió i exactitud, tant en tasques familiars, com en activitats noves o imprevistes.
+\\\\
+\textbf{I com és possible això?}
+\\\\
+Fent que repliquin les facultats cognitives de l'ésser humà, formant models que "generalitzin" la informació que se'ls presenta per realitzar les seves prediccions. I l'ingredient clau en tota aquesta qüestió són les dades.
+\\\\
+En realitat, l'origen i el format de les dades no és tan rellevant, ja que el machine learning és capaç d'assimilar una àmplia gamma d'aquests, el que es coneix com big data, però aquest no els percep com a dades, sinó com una enorme llista d'exemples pràctics.
+\\\
+Podríem dir que les seves algoritmes es divideixen principalment en tres grans categories: supervised learning (aprenentatge supervisat), unsupervised learning (aprenentatge no supervisat) i Reinforcement learning (aprenentatge per reforç). A continuació, detallarem les diferències entre aquestes.
+\\\\
+Una vegada que comproves el fàcil i pràctic que resulta d'aplicar les tècniques de machine learning a problemes que creies serien impossibles, és quan comences a creure que podria resoldre pràcticament qualsevol problema * -sempre i quan hi hagi suficients dades-.\\\\
+Per al consumidor modern, el machine learning és un facilitador clau de moltes de les seves tasques quotidianes. Des serveis de traducció, a prediccions climàtiques, fins endevinar el que els usuaris volen amb base a les seves activitats recents; les prestacions que ofereix són incomparables.
+\\\
+Pel que fa als negocis, moltes companyies han començat a incorporar aquesta tecnologia als seus sistemes operatius, amb grans expectatives de millorar i automatitzar els seus processos.
+\\\\
+Atès que el machine learning és un sistema basat en el processament i anàlisi de dades que són traduïts a troballes, es pot aplicar a qualsevol camp que compti amb bases de dades prou grans. De moment, alguns dels seus usos més populars i desenvolupats són:
+\begin{itemize}
+\item Classificació de seqüències de DNA
+\item Prediccions econòmiques i fluctuacions en el mercat borsari
+\item Mapatges i modelats 3D
+\item Detecció de fraus
+\item Diagnòstics mèdics
+\item Cercadors a Internet
+\item Sistemes de reconeixement de veu
+\item Optimització i implementació de campanyes digitals publicitàries
+\end{itemize}
+Un exemple de l'últim punt és Adext. Adext és el primer i únic AMaaS (Audience Management as a Service) que aplica Intel·ligència Artificial i Machine Learning a la publicitat digital per trobar la millor audiència o grup demogràfic per a qualsevol anunci. Gestiona de forma automàtica els pressupostos al voltant de 16 públics diferents, en 3 plataformes (AdWords de Google, Facebook i Instagram), optimitzant diverses vegades al dia.\\\\
+A més, se'ls garanteix sota contracte a les agències que siguin Adext Partners superar el cost per conversió actual (cost per venda o cost per lead més baix) de tots els comptes o campanyes que portin com a agència. Altrament, el servei serà gratis i no es cobra el fee corresponent.
+\\\\
+Tot i que ja hem vist el que la IA és capaç d'aportar a les nostres activitats del dia a dia, com podria això beneficiar el món dels negocis?
+\\\\
+Bé, ja que les converses i comentaris d'una infinitat de consumidors digitals -el nombre dia amb dia segueix incrementando- li ofereixen a aquest tipus de tecnologies una quantitat d'informació aclaparadora, aquestes contínuament obtenen coneixements nous i detecten tendències més ràpid del que qualsevol humà podria fer-ho.
+\\\\
+Si bé és cert que aquesta enorme quantitat de dades la tornarà molt més eficient, requerirà necessàriament de molt talent humà per perfeccionar-se, ja que finalment els ordinadors no tenen un domini tan elevat del llenguatge aplicat al raonament. O el que és, no són precisament hàbils per determinar contextos.
+\\\\
+El que significa que perquè el machine learning es desenvolupi en aquestes àrees, els experts en cada camp de treball hauran de trobar el temps per entrenar a les màquines i anar incorporant paulatinament a cada un dels processos que desitgin afinar.
+\\\\
+Finalment, com succeeix amb totes les tecnologies, els negocis hauran de començar per entendre els principis bàsics d'aquesta tecnologia, per poder usar-la a favor seu. També s'estima que aquesta -com molts altres derivats de la IA- transformarà per complet el món com el coneixem ...
+\\\\
+Com podem observar això només reflecteix una petita introducció al intricat món del machine learning. En una època on emergeixen tecnologies innovadores cada vegada que parpellegem, és fàcil perdre en l'allau d'informació i nous conceptes.
 
 \subsection{Tipus d'algoritmes}
 explicació dels diferents algoritmes que es poden aplicar\\\\
