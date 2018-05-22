@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.5.8)  16 MAY 2018 14:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.5.8)  22 MAY 2018 12:07
 entering extended mode
 **./TFG_Document.tex
 (TFG_Document.tex
@@ -1257,29 +1257,97 @@ Underfull \hbox (badness 10000) in paragraph at lines 369--383
 
  []
 
-[20]
-Underfull \hbox (badness 10000) in paragraph at lines 385--388
+[20] [21]
+<./Images/typesML.png, id=195, 803.0pt x 803.0pt>
+File: ./Images/typesML.png Graphic file (type png)
+<use ./Images/typesML.png>
+Package pdftex.def Info: ./Images/typesML.png  used on input line 394.
+(pdftex.def)             Requested size: 424.06033pt x 424.06863pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 400--409
 
  []
 
-[21]
-Overfull \hbox (9.83655pt too wide) in paragraph at lines 409--415
+
+Underfull \hbox (badness 10000) in paragraph at lines 400--409
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 400--409
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 400--409
+
+ []
+
+[22 <./Images/typesML.png (PNG copy)>]
+<./Images/supervised.png, id=199, 470.7186pt x 269.3262pt>
+File: ./Images/supervised.png Graphic file (type png)
+<use ./Images/supervised.png>
+Package pdftex.def Info: ./Images/supervised.png  used on input line 418.
+(pdftex.def)             Requested size: 424.06033pt x 242.64203pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 424--431
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 424--431
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 424--431
+
+ []
+
+[24 <./Images/supervised.png>]
+<./Images/unsupervised.png, id=207, 604.2575pt x 319.1925pt>
+File: ./Images/unsupervised.png Graphic file (type png)
+<use ./Images/unsupervised.png>
+Package pdftex.def Info: ./Images/unsupervised.png  used on input line 438.
+(pdftex.def)             Requested size: 424.06033pt x 224.00307pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 443--446
+
+ []
+
+[25 <./Images/unsupervised.png>]
+<./Images/reinforcement.jpeg, id=212, 602.25pt x 281.05pt>
+File: ./Images/reinforcement.jpeg Graphic file (type jpg)
+<use ./Images/reinforcement.jpeg>
+Package pdftex.def Info: ./Images/reinforcement.jpeg  used on input line 449.
+(pdftex.def)             Requested size: 424.06033pt x 197.9044pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 454--457
+
+ []
+
+[26 <./Images/reinforcement.jpeg>]
+Overfull \hbox (9.83655pt too wide) in paragraph at lines 472--478
 \OT1/cmr/m/n/12 explicaico rbm fun-ci-o-na-ment https://deeplearning4j.org/res
 trictedboltzmannmachine
  []
 
 
-Overfull \hbox (106.77304pt too wide) in paragraph at lines 409--415
+Overfull \hbox (106.77304pt too wide) in paragraph at lines 472--478
 \OT1/cmr/m/n/12 http://deeplearning.net/tutorial/rbm.html http://eric-yuan.me/r
 bm/ https://www.cs.toronto.edu/ hin-
  []
 
-[22] [23] [24] (TFG_Document.aux) ) 
+[27] [28] [29] (TFG_Document.aux) ) 
 Here is how much of TeX's memory you used:
- 15114 strings out of 493303
- 288561 string characters out of 3128915
+ 15137 strings out of 493303
+ 289088 string characters out of 3128915
  355874 words of memory out of 3000000
- 18333 multiletter control sequences out of 15000+200000
+ 18349 multiletter control sequences out of 15000+200000
  12044 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,9n,54p,710b,688s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1290,9 +1358,9 @@ er/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
 <C:/Users/mferrer/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
 /cm/cmti12.pfb><C:/Users/mferrer/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmtt12.pfb>
-Output written on TFG_Document.pdf (28 pages, 1873051 bytes).
+Output written on TFG_Document.pdf (33 pages, 2478975 bytes).
 PDF statistics:
- 222 PDF objects out of 1000 (max. 8388607)
+ 244 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 53 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 73 words of extra memory for PDF output out of 10000 (max. 10000000)
 

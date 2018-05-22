@@ -380,29 +380,92 @@ El que significa que perquè el machine learning es desenvolupi en aquestes àrees
 Finalment, com succeeix amb totes les tecnologies, els negocis hauran de començar per entendre els principis bàsics d'aquesta tecnologia, per poder usar-la a favor seu. També s'estima que aquesta -com molts altres derivats de la IA- transformarà per complet el món com el coneixem ...
 \\\\
 Com podem observar això només reflecteix una petita introducció al intricat món del machine learning. En una època on emergeixen tecnologies innovadores cada vegada que parpellegem, és fàcil perdre en l'allau d'informació i nous conceptes.
-
+\newpage
 \subsection{Tipus d'algoritmes}
-explicació dels diferents algoritmes que es poden aplicar\\\\
-Supervised learning
-Depende de datos previamente etiquetados, como podría ser el que una computadora logré distinguir imágenes de coches, de las de aviones. Para esto, lo normal es que estas etiquetas o rótulos sean colocadas por seres humanos para asegurar la efectividad y calidad de los datos.
+Dintre del conjunt del Machine Learning poder distinguir entre diferents tipus que ens definiran diferents tipus d'algoritmes a aplicar durant el desenvolupament d'una màquina. Els principals tipus són els següents:
+\begin{itemize}
+\item Aprenentatge supervisat
+\item Aprenentatge no supervisat
+\item Aprenentatge per reforç
+\end{itemize}
+A continuació s'anilitzarà en profunditat cada un dels tipus anteriors. Seguidament mostra una imatge resum dels diferents tipus i un exemple de cada un. 
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=\textwidth]{typesML}
+\caption{Diagrama dels tipus i exemples.}
+\end{center}
+\end{figure}
 
-En otras palabras, son problemas que ya hemos resuelto, pero que seguirán surgiendo en un futuro. La idea es que las computadoras aprendan de una multitud de ejemplos, y a partir de ahí puedan hacer el resto de cálculos necesarios para que nosotros no tengamos que volver a ingresar ninguna información.
+\subsubsection{Aprenentatge supervisat}
+En l'aprenentatge supervisat, els algorismes treballen amb dades etiquetades (labeled data), intentant trobar una funció que, donades les variables d'entrada (input data), els assigni l'etiqueta de sortida adequada. L'algorisme s'entrena amb un històric de dades i així aprèn a assignar l'etiqueta de sortida adequada a un nou valor, és a dir, prediu el valor de sortida.
+\\\\
+Per exemple, un detector de spam, analitza l'històric de missatges, veient que funció pot representar, segons els paràmetres d'entrada que es defineixin (el remitent, si el destinatari és individual o part d'una llista, si l'assumpte conté determinats termes, etc.), l'assignació de l'etiqueta spam o no és spam. Una vegada definida aquesta funció, en introduir un nou missatge no etiquetat, l'algorisme és capaç d'assignar-li l'etiqueta correcta.
+\\\\
+L'aprenentatge supervisat se sol usar en problemes de classificació, com a identificació de dígits, diagnòstics, o detecció de frau d'identitat. També s'usa en problemes de regressió, com a prediccions meteorològiques, d'expectativa de vida, de creixement, etc. Aquests dos tipus principals d'aprenentatge supervisat, classificació i regressió, es distingeixen pel tipus de variable objectiu. En els casos de classificació, és de tipus categòric, mentre que, en els casos de regressió, la variable objectiu és de tipus numèric.
+\\\\
+Alguns dels més freqüents en aprenentatge supervisat:
+\\\
+\begin{enumerate}
+\item Arbres de decisió
+\item Classificació de Naïve Bayes
+\item Regressió per mínims quadrats
+\item Regressió Logística
+\item Support Vector Machines (SVM)
+\item Mètodes ?Ensemble? (Conjunts de classificadors)
+\end{enumerate}
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=\textwidth]{supervised}
+\caption{Diagrama d'un algorisme amb aprenetatge supervisat.}
+\end{center}
+\end{figure}
+\newpage
+\subsubsection{Aprenentatge no supervisat}
+L'aprenentatge no supervisat té lloc quan no es disposa de dades etiquetades per a l'entrenament. Només coneixem les dades d'entrada, però no existeixen dades de sortida que corresponguin a un determinat input. Per tant, només podem descriure l'estructura de les dades, per intentar trobar algun tipus d'organització que simplifiqui l'anàlisi. Per això, tenen un caràcter exploratori.
+\\\\
+Per exemple, les tasques de clustering, busquen agrupaments basats en similituds, però gens garanteix que aquestes tinguin algun significat o utilitat. A vegades, en explorar les dades sense un objectiu definit, es poden trobar correlacions espúreas curioses, però poc pràctiques. Per exemple, en la gràfica inferior, publicada a la web de Tyler Vigen Spurious Correlations, podem apreciar una forta correlació entre el consum per càpita de pollastre als Estats Units i les seves importacions de petroli.\\\\
+L'aprenentatge no supervisat se sol usar en problemes de clustering, agrupaments de co-ocurrència i profiling. Si embargament, els problemes que impliquen tasques de trobar similitud, predicció d'enllaços o reducció de dades, poden ser supervisats o no.
+\\\\
+Els tipus d'algorisme més habituals en aprenentatge no supervisat són:
+\begin{enumerate}
+\item Algorismes de clustering
+\item Anàlisi de components principals
+\item Descomposició en valors singulars (singular value decomposition)
+\item Anàlisi de components independents (Independent Component Analysis)
+\end{enumerate}
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=\textwidth]{unsupervised}
+\caption{Diagrama d'un algorisme amb aprenetatge no supervisat.}
+\end{center}
+\end{figure}
+\subsubsection{Aprenentatge per reforç}
+El mètode d'aprenentatge de reforç pretén utilitzar observacions recollides a partir de la interacció amb el medi ambient per prendre accions que maximitzin la recompensa o minimitzin el risc. L'algoritme d'aprenentatge de reforç (anomenat agent) contínuament aprèn de l'entorn d'una manera iterativa. En el procés, l'agent aprèn de les seves experiències sobre el medi ambient fins que explora tot el ventall d'estats possibles.
+\\\\
+L'aprenentatge de reforç és un tipus d'aprenentatge automàtic, i també una branca d'Intel·ligència Artificial. Permet que les màquines i els agents de programari determinin automàticament el comportament ideal en un context específic, per maximitzar el seu rendiment. Es requereix feedback simple de recompensa perquè l'agent aprengui el seu comportament; això es coneix com el senyal de reforç.
+\newpage
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=\textwidth]{reinforcement}
+\caption{Exemple del funcionament de l'algorisme.}
+\end{center}
+\end{figure}
 
-Ejemplos: reconocimiento de voz, detección de spam, reconocimiento de escritura, entre otros.
-
-Unsupervised learning
-En esta categoría lo que sucede es que al algoritmo se le despoja de cualquier etiqueta, de modo que no cuenta con ninguna indicación previa. En cambio, se le provee de una enorme cantidad de datos con las características propias de un objeto (aspectos o partes que conforman a un avión o a un coche, por ej.), para que pueda determinar qué es, a partir de la información recopilada.
-
-Ejemplos: detectar morfología en oraciones, clasificar información, etc.
-
-Reinforcement learning
-En este caso particular, la base del aprendizaje es el refuerzo. La máquina es capaz de aprender con base a pruebas y errores en un número de diversas situaciones.
-
-Aunque conoce los resultados desde el principio, no sabe cuáles son las mejores decisiones para llegar a obtenerlos. Lo que sucede es que el algoritmo progresivamente va asociando los patrones de éxito, para repetirlos una y otra vez hasta perfeccionarlos y volverse infalible.
-
-Ejemplos: navegación de un vehículo en automático, toma de decisiones, etc.
-
-Existen otros enfoques más complejos para tareas más específicas, pero no vale la pena ahondar en éstos.
+Hi ha molts algoritmes diferents que s'ocupen d'aquest problema. De fet, l'educació de reforç es defineix per un tipus específic de problema, i totes les seves solucions es classifiquen com a algorismes d'aprenentatge de reforç. En el problema, se suposa que un agent decideix la millor acció per seleccionar en funció del seu estat actual. Quan es repeteix aquest pas, el problema es coneix com a procés de decisió de Markov.\\\\
+Per produir programes intel·ligents (també anomenats agents), l'aprenentatge de reforç passa pels següents passos:
+\begin{enumerate}
+\item L'agent l'observa l'estat d'entrada.
+\item La funció de presa de decisions s'utilitza per fer que l'agent realitzi una acció.
+\item Una vegada realitzada l'acció, l'agent rep recompensa o reforç des del medi ambient.
+\item S'emmagatzema la informació del parell d'acció estatal sobre la recompensa.
+\end{enumerate}
+Els principals algoritmes són:
+\begin{itemize}
+\item Q-Learning
+\item Diferència temporal (TD)
+\item Xarxes adversàries profundes
+\end{itemize}
+\newpage
 \subsection{Plantejament de l'algoritme}
 explicar que es el que volem que faci l'algoritme i quin hem escollit
 \subsection{Màquina de Boltzmann Restrictiva (RBM)}
