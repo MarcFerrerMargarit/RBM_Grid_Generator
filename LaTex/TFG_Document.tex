@@ -467,7 +467,30 @@ Els principals algoritmes són:
 \end{itemize}
 \newpage
 \subsection{Plantejament de l'algoritme}
-explicar que es el que volem que faci l'algoritme i quin hem escollit
+Un cop ja tenim els coneixements bàsics del machine learning necessitem pensar en quin algoritme necessitem per tal de poder aplicar-lo al nostre problema i desenvolupar-lo correctament. \\\\
+Pel nostre problema disposarem de dades d'entrada etiquetades, ja que seran les graelles de cada estil, és a dir, les dades d'entrada seran vectors de graelles, els quals cada d'un d'ells serà un moodboard d'un estil concret. Un estil pot tenir diferents graelles, però totes aquestes estaran etiquetades. I el que es vol aconseguir, és obtenir una graella nova donat un estil. \\\\
+D'aquesta forma el nostre algoritme ha de ser un algoritme de classificació supervisat, ja que el que es vol obtenir és classificar graelles per després poder classificar-ne de noves i com que aquestes estan etiquetades aquest algoritme serà supervisat. En aquests tipus d'algoritmes les dades segueixen un format estàndard compost per dues parts, les etiquetes (labels) i els valors (features).\\\\
+Les labels podríem dir que és l'output, el valor de sortida, el valor que obtenim després de classificar les dades d'entrada. Aquestes etiquetes poden ser valors únics o classes però són els valors que ens permeten etiquetar les dades correctament. \\\\
+Les features són variables individuals independents que actuen com a entrada al sistema. Els models de predicció utilitzen funcions per fer prediccions. També es poden obtenir funcions noves a partir de funcions antigues mitjançant un mètode conegut com a enginyeria de característiques. Més simplement, podem considerar que una columna del conjunt de dades sigui una feature. De vegades, aquests també s'anomenen atributs. I la quantitat de funcions s'anomenen dimensions. \\\
+Aplicant això al nostre problema obtindríem que les labels serien els estils i les features les diferents graelles que generem a partir de l'eina. \\\\
+Els algoritmes de classificació esmentats anteriorment classifiquen features d'entrada, és a dir, un cop entrenada la màquina permet classificar qualsevol dada d'entrada i obtenir una label, classificar aquesta dada. Si apliquem aquest comportament al nostre problema, obtindríem que donada una graella la podríem classificar, podríem dir de l'estil que és, de l'estil que pertany, però això, no és el que nosaltres volem aconseguir.\\\\
+El que volem aconseguir és que donat un estil ens generi una graella nova que segueixi les normes d'aquell estil que ha après la màquina. Volem que les nostres features siguin els estils i les labels les graelles però això no pot funcionar, ja que les labels han de ser valors únics o classes i les nostres graelles són vectors amb vectors, és una llista de dues dimensions. Així doncs necessitem un algoritme que ens permeti generar valors. \\\\
+Dintre del machine learning hi ha uns algoritmes que ens permeten generar valor a partir dels valors d'entrada, aquests algoritmes són els algoritmes generatius i discriminatius.\\\\
+Els algoritmes generatius són un model per a generar valors aleatoris d'una dada observable, típicament donats alguns paràmetres ocults. Els algoritmes generadors contrasten amb els models discriminadors; un algoritme generador és un gran model probabilista de totes les variables, mentre que un algoritme discriminador proporciona un model sol per les variables etiquetades com a condicionals sobre les variables observades. \\\
+Per això un model generador pot ser utilitzat, per exemple, per simular (i.e. generar) valors de qualsevol variable en el model, mentre que un algoritme discriminador permet el mostreig únic de les variables condicionals. A la pràctica les dues classes són vistes com a complementàries o com diferents observacions del mateix procediment.\\\\
+Així doncs, el que necessitem per al nostre problema és un algoritme generatiu que donats una sèrie de vectors que formen un estil, la màquina sigui capaç de generar una nova graella. Tot i això, aquest model ens provoca una restricció que és que haurem de tenir una màquina entrenada per a cada estil, ja que així aconseguim que els resultats siguin més precisos i correctes, ja que només permetrem que es generin graelles d'un estil per a cada màquina.\\\\
+Tenim diferents tipus d'algoritmes generatius. Els més coneguts són els següents:
+\begin{itemize}
+\item Model de barreja gaussiana i altres tipus de model de mescla
+\item Model ocult de Markov
+\item Gramàtica lliure de context probabilística
+\item Classificador bayesià ingenu
+\item Averaged one-dependence estimators
+\item Latent Dirichlet Allocation
+\item Restricted Boltzman machine
+\end{itemize}
+Després d'investigar entre totes les diferents opcions, vam arribar a la conclusió que la millor opció era utilitzar una Màquina de Boltzmann Restrictiva (RBM) que ens permetria generar graelles a partir de les graelles ja generades anteriorment. Aquest tipus de màquina té algunes restriccions a l'hora d'entrar les dades, ja que han de seguir un format específic, a continuació explicarem com funciona aquest tipus d'algoritme i les seves característiques.
+\newpage
 \subsection{Màquina de Boltzmann Restrictiva (RBM)}
 explicaicó rbm
 funcionament

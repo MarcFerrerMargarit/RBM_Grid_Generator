@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.5.8)  22 MAY 2018 12:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.5.8)  25 MAY 2018 09:11
 entering extended mode
 **./TFG_Document.tex
 (TFG_Document.tex
@@ -1331,18 +1331,68 @@ Underfull \hbox (badness 10000) in paragraph at lines 454--457
  []
 
 [26 <./Images/reinforcement.jpeg>]
-Overfull \hbox (9.83655pt too wide) in paragraph at lines 472--478
+Underfull \hbox (badness 10000) in paragraph at lines 470--483
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 470--483
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 470--483
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 470--483
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 470--483
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 470--483
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 470--483
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 470--483
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 470--483
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 470--483
+
+ []
+
+[27] [28]
+Overfull \hbox (9.83655pt too wide) in paragraph at lines 495--501
 \OT1/cmr/m/n/12 explicaico rbm fun-ci-o-na-ment https://deeplearning4j.org/res
 trictedboltzmannmachine
  []
 
 
-Overfull \hbox (106.77304pt too wide) in paragraph at lines 472--478
+Overfull \hbox (106.77304pt too wide) in paragraph at lines 495--501
 \OT1/cmr/m/n/12 http://deeplearning.net/tutorial/rbm.html http://eric-yuan.me/r
 bm/ https://www.cs.toronto.edu/ hin-
  []
 
-[27] [28] [29] (TFG_Document.aux) ) 
+[29] [30] [31] (TFG_Document.aux) ) 
 Here is how much of TeX's memory you used:
  15137 strings out of 493303
  289088 string characters out of 3128915
@@ -1358,9 +1408,9 @@ er/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
 <C:/Users/mferrer/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
 /cm/cmti12.pfb><C:/Users/mferrer/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmtt12.pfb>
-Output written on TFG_Document.pdf (33 pages, 2478975 bytes).
+Output written on TFG_Document.pdf (35 pages, 2484012 bytes).
 PDF statistics:
- 244 PDF objects out of 1000 (max. 8388607)
+ 250 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  73 words of extra memory for PDF output out of 10000 (max. 10000000)
 
