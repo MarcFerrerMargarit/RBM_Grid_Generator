@@ -1,0 +1,578 @@
+[
+{
+"name" : "Suelo",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+{"id" : 552,"name" : "Elementos Estructurales/Pavimento/Compuesto"},{"id" : 553,"name" : "Elementos Estructurales/Pavimento/Continuo"}]
+
+},
+{
+"name" : "Pared A",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+{"id" : 554,"name" : "Elementos Estructurales/Pared/Continuo"},{"id" : 597,"name" : "Elementos Estructurales/Pared/Compuesto"}]
+
+},
+{
+"name" : "Pared B",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+{"id" : 554,"name" : "Elementos Estructurales/Pared/Continuo"},{"id" : 597,"name" : "Elementos Estructurales/Pared/Compuesto"}]
+
+},
+{
+"name" : "Resto Paredes",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+{"id" : 597,"name" : "Elementos Estructurales/Pared/Compuesto"},{"id" : 554,"name" : "Elementos Estructurales/Pared/Continuo"}]
+
+},
+{
+"name" : "Pilar o Columna",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+]
+
+},
+{
+"name" : "Murete",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+]
+
+},
+{
+"name" : "Cornisa",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+]
+
+},
+{
+"name" : "Molduras Frisos",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+]
+
+},
+{
+"name" : "Arrimadero",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+]
+
+},
+{
+"name" : "Zócalos",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+{"id" : 388,"name" : "Elementos Estructurales/Zocalo/Zocalo"}]
+
+},
+{
+"name" : "Cantonera",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+]
+
+},
+{
+"name" : "Escaleras",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+]
+
+},
+{
+"name" : "Techo",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+]
+
+},
+{
+"name" : "Viga o Estructura Compuesta Vigas",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+]
+
+},
+{
+"name" : "Molduras",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+]
+
+},
+{
+"name" : "Rosetón",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+]
+
+},
+{
+"name" : "Puerta",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+{"id" : 555,"name" : "Elementos Estructurales/Carpinteria/Puerta_Abatible_1_Hoja"},{"id" : 556,"name" : "Elementos Estructurales/Carpinteria/Puerta_Abatible_2_Hojas"},{"id" : 568,"name" : "Elementos Estructurales/Carpinteria/Puerta_Corredera_1_Hoja"},{"id" : 569,"name" : "Elementos Estructurales/Carpinteria/Puerta_Corredera_2_Hojas"}]
+
+},
+{
+"name" : "Ventana o Balconera",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+{"id" : 570,"name" : "Elementos Estructurales/Carpinteria/Ventana_Abatible_2_Hojas"},{"id" : 571,"name" : "Elementos Estructurales/Carpinteria/Ventana_Abatible_1_Hoja"},{"id" : 572,"name" : "Elementos Estructurales/Carpinteria/Ventana_Fija_1_Hoja"},{"id" : 573,"name" : "Elementos Estructurales/Carpinteria/Ventana_Corredera_2_Hojas"},{"id" : 574,"name" : "Elementos Estructurales/Carpinteria/Balconera_Abatible_1_Hoja"},{"id" : 575,"name" : "Elementos Estructurales/Carpinteria/Balconera_Abatible_2_Hojas"},{"id" : 576,"name" : "Elementos Estructurales/Carpinteria/Balconera_Corredera_2_Hojas"}]
+
+},
+{
+"name" : "Otros",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+]
+
+},
+{
+"name" : "Separadores Espaciales",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+]
+
+},
+{
+"name" : "Calefacción",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+]
+
+},
+{
+"name" : "Climatización Ventilador Techo",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+]
+
+},
+{
+"name" : "Chimenea",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+{"id" : 442,"name" : "Elementos Estructurales/Chimenea/De tubo"},{"id" : 443,"name" : "Elementos Estructurales/Chimenea/De obra"},{"id" : 444,"name" : "Elementos Estructurales/Chimenea/Empotrada"}]
+
+},
+{
+"name" : "Interruptores Enchufes",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+]
+
+},
+{
+"name" : "Iluminación Técnica",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+]
+
+},
+{
+"name" : "Cama",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+{"id" : 266,"name" : "Mobiliario/Cama doble/Cama con patas fija"},{"id" : 267,"name" : "Mobiliario/Cama doble/Cama con patas y cabezal"},{"id" : 268,"name" : "Mobiliario/Cama doble/Cama con patas, cabezal y pies"},{"id" : 269,"name" : "Mobiliario/Cama doble/Cama con cajones"},{"id" : 270,"name" : "Mobiliario/Cama doble/Cama con cabezal y cajones"},{"id" : 271,"name" : "Mobiliario/Cama doble/Cama con cabezal, cajones y pies"},{"id" : 272,"name" : "Mobiliario/Cama doble/Tatami"},{"id" : 273,"name" : "Mobiliario/Cama doble/Tatami con cabezal"},{"id" : 274,"name" : "Mobiliario/Cama doble/Canapé"},{"id" : 275,"name" : "Mobiliario/Cama doble/Canapé con cabezal"}]
+
+},
+{
+"name" : "Estantería encima cama",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+{"id" : 288,"name" : "Mobiliario/Estantes de pared/Balda"},{"id" : 289,"name" : "Mobiliario/Estantes de pared/Balda con subestructura"}]
+
+},
+{
+"name" : "Mesita Noche",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+{"id" : 278,"name" : "Mobiliario/Mesitas de noche/De suelo sin cajones"},{"id" : 279,"name" : "Mobiliario/Mesitas de noche/De suelo con cajones"},{"id" : 280,"name" : "Mobiliario/Mesitas de noche/De pared sin cajones"},{"id" : 281,"name" : "Mobiliario/Mesitas de noche/De pared con cajones"}]
+
+},
+{
+"name" : "Lámpara Techo",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+{"id" : 1,"name" : "Iluminación/Techo/Colgadas simple"},{"id" : 2,"name" : "Iluminación/Techo/Focos techo"},{"id" : 3,"name" : "Iluminación/Techo/Plafones"},{"id" : 397,"name" : "Iluminación/Techo/colgada compuesta"},{"id" : 398,"name" : "Iluminación/Techo/colgada combinable"},{"id" : 567,"name" : "Iluminación/Techo/de brazos"}]
+
+},
+{
+"name" : "Armario",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+{"id" : 282,"name" : "Mobiliario/Armario/Modular abatible sin espejo"},{"id" : 283,"name" : "Mobiliario/Armario/Modular corredera sin espejo"},{"id" : 284,"name" : "Mobiliario/Armario/No modular abatible sin espejo"},{"id" : 285,"name" : "Mobiliario/Armario/No modular corredera sin espejo"},{"id" : 372,"name" : "Mobiliario/Armario/Modular abatible con espejo"},{"id" : 373,"name" : "Mobiliario/Armario/Modular corredera con espejo"},{"id" : 374,"name" : "Mobiliario/Armario/No modular abatible con espejo"},{"id" : 375,"name" : "Mobiliario/Armario/No modular corredera con espejo"},{"id" : 376,"name" : "Mobiliario/Armario/Abierto"}]
+
+},
+{
+"name" : "Banco/Baúl",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+{"id" : 312,"name" : "Mobiliario/Sillas/Banco"},{"id" : 344,"name" : "Mobiliario/Butaca/Puff rectangular"}]
+
+},
+{
+"name" : "Colgadores",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+{"id" : 293,"name" : "Mobiliario/Colgadores/Colgador horizontal pared"},{"id" : 294,"name" : "Mobiliario/Colgadores/Colgador horizontal con balda integrada"},{"id" : 295,"name" : "Mobiliario/Colgadores/Colgador vertical"},{"id" : 296,"name" : "Mobiliario/Colgadores/Ganchos sueltos"}]
+
+},
+{
+"name" : "Cómoda",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+{"id" : 286,"name" : "Mobiliario/Cómoda/Cómoda con cajones"},{"id" : 371,"name" : "Mobiliario/Cómoda/Cómoda abierta"}]
+
+},
+{
+"name" : "Espejode Pie",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+{"id" : 297,"name" : "Mobiliario/Espejo/De pie"},{"id" : 298,"name" : "Mobiliario/Espejo/De pie de pared"}]
+
+},
+{
+"name" : "Galán",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+{"id" : 300,"name" : "Mobiliario/Galán/Perchero"},{"id" : 301,"name" : "Mobiliario/Galán/Galán"},{"id" : 302,"name" : "Mobiliario/Galán/Colgador de guía / burra"}]
+
+},
+{
+"name" : "Butaca",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+{"id" : 320,"name" : "Mobiliario/Butaca/Sillón"},{"id" : 321,"name" : "Mobiliario/Butaca/Mecedora"},{"id" : 322,"name" : "Mobiliario/Butaca/Sillón reclinable"},{"id" : 323,"name" : "Mobiliario/Butaca/Chaiselongue"},{"id" : 369,"name" : "Mobiliario/Butaca/Chaiselongue con entrada en la derecha"},{"id" : 370,"name" : "Mobiliario/Butaca/Chaiselongue con entrada en la izquierda"}]
+
+},
+{
+"name" : "Lámpara de pie",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+{"id" : 378,"name" : "Iluminación/Suelo/Lámpara de volumen constante"},{"id" : 379,"name" : "Iluminación/Suelo/Lámpara con volumen en la parte superior"},{"id" : 380,"name" : "Iluminación/Suelo/Lámpara articulada"}]
+
+},
+{
+"name" : "Mesita Auxiliar",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+{"id" : 325,"name" : "Mobiliario/Mesita auxiliar/sin cajones simple"},{"id" : 326,"name" : "Mobiliario/Mesita auxiliar/con cajones"}]
+
+},
+{
+"name" : "Tocador",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+{"id" : 316,"name" : "Mobiliario/Tocador/Tocador con espejo visible (+cajones)"},{"id" : 317,"name" : "Mobiliario/Tocador/Tocador con espejo escondido (+cajones)"},{"id" : 318,"name" : "Mobiliario/Tocador/Tocador sin espejo (+cajones)"}]
+
+},
+{
+"name" : "Espejo",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+{"id" : 299,"name" : "Mobiliario/Espejo/De pared"}]
+
+},
+{
+"name" : "Alfombra",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+{"id" : 77,"name" : "Textil/Alfombras/Circulares"},{"id" : 79,"name" : "Textil/Alfombras/Rectangulares"},{"id" : 80,"name" : "Textil/Alfombras/Pieles"}]
+
+},
+{
+"name" : "Cortinas",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+{"id" : 58,"name" : "Textil/Cortinas/Barra"},{"id" : 62,"name" : "Textil/Cortinas/Estor enrollable"}]
+
+},
+{
+"name" : "Textil Cama Principal",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+{"id" : 14,"name" : "Textil/Textiles cama/Funda nórdica / Edredón"}]
+
+},
+{
+"name" : "Textil Cama Secundario",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+]
+
+},
+{
+"name" : "Textil Cama Secundario 1",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+]
+
+},
+{
+"name" : "Textil Cama Secundario 2",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+]
+
+},
+{
+"name" : "Escritorio",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+{"id" : 305,"name" : "Mobiliario/Escritorio/Escritorio sin cajones"},{"id" : 306,"name" : "Mobiliario/Escritorio/Escritorio con cajones"}]
+
+},
+{
+"name" : "Estantes de Pared",
+"types" : [
+]
+,
+"categories" : [
+]
+,
+"subcategories" : [
+{"id" : 287,"name" : "Mobiliario/Estantes de pared/Buc"},{"id" : 288,"name" : "Mobiliario/Estantes de pared/Balda"},{"id" : 289,"name" : "Mobiliario/Estantes de pared/Balda con subestructura"},{"id" : 290,"name" : "Mobiliario/Estantes de pared/Estante con cajones y subestructura"},{"id" : 291,"name" : "Mobiliario/Estantes de pared/Estante complejo"}]
+
+}
+]
