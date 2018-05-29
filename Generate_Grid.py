@@ -31,6 +31,10 @@ if __name__ == '__main__':
                             if k < len(id_finish)-1:
                                 str_finish += "&&"
                     available_id = []
+                    # if len(subcategories) == 0:
+                    #     print("No Subcategories")
+                    #     url = "https://roomdesignerdb.interiorvista.net/api/sku_object_models/?" + str_finish
+                    #     print(url)
                     for j in range(len(subcategories)):
                         url = "https://roomdesignerdb.interiorvista.net/api/sku_object_models/?subcategory=" + \
                               str(subcategories[j]["id"])
