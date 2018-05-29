@@ -42,10 +42,10 @@ def cleaningOutput(vector):
 
 
 # Generate grid from data
-def generateGrid(number_grids):
-    pickle_in = open("OneHotData.pickle", "rb")
+def generateGrid(number_grids, rbm_name="", onehot_name=""):
+    pickle_in = open(onehot_name, "rb")
     data = pickle.load(pickle_in)
-    pickle_in_rbm = open("RBM.pickle", "rb")
+    pickle_in_rbm = open(rbm_name, "rb")
     RBM = pickle.load(pickle_in_rbm)
     all_grids = []
     for j in range(number_grids):
