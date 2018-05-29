@@ -10,6 +10,8 @@
 \graphicspath{{./Images/}}
 \usepackage{listings}
 \usepackage[latin1]{inputenc}
+\usepackage{algorithm}
+\usepackage{algorithmic}
 
 \setcounter{page}{0}
 
@@ -502,8 +504,70 @@ https://www.cs.toronto.edu/~hinton/csc2535/notes/lec4new.pdf
 A continuació explicarem d'una forma més detallada les màquines de Boltzmann i la seva variant, que és la que utilitzarem, la màquina de Boltzmann Restrictiva. Bàsicament ens centrarem en com entrenar i avaluar les màquines utilitzant el gradient estocàstic i analitzar les seves dificultats. També analitzarem els seus avantatges i inconvenients.
 \subsubsection{Màquina de Boltzmann}
 La màquina Boltzmann (BM) és una xarxa neuronal recurrent estocàstica que consisteix en neurones binàries (Haykin, 1998; Ackley et al., 1985). La xarxa està totalment connectada i cada connexió entre dues neurones és simètrica, de manera que l'efecte d'una neurona en l'estat de l'altra és simètrica per a cada parell.\\\\
-La probabilitat d'un estat particular ${X = [x_1, x_2,...,x_d]^T}$ de la xarxa es defineix per l'energia de BM que es postula com \[E (x | ?) = - X i X j> i wijxixj - X i Bixi\] on ${?}$ indica paràmetres de la xarxa que consisteixen en una matriu de pes ${W = [wij]}$ i un vector de polarització ${b = [bi]}$. wij és el pes de les connexions sinàptiques entre les neurones i i j. Suposem que wii = 0 i wij = wji. La probabilitat d'un estat x és, doncs, \[P (x | ?) = 1 Z (?) exp [-E (x | ?)] (2.1) \] on \[Z (?) = X x exp [-E (x | ?)]\] és la constant de normalització. Es dedueix de (2.1) que la probabilitat condicional d'una sola neurona que sigui 0 o 1 donada als estats de les altres neurones es pot escriure de la següent manera: \[P (xi = 1 | x \ i, W) = 1 1 + exp - P j6 = i wijxj - bi, (2.2)\] on x \ denota un vector [x1, · · ·, xi-1, xi + 1, · · ·, xd] T. \\\\
-Les neurones de BM solen estar dividides en visibles i ocultes x = [v T, h T] T, on els estats v de les neurones visibles es subjecten a les dades observades, i els estats h de les neurones ocultes poden canviar lliurement. En aquest cas de tenir neurones visibles i ocultes, es pot calcular la probabilitat d'una configuració específica de les neurones visibles marginant les neurones ocultes.
+La probabilitat d'un estat particular ${X = [x_1, x_2,...,x_d]^T}$ de la xarxa es defineix per l'energia de BM que es postula com 
+\[E (x | \theta) = -\sum_{i}\sum_{j>i}w_{ij}x_ix_j - \sum_{i}b_ix_i\]
+on ${\theta}$ indica paràmetres de la xarxa que consisteixen en una matriu de pes ${W = [w_{ij}]}$ i un vector de polarització ${b = [b_i]}$. ${w_{ij}}$ és el pes de les connexions sinàptiques entre les neurones i i j. Suposem que ${w_{ij}}$ = 0 i ${w_{ij}}$ = ${w_{ji}}$. La probabilitat d'un estat x és, doncs, 
+\begin{equation}
+P (x | \theta) = \frac{1}{Z}exp[-E(x|\theta)] 
+\end{equation}
+on
+\[Z (\theta) = \sum_{x}exp[-E(x|\theta)]\]
+
+ és la constant de normalització. Es dedueix de (3.1) que la probabilitat condicional d'una sola neurona que sigui 0 o 1 donada als estats de les altres neurones es pot escriure de la següent manera: 
+\begin{equation}
+P(x_i = 1|(x_{\setminus i},W)) = \frac{1}{1 + exp(-\sum_{j\neq i}w_{ij}x_j - b_i)}
+\end{equation}
+on ${x_{\setminus i}}$ denota un vector ${[x_1,...,x_{i-1},x_{i+1},..., x_d]^T }$. \\\\
+Les neurones de BM solen estar dividides en visibles i ocultes ${x = [v^T, h^t]^T}$, on els estats v de les neurones visibles es subjecten a les dades observades, i els estats h de les neurones ocultes poden canviar lliurement. En aquest cas de tenir neurones visibles i ocultes, es pot calcular la probabilitat d'una configuració específica de les neurones visibles marginant les neurones ocultes.\\\\
+Els paràmetres de BM es poden obtenir a partir de les dades utilitzant l'estimació estàndard de màxima versemblança. Donat un conjunt de dades ${}$, la probabilitat de registre dels paràmetres de BM és 
+\begin{equation}
+\mathcal{L}(\theta) = \sum_{t=1}^N logP(v^{(t)}|\theta) =  \sum_{t=1}^N log \sum_h P(v^{(t)},h|\theta)
+\end{equation} 
+on les mostres ${v^{(t)}}$ s s'assumeixen que són independents entre si, i els estats h de les neurones amagades han de ser marginades.\\\\
+El gradient de la probabilitat de registre s'obté prenent derivada parcial de ${\mathcal{L}(\theta)}$ respecte als paràmetres ${w_{ij}}$ 
+\[\frac{\partial\mathcal{L}}{\partial w_{ij}} = \frac{N}{2} [\langle x_ix_j \rangle_d - \langle x_ix_j \rangle_m] \]
+on una notació abreviada ${\langle\cdot\rangle_{P(\cdot)}}$ que denota l'expectativa calculada sobre la distribució de probabilitat ${P(\cdot)}$. A més, es van utilitzar ${d}$ i ${m}$ per designar dues distribucions de probabilitat ${P(h|\{v^{(t)}\},\theta)}$ i ${P(x|\theta)}$, respectivament. Són la probabilitat de les neurones ocultes quan les neurones visibles es subjecten a les mostres, i la probabilitat de totes les neurones sense cap neurona fixa. \\\\
+Segons el signe de cada terme, els dos termes es poden anomenar la fase positiva i la fase negativa, respectivament. La fórmula d'actualització general d'un paràmetre ${w_{ij}}$ és 
+\begin{equation}
+w_{ij}\leftarrow w_{ij} + \eta [\langle x_ix_j \rangle_d - \langle x_ix_j \rangle_m]
+\end{equation}
+on ${\eta}$ denota la taxa d'aprenentatge. \\\\
+Així doncs, a partir d'aquí, deixem que ${b}$ sigui només un vector de biaixos ${b_i}$ de les neurones visibles, i ${c}$ sigui un vector dels biaixos de les neurones ocultes. A continuació, per als biaixos separats de les neurones visibles i ocultes, les regles d'actualització són, en analogia amb la regla d'actualització dels pesos, 
+\begin{equation}
+b_{i}\leftarrow b_{i} + \eta [\langle v_i \rangle_d - \langle v_i \rangle_m]
+\end{equation} 
+i 
+\begin{equation}
+c_{j}\leftarrow b_{j} + \eta [\langle h_j \rangle_d - \langle h_j \rangle_m]
+\end{equation} 
+on ${v_i}$, ${h_j}$, ${b_{i}}$ i ${c_{j}}$ denoten la i i la neurona visible, la ${j}$-oculta neurona, el $i{}$-biaix visible, i el ${j}$ biaix amagat.
+\newpage
+Tot i que les regles d'activació i aprenentatge de la BM estan clarament formulades, hi ha limitacions pràctiques en l'ús de la BM. Especialment, les fórmules d'actualització basades en gradients (3.4) - (3.6) no són computacionalment factibles, ja que les distribucions requerides tant en les fases positives com negatives només es poden obtenir després de computar la constant de normalització ${Z(\theta)}$.\\\\
+\begin{algorithm}
+\caption{ Passos de mostreig de Gibbs per al BM general}
+\begin{algorithmic} 
+\STATE Dibuixa $x_0$ uniformement des de l'espai de l'estat.
+\REPEAT 
+\FOR{$i = 1 ... d$} \STATE {Mostreig $x_i$ fent l'equació (3.2)} \ENDFOR 
+\UNTIL{que es reculli el nombre suficient de mostres, o el mostreig de Gibbs hagi arribat a l'equilibri.}
+\end{algorithmic}
+\end{algorithm}\\\\
+La computació ${Z(\theta)}$, tanmateix, requereix sumar de forma exponencial moltes possibles configuracions de BM, i és senzillament impossible per a les BM grans.\\\\
+Un mètode obvi per evitar la computació de la constant de normalització és utilitzar els mètodes de mostreig Markov-Chain Monte-Carlo (MCMC) per calcular el gradient estocàstic. A causa de la simplicitat de la regla d'activació d'una única neurona donada als estats d'altres neurones, un simple mostreig de Gibbs és suficient per obtenir gradients estocàstics. \\\\
+El mostreig de Gibbs es pot implementar fàcilment perquè la distribució condicional de l'estat d'una sola neurona a BM donada als estats de totes les altres neurones ve donada per (3.2). Una descripció senzilla sobre com realitzar el mostreig de Gibbs amb BM es descriu en Algorisme 1. \\\\
+Aquest enfocament pot reduir considerablement la càrrega computacional de les regles d'actualització de gradients. Si s'assumeix que la quantitat de mostres necessàries per explicar la distribució de probabilitat de tot l'espai estatal és prou menor que la mida de l'espai estatal, és a dir, el nombre de totes les combinacions possibles dels estats de les neurones, l'aprenentatge de BM ja no és computacional inviable.\\\\
+Tanmateix, també existeixen altres tipus de limitacions en l'ús del mostreig de Gibbs per a la formació de BM. El major problema es deu a la connectivitat completa de BM. Atès que cada neurona està connectada i influïda per totes les altres neurones, es necessiten tants passos com la quantitat de neurones per obtenir una mostra de l'estat de BM. Fins i tot quan les neurones visibles es mantenen subjectes a les dades de formació, el nombre de passos necessaris per a una sola mostra fresca encara és almenys el nombre de neurones ocultes. Això fa que les mostres successives de la cadena estiguin altament correlacionades entre elles i aquesta pobra barreja afecta el rendiment de l'aprenentatge. \\\\
+Una altra limitació d'aquest enfocament és que les distribucions multimodals són problemàtiques per al mostreig de Gibbs (Salakhutdinov, 2009b): a causa de la naturalesa del mostreig de components, les mostres poden perdre alguns modes de distribució.
+\subsubsection{Màquina de Boltzmann Restrictiva}
+Per superar les limitacions pràctiques imposades a la màquina general Boltzmann com el problema del mostreig ineficient, Smolensky (1986) ha proposat una versió estructuralment restringida de la màquina Boltzmann anomenada Restringit Boltzmann Machine (RBM). RBM es construeix eliminant les connexions laterals entre les neurones visibles i les neurones ocultes. Per tant, una neurona visible només tindria vores connectades a les neurones ocultes, i una neurona oculta només tindria vores connectades a les neurones visibles. Ara, l'estructura de RBM es pot dividir en dues capes amb vores interconnectats. La relació entre BM i RBM s'il·lustra a la figura 13. 
+\\\\
+Tot i que la restricció imposada podria suggerir que el poder de representació podria haver estat reduït, Le Roux and Bengio (2008) va demostrar que RBM és un aproximador universal que pot modelar qualsevol distribució de probabilitat discreta (Le Roux and Bengio, 2008).\\\\
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=\textwidth]{boltzmann1}
+\caption{Il·lustració de la relació entre la màquina Boltzmann i la màquina restrictiva de Boltzmann.}
+\end{center}
+\end{figure}
 \section{Desenvolupament de l'algoritme aplicat al problema}
 com aplicarem l'algorisem en el projecte. Com seran les dades.
 \subsection{Dades d'entrada}
