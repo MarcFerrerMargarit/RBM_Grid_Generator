@@ -491,13 +491,19 @@ Tenim diferents tipus d'algoritmes generatius. Els més coneguts són els següents
 \end{itemize}
 Després d'investigar entre totes les diferents opcions, vam arribar a la conclusió que la millor opció era utilitzar una Màquina de Boltzmann Restrictiva (RBM) que ens permetria generar graelles a partir de les graelles ja generades anteriorment. Aquest tipus de màquina té algunes restriccions a l'hora d'entrar les dades, ja que han de seguir un format específic, a continuació explicarem com funciona aquest tipus d'algoritme i les seves característiques.
 \newpage
-\subsection{Màquina de Boltzmann Restrictiva (RBM)}
+\subsection{Màquina de Boltzmann(BM) i Màquina de Boltzmann Restrictiva (RBM)}
 explicaicó rbm
 funcionament
 https://deeplearning4j.org/restrictedboltzmannmachine
 http://deeplearning.net/tutorial/rbm.html
 http://eric-yuan.me/rbm/
 https://www.cs.toronto.edu/~hinton/csc2535/notes/lec4new.pdf
+\\\\
+A continuació explicarem d'una forma més detallada les màquines de Boltzmann i la seva variant, que és la que utilitzarem, la màquina de Boltzmann Restrictiva. Bàsicament ens centrarem en com entrenar i avaluar les màquines utilitzant el gradient estocàstic i analitzar les seves dificultats. També analitzarem els seus avantatges i inconvenients.
+\subsubsection{Màquina de Boltzmann}
+La màquina Boltzmann (BM) és una xarxa neuronal recurrent estocàstica que consisteix en neurones binàries (Haykin, 1998; Ackley et al., 1985). La xarxa està totalment connectada i cada connexió entre dues neurones és simètrica, de manera que l'efecte d'una neurona en l'estat de l'altra és simètrica per a cada parell.\\\\
+La probabilitat d'un estat particular ${X = [x_1, x_2,...,x_d]^T}$ de la xarxa es defineix per l'energia de BM que es postula com \[E (x | ?) = - X i X j> i wijxixj - X i Bixi\] on ${?}$ indica paràmetres de la xarxa que consisteixen en una matriu de pes ${W = [wij]}$ i un vector de polarització ${b = [bi]}$. wij és el pes de les connexions sinàptiques entre les neurones i i j. Suposem que wii = 0 i wij = wji. La probabilitat d'un estat x és, doncs, \[P (x | ?) = 1 Z (?) exp [-E (x | ?)] (2.1) \] on \[Z (?) = X x exp [-E (x | ?)]\] és la constant de normalització. Es dedueix de (2.1) que la probabilitat condicional d'una sola neurona que sigui 0 o 1 donada als estats de les altres neurones es pot escriure de la següent manera: \[P (xi = 1 | x \ i, W) = 1 1 + exp - P j6 = i wijxj - bi, (2.2)\] on x \ denota un vector [x1, · · ·, xi-1, xi + 1, · · ·, xd] T. \\\\
+Les neurones de BM solen estar dividides en visibles i ocultes x = [v T, h T] T, on els estats v de les neurones visibles es subjecten a les dades observades, i els estats h de les neurones ocultes poden canviar lliurement. En aquest cas de tenir neurones visibles i ocultes, es pot calcular la probabilitat d'una configuració específica de les neurones visibles marginant les neurones ocultes.
 \section{Desenvolupament de l'algoritme aplicat al problema}
 com aplicarem l'algorisem en el projecte. Com seran les dades.
 \subsection{Dades d'entrada}
