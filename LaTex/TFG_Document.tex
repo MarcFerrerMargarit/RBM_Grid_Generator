@@ -560,14 +560,28 @@ Tanmateix, també existeixen altres tipus de limitacions en l'ús del mostreig de 
 Una altra limitació d'aquest enfocament és que les distribucions multimodals són problemàtiques per al mostreig de Gibbs (Salakhutdinov, 2009b): a causa de la naturalesa del mostreig de components, les mostres poden perdre alguns modes de distribució.
 \subsubsection{Màquina de Boltzmann Restrictiva}
 Per superar les limitacions pràctiques imposades a la màquina general Boltzmann com el problema del mostreig ineficient, Smolensky (1986) ha proposat una versió estructuralment restringida de la màquina Boltzmann anomenada Restringit Boltzmann Machine (RBM). RBM es construeix eliminant les connexions laterals entre les neurones visibles i les neurones ocultes. Per tant, una neurona visible només tindria vores connectades a les neurones ocultes, i una neurona oculta només tindria vores connectades a les neurones visibles. Ara, l'estructura de RBM es pot dividir en dues capes amb vores interconnectats. La relació entre BM i RBM s'il·lustra a la figura 13. 
-\\\\
-Tot i que la restricció imposada podria suggerir que el poder de representació podria haver estat reduït, Le Roux and Bengio (2008) va demostrar que RBM és un aproximador universal que pot modelar qualsevol distribució de probabilitat discreta (Le Roux and Bengio, 2008).\\\\
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=\textwidth]{boltzmann1}
 \caption{Il·lustració de la relació entre la màquina Boltzmann i la màquina restrictiva de Boltzmann.}
 \end{center}
 \end{figure}
+\\\\
+Tot i que la restricció imposada podria suggerir que el poder de representació podria haver estat reduït, Le Roux and Bengio (2008) va demostrar que RBM és un aproximador universal que pot modelar qualsevol distribució de probabilitat discreta (Le Roux and Bengio, 2008).\\\\
+A causa d'aquesta restricció, l'energia i la probabilitat de l'estat han de ser modificadess en conseqüència a la següents fórmules:
+\begin{equation}
+\begin{array}{l}
+E(v,h|\theta) = -v^TWh-b^Tv-c^Th \\\\
+P(v,h|\theta) = \frac{1}{Z(\theta)}exp\{-E(v,h|\theta)\}
+\end{array}
+\end{equation}
+on ara els paràmetres ${\theta = (W,b,c)}$ inclouen els biaixos ${b}$ i ${c}$.\\\\
+Atès que cada neurona oculta és independent una de l'altra donada totes les neurones visibles, és possible extreure explícitament les neurones ocultes i obtenir la probabilitat no normalitzada de les neurones visibles. La probabilitat d'un estat de neurones visibles v és, doncs,
+\begin{equation}
+P(v|\theta) = \frac{1}{Z(\theta)}exp(b^tv)\prod_{j=1}^{n_h}(1 + exp(c_j + \sum_{i=1}^{n_v}w_{ij}v_i))
+\end{equation}
+on ${n_v}$ i ${n_h}$ són el número de neurones visibles i invisbles respectivament.
+
 \section{Desenvolupament de l'algoritme aplicat al problema}
 com aplicarem l'algorisem en el projecte. Com seran les dades.
 \subsection{Dades d'entrada}
