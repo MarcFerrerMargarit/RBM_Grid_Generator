@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.5.28)  31 MAY 2018 18:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.5.8)  4 JUN 2018 20:56
 entering extended mode
 **./TFG_Document.tex
 (TFG_Document.tex
@@ -1490,12 +1490,108 @@ Underfull \hbox (badness 10000) in paragraph at lines 577--580
 
  []
 
-[33] [34] [35] (TFG_Document.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 582--585
+
+ []
+
+<./Images/rbm_hidden.png, id=242, 296.90926pt x 71.0655pt>
+File: ./Images/rbm_hidden.png Graphic file (type png)
+<use ./Images/rbm_hidden.png>
+Package pdftex.def Info: ./Images/rbm_hidden.png  used on input line 599.
+(pdftex.def)             Requested size: 424.06033pt x 101.49924pt.
+<./Images/cd.png, id=243, 263.7855pt x 210.7875pt>
+File: ./Images/cd.png Graphic file (type png)
+<use ./Images/cd.png>
+Package pdftex.def Info: ./Images/cd.png  used on input line 609.
+(pdftex.def)             Requested size: 424.06033pt x 338.86542pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 593--615
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 593--615
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 593--615
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 593--615
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 593--615
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 593--615
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 593--615
+
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[33]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./Images/model.png, id=251, 368.577pt x 159.59625pt>
+File: ./Images/model.png Graphic file (type png)
+<use ./Images/model.png>
+Package pdftex.def Info: ./Images/model.png  used on input line 623.
+(pdftex.def)             Requested size: 424.06033pt x 183.62677pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 617--632
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 617--632
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 617--632
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 617--632
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 617--632
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 617--632
+
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[34 <./Images/rbm_hidden.png>] [35 <./Images/cd.png>] [36 <./Images/model.png>]
+[37] [38] [39] (TFG_Document.aux) ) 
 Here is how much of TeX's memory you used:
- 15420 strings out of 493305
- 291859 string characters out of 3130237
+ 15436 strings out of 493305
+ 292167 string characters out of 3130238
  360403 words of memory out of 3000000
- 18617 multiletter control sequences out of 15000+200000
+ 18630 multiletter control sequences out of 15000+200000
  12044 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,9n,54p,735b,692s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1507,15 +1603,17 @@ s/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.p
 fb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
 /cm/cmmi8.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
 ic/amsfonts/cm/cmr12.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Marc/AppData/Local/Pro
-grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Marc/AppDat
-a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users
-/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.p
-fb>
-Output written on TFG_Document.pdf (39 pages, 2581920 bytes).
+/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Marc/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Marc/AppData
+/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/M
+arc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+<C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmti12.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmtt12.pfb>
+Output written on TFG_Document.pdf (43 pages, 2649910 bytes).
 PDF statistics:
- 291 PDF objects out of 1000 (max. 8388607)
+ 318 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 78 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 93 words of extra memory for PDF output out of 10000 (max. 10000000)
 
