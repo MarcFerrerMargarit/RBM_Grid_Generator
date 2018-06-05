@@ -628,12 +628,12 @@ Tanmateix, aquest avantatge de l'aprenentatge de CD és el seu desavantatge alhor
 Per superar aquest problema, s'han proposat diferents enfocaments basats en l'aprenentatge de CD. Entre ells, l'aprenentatge persistent de divergència contrastiva (PCD) és l'extensió més senzilla de l'aprenentatge de CD (Tieleman, 2008).\\\\
 A cada pas d'actualització de gradients, l'aprenentatge de CD realitza el mostreig de Gibbs a partir de les mostres de dades de formació, mentre que l'aprenentatge de PCD comença el mostreig a partir de mostres model obtingudes en l'última actualització de degradat. D'aquesta manera, s'espera que les mostres del model exploren els modes de la distribució del model que no són pròxims a les mostres d'entrenament.\\\\
 Tanmateix, l'aprenentatge de PCD encara pateix els modes que falten en la distribució del model a mesura que avança l'aprenentatge. Es deu a la mala barreja del mostreig de Gibbs que produeix mostres altament correlacionades per actualitzacions successives de gradients. Aquest comportament fa que els enfocaments basats en l'aprenentatge en CD pateixin la divergència de la probabilitat (Schulzet, 2010; Fischer and Igel, 2010; Desjardins et al., 2010b, a) si l'aprenentatge es realitza sense escollir manualment heurístiques d'aprenentatge com ara el calendari de tarifes d'aprenentatge, la decadència del pes i l'impuls.\\\\
-S'han proposat recentment nombrosos enfocaments basats en l'aprenentatge de CDs diferents de l'aprenentatge de la PCD. Per exemple, l'aprenentatge de Fast PCD proposat per Tieleman and Hinton (2009) amplia l'aprenentatge de la PCD mantenint uns pesos ràpids que ajuden a obtenir millors models de mostres.
+S'han proposat recentment nombrosos enfocaments basats en l'aprenentatge de CDs diferents de l'aprenentatge de la PCD. Per exemple, l'aprenentatge de Fast PCD proposat per Tieleman and Hinton (2009) amplia l'aprenentatge de la PCD mantenint uns pesos ràpids que ajuden a obtenir millors models de mostres.\\\\
+\subsection{Algorisme seleccionat a implementar en codi}
+sickit-learn
 \newpage
 \section{Desenvolupament de l'algoritme aplicat al problema}
 com aplicarem l'algorisem en el projecte. Com seran les dades.
-\subsection{Algorisme seleccionat a implementar en el codi}
-sklearn
 \subsection{Dades d'entrada}
 format de les dades obtingutdes de l'eina
 \subsection{Dades d'entrament}

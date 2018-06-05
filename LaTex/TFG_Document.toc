@@ -16,10 +16,10 @@
 \contentsline {subsection}{\numberline {3.4}M\`aquina de Boltzmann(BM) i M\`aquina de Boltzmann Restrictiva (RBM)}{29}
 \contentsline {subsubsection}{\numberline {3.4.1}M\`aquina de Boltzmann}{29}
 \contentsline {subsubsection}{\numberline {3.4.2}M\`aquina de Boltzmann Restrictiva}{32}
+\contentsline {subsection}{\numberline {3.5}Algorisme seleccionat a implementar en codi}{36}
 \contentsline {section}{\numberline {4}Desenvolupament de l'algoritme aplicat al problema}{37}
-\contentsline {subsection}{\numberline {4.1}Algorisme seleccionat a implementar en el codi}{37}
-\contentsline {subsection}{\numberline {4.2}Dades d'entrada}{37}
-\contentsline {subsection}{\numberline {4.3}Dades d'entrament}{37}
-\contentsline {subsection}{\numberline {4.4}\`Analisi de l'algoritme amb les dades}{37}
-\contentsline {subsection}{\numberline {4.5}Dades de sortida}{37}
+\contentsline {subsection}{\numberline {4.1}Dades d'entrada}{37}
+\contentsline {subsection}{\numberline {4.2}Dades d'entrament}{37}
+\contentsline {subsection}{\numberline {4.3}\`Analisi de l'algoritme amb les dades}{37}
+\contentsline {subsection}{\numberline {4.4}Dades de sortida}{37}
 \contentsline {section}{\numberline {5}Resultats i conclusions i l\IeC {\'\i }nies de continuaci\'o}{37}
