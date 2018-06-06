@@ -493,7 +493,7 @@ Tenim diferents tipus d'algoritmes generatius. Els més coneguts són els següents
 \end{itemize}
 Després d'investigar entre totes les diferents opcions, vam arribar a la conclusió que la millor opció era utilitzar una Màquina de Boltzmann Restrictiva (RBM) que ens permetria generar graelles a partir de les graelles ja generades anteriorment. Aquest tipus de màquina té algunes restriccions a l'hora d'entrar les dades, ja que han de seguir un format específic, a continuació explicarem com funciona aquest tipus d'algoritme i les seves característiques.
 \newpage
-\subsection{Màquina de Boltzmann(BM) i Màquina de Boltzmann Restrictiva (RBM)}
+\section{Màquina de Boltzmann(BM) i Màquina de Boltzmann Restrictiva (RBM)}
 explicaicó rbm
 funcionament
 https://deeplearning4j.org/restrictedboltzmannmachine
@@ -502,7 +502,7 @@ http://eric-yuan.me/rbm/
 https://www.cs.toronto.edu/~hinton/csc2535/notes/lec4new.pdf
 \\\\
 A continuació explicarem d'una forma més detallada les màquines de Boltzmann i la seva variant, que és la que utilitzarem, la màquina de Boltzmann Restrictiva. Bàsicament ens centrarem en com entrenar i avaluar les màquines utilitzant el gradient estocàstic i analitzar les seves dificultats. També analitzarem els seus avantatges i inconvenients.
-\subsubsection{Màquina de Boltzmann}
+\subsection{Màquina de Boltzmann}
 La màquina Boltzmann (BM) és una xarxa neuronal recurrent estocàstica que consisteix en neurones binàries (Haykin, 1998; Ackley et al., 1985). La xarxa està totalment connectada i cada connexió entre dues neurones és simètrica, de manera que l'efecte d'una neurona en l'estat de l'altra és simètrica per a cada parell.\\\\
 La probabilitat d'un estat particular ${X = [x_1, x_2,...,x_d]^T}$ de la xarxa es defineix per l'energia de BM que es postula com 
 \[E (x | \theta) = -\sum_{i}\sum_{j>i}w_{ij}x_ix_j - \sum_{i}b_ix_i\]
@@ -519,6 +519,7 @@ P(x_i = 1|(x_{\setminus i},W)) = \frac{1}{1 + exp(-\sum_{j\neq i}w_{ij}x_j - b_i
 \end{equation}
 on ${x_{\setminus i}}$ denota un vector ${[x_1,...,x_{i-1},x_{i+1},..., x_d]^T }$. \\\\
 Les neurones de BM solen estar dividides en visibles i ocultes ${x = [v^T, h^t]^T}$, on els estats v de les neurones visibles es subjecten a les dades observades, i els estats h de les neurones ocultes poden canviar lliurement. En aquest cas de tenir neurones visibles i ocultes, es pot calcular la probabilitat d'una configuració específica de les neurones visibles marginant les neurones ocultes.\\\\
+\subsubsection{Entrenament Màquina de Boltzmann}
 Els paràmetres de BM es poden obtenir a partir de les dades utilitzant l'estimació estàndard de màxima versemblança. Donat un conjunt de dades ${}$, la probabilitat de registre dels paràmetres de BM és 
 \begin{equation}
 \mathcal{L}(\theta) = \sum_{t=1}^N logP(v^{(t)}|\theta) =  \sum_{t=1}^N log \sum_h P(v^{(t)},h|\theta)
@@ -558,7 +559,7 @@ El mostreig de Gibbs es pot implementar fàcilment perquè la distribució condicio
 Aquest enfocament pot reduir considerablement la càrrega computacional de les regles d'actualització de gradients. Si s'assumeix que la quantitat de mostres necessàries per explicar la distribució de probabilitat de tot l'espai estatal és prou menor que la mida de l'espai estatal, és a dir, el nombre de totes les combinacions possibles dels estats de les neurones, l'aprenentatge de BM ja no és computacional inviable.\\\\
 Tanmateix, també existeixen altres tipus de limitacions en l'ús del mostreig de Gibbs per a la formació de BM. El major problema es deu a la connectivitat completa de BM. Atès que cada neurona està connectada i influïda per totes les altres neurones, es necessiten tants passos com la quantitat de neurones per obtenir una mostra de l'estat de BM. Fins i tot quan les neurones visibles es mantenen subjectes a les dades de formació, el nombre de passos necessaris per a una sola mostra fresca encara és almenys el nombre de neurones ocultes. Això fa que les mostres successives de la cadena estiguin altament correlacionades entre elles i aquesta pobra barreja afecta el rendiment de l'aprenentatge. \\\\
 Una altra limitació d'aquest enfocament és que les distribucions multimodals són problemàtiques per al mostreig de Gibbs (Salakhutdinov, 2009b): a causa de la naturalesa del mostreig de components, les mostres poden perdre alguns modes de distribució.
-\subsubsection{Màquina de Boltzmann Restrictiva}
+\subsection{Màquina de Boltzmann Restrictiva}
 Per superar les limitacions pràctiques imposades a la màquina general Boltzmann com el problema del mostreig ineficient, Smolensky (1986) ha proposat una versió estructuralment restringida de la màquina Boltzmann anomenada Restringit Boltzmann Machine (RBM). RBM es construeix eliminant les connexions laterals entre les neurones visibles i les neurones ocultes. Per tant, una neurona visible només tindria vores connectades a les neurones ocultes, i una neurona oculta només tindria vores connectades a les neurones visibles. Ara, l'estructura de RBM es pot dividir en dues capes amb vores interconnectats. La relació entre BM i RBM s'il·lustra a la figura 13. 
 \begin{figure}[h!]
 \begin{center}
@@ -581,6 +582,7 @@ Atès que cada neurona oculta és independent una de l'altra donada totes les neur
 P(v|\theta) = \frac{1}{Z(\theta)}exp(b^tv)\prod_{j=1}^{n_h}(1 + exp(c_j + \sum_{i=1}^{n_v}w_{ij}v_i))
 \end{equation}
 on ${n_v}$ i ${n_h}$ són el número de neurones visibles i invisbles respectivament.\\\\
+\subsubsection{Entrenament Màquina de Boltzmann Restrictiva}
 D'aquesta forma les regles d'aprenentages d'un RBM passen a ser:
 \begin{equation}
 w_{ij}\leftarrow w_{ij} + \eta_w[\langle v_i h_j\rangle_d - \langle v_i h_j \rangle_m]
@@ -629,6 +631,15 @@ Per superar aquest problema, s'han proposat diferents enfocaments basats en l'ap
 A cada pas d'actualització de gradients, l'aprenentatge de CD realitza el mostreig de Gibbs a partir de les mostres de dades de formació, mentre que l'aprenentatge de PCD comença el mostreig a partir de mostres model obtingudes en l'última actualització de degradat. D'aquesta manera, s'espera que les mostres del model exploren els modes de la distribució del model que no són pròxims a les mostres d'entrenament.\\\\
 Tanmateix, l'aprenentatge de PCD encara pateix els modes que falten en la distribució del model a mesura que avança l'aprenentatge. Es deu a la mala barreja del mostreig de Gibbs que produeix mostres altament correlacionades per actualitzacions successives de gradients. Aquest comportament fa que els enfocaments basats en l'aprenentatge en CD pateixin la divergència de la probabilitat (Schulzet, 2010; Fischer and Igel, 2010; Desjardins et al., 2010b, a) si l'aprenentatge es realitza sense escollir manualment heurístiques d'aprenentatge com ara el calendari de tarifes d'aprenentatge, la decadència del pes i l'impuls.\\\\
 S'han proposat recentment nombrosos enfocaments basats en l'aprenentatge de CDs diferents de l'aprenentatge de la PCD. Per exemple, l'aprenentatge de Fast PCD proposat per Tieleman and Hinton (2009) amplia l'aprenentatge de la PCD mantenint uns pesos ràpids que ajuden a obtenir millors models de mostres.\\\\
+\subsubsection{Avaluació d'una RBM}
+A continuació explicarem les formes d'avaluar una màquina de boltzamn restrictiva. Tenim tres formes diferents per realitzar l'avaluació. En primer lloc tenim l'avaluació  per probabilitat i mostreig rellevant d'importància.\\\\
+Una forma natural d'avaluar el rendiment d'un RBM entrenat és calcular la probabilitat del model i les probabilitats de realitzar mostres de dades de prova sota el RBM format. A més, tal com es comentarà al capítol 3 i es mostra en el document de l'autor (Cho et al., 2010), la probabilitat de les mostres de dades aleatòries també es pot utilitzar com a mesura de la bondat de les RBM.\\\\
+A causa de la restricció estructural, el resum explícit de les neurones amagades és força senzill (vegeu l'equació (4.8)), però, malauradament, la probabilitat d'una observació encara és intractable a causa de la constant de normalització. La constant de normalització només es pot computar exactament sumant exponencialment molts termes, i tret que la dimensionalitat del conjunt de dades sigui molt petita, és senzillament impossible. Per tant, en lloc de computar-ho exactament, cal utilitzar un mètode aproximat.\\\\
+Per a l'estimació de la constant de normalització, aquesta tesi utilitza mostres d'importància recomenada (Annealed importance sampling, AIS) (Neal, 1998) que s'ha utilitzat amb èxit per calcular la constant de normalització de RBM (Salakhutdinov, 2009b).\\\\
+L'AIS es basa en un mètode de mostreig d'importància simple (SIS) que podria estimar la proporció de dues constants de normalització. Per a dues densitats de probabilitat ${P_A (x) = \frac{P_A^*(x)}{Z_A}}$ i ${P_B (x) = \frac{P_B^*(x)}{Z_B}}$, la relació de dues constants de normalització ${Z_A}$ i ${Z_B}$ es pot estimar mitjançant un mètode de mostreig de Monte Carlo sense cap biaix si és possible provar de ${P_A (\cdot)}$:
+\begin{equation}
+\frac{Z_B}{Z_A} = E_{P_A} [\frac{P_B^*(x)}{P_A^*(x)}] \approx \frac{1}{M} \sum^M_{i=1} \frac{P_B^*(x_i)}{P_A^*(x_i)}
+\end{equation}
 \subsection{Algorisme seleccionat a implementar en codi}
 sickit-learn
 \newpage
