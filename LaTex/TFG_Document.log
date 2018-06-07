@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.5.8)  6 JUN 2018 19:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.5.8)  7 JUN 2018 19:36
 entering extended mode
 **./TFG_Document.tex
 (TFG_Document.tex
@@ -1631,34 +1631,165 @@ Underfull \hbox (badness 10000) in paragraph at lines 635--640
 
  []
 
-[36 <./Images/model.png>] [37] [38] [39] [40] (TFG_Document.aux) ) 
+[36 <./Images/model.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 642--645
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 647--667
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 647--667
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 647--667
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 647--667
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 647--667
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 647--667
+
+ []
+
+[37] [38]
+Underfull \hbox (badness 10000) in paragraph at lines 667--673
+
+ []
+
+
+Overfull \hbox (9.54073pt too wide) in paragraph at lines 667--673
+\OT1/cmr/m/n/12 Finalment nomes ens que-da ana-lit-zar la vi-su-a-lit-za-cio 
+di-rec-ta i ins-pec-cio de parametres.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 667--673
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 667--673
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 667--673
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 667--673
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 667--673
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 674--686
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 674--686
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 674--686
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 674--686
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 674--686
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 674--686
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 674--686
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 674--686
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 674--686
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 674--686
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 674--686
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 674--686
+
+ []
+
+[39] [40] [41] [42] [43] [44] (TFG_Document.aux) ) 
 Here is how much of TeX's memory you used:
- 15436 strings out of 493305
- 292167 string characters out of 3130238
+ 15437 strings out of 493305
+ 292182 string characters out of 3130238
  360403 words of memory out of 3000000
- 18630 multiletter control sequences out of 15000+200000
+ 18631 multiletter control sequences out of 15000+200000
  12044 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,9n,54p,735b,692s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/Mar
-c/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
-C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmex10.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmmi12.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Marc/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Marc/AppData/
-Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Mar
-c/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:
-/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-sy10.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmsy6.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Marc/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on TFG_Document.pdf (44 pages, 2655852 bytes).
+<C:/Users/Marc/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Marc/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/U
+sers/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi
+12.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmmi6.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmmi8.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Marc/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Marc/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Marc/AppD
+ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Use
+rs/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.
+pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmsy8.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmti12.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on TFG_Document.pdf (48 pages, 2667351 bytes).
 PDF statistics:
- 321 PDF objects out of 1000 (max. 8388607)
+ 333 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  93 words of extra memory for PDF output out of 10000 (max. 10000000)
 
