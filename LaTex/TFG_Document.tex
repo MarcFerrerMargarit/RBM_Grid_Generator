@@ -117,7 +117,7 @@ El machine learning ens permet entrenar una màquina per tal que aquesta sigui ca
 \\\
 El que volem obtenir és una combinació entre les dues parts per aconseguir la generació de noves imatges, amb objectes totalment correctes i cohesionats i diferents de les imatges utilitzades per entrenar la màquina.
 \\\
-Així doncs l'objectiu d'aquest projecte és crear una màquina que ens permeti, a partir de dades correctes, moodboards generats correctament, generar moodboards correctes sense la necessitat que una persona els hagi de generar, crear un sistema automatitzat per a reemplaçar una tasca lenta i mecànica que realitzen una série de persones.
+Així doncs l'objectiu d'aquest projecte és crear una màquina que ens permeti, a partir de dades correctes, moodboards generats correctament, generar moodboards correctes sense la necessitat que una persona els hagi de generar, crear un sistema automatitzat per a reemplaçar una tasca lenta i mecànica que realitzen una  de persones.
 \\\
 A part de crear aquest sistema, també s'analitzarà la seva eficiència, respecte al sistema no automatitzat o la generació de dades d'una forma aleatòria, així podrem establir si el sistema creat és prou eficaç, ràpid i precís a l'hora de realitzar, en aquest cas, nous moodboards.
 \\\
@@ -148,7 +148,7 @@ La tasca que volem substituir, més ben dit, millorar, evolucionar, és la tasca d
 Aquest procés pot ser molt lent i tediós, ja que buscar totes les imatges necessàries pot necessitar igual que col·locar-les correctament i editar-les per tal que totes s'ajuntin i formin una sola imatge.\\\
 Aquest procés se substituirà per un altre de més ràpid conservant alguns aspectes tot i que el procediment canviarà per tal que tot sigui més mecànic i més ràpid. \\\\
 Com hem dit anteriorment poden haver-hi moodboards de molts tipus, però per aquest projecte ens centrarem amb els moodboards d'interiorisme, és a dir, els que defineixen una estança d'una casa, un dormitori, un bany, una cuina, etc. A part de definir una estança també definiran un estil, cada moodboard pertanyerà a un estil determinat. Així, cada moodboard serà una combinació de mobles i objectes que junts representaran l'estil d'una zona de la casa.\\\\
-Un cop explicat tota la base de la qual partirem l'objectiu que ens proposem és crear un sistema automatitzat que ens permeti la generació automàtica de moodobards, sense la necessitat d'editar imatges, facilitant la cerca dels mobles i objectes necessaris que es necessiten per a cada zona i generant imatges d'una forma més ràpida i eficient.\\\\
+Un cop explicat tota la base de la qual partirem l'objectiu que ens proposem és crear un sistema automatitzat que ens permeti la generació automàtica de moodboards, sense la necessitat d'editar imatges, facilitant la cerca dels mobles i objectes necessaris que es necessiten per a cada zona i generant imatges d'una forma més ràpida i eficient.\\\\
 Per tal de poder crear aquest sistema utilitzarem tècniques de machine learning per tal de crear una màquina capaç d'aprendre i de generar a partir de les dades que ha après. D'aquesta forma podem estructurar el projecte amb dues parts essencials, una la generació de moodboards mitjançant eines, ja creades i que explicarem és endavant, per tal d'entrenar la màquina i la segona la creació d'una màquina capaç de llegir els moodboards creats anteriorment, aprendre com estan generats, és a dir, com es distribueixen els diferents elements a cada un ells i generar-ne de nous que siguin correctes.
 \\\\
 Com bé he mencionat, farem servir tècniques de machine learning, és a dir algorismes d'aprenentatge automàtic. \textbf{Però que entenem per aprenentatge automàtic?}\\\
@@ -223,7 +223,7 @@ Com hem comentat aquesta eina ha de tenir unes funcionalitats bàsiques i essenci
 Aquests noms i aquests valors s'han de poder modificar per si en algun moment s'ha classificat una casella incorrectament. Així doncs, l'eina ens ha de permetre modificar cada una de les caselles, tant la part visual com els valors que no es mostren que en permeten filtrar objectes.\\\
 \item Carregar objectes. Com hem mencionat repetidament necessitem objectes per a col·locar. Aquests objectes es troben a una base de dades i el que l'eina ha de fer és obtenir la informació d'aquests i mostrar-la en forma d'imatges per tal que l'usuari pugui col·locar-los correctament a la graella. Així doncs ha d'implementar un sistema de crides a servidor per obtenir les dades i transformar-les per tal que es mostrin correctament i s'emmagatzemi d'alguna forma la informació que posteriorment ens serà útil.\\\
 \item Filtrar objectes. El rang disponible d'objectes és molt ampli i el que no volem és que l'usuari es passi molt de temps buscant un objecte per a col·locar-lo a una casella. Per tant, el que es necessita és implementar un sistema de filtratge ràpid i fàcil de fer servir.\\\
-Per tal d'implementar aquest sistema utilitzarem els valors que amaguen les caselles que són els que ens indiquen aquells objectes que poden anar en ella. Així doncs cada cop que es vulgui col·locar un objecte a una casella només es mostraran aquells objectes que la base de dades retornarà aplicant el filtre amb els valors de la casella. D'aquesta forma aconseguim que l'usuari no s'hagi de trencar al cap buscant objectes i sempre coloqui objectes vàlids a cada casella. \\\
+Per tal d'implementar aquest sistema utilitzarem els valors que amaguen les caselles que són els que ens indiquen aquells objectes que poden anar en ella. Així doncs cada cop que es vulgui col·locar un objecte a una casella només es mostraran aquells objectes que la base de dades retornarà aplicant el filtre amb els valors de la casella. D'aquesta forma aconseguim que l'usuari no s'hagi de trencar al cap buscant objectes i sempre col·loqui objectes vàlids a cada casella. \\\
 A part també s'han de poder filtrar aquests objectes, els que ja han estat filtrats, segons cada valor de la casella, és a dir, ha d'haver-hi l'opció de mostrar tots els objectes disponibles de la casella o només els d'un tipus determinat de la casella, només utilitzant un valor de la casella.\\\
 \item Col·locar objectes. L'aplicació ha de permetre a l'usuari poder col·locar objectes a la graella. Així doncs, la mecànica és que pugui arrossegar la imatge de l'objecte a la graella. També ha de permetre que un cop col·locat l'objecte aquest es pugui treure i/o eliminar.
 \item Guardar graella. Com que el principal objectiu de l'aplicació és generar moodboards per després entrenar una màquina amb els moodboards generats, l'aplicació ens ha de permetre guardar d'alguna forma el moodboard generat amb tota la distribució d'objectes creada per l'usuari. El format d'aquestes dades que s'exportaran ha de ser l'adient per tal que la màquina pugui llegir-les.
@@ -256,7 +256,7 @@ La graella es pot emplenar del tot o deixar caselles buides. No hi ha cap restri
 Un cop ja hem explicat l'element principal de l'eina a continuació ens centrarem amb la zona 1, la zona dels objectes. Com hem dit, necessitem visualitzar els diferents objectes que es troben a la base de dades, així doncs necessitem una zona en la qual podem veure i filtrar els diferents objectes. \\\
 Només d'iniciar l'aplicació els objectes que es mostraran són tots els objectes disponibles que tenim, ja que no s'ha seleccionat cap cel·la en concret. El rang d'objectes que tenim és molt gran i cada objecte conté una imatge que l'aplicació ha de descarregar. Això ens presenta un problema important que haurem de gestionar d'una forma especial.\\\\ El problema que se'ns presenta és que no podem carregar tots els objectes amb les seves corresponents imatges, ja que aquesta càrrega trigaria molt i podria fer lent la tasca de generació de moodboards. \\\
 Per tal de solucionar aquest problema crearem un sistema de càrrega semblant als buscadors de les pàgines web, les imatges s'aniran carregant a mesura que es mogui la barra de desplaçament o s'utilitzi la rodeta del ratolí per baixar la barra. Aquest sistema ens permet una càrrega ràpida i fluida de les imatges sense la necessitat de carregar totes les imatges. Així doncs, en iniciar l'aplicació es mostraran un nombre finit d'imatges, aquest número dependrà de la mida de la finestra, ja que com més gran més imatges es mostraran al principi, i a mesura que es vagi desplaçant cap avall s'aniran carregant les següents imatges. \\\\
-També s'ha implementat que un cop la imatge s'ha descarregat no es torni a descarregar, es vol imitar el sistema de memòria caché pero en aquest cas les imatges es guarden internament en l'aplicació el que ens permet que un cop carregada una imatge ja no es tornarà a descarregar, conseqüentment, si s'han carregat tots els objectes amb les seves imatges, ja no es descarregaran més imatges i el filtratge d'objectes serà més ràpid. Aquesta informació desapareixerà un cop l'aplicació es tanqui. \\\\
+També s'ha implementat que un cop la imatge s'ha descarregat no es torni a descarregar, es vol imitar el sistema de memòria caché però en aquest cas les imatges es guarden internament en l'aplicació el que ens permet que un cop carregada una imatge ja no es tornarà a descarregar, conseqüentment, si s'han carregat tots els objectes amb les seves imatges, ja no es descarregaran més imatges i el filtratge d'objectes serà més ràpid. Aquesta informació desapareixerà un cop l'aplicació es tanqui. \\\\
 El filtratge d'objectes es realitzarà quan se seleccioni una cel·la. Les diferents opcions de filtratge es mostraran en el desplegable que es troba a la part superior. En tots els casos hi haurà una opció que serà el filtratge de totes les categories, és a dir, de tots els objectes que poden anar a la cel·la i les altres opcions seran per filtrar per categoria, per escurçar el rang d'objectes a col·locar. El sistema de càrrega d'imatges del filtratge és el mateix que s'ha explicat anteriorment, ja que si ja tenim imatges descarregades només les hem de mostrar i en cas contrari, les descarreguem i les guardem per posteriors usos. \\\\
 Tot el filtratge d'objectes s'obté mitjançant crides a la base de dades aplicant els filtres que té la cel·la. Un altre sistema seria, filtrar a partir de la llista d'objectes descarregats inicialment, però això pot suposar que en algun moment s'afegeixi o es modifiqui un objecte mentre s'està utilitzant l'aplicació i aquest no apareixeria en el filtratge per això utilitzem les crides a base de dades per obtenir la informació actualitzada. A continuació es mostra un exemple de com funciona el filtre un cop se selecciona una cel·la. Podem veure com la primera opció és la general, la que engloba les dues categories i després podem filtrar per cada una d'elles.
 \begin{figure}[h!]
@@ -275,7 +275,7 @@ Un cop ja explicades dues de les parts de l'eina, finalment explicarem la part s
 \end{figure}
 \\\\
 Seguint un ordre d'esquerra a dreta tenim en primer lloc dos botons que són els botons de desfer i refer. L'aplicació té implementat un sistema de gestió d'accions, és a dir, cada cop que es realitza una acció aquesta queda registrada a dins l'aplicació. Això el que ens permet és tenir un control sobre elles i en qualsevol moment saber quines accions s'han realitzat. \\\\
-A partir d'aquest sistema de gestió hem implementat un sistema de desfer i refer que desfà o torna a fer les accions que s'han realitzat. Això permet que si en un punt ens hem equivocat i volem tornar endarrere no tinguem problema o si s'ha guardat pero ens hem equivocat puguem tornar a un punt anterior per seguir endavant. \\\
+A partir d'aquest sistema de gestió hem implementat un sistema de desfer i refer que desfà o torna a fer les accions que s'han realitzat. Això permet que si en un punt ens hem equivocat i volem tornar endarrere no tinguem problema o si s'ha guardat però ens hem equivocat puguem tornar a un punt anterior per seguir endavant. \\\
 Aquest sistema guarda totes les accions que es realitza l'usuari amb el ratolí. Aquestes dues icones s'aniran il·luminant a mesura que sigui possible realitzar les accions, és a dir, si no es pot retrocedir o no es pot refer, no es podrà interactuar amb el botó, així s'evita que es realitzin accions no permeses. \\\\
 Cada cop que es reinicia l'aplicació és reseteja el sistema i es netegen les accions, quan es guarda un moodboard definitiu també es netegen tot i que es pot seguir realitzant accions que seran afegides al sistema com a noves accions, és a dir, com si es tornés a crear el sistema de gestió. Això permet indicar a l'usuari que ha guardat el que ha realitzat i que a partir d'aquest punt tot el que realitzi serà un nou moodboard.\\\\
 Després dels botons de desfer i refer tenim el nom del moodboard. Aquí és on ens apareixerà el nom del moodboard que estem generant. En el desplegable també ens apareixerà el nom dels moodboards anteriors que hem creat. Seleccionar un nom d'un moodboard que ja hem creat ens permet crear un nou moodboard amb el mateix o carregar-ne un de nou per a visualitzar-lo. \\\\
@@ -290,7 +290,7 @@ El tipus es refereix a la distribució d'attrezzo, és a dir, la distribució d'obj
 \\\\
 A continuació segueix el botó per a carregar moodboards ja creats. Això ens permet visualitzar moodboards creats prèviament. Per tal de poder carregar un moodboard correctament s'ha de seleccionar un moodboard. Per fer-ho només cal obrir el desplegable i seleccionar el nom del moodboard desitjat. Si no se selecciona cap nom, la icona no estarà activa, ja que seleccionar un nom és un requisit indispensable per tal de fer la càrrega correctament. \\\\
 Un cop es premi el botó apareixeran els objectes a la graella segons la distribució del moodboard carregat. L'aparició dels objectes pot ser una mica lenta, ja que per a cada casella ha de buscar l'objecte que hi ha d'anar i si aquest no té imatge descarregar-la. Aquest procés pot ser lent, però si tenim en compte que prèviament s'han carregat totes les imatges de tots els objectes, la col·locació d'aquest ha de ser ràpida. \\\\
-Com hem dit anteriorment, un moodboard pot contenir diferents distribucions d'objectes, així doncs, en carregar aquest moodboard també hem de poder visualitzar totes les distribucions disponibles. Els dos botons del costat del botó de carregar moodboards ens permetran mostrar les diferents distribucions que té el moodboard. Només de carregar el moodbard es mostrarà la primera distribució de totes. \\\
+Com hem dit anteriorment, un moodboard pot contenir diferents distribucions d'objectes, així doncs, en carregar aquest moodboard també hem de poder visualitzar totes les distribucions disponibles. Els dos botons del costat del botó de carregar moodboards ens permetran mostrar les diferents distribucions que té el moodboard. Només de carregar el moodboard es mostrarà la primera distribució de totes. \\\
 Si només es disposa d'una distribució, els dos botons es trobaran inactius mentre que si hi ha més d'una distribució els botons s'aniran activant per permetre l'avanç o el retrocés de les distribucions. En qualsevol dels casos, les distribucions si per algun motiu està malament o s'han de modificar és poder canviar els objectes que les formen. En cas de modificació, la distribució es guardarà segons el nom escollit, si es dóna el cas que és el mateix nom, s'afegirà a la distribució corresponen i aquesta podrà ser carregada i visualitzada més endavant.
 \\\\
 Seguidament ens trobem amb el botó de generació de PDF. Aquest botó ens permetrà generar un PDF del moodboard actual en el qual apareixerà una captura de la graella amb els elements, amb el nom del moodboard i a continuació a cada una de les pàgines del fitxer, cada objecte amb la seva informació corresponent. \\\\
@@ -306,7 +306,7 @@ En aquest punt explicarem els passos a seguir per crear un moodboard correctamen
 \item \textbf{Categoritzar la graella.} En cas que la graella estigui buida categoritzar-la per tal de fer el filtratge d'objectes correctament.
 \item \textbf{Escollir un nom o afegir-ne un de nou.} Escollir un nom pel moodboard per tal de poder guardar i generar el PDF en qualsevol moment.
 \item \textbf{Emplenar graella.} Emplenar la graella amb els objectes necessaris fins a obtenir un moodboard correcte. Utilitzar les funcions de filtratge per tal de poder col·locar els objectes amb més precisió i més eficaçment.
-\item \textbf{Guardar moodbaord.} Un cop s'hagi acabat d'emplenar el moodboard guardar el moodboard correctament per tal de no perdre els canvis realitzats.
+\item \textbf{Guardar moodboard.} Un cop s'hagi acabat d'emplenar el moodboard guardar el moodboard correctament per tal de no perdre els canvis realitzats.
 \item \textbf{Generar PDF.} Un cop guardat el moodboard guardar el PDF per tenir una referència i una visualització ràpida del moodboard generat.
 \end{enumerate}
 A continuació es mostra un esquema de seqüència dels passos a realitzar de completar els passos anteriors. \\\\
@@ -320,8 +320,8 @@ A continuació es mostra un esquema de seqüència dels passos a realitzar de compl
 \newpage
 \section{Desenvolupament del Machine Learning}
 https://blog.adext.com/es/machine-learning-guia-completa
-resum del machine learning, l'estat acutal i les seves utilitats\\\\
-La part més important de projecte no és el desenvolupament de l'eina i el seu funcionament, sinó que és la part del algorisme. L'algorisme és el que ens permetrà generar automàticament moodboards un cop aquest s'hagi entrenat i és el que ens permetrá, que la genereació de moodboards sigui ràpida i automàtica.\\\\
+resum del machine learning, l'estat actual i les seves utilitats\\\\
+La part més important de projecte no és el desenvolupament de l'eina i el seu funcionament, sinó que és la part del algorisme. L'algorisme és el que ens permetrà generar automàticament moodboards un cop aquest s'hagi entrenat i és el que ens permetrá, que la generació de moodboards sigui ràpida i automàtica.\\\\
 Així doncs, a continuació explicarem en què es basa l'algorisme que realitzarem, explicant una mica d'introducció i història per posar en context. També explicarem els diferents tipus i quin d'ells s'ha escollit i com s'ha desenvolupat.
 \subsection{Introducció i antecedents}
 Parlar avui d'Intel·ligència Artificial no és una novetat. Ni per a la gent ni per a les empreses o governs.\\\
@@ -338,9 +338,9 @@ Com vam establir prèviament, és un camp de les ciències de la computació que, d'
 \\\\
 Si aquesta definició va resultar molt trivial, posem-d'aquesta manera: és la idea que hi ha algoritmes que poden donar-te troballes o conclusions rellevants obtingudes d'un conjunt de dades, sense que l'ésser humà hagi d'escriure instruccions o codis per això.
 \\\
-D'acord, però ¿què és un algoritme? Doncs no és altra cosa que una seqüència o sèrie d'instruccions, que representen la solució a un determinat problema
+D'acord, però ¿què és un algoritme? Doncs no és altra cosa que una seqüència o sèrie d'instruccions, que representen la solució a un determinat problema.
 \\\\
-El propòsit del machine learning és que les persones i les màquines treballin de la mà, a l'aquestes ser capaços d'aprendre com un humà ho faria. Precisament això és el que fan els algoritmes, permeten que les màquines executin tasques, tant generals com específiques.
+El propòsit del machine learning és que les persones i les màquines treballin de la mà, aquestes màquines han de ser capaços d'aprendre com un humà ho faria. Precisament això és el que fan els algoritmes, permeten que les màquines executin tasques, tant generals com específiques.
 Si bé al principi les seves funcions eren bàsiques i es limitaven a filtrar emails, avui dia pot fer coses tan complexes com prediccions de trànsit en interseccions molt transitades, detectar càncer, mapejar llocs per generar projectes de construcció en temps real, i fins i tot, definir la compatibilitat entre dues persones.\\\
 El principal objectiu de tot aprenent (learner) és desenvolupar la capacitat de generalitzar i associar. Quan traduïm això a una màquina o ordinador, significa que aquestes haurien de poder exercir-se amb precisió i exactitud, tant en tasques familiars, com en activitats noves o imprevistes.
 \\\\
@@ -379,18 +379,18 @@ Si bé és cert que aquesta enorme quantitat de dades la tornarà molt més eficient
 \\\\
 El que significa que perquè el machine learning es desenvolupi en aquestes àrees, els experts en cada camp de treball hauran de trobar el temps per entrenar a les màquines i anar incorporant paulatinament a cada un dels processos que desitgin afinar.
 \\\\
-Finalment, com succeeix amb totes les tecnologies, els negocis hauran de començar per entendre els principis bàsics d'aquesta tecnologia, per poder usar-la a favor seu. També s'estima que aquesta -com molts altres derivats de la IA- transformarà per complet el món com el coneixem ...
+Finalment, com succeeix amb totes les tecnologies, els negocis hauran de començar per entendre els principis bàsics d'aquesta tecnologia, per poder usar-la a favor seu. També s'estima que aquesta -com molts altres derivats de la IA- transformarà per complet el món com el coneixem.
 \\\\
 Com podem observar això només reflecteix una petita introducció al intricat món del machine learning. En una època on emergeixen tecnologies innovadores cada vegada que parpellegem, és fàcil perdre en l'allau d'informació i nous conceptes.
 \newpage
 \subsection{Tipus d'algoritmes}
-Dintre del conjunt del Machine Learning poder distinguir entre diferents tipus que ens definiran diferents tipus d'algoritmes a aplicar durant el desenvolupament d'una màquina. Els principals tipus són els següents:
+Dintre del conjunt del Machine Learning poder distingir entre diferents tipus que ens definiran diferents tipus d'algoritmes a aplicar durant el desenvolupament d'una màquina. Els principals tipus són els següents:
 \begin{itemize}
 \item Aprenentatge supervisat
 \item Aprenentatge no supervisat
 \item Aprenentatge per reforç
 \end{itemize}
-A continuació s'anilitzarà en profunditat cada un dels tipus anteriors. Seguidament mostra una imatge resum dels diferents tipus i un exemple de cada un. 
+A continuació s'analitzarà en profunditat cada un dels tipus anteriors. Seguidament mostra una imatge resum dels diferents tipus i un exemple de cada un. 
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=\textwidth]{typesML}
@@ -425,7 +425,7 @@ Alguns dels més freqüents en aprenentatge supervisat:
 \subsubsection{Aprenentatge no supervisat}
 L'aprenentatge no supervisat té lloc quan no es disposa de dades etiquetades per a l'entrenament. Només coneixem les dades d'entrada, però no existeixen dades de sortida que corresponguin a un determinat input. Per tant, només podem descriure l'estructura de les dades, per intentar trobar algun tipus d'organització que simplifiqui l'anàlisi. Per això, tenen un caràcter exploratori.
 \\\\
-Per exemple, les tasques de clustering, busquen agrupaments basats en similituds, però gens garanteix que aquestes tinguin algun significat o utilitat. A vegades, en explorar les dades sense un objectiu definit, es poden trobar correlacions espúreas curioses, però poc pràctiques. Per exemple, en la gràfica inferior, publicada a la web de Tyler Vigen Spurious Correlations, podem apreciar una forta correlació entre el consum per càpita de pollastre als Estats Units i les seves importacions de petroli.\\\\
+Per exemple, les tasques de clustering, busquen agrupaments basats en similituds, però gens garanteix que aquestes tinguin algun significat o utilitat. A vegades, en explorar les dades sense un objectiu definit, es poden trobar correlacions esporàdiques curioses, però poc pràctiques. Per exemple, en la gràfica inferior, publicada a la web de Tyler Vigen Spurious Correlations, podem apreciar una forta correlació entre el consum per càpita de pollastre als Estats Units i les seves importacions de petroli.\\\\
 L'aprenentatge no supervisat se sol usar en problemes de clustering, agrupaments de co-ocurrència i profiling. Si embargament, els problemes que impliquen tasques de trobar similitud, predicció d'enllaços o reducció de dades, poden ser supervisats o no.
 \\\\
 Els tipus d'algorisme més habituals en aprenentatge no supervisat són:
@@ -494,7 +494,7 @@ Tenim diferents tipus d'algoritmes generatius. Els més coneguts són els següents
 Després d'investigar entre totes les diferents opcions, vam arribar a la conclusió que la millor opció era utilitzar una Màquina de Boltzmann Restrictiva (RBM) que ens permetria generar graelles a partir de les graelles ja generades anteriorment. Aquest tipus de màquina té algunes restriccions a l'hora d'entrar les dades, ja que han de seguir un format específic, a continuació explicarem com funciona aquest tipus d'algoritme i les seves característiques.
 \newpage
 \section{Màquina de Boltzmann(BM) i Màquina de Boltzmann Restrictiva (RBM)}
-explicaicó rbm
+explicació rbm
 funcionament
 https://deeplearning4j.org/restrictedboltzmannmachine
 http://deeplearning.net/tutorial/rbm.html
@@ -558,7 +558,7 @@ Un mètode obvi per evitar la computació de la constant de normalització és utili
 El mostreig de Gibbs es pot implementar fàcilment perquè la distribució condicional de l'estat d'una sola neurona a BM donada als estats de totes les altres neurones ve donada per (3.2). Una descripció senzilla sobre com realitzar el mostreig de Gibbs amb BM es descriu en Algorisme 1. \\\\
 Aquest enfocament pot reduir considerablement la càrrega computacional de les regles d'actualització de gradients. Si s'assumeix que la quantitat de mostres necessàries per explicar la distribució de probabilitat de tot l'espai estatal és prou menor que la mida de l'espai estatal, és a dir, el nombre de totes les combinacions possibles dels estats de les neurones, l'aprenentatge de BM ja no és computacional inviable.\\\\
 Tanmateix, també existeixen altres tipus de limitacions en l'ús del mostreig de Gibbs per a la formació de BM. El major problema es deu a la connectivitat completa de BM. Atès que cada neurona està connectada i influïda per totes les altres neurones, es necessiten tants passos com la quantitat de neurones per obtenir una mostra de l'estat de BM. Fins i tot quan les neurones visibles es mantenen subjectes a les dades de formació, el nombre de passos necessaris per a una sola mostra fresca encara és almenys el nombre de neurones ocultes. Això fa que les mostres successives de la cadena estiguin altament correlacionades entre elles i aquesta pobra barreja afecta el rendiment de l'aprenentatge. \\\\
-Una altra limitació d'aquest enfocament és que les distribucions multimodals són problemàtiques per al mostreig de Gibbs (Salakhutdinov, 2009b): a causa de la naturalesa del mostreig de components, les mostres poden perdre alguns modes de distribució.
+Una altra limitació d'aquest enfocament és que les distribucions multi modals són problemàtiques per al mostreig de Gibbs (Salakhutdinov, 2009b): a causa de la naturalesa del mostreig de components, les mostres poden perdre alguns modes de distribució.
 \subsection{Màquina de Boltzmann Restrictiva}
 Per superar les limitacions pràctiques imposades a la màquina general Boltzmann com el problema del mostreig ineficient, Smolensky (1986) ha proposat una versió estructuralment restringida de la màquina Boltzmann anomenada Restringit Boltzmann Machine (RBM). RBM es construeix eliminant les connexions laterals entre les neurones visibles i les neurones ocultes. Per tant, una neurona visible només tindria vores connectades a les neurones ocultes, i una neurona oculta només tindria vores connectades a les neurones visibles. Ara, l'estructura de RBM es pot dividir en dues capes amb vores interconnectats. La relació entre BM i RBM s'il·lustra a la figura 13. 
 \begin{figure}[h!]
@@ -569,7 +569,7 @@ Per superar les limitacions pràctiques imposades a la màquina general Boltzmann 
 \end{figure}
 \\\\
 Tot i que la restricció imposada podria suggerir que el poder de representació podria haver estat reduït, Le Roux and Bengio (2008) va demostrar que RBM és un aproximador universal que pot modelar qualsevol distribució de probabilitat discreta (Le Roux and Bengio, 2008).\\\\
-A causa d'aquesta restricció, l'energia i la probabilitat de l'estat han de ser modificadess en conseqüència a la següents fórmules:
+A causa d'aquesta restricció, l'energia i la probabilitat de l'estat han de ser modificades en conseqüència a la següents fórmules:
 \begin{equation}
 \begin{array}{l}
 E(v,h|\theta) = -v^TWh-b^Tv-c^Th \\\\
@@ -581,9 +581,9 @@ Atès que cada neurona oculta és independent una de l'altra donada totes les neur
 \begin{equation}
 P(v|\theta) = \frac{1}{Z(\theta)}exp(b^tv)\prod_{j=1}^{n_h}(1 + exp(c_j + \sum_{i=1}^{n_v}w_{ij}v_i))
 \end{equation}
-on ${n_v}$ i ${n_h}$ són el número de neurones visibles i invisbles respectivament.\\\\
+on ${n_v}$ i ${n_h}$ són el número de neurones visibles i invisibles respectivament.\\\\
 \subsubsection{Entrenament Màquina de Boltzmann Restrictiva}
-D'aquesta forma les regles d'aprenentages d'un RBM passen a ser:
+D'aquesta forma les regles d'aprenentatge d'un RBM passen a ser:
 \begin{equation}
 w_{ij}\leftarrow w_{ij} + \eta_w[\langle v_i h_j\rangle_d - \langle v_i h_j \rangle_m]
 \end{equation}
@@ -649,29 +649,40 @@ on els índexs ${i}$ i ${j}$ passen per totes les neurones visibles i ocultes, re
 Mitjançant la computació del producte de les proporcions estimades de les constants de normalització intermèdia i ${Z_0}$, es pot estimar la constant de normalització del RBM objectiu. L'algoritme que implementa AIS es descriu en Algorisme 2.\\\\
 L'algoritme presentat descriu la construcció de RBM intermedis seguint el que va proposar Salakhutdinov (2009a). La distribució base està representada per RBM amb pesos nuls, però els biaixos són idèntics als del RBM objectiu. No obstant això, cal tenir en compte que hi ha altres possibilitats per construir distribucions intermèdies i triar una distribució bàsica. Per exemple, en els capítols següents, la distribució base és un RBM amb dos pesos zero i biaixos zero, de manera que no cal que cada RBM intermedi mantingui el doble de neurones ocultes que el RBM objectiu.
 \begin{algorithm}
-\caption{ Passos de mostreig de Gibbs per al BM general}
+\caption{ Estimació de la normalització constant per mostreig d'importància recomenada}
 \begin{algorithmic} 
-\STATE Dibuixa $x_0$ uniformement des de l'espai de l'estat.
-\REPEAT 
-\FOR{$i = 1 ... d$} \STATE {Mostreig $x_i$ fent l'equació (3.2)} \ENDFOR 
-\UNTIL{que es reculli el nombre suficient de mostres, o el mostreig de Gibbs hagi arribat a l'equilibri.}
+\STATE Crear una seqüència de temperatures ${T_k}$ tal que ${0 = T_0 < T_1 < \cdot \cdot \cdot < T_K = 1}$\\
+Crear un RBM base, ${R_0}$ amb paràmetres ${\theta_0 = (W_0,b,c)}$, on ${W_0 = 0}$ \\
+Crear una seqüència de RBMs intermedis ${R_k}$ tal que
+\begin{itemize}
+\item Té el doble de nodes ocults que el RBM objectiu té
+\item Els seus paràmetres són ${\theta_k = ([(1-T_k)W_0 T_k W],[(1-T_{k}) b_0 T_k b],[(1-T_k)c_{0}^{T} T_kc^T]^T)}$
+\end{itemize}
+\FOR{$m = 1 \cdot \cdot \cdot M$} 
+\STATE {Obté ${x_1}$ de ${R_0}$} 
+\FOR{$k= 1 \cdot\cdot \cdot K-1$}
+\STATE {Mostreja ${x_{k+1}}$ de ${R_k}$ mitjançant un mostreig de Gibbs d'un pas a partir de ${x_k}$.}
+\ENDFOR \\
+Estableix ${u_m = \prod_{k = 1}^K \frac{P_k^\ast (x_k)}{P_{k-1}^\ast (x_k)}}$, on ${P_k^\ast (\cdot)}$ és una funció de distribució marginal no normalitzada de ${R_k}$.
+\ENDFOR \\
+La estimació de ${\frac{Z_K}{Z_0}}$ és ${\frac{1}{M} \sum_{m=1}^M u_m}$.
 \end{algorithmic}
 \end{algorithm}
 \\\
-Després d'anlitzar la primera forma ara en centrarem en la precisió de classificació i altres mesures de la màquina per a la seva avaluació.\\\\
+Després d'analitzar la primera forma ara en centrarem en la precisió de classificació i altres mesures de la màquina per a la seva avaluació.\\\\
 És evident a partir dels treballs de recerca esmentats anteriorment utilitzant xarxes neurals profundes construïdes a partir de la pila de RBMs (Salakhutdinov, 2009b; Hinton and Salakhutdinov, 2006) que les probabilitats d'activació ocultes de RBM entrenades en el conjunt de dades podrien millorar la precisió de classificació en comparació amb classificar el conjunt de dades basat en les seves funcions en brut. Tanmateix, aquests enfocaments solen requerir l'afinació discriminativa que destrueix la generativitat de RBM.\\\\
 Afortunadament, els documents recents suggereixen que les probabilitats d'activació oculta de RBM que es van entrenar sense supervisió també ajuden a la tasca de classificació. Krizhevsky (2009) va utilitzar amb èxit un Gauss-Bernoulli RBM per extreure característiques d'imatges que ajuden a obtenir una alta precisió de classificació. A més, es va demostrar que les formes més sofisticades de RBM introduïdes recentment (Ranzato and Hinton, 2010; Ranzato et al., 2010; Osindero and Hinton, 2008) van poder extreure característiques que són més útils per a la tasca de classificació.\\\\
 A més, Coates et al. (2010) va mostrar que les característiques extretes pels models probabilístics apreses d'una manera no supervisada superen les contraparts supervisades, com ara xarxes neuronals convolucionals (LeCun et al., 1998) i la xarxa de conviccions profundes (Krizhevsky, 2010).
 Per tant, és convenient utilitzar la precisió de classificació del RBM format com a mesura de rendiment.\\\\
-Addicionalment, gràcies a la seva estructura bipartita i al mostreig de Gibbs capaç, l'error de reconstrucció també es pot utilitzar com a mesura per a l'avaluació del rendiment (Hinton, 2010). Es defineix un error de reconstrucció
+Addicionalment, gràcies a la seva estructura bipartida i al mostreig de Gibbs capaç, l'error de reconstrucció també es pot utilitzar com a mesura per a l'avaluació del rendiment (Hinton, 2010). Es defineix un error de reconstrucció
 \[\mathcal{E}(X) = \parallel x-x_1 \parallel_2\]
 Tanmateix, aquestes mesures no reflecteixen directament la veritable qualitat de RBM, ja que l'entrenament no maximitza ni minimitza cap d'aquestes mesures. Per tant, per a la resta d'aquesta tesi, els experiments valoren principalment el RBM format per la probabilitat del model i les probabilitats de les mostres de prova donades el model.\\\\
-Finalment només ens queda analitzar la visualització directa i inspecció de paràmetres. Una manera d'analitzar la qualitat d'un model entrenat és mirar les característiques (les ponderacions ${w_{ij}}$) i els termes de polarització cj corresponents a diferents neurones ocultes de la RBM modelada. Especialment ajuda quan es formen mostres de dades consisteixen en imatges que es poden visualitzar fàcilment.\\\\
+Finalment només ens queda analitzar la visualització directa i inspecció de paràmetres. Una manera d'analitzar la qualitat d'un model entrenat és mirar les característiques (les ponderacions ${w_{ij}}$) i els termes de polarització ${c_j}$ corresponents a diferents neurones ocultes de la RBM modelada. Especialment ajuda quan es formen mostres de dades consisteixen en imatges que es poden visualitzar fàcilment.\\\\
 Per exemple, es poden visualitzar funcions de RBM formats en dígits manuscrits. Cada característica o filtre s'assembla a una part de dígits o una combinació de parts de dígits. Quan l'aprenentatge falla, és fàcil observar característiques degenerades que són sorolloses funcions globals.\\\\
 En cas de biaixos ocults, els valors mateixos suggereixen si cada neurona oculta contribueix a la capacitat de modelització de RBM. Les neurones que tenen un gran biaix cj són la major part del temps actiu, i no són molt útils, ja que els pesos associats a ells es poden incorporar al biaix b. D'altra banda, les neurones ocultes que són majoritàriament inactives (p.Ex., Amb grans biaixos negatius ${c_j}$) o les activacions dels quals són independents de les dades també són inútils, ja que la capacitat d'aprenentatge de la RBM no canvia encara que s'eliminin.\\\\
 Igual que altres mesures indirectes presentades anteriorment, la visualització i la inspecció dels valors dels paràmetres s'haurien de realitzar acuradament. No hi ha cap mesura objectiva per la qualitat de les funcions visualitzades, i les característiques visualitzades i els valors dels biaixos poden evolucionar lentament a través de l'entrenament.\\\\
 \subsubsection{Dificultats i solucions convencionals}
-El fet que la funció de destinació no es pugui calcular exactament durant l'aprenentatge dificulta l'entrenament de les RBM. És computacional infeasible de saber quan l'aprenentatge ha convergit, o fins i tot no és fàcil dir si l'aprenentatge està passant realment. A més, no és possible utilitzar cap mètode de degradat avançat com el gradient de conjugat no lineal.\\\\
+El fet que la funció de destinació no es pugui calcular exactament durant l'aprenentatge dificulta l'entrenament de les RBM. És computacional inviable de saber quan l'aprenentatge ha convergit, o fins i tot no és fàcil dir si l'aprenentatge està passant realment. A més, no és possible utilitzar cap mètode de degradat avançat com el gradient de conjugat no lineal.\\\\
 Atès que l'aprenentatge es realitza utilitzant actualitzacions de gradients estocàstics, convergeix a una solució local.\\\\
 El problema és que no és factible comparar les diferents solucions analíticament, i triar el millor d'entre elles. Schulz et al. (2010) i Fischer and Igel (2010) han mostrat recentment que, depenent de la inicialització i els paràmetres d'aprenentatge, els RBM resultants varien molt, fins i tot en els petits conjunts de dades de joguines.\\\\
 Més problemàticament, els enfocaments més aproximats presentats en els apartats anteriors s'han demostrat que difereixen, si els paràmetres d'aprenentatge no s'han triat de manera adequada. L'ús d'un millor mètode de mostreig MCMC, p. Ex. el temperament paral·lel s'ha demostrat que evita millor el comportament divergent, però a llarg termini sense utilitzar la programació de tarifes d'aprenentatge apropiada, la probabilitat del registre fluctua molt (Desjardins et al., 2010b, 2009), cosa que no és desitjable.\\\\
@@ -682,9 +693,26 @@ Idealment, cada neurona oculta hauria de representar una característica "signifi
 Es van obtenir RBM amb 36 neurones ocultes en 1-MNIST, que és un conjunt de dades molt dens en comparació amb el MNIST original.
 18 neurones ocultes no van poder aprendre cap característica útil, i són majoritàriament inactives.\\\\
 Les altres 18 neurones són, en la seva majoria, actives i, tal com s'esperava, s'han après unes característiques globals que s'assemblen una mica al biaix visible.\\\\
-Fins i tot quan les dades de formació no són denses, amb la petita quantitat de neurones ocultades, l'elecció inapropiada dels paràmetres d'aprenentatge i l'elecció inapropiada d'inicialització dels paràmetres, moltes neurones ocultes seran inútils. La visualització dels filtres apresos per RBM amb 36 neurones ocultes entrenades a MNIST amb la taxa d'aprenentatge constant 0.1 i els pesos inicials mostrats de la distribució uniforme entre -1 i 1 són. No obstant això, encara existeixen aquestes neurones que són majoritàriament actives o majoritàriament inactives.\\\\
+Fins i tot quan les dades de formació no són denses, amb la petita quantitat de neurones ocultades, l'elecció inapropiada dels paràmetres d'aprenentatge i l'elecció inapropiada d'inicialització dels paràmetres, moltes neurones ocultes seran inútils. La visualització dels filtres apresos per RBM amb 36 neurones ocultes entrenades a MNIST amb la taxa d'aprenentatge constant 0.1 i els pesos inicials mostrats de la distribució uniforme entre -1 i 1 són. No obstant això, encara existeixen aquestes neurones que són majoritàriament actives o majoritàriament inactives.
 \subsection{Algorisme seleccionat a implementar en codi}
-sickit-learn
+Un cop ja sabem quin algorisme hem d'utilitzar per tal de poder desenvolupar el nostre problema, ara hem de decidir com serà implementat, és a dir, si crearem nosaltres l'algorisme des de zero o utilitzarem alguna llibreria o algorisme ja conegut. \\\\
+En aquest cas i després de fer molta investigació, en primer lloc es va decidir utilitzar el llenguatge de programació Python per tal de desenvolupar les parts essencials de l'algorisme. Python ens ofereix una gran quantitat de recursos per al machine learning i actualment juntament amb Scala són els principals llenguatges utilitzats per al desenvolupament de màquines.\\\
+Així doncs un cop escollit el llenguat ara falta decidir si implementar un RBM des de 0 o utilitzar alguna llibreria que ens permetés usar una implementació ja desenvolupada. \\\\
+Crear una màquina de zero suposa un gran esforç i treball i pot suposar que la màquina no estigui ben dissenyada o que els algorismes aplicats i fórmules siguin incorrectes. Així doncs es va decidir utilitzar una llibreria la qual ens permetia tenir un RBM ben creat i amb les característiques que buscàvem. La màquina que es va decidir utilitzar seria de la llibreria \textit{sklearn} la qual ens proporcionaria una màquina RBM anomenada \textit{BernoulliRBM.} \\\\
+Aquesta màquina es tracta d'una màquina de Boltzmann Restrictivaamb unitats visibles binàries i unitats ocultes binàries. Els paràmetres es calculen utilitzant la Probabilitat màxima estocàstica (SML), també coneguda com Persistent Contrastive Divergence (PCD). La complexitat del temps d'aquesta implementació és de ${O(d ** 2)}$ si assumim que el nombre de features és igual al nombre de components.\\\\
+A més aquesta implementació ens permet utilitzar diferents mètodes i funcions per tal d'obtenir resultats i/o entrenar la màquina. Aquest són els mètodes i funcions principals d'aquesta implementació:
+\begin{itemize}
+\item ${fit (X[,y])}$: ens permet entrenar la màquina a partir de les dades X.
+\item ${fit_transform (X[,y])}$: ens permet entrenar la màquina a partir de les dades X i després transformar-la.
+\item ${get_params([deep])}$: obtenim els paràmetres del model que hem generat.
+\item ${gibbs(v)}$: s'executa un mostreig de Gibbs.
+\item ${partial_fit(X[,y])}$: ens permet entrenar la màquina a partir de les dades X que han de contenir una part segmentada de les dades.
+\item ${score_samples(X)}$: computació de la probabilitat de X.
+\item ${set_params(**params)}$: estableix els paràmetres del model.
+\item ${transform(X)}$: computació de les probabilitats d'activació de la capa oculta.
+\end{itemize}
+Un exemple del ús d'aquesta màquina es troba en l'obtenció de features per la classificació de dígits.\\\\
+Un cop tenim la implementació que usarem ara només ens queda preparar les dades per la entrada a la màquina.
 \newpage
 \section{Desenvolupament de l'algoritme aplicat al problema}
 com aplicarem l'algorisem en el projecte. Com seran les dades.
