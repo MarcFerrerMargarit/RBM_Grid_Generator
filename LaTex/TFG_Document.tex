@@ -703,16 +703,37 @@ Aquesta màquina es tracta d'una màquina de Boltzmann Restrictivaamb unitats visi
 A més aquesta implementació ens permet utilitzar diferents mètodes i funcions per tal d'obtenir resultats i/o entrenar la màquina. Aquest són els mètodes i funcions principals d'aquesta implementació:
 \begin{itemize}
 \item ${fit (X[,y])}$: ens permet entrenar la màquina a partir de les dades X.
-\item ${fit_transform (X[,y])}$: ens permet entrenar la màquina a partir de les dades X i després transformar-la.
-\item ${get_params([deep])}$: obtenim els paràmetres del model que hem generat.
+\item ${fit\_transform (X[,y])}$: ens permet entrenar la màquina a partir de les dades X i després transformar-la.
+\item ${get\_params([deep])}$: obtenim els paràmetres del model que hem generat.
 \item ${gibbs(v)}$: s'executa un mostreig de Gibbs.
-\item ${partial_fit(X[,y])}$: ens permet entrenar la màquina a partir de les dades X que han de contenir una part segmentada de les dades.
-\item ${score_samples(X)}$: computació de la probabilitat de X.
-\item ${set_params(**params)}$: estableix els paràmetres del model.
+\item ${partial\_fit(X[,y])}$: ens permet entrenar la màquina a partir de les dades X que han de contenir una part segmentada de les dades.
+\item ${score\_samples(X)}$: computació de la probabilitat de X.
+\item ${set\_params(**params)}$: estableix els paràmetres del model.
 \item ${transform(X)}$: computació de les probabilitats d'activació de la capa oculta.
 \end{itemize}
-Un exemple del ús d'aquesta màquina es troba en l'obtenció de features per la classificació de dígits.\\\\
-Un cop tenim la implementació que usarem ara només ens queda preparar les dades per la entrada a la màquina.
+Un exemple del ús d'aquesta màquina es troba en l'obtenció de features per la classificació de dígits. A continuació mostrarem un exemple de la creació d'un RBM utilitzant les funcions mencionades anteriorment.\\\
+\begin{lstlisting}[language=Python]
+import numpy as np
+from sklearn.neural_network import BernoulliRBM
+X = np.array([[0, 0, 0], [0, 1, 1], [1, 0, 1], [1, 1, 1]])
+model = BernoulliRBM(n_components=2)
+model.fit(X)
+#Sortida del resultat per la consola
+BernoulliRBM(batch_size=10, learning_rate=0.1, n_components=2, n_iter=10,
+       random_state=None, verbose=0)
+\end{lstlisting}
+Com podem observar creem una llista de diferents elements els quals tots aquests són binaris, ja que la màquina només pot rebre entrades binàries. A continuació creem la màquina i li assignem el nombre de components i l'entrenem amb les dades d'entrada. A partir d'aquí podríem aplicar els altres mètodes per obtenir resultats o analitzar el seu funcionament.\\\
+Com podem observar al crear la màquina podem passar-li, especificar-li alguns paràmetres d'entrada. Aquests, definiran el seu comportament. Aquests paràmetres són els següents:
+\begin{itemize}
+\item \textit{n\_components}: Estableix el nombre de unitats binàries ocultes.
+\item \textit{learning\_rate}: La velocitat d'aprenentatge de les actualitzacions de pes. Es recomana sintonitzar aquest hiperparametre. Els valors raonables es troben en el rang de 10 ** [0., -3.].
+\item \textit{batch\_size}: Nombre d'exemples per minibatch.
+\item \textit{n\_iter}: Nombre d'iteracions sobre el conjunt de dades de formació que es realitzarà durant la formació.
+\item \textit{verbose}: El nivell de verbositat. El valor predeterminat, zero, significa el mode silenciós.
+\item \textit{random\_state}:Una instància de generador de números aleatoris per definir l'estat del generador de permutacions aleatòries. Si es dóna un enter, corregeix la llavor. Valors predeterminats del generador de nombres aleatoris global de \textit{numpy}.
+\end{itemize}
+Aquests paràmetres no són obligatoris, es pot crear una màquina sense la necessitat de definir tots els paràmetres. En cas de no definir-ne cap, s'aplicaran els valors predeterminats.\\\\
+Un cop tenim la implementació que usarem ara només ens queda preparar les dades per la entrada a la màquina. En els següents apartats anirem explicant el desenvolupament de la màquina creada sobre les dades que li proporcionem i el seu funcionament.
 \newpage
 \section{Desenvolupament de l'algoritme aplicat al problema}
 com aplicarem l'algorisem en el projecte. Com seran les dades.
