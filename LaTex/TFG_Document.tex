@@ -728,11 +728,122 @@ Aquests paràmetres no són obligatoris, es pot crear una màquina sense la necessi
 Un cop tenim la implementació que usarem ara només ens queda preparar les dades per la entrada a la màquina. En els següents apartats anirem explicant el desenvolupament de la màquina creada sobre les dades que li proporcionem i el seu funcionament.
 \newpage
 \section{Desenvolupament de l'algoritme aplicat al problema}
-com aplicarem l'algorisem en el projecte. Com seran les dades.
-\subsection{Dades d'entrada}
-format de les dades obtingutdes de l'eina
+Un cop ja tenim tots els elements que composen el nostre problema només ens falta explicar el desenvolupament d'aquest utilitzant les dades que ens proporcionen i com utilitzem aquestes per a crear una màquina i a generara resultats. \\\
+A continuació analitzarem les dades que rebem de l'aplicació, com es transformen per tal de ser aptes per la màquina, com funciona i com definim la màquina i com són les dades de sortida i com les transformem per tal de poder-les tornar a llegir amb l'aplicació.
+\subsection{Dades obtingudes de l'eina}
+El primer pas com hem mencionat anteriorment és la generació de moodboards a partir de l'eina creada. Les graelles resultants són imatges formades a partir d'altres imatges, són representacions visuals que en aquest cas no podem entrar directament a la màquina ja que les hem de descompondre d'alguna manera per tal que ens sigui més fàcil entendre la seva composició.\\\\
+Com hem dit, cada imatge que forma un moodboard representa un objecte, en aquest cas un moble. Així doncs, cada moble ha de ser identificable d'alguna manera. La forma que tenim per identificar els mobles és un ID que ens proporciona la base de dades per a cada un dels mobles disponibles que tenim, d'aquesta forma podem identificar els diferents mobles que composen una graella.\\\\
+Aixo ens permet obtenir un diccionari o una llista dels diferents ID que formen un moodboards que el podrem exportar d'una forma senzilla en un fitxer. Per tal d'obtenir aquesta llista, només necessitem recórrer el moodboard, començant des de la primera cel·la, i obtenir els ID d'aquelles objectes que es trobin a les caselles. En cas que no hi hagi cap objecte a la casell, posar un 0 per tal d'indicar que allà no hi ha cap objecte posat. L'algorisme 3 ens mostra el procediment d'aquest algoritme explicat.
+\begin{algorithm}
+\caption{Generació de una llista de IDs a partir dels elements col·locats al moodboard.}
+\begin{algorithmic} 
+\STATE Crear una llista ${L}$ tal que ${L = [e_1, e_2, \cdot \cdot \cdot, e_{48}]}$ on ${e_x, x <= 48}$ correspon als ID dels objectes.\\\ Moodboard ${M}$ format per una llista de cel·les tal que ${M = [C_1,C_2, \cdot \cdot \cdot, C_{48}]}$.
+\FOR{$i = 1 \cdot \cdot \cdot 48$} 
+\STATE {Comprovar si la cel·la ${C_i}$ conté una imatge} 
+\IF {${C_i}$ té una imatge}
+\STATE Obtenir ${C_i (ID)}$ i afegir ${C_i (ID)}$ a la llista ${L}$
+\ELSE
+\STATE Afegir 0 a la llista ${L}$
+\ENDIF
+\ENDFOR \\
+${L}$ conté tots els ID del moodboard generat
+\end{algorithmic}
+\end{algorithm}
+\\\\ Un cop apliquem l'algorisme descrit anteriorment, algorisme 3, obtindrem una llista de ID que abans eren simples imatges i no ens proporcionaven res d'informació a part de la visual. Ara tenim una llista amb els ID el qual cada un d'ells és un objecte que s'ha col·locat al moodboard. Així doncs de moment hem passat d'una representació visual del objecte a una representació descriptiva formada per la llista dels identificadors dels objectes. A continuació es mostra un exemple d'un resultat obtingut:
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=\textwidth]{id}
+\caption{Exemple de la transformació de imatge a una llista de ID.}
+\end{center}
+\end{figure}
+\\\\
+Aquest resultat però no és el definitiu per entrenar a la màquina ja que aquests ID no ens donen informació sobre les característiques del objecte per tant necessitem realitzar una segona transformació per tal d'obtenir els ID que ens indicaran les característiques del color, material, forma... Així doncs hem de tornar-los a transformar per tal d'obtenir un diccionari amb totes les graelles plenes amb informació sobre els objectes. \\\\
+Tal i com hem explicat, volem generar moodboards d'un estil concret per tant, cada estil es regeix per unes característiques que els objectes compleixen. Així doncs necessitem obtenir aquestes característiques per tal de poder entrenar correctament la màquina.\\\\
+Aquestes característiques les obtindrem de la base de dades i ens descriuran aspectes dels objectes. Com que no podem entrenar la màquina utilitzant paraules haurem de convertir aquestes característiques en ID. Cada característica està associada a un ID concret i cada objecte conte una llista de ID que es pot obtenir mitjançant crides a la base dades.
+\\\ Així doncs necessitem aplicar una algorisme capaç d'obtenir un diccionari el qual contingui les cel·les del moodboard i cada una d'elles una llista de ID que són els que ens permetran identificar les característiques. Així aplicarem el següent algorisme, algorisme 4, per obtenir el resultat desitjat.
+\begin{algorithm}
+\caption{Generació d'un diccionari amb les característiques dels objectes a partir de la llista de IDs.}
+\begin{algorithmic} 
+\STATE Crear un Diccionari ${D}$ tal que ${D = \{"style": [e_1, e_2, \cdot \cdot \cdot, e_{48}]\}}$ on ${e_x, x <= 48}$ correspon a les cel·les del moodboard i on ${e_x = [idc_1,idc_2, \cdot \cdot \cdot]}$.\\\ Llista ${L}$ conté tots els ID obtinguts prèviament del moodboard generat.
+\FOR{$i = 1 \cdot \cdot \cdot 48$} 
+\STATE {Obtenir llista ${C}$ de les característiques de l'element ${L_i}$ \\
+Llista ${LL}$ contindrà els ID de les característiques} 
+\FOR{${j = 1 \cdot \cdot \cdot M = length(C)}$}
+\STATE {Afegir ${C_j}$ a ${LL}$}
+\ENDFOR
+\\ Afegir ${LL}$ a ${D_i}$
+\ENDFOR \\
+${D}$ conté una llista de totes els cel·les les qual cadascuna conté una llista de ID de les característiques de cada objecte que es troba  al cel·la.
+\end{algorithmic}
+\end{algorithm}
+\\\\Aplicant l'algorisme anterior obtindríem un resultat similar de la Figura 18. Després d'obtenir aquest diccionari el podem exportar per tal de tractar-lo més endavant ja que encara no podem passar aquestes dades a la màquina. Ara de moment ja tenim la informació necessària, és a dir, la informació que ens descriu cada objecte, una sèrie de números que cada un correspon a una característica del objecte que es troba a la cel·la del moodboard.
+\\\\
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=\textwidth]{id_c}
+\caption{Exemple de la transformació de ID a un diccionari de ID de les característiques de cada objecte.}
+\end{center}
+\end{figure}
+\\\\
+En aquest punt disposem d'un diccionari el qual ens permet saber a cada cel·la quines són les característiques del objecte que estava col·locat. Però aquest no es el format definitiu, ja que tal i com es va explicar, la màquina necessita una matriu com a dada d'entrada i en el nostre cas tenim un diccionari format per llistes que cada una conté una llista com a element i que cada una té una longitud diferent i la màquina necessita que cada element de la matriu, encara que siguin llistes, tinguin la mateixa longitud. \\\\
+El format ideal per a nosaltres seria el format que obtenim directament de l'eina però no ens serveix perquè no ens proporciona suficient informació per tant l'hem hagut de transformar per tal d'obtenir mes informació però ara ja no tenim el format desitjat ja que tenim un diccionari en el qual tenim una llista i cada element una llista de les característiques dels objectes.\\\
+Així doncs necessitem trobar una forma d'obtenir el format que desitgem que és una llista, que seran les diferents cel·les i que cada element contingui un identificador. \\\\
+Una forma de resoldre aquest problema seria descomponent cada graella del diccionari en múltiples graelles que continguin un identificador per element. 
+L'únic problema a resoldre aquí seria el cas del que les longituds són diferents ja que no tots els objectes tenen el mateix nombre de característiques. Així doncs hem de trobar una forma de solucionar aquest problema. La solució més senzilla i més ràpida d'aplicar és buscar l'objecte amb més nombre de característiques. Un cop tenim aquest valor, aquest ens definirà el nombre de graelles les quals hem de descompondre el diccionari, és a dir, suposem que l'objecte amb més característiques en té 10. Això vol dir que el màxim nombre de graelles noves que hem de obtenir és 10 per cada moodboard generat, ja que si en fem menys no hi hauran totes els característiques d'alguns objectes.\\\\
+Per tal d'obtenir aquest valor aplicarem un algorisme de cerca en tot el diccionari. Fins ara només hem suposat que tenim un moodboard generat al diccionari però podem tenir varis moodboards en ell, per tant, haurem de fer una recerca entre tots els elements del diccionari i anar guardant la longitud de cada cel·la fins a trobar la longitud màxima. Per dur a terme aquest algorisme, primer transformarem el nostre diccionari en una llista ben construïda. \\\
+Per tal de realitzar la transformació utilitzarem un \textit{Dataframe} a partir del qual ens organitzarà els elements en forma de taula. D'aquesta taula agafarem les \textit{values}, que correspondran a cada cel·la i les afegirem a una llista aixi obtindrem una llista on cada element serà una llista i aquesta tindrà com a elements les diferents característiques de cada objecte. \\\\
+\[input = [[id_1^1,id_2^1,_id_3^1, ...,id_{255}^1], [id_1^2,id_2^2,_id_3^2, ...,id_{255}^2], ..., [id_1^{48},id_2^{48},_id_3^{48}, ...,id_{255}^{48}]]\]
+Un cop ja tenim la llista apunt només necessitem aplicar el següent algorisme: \\\
+\begin{lstlisting}[language=Python,basicstyle=\footnotesize\ttfamily]
+def getMaxLengthForElements(vector):
+    maxLength = 0
+    for i in range(len(vector)):
+        tmp = vector[i]
+        for j in range(len(tmp)):
+            if (len(tmp[j]) > maxLength):
+                maxLength = len(tmp[j])
+    return maxLength
+\end{lstlisting}
+Aquest algorisme ens retornarà el numero màxim de graelles que hem de generar de nou per tal d'obtenir a cada posició de cada element un identificador diferent.\\\
+Per a realitzar aquesta transformació hem de tenir en compte varis factors. El primer de tots hem de saber el nombre de moodboards que hem generat ja que haurem d'iterar sobre cada moodboard generat per transform-lo correctament. I el segon punt i el més important hem de tenir en compte com tractarem aquelles cel·les les quals, la seva longitud sigui menor que la longitud màxima. En aquests casos la solució plantejada és afegir un valor nul, és a dir, un valor que no aporti informació, en aquest cas el valor 0. Això provocara que el resultat contingui llistes en les quals molts elements són 0 però no ens importa ja que només ens centrarem en els identificadors que no són 0. L'algorisme aplicat per obtenir aquesta transformació és el següent:\\\
+\begin{lstlisting}[language=Python,basicstyle=\footnotesize\ttfamily]
+def transformInputVector(vector, maxLength, length):
+    output = []
+    for i in range(length):
+        v = vector[i]
+        for j in range(maxLength):
+            tmp = []
+            length_v = len(v)
+            for k in range(length_v):
+                if j >= len(v[k]):
+                    tmp.append(0)
+                else:
+                    tmp.append(v[k][j])
+            output.append(tmp)
+    return output
+\end{lstlisting}
+Com podem observar només necessitem passar-li el vector \textit{input} descrit anteriorment i obtindrem un vector \textit{outuput} que tindrà el següent format:
+\[output = [[id_1^1, id_1^2,..., id_1^{48}],
+[id_2^1, id_2^2,..., id_2^{48}],..., [0,0,...,id_y^{48}]\]
+Un exemple d'una graella generada a partir de la descomposició en vàries graelles de les dades d'entrada podria ser la següent:
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=\textwidth]{id_s}
+\caption{Exemple d'una de les graelles obtingudes al realitzar la descomposició.}
+\end{center}
+\end{figure}
+\\\ El número de llistes que obtindríem com aquestes seria la longitud màxima que hem obtingut aplicant l'algorisme anterior multiplicat pel nombre de moodboards que hem generat. D'aquesta forma, realitzant tot el procés obtindríem el format correcte de les nostres dades per tal d'entrenar la màquina.
+\\\\Resumint, l'objectiu de la primera part del tractament de les dades és convertir les imatges obtingudes a identificadors que ens permetin classificar els objectes segons les seves característiques. Per tal d'aconseguir això primer hem de transformar aquestes imatges, en aquest cas utilitzant l'eina, en una llista de identificador els quals ens permeten identificar cada objecte dintre la base de dades. El següent pas és a partir d'aquests identificadors obtenir un diccionari on cada element estigui format per una llista, que són les 48 cel·les del moodboard, la qual cada element contingui una llista de tots els identificadors de les característiques del objecte que es trobava a la cel·la i així obtenir un format de dades més precís i descriptiu. I l'últim pas a realitzar és descompondre aquest diccionari en llistes, de forma que obtinguem un conjunt de llistes on cada element sigui un identificador d'una característica d'un objecte, és a dir, descompondre cada moodboard en tantes llistes, graelles, com sigui necessari fins a obtenir un identificador a cada element.
 \subsection{Dades d'entrament}
-format de les dades dentrenament per a la màquina
+Un cop ja tenim les dades d'entrada transformades i llestes tal i seguin el format establert prèviament necessitem comprovar que la màquina que crearem és capaç de llegir-les. En el nostre cas crearem un RBM i segons la descripció anterior el format de les nostres dades és el correcte però com que utilitzarem una implementació d'una llibreria, aquesta màquina té una sèrie de restriccions sobre les dades d'entrenament per a la màquina. \\\
+La més important és que les dades han de ser binàries, és a dir, cada element, cada ID ha de estar en forma de llista de binaris. Tot i que el format de les nostres dades podria funcionar en altres màquines que utilitzen el mateix algorisme, en el nostre cas necessitem transformar-les per tal que la nostra implementació funcioni correctament. En aquest punt, les dades de les quals disposem no es troben en aquest format per tant necessitem trobar alguna forma de convertir-les.\\\\
+En el nostre cas, les dades que tenim son dades categòriques, és a dir, són variables que contenen valors d'etiqueta, a cada categoria li assignem un número. Així doncs, una solució al problema seria codificar cada un dels ID que tenim en binari però aquesta solució no seria optima ja que hauriem de fer una màquina que pogués descodificar cada un d'ells per tal de poder entendre el valor que li estem entrant i inclús en alguns casos no podríem entrar certes dades si el número a codificar és molt llarg.\\\\
+La solució més òptima i més assequible és utilitzar els denominats \textit{One Hot Vectors}. Aquests tipus de vectors són un grup de bits entre els quals les combinacions vàlides de valors són només aquelles amb un sol bit alt(1) i tots els altres valors amb bits baixos(0). És a dir, ens permet codificar qualsevol número en forma d'una llista que serà tant llarga com el número més alt i que contindrà tots els valors 0 excepte la posició en la qual representi el valor a codificar.\\\\
+Un exemple fàcil per a veure el funcionament d'aquests vectors és aplicar al nostre cas. Disposem de 255 característiques diferents a la nostre base de dades per tant si volem codificar un identificador d'una característica concreta, per exemple l'identificador 10, el codificarem de la següent manera:
+\[10 = [0_1,0_2, \cdot \cdot \cdot, 1_{10}, 0_{11}, \cdot \cdot \cdot, 0_{255}]\]
+D'aquesta forma podrem codificar tots els identificadors de forma binària. Per transforma cada identificador podem crear un algorisme que ens converteixi un número en un vector o també podem utilitzar eines que ens proporcionen algunes llibreries com és el cas de la llibreria \textit{sklearn} que ens proporciona un codificador per codificar les nostres dades. Aquest codificador s'anomena \textit{OneHotEncoder}. \\\\
+Aquest codificador ens permet transformar les nostres dades d'entrada en una matriu de on cada columna correspon a un possible valor d'una característica. Al crear un codificador podem establir alguns paràmetres d'entrada per tal de definir com serà i com seran les dades que li entrem i volem obtenir.\\\\
+
 \subsection{Ànalisi de l'algoritme amb les dades}
 analisitzar el temps, l'eficiencia i les propietats de la màquina
 \subsection{Dades de sortida}
