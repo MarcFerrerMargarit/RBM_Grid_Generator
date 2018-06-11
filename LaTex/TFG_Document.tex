@@ -494,13 +494,6 @@ Tenim diferents tipus d'algoritmes generatius. Els més coneguts són els següents
 Després d'investigar entre totes les diferents opcions, vam arribar a la conclusió que la millor opció era utilitzar una Màquina de Boltzmann Restrictiva (RBM) que ens permetria generar graelles a partir de les graelles ja generades anteriorment. Aquest tipus de màquina té algunes restriccions a l'hora d'entrar les dades, ja que han de seguir un format específic, a continuació explicarem com funciona aquest tipus d'algoritme i les seves característiques.
 \newpage
 \section{Màquina de Boltzmann(BM) i Màquina de Boltzmann Restrictiva (RBM)}
-explicació rbm
-funcionament
-https://deeplearning4j.org/restrictedboltzmannmachine
-http://deeplearning.net/tutorial/rbm.html
-http://eric-yuan.me/rbm/
-https://www.cs.toronto.edu/~hinton/csc2535/notes/lec4new.pdf
-\\\\
 A continuació explicarem d'una forma més detallada les màquines de Boltzmann i la seva variant, que és la que utilitzarem, la màquina de Boltzmann Restrictiva. Bàsicament ens centrarem en com entrenar i avaluar les màquines utilitzant el gradient estocàstic i analitzar les seves dificultats. També analitzarem els seus avantatges i inconvenients.
 \subsection{Màquina de Boltzmann}
 La màquina Boltzmann (BM) és una xarxa neuronal recurrent estocàstica que consisteix en neurones binàries (Haykin, 1998; Ackley et al., 1985). La xarxa està totalment connectada i cada connexió entre dues neurones és simètrica, de manera que l'efecte d'una neurona en l'estat de l'altra és simètrica per a cada parell.\\\\
@@ -712,16 +705,15 @@ A més aquesta implementació ens permet utilitzar diferents mètodes i funcions pe
 \item ${transform(X)}$: computació de les probabilitats d'activació de la capa oculta.
 \end{itemize}
 Un exemple del ús d'aquesta màquina es troba en l'obtenció de features per la classificació de dígits. A continuació mostrarem un exemple de la creació d'un RBM utilitzant les funcions mencionades anteriorment.\\\
-\begin{lstlisting}[language=Python]
-import numpy as np
-from sklearn.neural_network import BernoulliRBM
+\begin{lstlisting}[language=Python,basicstyle=\footnotesize\ttfamily]
 X = np.array([[0, 0, 0], [0, 1, 1], [1, 0, 1], [1, 1, 1]])
 model = BernoulliRBM(n_components=2)
 model.fit(X)
 #Sortida del resultat per la consola
-BernoulliRBM(batch_size=10, learning_rate=0.1, n_components=2, n_iter=10,
-       random_state=None, verbose=0)
+BernoulliRBM(batch_size=10, learning_rate=0.1, 
+n_components=2, n_iter=10, random_state=None,verbose=0)
 \end{lstlisting}
+
 Com podem observar creem una llista de diferents elements els quals tots aquests són binaris, ja que la màquina només pot rebre entrades binàries. A continuació creem la màquina i li assignem el nombre de components i l'entrenem amb les dades d'entrada. A partir d'aquí podríem aplicar els altres mètodes per obtenir resultats o analitzar el seu funcionament.\\\
 Com podem observar al crear la màquina podem passar-li, especificar-li alguns paràmetres d'entrada. Aquests, definiran el seu comportament. Aquests paràmetres són els següents:
 \begin{itemize}
@@ -781,7 +773,14 @@ Interficie grafica de la imatge.
 \newpage
 
 \begin{thebibliography}{25}
-\bibitem{pari} Batut, C.; Belabas, K.; Bernardi, D.; Cohen, H.; Olivier, M.: User's guide to \textit{PARI-GP},  \newline \texttt{pari.math.u-bordeaux.fr/pub/pari/manuals/2.3.3/users.pdf}, 2000.
+\bibitem{pari} A Beginner\textsc{\char13}s Tutorial for Restricted Boltzmann Machines,  \newline \texttt{https://deeplearning4j.org/restrictedboltzmannmachine}.
+
+\bibitem{pari} Eric Yuan; Restricted Boltzmann Machine,  \newline \texttt{http://eric-yuan.me/rbm/}, 2014.
+
+\bibitem{pari} Restricted Boltzmann Machines (RBM),  \newline \texttt{http://deeplearning.net/tutorial/rbm.html}.
+
+\bibitem{pari} Geoffrey Hinton; Advanced Machine Learning, Lecture 4, Restricted Boltzmann Machines,  \newline \texttt{https://www.cs.toronto.edu/~hinton/csc2535/notes/lec4new.pdf}.
+
 \end{thebibliography}
 \end{document} 
 
