@@ -85,7 +85,7 @@
 \textbf{\Large Director:} & \textbf{\Large David Buchaca } \\
 \textbf{\Large Realitzat a:} & \textbf{\Large  Interiorvista   } \\
  & \textbf{\Large} \\
-\textbf{\Large Barcelona,} & \textbf{\Large \today }
+\textbf{\Large Barcelona,} & \textbf{\Large 25 de juny de 2018 }
 \end{tabular}
 
 \end{center}
@@ -732,6 +732,8 @@ Un cop ja tenim tots els elements que composen el nostre problema només ens falt
 A continuació analitzarem les dades que rebem de l'aplicació, com es transformen per tal de ser aptes per la màquina, com funciona i com definim la màquina i com són les dades de sortida i com les transformem per tal de poder-les tornar a llegir amb l'aplicació.
 \subsection{Dades obtingudes de l'eina}
 El primer pas com hem mencionat anteriorment és la generació de moodboards a partir de l'eina creada. Les graelles resultants són imatges formades a partir d'altres imatges, són representacions visuals que en aquest cas no podem entrar directament a la màquina ja que les hem de descompondre d'alguna manera per tal que ens sigui més fàcil entendre la seva composició.\\\\
+Així doncs explicarem el format d'aquestes dades i quines dades hem obtingut en el nostre projecte.
+\subsubsection{Format de les dades}
 Com hem dit, cada imatge que forma un moodboard representa un objecte, en aquest cas un moble. Així doncs, cada moble ha de ser identificable d'alguna manera. La forma que tenim per identificar els mobles és un ID que ens proporciona la base de dades per a cada un dels mobles disponibles que tenim, d'aquesta forma podem identificar els diferents mobles que composen una graella.\\\\
 Aixo ens permet obtenir un diccionari o una llista dels diferents ID que formen un moodboards que el podrem exportar d'una forma senzilla en un fitxer. Per tal d'obtenir aquesta llista, només necessitem recórrer el moodboard, començant des de la primera cel·la, i obtenir els ID d'aquelles objectes que es trobin a les caselles. En cas que no hi hagi cap objecte a la casell, posar un 0 per tal d'indicar que allà no hi ha cap objecte posat. L'algorisme 3 ens mostra el procediment d'aquest algoritme explicat.
 \begin{algorithm}
@@ -805,7 +807,7 @@ def getMaxLengthForElements(vector):
     return maxLength
 \end{lstlisting}
 Aquest algorisme ens retornarà el numero màxim de graelles que hem de generar de nou per tal d'obtenir a cada posició de cada element un identificador diferent.\\\
-Per a realitzar aquesta transformació hem de tenir en compte varis factors. El primer de tots hem de saber el nombre de moodboards que hem generat ja que haurem d'iterar sobre cada moodboard generat per transform-lo correctament. I el segon punt i el més important hem de tenir en compte com tractarem aquelles cel·les les quals, la seva longitud sigui menor que la longitud màxima. En aquests casos la solució plantejada és afegir un valor nul, és a dir, un valor que no aporti informació, en aquest cas el valor 0. Això provocara que el resultat contingui llistes en les quals molts elements són 0 però no ens importa ja que només ens centrarem en els identificadors que no són 0. L'algorisme aplicat per obtenir aquesta transformació és el següent:\\\
+Per a realitzar aquesta transformació hem de tenir en compte varis factors. El primer de tots hem de saber el nombre de moodboards que hem generat ja que haurem d'iterar sobre cada moodboard generat per transform-lo correctament. I el segon punt i el més important hem de tenir en compte com tractarem aquelles cel·les les quals, la seva longitud sigui menor que la longitud màxima. En aquests casos la solució plantejada és afegir un valor nul, és a dir, un valor que no aporti informació, en aquest cas el valor 0. Això provocara que el resultat contingui llistes en les quals molts elements són 0 però no ens importa ja que només ens centrarem en els identificadors que no són 0. L'algorisme aplicat per obtenir aquesta transformació és el següent:\\\\
 \begin{lstlisting}[language=Python,basicstyle=\footnotesize\ttfamily]
 def transformInputVector(vector, maxLength, length):
     output = []
@@ -834,19 +836,124 @@ Un exemple d'una graella generada a partir de la descomposició en vàries graelle
 \end{figure}
 \\\ El número de llistes que obtindríem com aquestes seria la longitud màxima que hem obtingut aplicant l'algorisme anterior multiplicat pel nombre de moodboards que hem generat. D'aquesta forma, realitzant tot el procés obtindríem el format correcte de les nostres dades per tal d'entrenar la màquina.
 \\\\Resumint, l'objectiu de la primera part del tractament de les dades és convertir les imatges obtingudes a identificadors que ens permetin classificar els objectes segons les seves característiques. Per tal d'aconseguir això primer hem de transformar aquestes imatges, en aquest cas utilitzant l'eina, en una llista de identificador els quals ens permeten identificar cada objecte dintre la base de dades. El següent pas és a partir d'aquests identificadors obtenir un diccionari on cada element estigui format per una llista, que són les 48 cel·les del moodboard, la qual cada element contingui una llista de tots els identificadors de les característiques del objecte que es trobava a la cel·la i així obtenir un format de dades més precís i descriptiu. I l'últim pas a realitzar és descompondre aquest diccionari en llistes, de forma que obtinguem un conjunt de llistes on cada element sigui un identificador d'una característica d'un objecte, és a dir, descompondre cada moodboard en tantes llistes, graelles, com sigui necessari fins a obtenir un identificador a cada element.
+\subsubsection{Dades obtingudes del projecte}
+Ara que ja sabem com és el format de les nostre dades explicarem quines són les dades que hem obtingut al utilitzar l'eina durant el procés de desenvolupament del projecte.\\\
+En primer lloc es va demanar als experts la creació d'alguns moodboards d'un estil concret. En aquest cas l'estil s'anomenava Popular Modern. Es van crear 8 moodboards totalment diferents.\\\\
+Utilitzant l'eina es va obtenir fitxer on hi havia els 8 moodboards transformats a llistes de identificadors. Seguidament com hem explicat anteriorment i aplicant els algorismes descrits es van obtenir els identificadors de les característiques dels objectes i es va crear un diccionari el qual cada element era un moodboard fet de llistes de identificador a cada element, a cada cel·la. En aquest punt es va buscar la llargada màxima de característiques que va resultar ser 15. Així doncs sortirien 120 graelles noves ja que per cada moodboard, aquest es descompondria en 15 graelles on cada element, cada cel·la, contindria un identificador. \\\\
+Finalment, les dades resultants després d'aplicar la primer transformació és una matriu de mida 120 per 48 on cada element seria una llista, una graella, amb un identificador d'una característica. En aquest cas, les dades proporcionades eren poques ja que amb 120 elements no seria necessari per entrenar una màquina.\\\\
+Per solucionar aquest problema vam decidir duplicar algunes dades ja que en realitat era com generar un moodboard igual a un altre i per tant les dades no es veurien afectades. L'altre solució era demanar als experts que generessin 500 moodboards però per falta de temps i coordinació no va ser possible. Així doncs necessitàvem obtenir una mida de dades més gran que 5000, per tant, vam duplicar les dades 51 vegades i vam obtenir una matriu de mida 6120 per 48. Ara ja teníem una mida raonable per entrenar una màquina i podíem procedir a realitzar els següents passos.
 \subsection{Dades d'entrament}
+Cada màquina necessita un format especific per tal de llegir correctament les dades i poder aprendre d'elles per tant necessitem transformar les dades actuals en dades llestes per la ingesta. A continuació explicarem com són aquestes dades i quines dades hem obtingut.
+\subsubsection{Format de les dades}
 Un cop ja tenim les dades d'entrada transformades i llestes tal i seguin el format establert prèviament necessitem comprovar que la màquina que crearem és capaç de llegir-les. En el nostre cas crearem un RBM i segons la descripció anterior el format de les nostres dades és el correcte però com que utilitzarem una implementació d'una llibreria, aquesta màquina té una sèrie de restriccions sobre les dades d'entrenament per a la màquina. \\\
 La més important és que les dades han de ser binàries, és a dir, cada element, cada ID ha de estar en forma de llista de binaris. Tot i que el format de les nostres dades podria funcionar en altres màquines que utilitzen el mateix algorisme, en el nostre cas necessitem transformar-les per tal que la nostra implementació funcioni correctament. En aquest punt, les dades de les quals disposem no es troben en aquest format per tant necessitem trobar alguna forma de convertir-les.\\\\
-En el nostre cas, les dades que tenim son dades categòriques, és a dir, són variables que contenen valors d'etiqueta, a cada categoria li assignem un número. Així doncs, una solució al problema seria codificar cada un dels ID que tenim en binari però aquesta solució no seria optima ja que hauriem de fer una màquina que pogués descodificar cada un d'ells per tal de poder entendre el valor que li estem entrant i inclús en alguns casos no podríem entrar certes dades si el número a codificar és molt llarg.\\\\
+En el nostre cas, les dades que tenim son dades categòriques, és a dir, són variables que contenen valors d'etiqueta, a cada categoria li assignem un número. Així doncs, una solució al problema seria codificar cada un dels ID que tenim en binari però aquesta solució no seria optima ja que hauríem de fer una màquina que pogués descodificar cada un d'ells per tal de poder entendre el valor que li estem entrant i inclús en alguns casos no podríem entrar certes dades si el número a codificar és molt llarg.\\\\
 La solució més òptima i més assequible és utilitzar els denominats \textit{One Hot Vectors}. Aquests tipus de vectors són un grup de bits entre els quals les combinacions vàlides de valors són només aquelles amb un sol bit alt(1) i tots els altres valors amb bits baixos(0). És a dir, ens permet codificar qualsevol número en forma d'una llista que serà tant llarga com el número més alt i que contindrà tots els valors 0 excepte la posició en la qual representi el valor a codificar.\\\\
-Un exemple fàcil per a veure el funcionament d'aquests vectors és aplicar al nostre cas. Disposem de 255 característiques diferents a la nostre base de dades per tant si volem codificar un identificador d'una característica concreta, per exemple l'identificador 10, el codificarem de la següent manera:
-\[10 = [0_1,0_2, \cdot \cdot \cdot, 1_{10}, 0_{11}, \cdot \cdot \cdot, 0_{255}]\]
+Un exemple fàcil per a veure el funcionament d'aquests vectors és aplicar al nostre cas. Disposem de 262 característiques diferents a la nostre base de dades per tant si volem codificar un identificador d'una característica concreta, per exemple l'identificador 10, el codificarem de la següent manera:
+\[10 = [0_1,0_2, \cdot \cdot \cdot, 1_{10}, 0_{11}, \cdot \cdot \cdot, 0_{262}]\]
 D'aquesta forma podrem codificar tots els identificadors de forma binària. Per transforma cada identificador podem crear un algorisme que ens converteixi un número en un vector o també podem utilitzar eines que ens proporcionen algunes llibreries com és el cas de la llibreria \textit{sklearn} que ens proporciona un codificador per codificar les nostres dades. Aquest codificador s'anomena \textit{OneHotEncoder}. \\\\
 Aquest codificador ens permet transformar les nostres dades d'entrada en una matriu de on cada columna correspon a un possible valor d'una característica. Al crear un codificador podem establir alguns paràmetres d'entrada per tal de definir com serà i com seran les dades que li entrem i volem obtenir.\\\\
-
-\subsection{Ànalisi de l'algoritme amb les dades}
-analisitzar el temps, l'eficiencia i les propietats de la màquina
+De tots els paràmetres que podem definir els més importants són:
+\begin{itemize}
+\item ${n\_values}$: Nombre de valors per característica. En aquest cas el nombre de identificadors màxims que hi pot haver. Com hem dit anteriorment, aquest valor és 262. 
+\item ${sparse}$: Boolea que ens indica si utilitzarem matrius disperses, \textit{sparse matrix}, o matrius denses i el format del resultat.
+\end{itemize}
+A part d'aquests paràmetres també té mètodes que ens permetran realitzar certes accions. El mètodes més importants i que més endavant utilitzarem són els següents:
+\begin{itemize}
+\item ${fit (X[,y])}$: ens permet entrenar el codificador amb les dades X.
+\item ${fit\_transform (X[,y])}$: ens permet entrenar el codificador a partir de les dades X i després transformar-la.
+\item ${transform(X)}$: ens permet transformar unes dades X en un one hot vector.
+\end{itemize}
+Així doncs, un cop creat el codificador i entrenat amb les dades que obtenir de la primera transformació podem obtenir les nostres dades llestes per la ingesta de la màquina. La creació d'aquestes dades provocarà que la mida de les nostres dades creixi sobretot en les files de la matriu, en aquest cas, en la llista d'elements de cada cel·la ja que cada cel·la contindrà una successió de 0 i 1 i aquesta serà tant llarga com el nombre de valors per característica que li haguem definit.
+\subsubsection{Creació del codificador i dades obtingudes}
+Ara ja sabem què necessitem per transformar les nostres dades per realitzar la ingesta a la màquina i així entrenar-la. A continuació explicarem com hem creat el nostre codificador, quins paràmetres hem definit i quines són les dades obtingudes.\\\\
+En primer recordem que de la primer part de les dades vam obtenir una matriu de mida 6120 per 48 que contenia les graelles amb els identificadors de les característiques dels objectes del moodboard. El primer que hem de definir és el nombre de valors per característica, en aquest cas disposem de 262 característiques diferents, el que és el mateix, que 262 identificadors diferents per tant, el paràmetre \textit{n\_values} serà igual a 262. \\\\
+La segona cosa i la que més ens afectarà alhora de rendiment és el booleà \textit{sparse}. Com hem dit aquest valor ens indica quin tipus de matriu farem servir i obtindrem, si \textit{sparse matrix} o matriu denses. Per entendre bé la decisió a prendre necessitem saber les diferencies entre els dos tipus. \\\\
+Les \textit{sparse matrix} només emmagatzemen les entrades que no són zero, aquelles entrades de la matriu que tenen algun valor mentre que les denses emmagatzemen tots els valors. Així doncs la diferència es troba alhora de treballar amb elles, és a dir, a l'hora de recórrer les matrius o de comprimir-les. En aquests cas és molt millor treballar amb \textit{sparse matrix} ja que el procés serà més ràpid i sobretot quan es tracten de matrius molt grans. En cas contrari, si es tracten de matrius petites es poden utilitzar matriu denses. \\\\
+Aplicant això al nostre cas podem fer servir les dos formes ja que la matriu és gran però no exageradament. De tot formes a continuació mostrarem dos exemples, Figura 20, de la creació del nostre codificador i el resultat que dona, un utilitzant \textit{sparse matrix} i l'altre utilitzant matrius denses.
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=\textwidth]{onehotencoder}
+\caption{Creació del codificador de les dos forma. A dalt amb matrius denses i a baix amb \textit{sparse matrix}}
+\end{center}
+\end{figure}
+\\\\
+Com podem observar, el resultat final és una matriu del mateix nombre de files que la matriu anterior però ara els elements són més grans ja que multipliquem cada element per 262. També podem podem observar que utilitzant \textit{sparse matrix} el temps es redueix. En aquest cas el temps és molt petit però es pot observar una diferència. Així doncs el millor mètode és fer servir \textit{sparse matrix}. \\\\
+El contingut de la nostre matriu serà per a cada fila una successió de 0 i 1 per al tractar-se d'una \textit{sparse matrix} si la mostrem per pantalla només veurem aquelles posicions que contenen un valor diferent a 0.
+Ara ja tenim les dades llestes per entrar a la màquina i entrenar-la però primer de tot hem de crear-la d'acord a les dades que tenim.
+\subsection{Creació i entrenament del RBM}
+Un cop ja tenim les dades transformades per l'entrenament de la màquina només ens queda crear la màquina i entrenar-la per tal d'obtenir resultats. A continuació explicarem la creació de la nostra màquina i analitzarem el seu comportament.
+\subsubsection{Creació del RBM a partir de les dades}
+En apartats anterior hem vist com crear un RBM estàndard utilitzant la llibreria. Però ara ja tenim les dades i necessitem trobar els paràmetres adients per tal que la creació d'aquesta màquina sigui la correcte o la més adient per al nostre problema. \\\
+El principals camps que definirem seran el \textit{n\_components}, \textit{learning\_rate} i\textit{n\_iter}. I altres camps que modificarem però els seus valors són valors ja establerts però que els hem definit alhora de la creació tal i com hem trobat a la documentació de la llibreria.\\\\
+Per començar hem de definir el nombre de unitats ocultes que tindrà la nostra màquina. Hi ha vàries formes de trobar el número perfecte de unitats ocultes aplicant formules però en el nostre cas hem decidit que aquest nombre serà el valor total de les característiques disponibles que en aquest cas es 262, així disposem d'una unitat oculta per a cada un dels valors de les dades. \\\\
+Un cop ja tenim el nombre de components decidit hem de decidir la velocitat d'aprenentatge. Tal i com es va explicar anteriorment ha d'estar en el rang de 10**[0., -3.], així doncs a partir de la documentació de la llibreria i partir d'alguns exemples que ens han proporcionat vam poder establir un valor relativament correcte per a la nostre màquina.\\\\
+ Es va establir un valor de 0.01. Aquest valor és una funció que el que defineix és com de ràpid canvien el pesos dels valors al llarg del aprenentatge. Si aquest valor és massa alt, és possible que es perdi el punt 0 del pendent i si es massa baix pot provocar que es tardi molt a arribar aquest punt.\\\\
+ Finalment queda definir el nombre d'iteracions. Ja es sap que en una màquina d'aquest tipus cada iteració pot durar molt de temps per tant no volíem que tardes molt a realitzar totes les iteracions. Per tal de començar vam establir unes 10 iteracions per tal de comprovar el temps i la seva eficiència. Finalment, a partir dels resultats es va establir un valor de 20 iteracions.\\\\
+ Així doncs, un cop ja tenim tots els valors definits només ens queda crear la màquina. A continuació, a la figura 21 es mostra com s'ha realitzat la creació de la màquina.
+ \begin{figure}[h!]
+\begin{center}
+\includegraphics[width=\textwidth]{rbm}
+\caption{Creació del RBM amb els paràmetres definits anteriorment}
+\end{center}
+\end{figure}
+\subsubsection{Entrenament del RBM}
+Un cop ja creada la màquina necessitem entrenar-la per tal de, més endavant, poder generar noves dades i així poder analitzar el seu funcionament amb les dades que li passem. Per tal d'entrenar-la només cal cridar el mètode \textit{fit} de la màquina.\\\
+Al cridar aquest mètode li hem de passar les dades les quals volem que siguin les utilitzades per l'entrenament. En aquest cas li hem de passar la \textit{sparse matrix} que hem obtingut anteriorment. \\\\
+A mesura que es vagin realitzant les iteracions es mostrarà per pantalla la iteració la qual s'acaba de realitzar, la \textit{pseudo-likelihood} i el temps que ha tardat. La \textit{pseudo-likelihood} és una estimació bastant decent sobre el rendiment del model actualment encaixant les dades de formació. Com més baix sigui millor. Així doncs al entrenar la nostra màquina creada obtenim un resultat com aquest:
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=\textwidth]{rbmtrain}
+\caption{Resultat del entrenament de la màquina}
+\end{center}
+\end{figure}
+\\\\
+Com podem observar el temps de cada iteració es similar i la \textit{pseudo-likelihood} va variant a mesura que passen les iteracions. Aquesta informació ens permet analitzar el comportament de la nostra màquina, és a dir, si volem canviar el valor la \textit{pseudo-likelihood} per tal que sigui més baix i millor necessitem anar realitzant proves i anar canviar els diferents paràmetres de la màquina. En aquest cas, una solució seria canviar el \textit{batch\_size} però això comportaria més temps per iteració i a més tenint en compte que el nombre de dades actual és baix en comparació a altres màquina i en un futur podria augmentar considerablement. \\\\
+La qüestió final és fer proves fins a trobar una implementació que ens sigui assequible, que s'adapti a les nostres necessitats i a les del problema proposat. Per tal de trobar aquesta implementació es van realitzar diferents proves amb diferents valors però els valors de temps eren molt elevats i la \textit{pseudo-likelihood} era molt alta en comparació a les altres implementacions.\\\\
+Finalment un cop acaben totes les iteracions ja tenim la màquina creada per tal d'obtenir valors nous. Per tal d'evitar entrenar la màquina cada cop que volem generar valors nous es va decidir guardar tant les dades d'entrenament com la màquina en un format de fitxer \textit{pickle}. Aquest format ens permet guardar la nostra màquina i les nostres dades sense la necessitat d'ocupar molt d'espai i també ens permet més endavant carregar de nou la màquina, ja entrenada, i les nostres dades.
 \subsection{Dades de sortida}
+Després d'haver entrenat la màquina només ens queda una pas i és generar moodboards. Però per tal de generar moodboards hem de saber com obtenir valors nous a partir de la màquina i en quin format es troben i quin format necessitem per visualitzar-los a la eina.
+\subsubsection{Dades obtingudes del RBM}
+Un cop la màquina està entrenada necessitem generar dades noves. Per tal de generar dades noves la llibreria amb la qual hem implementat la màquina ens proporciona un mètode per tal de generar aquestes dades. Aquest mètode es tracte del mostreig de Gibbs, \textit{gibbs(v)}. El mostreig de Gibbs és un algoritme per generar una mostra aleatòria a partir de la distribució de probabilitat conjunta de dues o més variables aleatòries. A partir d'un vector de unitats visibles, de valors visibles i vàlids genera un altre vector d'unitats visibles mitjançant el mostreig de Gibbs.\\\\
+Així doncs, aquesta funció ha de rebre com a paràmetre un \textit{one hot vector}. En aquest cas, aquest vector ha de correspondre a una dada de les d'entrenament ja que són les aquestes són les úniques dades vàlides. En molts casos, es té unes dades d'entrenament i unes dades de test, però en aquest cas al tenir poques dades no s'ha dividit en dos tipus de dades.\\\
+D'aquesta forma, al passar un vector format de 0 i 1 a la funció \textit{gibbs}, aquesta ens retornarà un vector de unitats visibles de la màquina.\\\\
+Aquest vector que obtindrem estarà no estarà format per 0 i 1 sinó que estarà format per booleans a cada posició. A més la seva llargada no serà de 48 elements com la mida d'un moodboard sinó que la mida serà de 12576 com la mida de cada vector de la matriu d'entrada a la màquina. Així doncs el format d'aquest vector resultant serà:
+\[ [False_0,False_1, \cdot\cdot\cdot, True_125, \cdot\cdot\cdot, False_{12576}]\]
+Això ens suposa alguns problemes ja que nosaltres volem un vector que tingui una mida de 48 i on a cada posició tingui un o més d'un identificador de característiques. El primer problema a observar és que haurem de transformar el vector obtingut per obtenir identificador i el segon problema és que a si només obtenim un vector només tindrem un identificador per cel·la o poder cap. Per tant haurem de realitzar el mostreig de Gibbs varis cops fins que tinguem un vector correcte.\\\\
+Primer de tot hem de transformar el vector per obtenir un vector de 0 i 1. Per fer aixo només hem de recórrer el vector i substituir tots els valors \textit{False} per 0 i els valors \textit{True} per 1.\\\
+Un cop realitzat aquest procés ja tenim un vector amb el següent format:
+\[ [0_0,0_1, \cdot\cdot\cdot, 1_125, \cdot\cdot\cdot, 0_{12576}]\]
+El següent pas és convertir aquest vector en un de mida 48 i amb identificadors a cada posició on cada identificador pot tenir un valor entre 1 i 262 que són els identificador de les característiques que tenim. També poden tenir un valor 0 el qual ens indica que en aquella posició no hi ha cap objecte. Per realitzar aquesta transformació aplicarem el següent algorisme:
+\begin{algorithm}
+\caption{Generació d'un vector amb identificadors a cada posició a partir d'un vector de 0 i 1}
+\begin{algorithmic} 
+\STATE Vector ${V}$ tal que ${V = [i_0,i_1, \cdot \cdot \cdot, i_{48}]}$ on ${ 0 <= i <= 262}$. \\\ 
+Vector ${D}$ tal que ${D = [j_0,j_1, \cdot \cdot \cdot, i_{12576}]}$ on ${ j = 0 o j = 1}$.
+\FOR{$i = 1 \cdot \cdot \cdot 48$} 
+\STATE Obtenir el vector ${K}$ tal que ${K = D[(262 * i):((i + 1) * 262)]}$
+\IF{${K}$ no conté 1}
+\STATE Afegir 0 a ${V}$
+\ELSE 
+\STATE Afegir ${K.index(1)}$ a ${V}$
+\ENDIF
+\ENDFOR \\
+${V}$ conté a cada posició un \textit{int} que és l'identificador d'una característica d'un objecte.
+\end{algorithmic}
+\end{algorithm} 
+Així doncs, aplicant l'algorisme anterior obtindríem un vector amb els identificadors corresponents a les característiques. Però, tot i això encara ens falta solucionar el problema d'obtenir més d'un valor per cada element. Per tal d'aconseguir el format final correcte necessitem tenir més d'un identificador a cada element, és a dir, una llista de identificador a cada posició tal i com obteníem les dades després de transformar-les al sortir de l'eina.\\\\
+Per aconseguir aquest format necessitem generar diferents vectors utilitzant el mostreig de gibbs, és a dir, utilitzant les dades d'entrenament agafar vectors aleatoris i realitzar un mostreig de gibbs. Per realitzar això només cal que definim un numero de iteracions, en aquest cas, vam definir 50 ja que no era un numero molt elevat ni molt baix i realitzar un mostreig de Gibbs i transformar aquest vector resultant a 0 i 1 a cada iteració. Així aconseguim un vector que conté 50 elements on cada un d'ells és un vector de 0 i 1 i que utilitzant l'algorisme 5 els transformarem a un vector de identificador.\\\\
+Finalment només hem d'ajuntar els vectors que hem obtingut de l'algorisme 5 i obtindrem el vector final amb un format com el següent:
+\[final\_data = [[id_1^1,id_2^1,_id_3^1, ...,id_{255}^1], [id_1^2,id_2^2,_id_3^2, ...,id_{255}^2], ..., [id_1^{48},id_2^{48},_id_3^{48}, ...,id_{255}^{48}]]\]
+Un exemple d'aquest vector amb dades reals obtingudes a partir de la màquina creada podria ser el següent:
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=\textwidth]{finaldata}
+\caption{Resultat final de la transformació}
+\end{center}
+\end{figure}
+\\\\
+Podem observar que la mida del vector és de 48 elements i cadascun ells conté una llista d'identificadors de característiques. Hem aconseguit passar d'un vector de mide 12576 format per valors booleans a un vector de mida 48 el qual esta format pels identificadors de les característiques dels objectes que més endavant es col·locaran en el moodboard. Finalment l'ultim pas que queda és com passem d'aquest vector a una representació visual, a un moodboard format per objectes.
+\subsubsection{Creació de moodboards a partir de les dades}
 format de les dades de sortida
 \section{Resultats i conclusions i línies de continuació}
 Evaluation Quantitativa

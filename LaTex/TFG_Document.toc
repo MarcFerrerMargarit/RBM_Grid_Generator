@@ -23,7 +23,15 @@
 \contentsline {subsection}{\numberline {4.3}Algorisme seleccionat a implementar en codi}{41}
 \contentsline {section}{\numberline {5}Desenvolupament de l'algoritme aplicat al problema}{44}
 \contentsline {subsection}{\numberline {5.1}Dades obtingudes de l'eina}{44}
-\contentsline {subsection}{\numberline {5.2}Dades d'entrament}{48}
-\contentsline {subsection}{\numberline {5.3}\`Analisi de l'algoritme amb les dades}{50}
-\contentsline {subsection}{\numberline {5.4}Dades de sortida}{50}
-\contentsline {section}{\numberline {6}Resultats i conclusions i l\IeC {\'\i }nies de continuaci\'o}{50}
+\contentsline {subsubsection}{\numberline {5.1.1}Format de les dades}{44}
+\contentsline {subsubsection}{\numberline {5.1.2}Dades obtingudes del projecte}{49}
+\contentsline {subsection}{\numberline {5.2}Dades d'entrament}{49}
+\contentsline {subsubsection}{\numberline {5.2.1}Format de les dades}{49}
+\contentsline {subsubsection}{\numberline {5.2.2}Creaci\'o del codificador i dades obtingudes}{51}
+\contentsline {subsection}{\numberline {5.3}Creaci\'o i entrenament del RBM}{52}
+\contentsline {subsubsection}{\numberline {5.3.1}Creaci\'o del RBM a partir de les dades}{53}
+\contentsline {subsubsection}{\numberline {5.3.2}Entrenament del RBM}{54}
+\contentsline {subsection}{\numberline {5.4}Dades de sortida}{55}
+\contentsline {subsubsection}{\numberline {5.4.1}Dades obtingudes del RBM}{55}
+\contentsline {subsubsection}{\numberline {5.4.2}Creaci\'o de moodboards a partir de les dades}{57}
+\contentsline {section}{\numberline {6}Resultats i conclusions i l\IeC {\'\i }nies de continuaci\'o}{57}
