@@ -751,14 +751,15 @@ Aixo ens permet obtenir un diccionari o una llista dels diferents ID que formen 
 ${L}$ conté tots els ID del moodboard generat
 \end{algorithmic}
 \end{algorithm}
-\\\\ Un cop apliquem l'algorisme descrit anteriorment, algorisme 3, obtindrem una llista de ID que abans eren simples imatges i no ens proporcionaven res d'informació a part de la visual. Ara tenim una llista amb els ID el qual cada un d'ells és un objecte que s'ha col·locat al moodboard. Així doncs de moment hem passat d'una representació visual del objecte a una representació descriptiva formada per la llista dels identificadors dels objectes. A continuació es mostra un exemple d'un resultat obtingut:
+\\\\ Un cop apliquem l'algorisme descrit anteriorment, algorisme 3, obtindrem una llista de ID que abans eren simples imatges i no ens proporcionaven res d'informació a part de la visual. Ara tenim una llista amb els ID el qual cada un d'ells és un objecte que s'ha col·locat al moodboard. Així doncs de moment hem passat d'una representació visual del objecte a una representació descriptiva formada per la llista dels identificadors dels objectes. \\\
+A continuació es mostra un exemple d'un resultat obtingut:
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=\textwidth]{id}
 \caption{Exemple de la transformació de imatge a una llista de ID.}
 \end{center}
 \end{figure}
-\\\\
+\\\
 Aquest resultat però no és el definitiu per entrenar a la màquina ja que aquests ID no ens donen informació sobre les característiques del objecte per tant necessitem realitzar una segona transformació per tal d'obtenir els ID que ens indicaran les característiques del color, material, forma... Així doncs hem de tornar-los a transformar per tal d'obtenir un diccionari amb totes les graelles plenes amb informació sobre els objectes. \\\\
 Tal i com hem explicat, volem generar moodboards d'un estil concret per tant, cada estil es regeix per unes característiques que els objectes compleixen. Així doncs necessitem obtenir aquestes característiques per tal de poder entrenar correctament la màquina.\\\\
 Aquestes característiques les obtindrem de la base de dades i ens descriuran aspectes dels objectes. Com que no podem entrenar la màquina utilitzant paraules haurem de convertir aquestes característiques en ID. Cada característica està associada a un ID concret i cada objecte conte una llista de ID que es pot obtenir mitjançant crides a la base dades.
@@ -954,7 +955,18 @@ Un exemple d'aquest vector amb dades reals obtingudes a partir de la màquina cre
 \\\\
 Podem observar que la mida del vector és de 48 elements i cadascun ells conté una llista d'identificadors de característiques. Hem aconseguit passar d'un vector de mide 12576 format per valors booleans a un vector de mida 48 el qual esta format pels identificadors de les característiques dels objectes que més endavant es col·locaran en el moodboard. Finalment l'ultim pas que queda és com passem d'aquest vector a una representació visual, a un moodboard format per objectes.
 \subsubsection{Creació de moodboards a partir de les dades}
-format de les dades de sortida
+Aquest és la part final per obtenir un moodboard completament generat a partir de les dades obtingudes de la màquina. En aquest punt tenim un vector que conté els identificadors de les característiques dels objectes que podrien anar a cada cel·la, ja que tenim 48 elements que corresponen a les cel·les del moodboard. \\\\
+Així doncs l'objectiu ara és a partir d'aquests identificadors obtenir els objectes que compleixin aquestes característiques. Per tal d'obtenir aquests objectes necessitarem fer vàries peticions a la base de dades. Com es va explicar en l'apartat del disseny de l'eina cada cel·la té unes subcategories que defineixen un rang d'objectes que pode anar-hi. Per el primer que hem de fer és llegir el fitxer que conté per a cada cel·la els identificadors de subcategories i guardar-los en un vector el qual tindrà 48 elements i a cada element una llista de identificadors.\\\\
+Ara disposem de dos vectors del mateixa mida i amb llistes d'identificadors que signifiquen diferents coses però que serveix pel mateix, per establir un rang d'objectes a col·locar a les cel·les. Per tant, per tal, d'aconseguir aquests rangs hem de recórrer els dos vectors simultàniament i fer crides a base de dades de forma que aquestes crides lis apliquem un filtre. Aquest filtre estarà format per les subcategories de la cel·les i s'hi ajuntara els identificadors de les característiques del vector obtingut anteriorment.\\\\
+D'aquesta forma a cada crida que fem a la base de dades, se'ns retornar un rang de identificadors corresponents a objectes que compleixen les condicions de pertànyer a una o més subcategories i que tenen certes característiques. En cas que se'ns retorni una llista de identificadors, com que no tenim forma de saber quin és millor que l'altre, agafarem un identificador aleatori ja que si es troba a la llista és que compleix totes les condicions.\\\\
+Finalment, si apliquem aquest procediment a tots els elements del vector obtindrem un vector final semblant a aquest:
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=\textwidth]{final_vector}
+\end{center}
+\end{figure}
+\\
+Aquest vector ja ens defineix el moodboard obtingut després de totes les transformacions. Per tant, ara per visualitzar aquest moodboard només l'hem de guardar en un fitxer i amb l'eina utilitzar la funció de visualitzar moodboards ja creats per tal de visualitzar correctament el moodboard obtingut de la màquina.
 \section{Resultats i conclusions i línies de continuació}
 Evaluation Quantitativa
 
