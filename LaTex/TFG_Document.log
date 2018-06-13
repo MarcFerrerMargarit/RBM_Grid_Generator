@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.5.28)  12 JUN 2018 21:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.5.28)  13 JUN 2018 18:11
 entering extended mode
 **./TFG_Document.tex
 (TFG_Document.tex
@@ -2088,17 +2088,67 @@ Underfull \hbox (badness 10000) in paragraph at lines 958--970
 
  []
 
-[57 <./Images/finaldata.png>] [58 <./Images/final_vector.png>] [59] [60]
-(TFG_Document.aux)
+[57 <./Images/finaldata.png>]
+<./Images/merge.jpg, id=351, 5390.72032pt x 1480.36935pt>
+File: ./Images/merge.jpg Graphic file (type jpg)
+<use ./Images/merge.jpg>
+Package pdftex.def Info: ./Images/merge.jpg  used on input line 978.
+(pdftex.def)             Requested size: 424.02794pt x 116.44417pt.
+<./Images/avaluation.jpg, id=352, 2207.73193pt x 572.72032pt>
+File: ./Images/avaluation.jpg Graphic file (type jpg)
+<use ./Images/avaluation.jpg>
+Package pdftex.def Info: ./Images/avaluation.jpg  used on input line 987.
+(pdftex.def)             Requested size: 424.05489pt x 110.00648pt.
+<./Images/avaluation1.jpg, id=353, 1989.36774pt x 450.71613pt>
+File: ./Images/avaluation1.jpg Graphic file (type jpg)
+<use ./Images/avaluation1.jpg>
+Package pdftex.def Info: ./Images/avaluation1.jpg  used on input line 988.
+(pdftex.def)             Requested size: 424.0631pt x 96.07678pt.
+<./Images/avaluation2.jpg, id=354, 1391.78032pt x 901.43225pt>
+File: ./Images/avaluation2.jpg Graphic file (type jpg)
+<use ./Images/avaluation2.jpg>
+Package pdftex.def Info: ./Images/avaluation2.jpg  used on input line 989.
+(pdftex.def)             Requested size: 424.05702pt x 274.65446pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 973--995
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 973--995
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 973--995
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 973--995
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 973--995
+
+ []
+
+[58 <./Images/final_vector.png>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[59 <./Images/merge.jpg>] [60 <./Images/avaluation.jpg> <./Images/avaluation1.j
+pg> <./Images/avaluation2.jpg>] [61] [62] (TFG_Document.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 15952 strings out of 493305
- 297556 string characters out of 3130237
+ 15972 strings out of 493305
+ 298041 string characters out of 3130237
  381704 words of memory out of 3000000
- 19131 multiletter control sequences out of 15000+200000
+ 19147 multiletter control sequences out of 15000+200000
  12681 words of font info for 51 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,9n,54p,1128b,1276s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2121,9 +2171,9 @@ rs/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12
 .pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
 ts/cm/cmtt10.pfb><C:/Users/Marc/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
 ublic/amsfonts/cm/cmtt12.pfb>
-Output written on TFG_Document.pdf (65 pages, 2824224 bytes).
+Output written on TFG_Document.pdf (67 pages, 4815762 bytes).
 PDF statistics:
- 415 PDF objects out of 1000 (max. 8388607)
+ 426 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 133 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 153 words of extra memory for PDF output out of 10000 (max. 10000000)
 

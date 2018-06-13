@@ -968,6 +968,34 @@ Finalment, si apliquem aquest procediment a tots els elements del vector obtindr
 \\
 Aquest vector ja ens defineix el moodboard obtingut després de totes les transformacions. Per tant, ara per visualitzar aquest moodboard només l'hem de guardar en un fitxer i amb l'eina utilitzar la funció de visualitzar moodboards ja creats per tal de visualitzar correctament el moodboard obtingut de la màquina.
 \section{Resultats i conclusions i línies de continuació}
+Ara ja tenim totes les parts enllaçades i preparades per generar moodboards, l'ultim pas que ens queda és obtenir resultats, avaluar-los, treure'n conclusions i explicar les possibles línies de continuació  que existeixen per aquest projecte que hem desenvolupat.
+\subsection{Resultats}
+Avaluar models generatius com la màquina que em creat és molt complicat ja que no tenim un resultat estàndard per el resultat obtingut i no qualsevol persona pot detectar si aquell resultat és bo o dolent. Així doncs la nostra forma d'avaluar els nostres resultats serà utilitzant l'ajuda d'un expert per a valorar els moodboards obtinguts. \\\\
+Definirem tres tipus d'avaluació diferents per tal d'avaluar el nostre sistema creat. La primera avaluació serà una avaluació qualitativa. Es generaran 10 moodboars utilitzant la màquina i al eina respectivament i se'ls ensenyaran al expert i haurà de valorar per cada un d'ells quins són els objectes que fallen i perquè. D'aquesta forma obtindrem els moodboards més ben generats i els que més objectes incorrectes tenen. Aquesta avaluació ens permetrà tenir una primera idea si la màquina esta generant els moodboards correctament, és a dir, si conté objectes correctes i si és el cas, dels que s'han generat quina és la mitja de elements correctes.\\\\
+També ens permetrà saber les causes dels objectes que han fallat i així intentar millorar la màquina per tal que tals objectes no siguin generats o que valori uns més que els altres. A continuació es mostren els moodboard generats.
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{merge}
+\caption{Resultat de la generació de 10 moodboards.}
+\end{center}
+\end{figure}
+\\\\
+Com podem observar tots els moodboards segueixen un esquema similar, les caselles on no hi ha objectes sempre solen ser les mateix. També cal observara que hi ha objectes que no tenen imatges, això pot complicar l'avaluació ja que no sabem com és l'objecte col·locat. En aquest punt vam decidir que suposaríem que l'objecte era correcte ja que en cas de suposar el contrari el moodboard ja seria incorrecte. Una millora de l'algorisme seria evitar els objectes que no tenen imatge.\\\\
+Així doncs el següent pas és donar aquests moodbards al expert i que ens digui quins objectes fallen a cada un i perquè fallen. Una vegada l'expert ha avaluat el resultat obtenim la imatge de la figura 25. L'expert ha marcat els objectes que estan malament i les observacions que ha fet sobre aquests.
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{avaluation}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{avaluation1}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{avaluation2}
+\caption{Resultat de l'avaluació del expert moodboards generats.}
+\end{center}
+\end{figure}
+\\\\
+adfadfafd
+\newpage
+\subsection{Conclusions}
+\subsection{Línies de continuació}
+
 Evaluation Quantitativa
 
 Evaluar models generatius és en general molt complicat.

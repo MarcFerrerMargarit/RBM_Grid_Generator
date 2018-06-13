@@ -35,3 +35,6 @@
 \contentsline {subsubsection}{\numberline {5.4.1}Dades obtingudes del RBM}{55}
 \contentsline {subsubsection}{\numberline {5.4.2}Creaci\'o de moodboards a partir de les dades}{57}
 \contentsline {section}{\numberline {6}Resultats i conclusions i l\IeC {\'\i }nies de continuaci\'o}{58}
+\contentsline {subsection}{\numberline {6.1}Resultats}{58}
+\contentsline {subsection}{\numberline {6.2}Conclusions}{60}
+\contentsline {subsection}{\numberline {6.3}L\IeC {\'\i }nies de continuaci\'o}{60}
