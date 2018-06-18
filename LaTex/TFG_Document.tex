@@ -127,7 +127,9 @@ Finalment, aquestes proves es realitzaran mitjançant la supervisió de persones e
 
 \section*{Agraïments}
 
-Vull agrair a ... 
+Vull agrair a la empresa InteriorVista per donar-me l'oportunitat de realitzar aquest projecte i per tal de facilitar-me totes les eines i recursos necessaris per tal de poder desenvolupar i acabar el projecte.\\\
+També vull agrair al meu tutor a l'empresa, David Osuna, per tal de proposar-me aquest projecte tant important i tant interessant per a realitzar i per ajudar-me en tots els dubtes que he tingut durant aquest temps.\\\
+I finalment vull agrair al meu tutor del treballa, David Buchaca, per tal d'haver-me ajudat a trobar a dur a terme el projecte correctament i per haver-me ajudat a trobar eines i solucions per tal de resoldre els problemes que se'm presentaven al llarg del desenvolupament.
 \newpage
 
 \tableofcontents
@@ -981,7 +983,7 @@ També ens permetrà saber les causes dels objectes que han fallat i així intentar
 \end{figure}
 \\\\
 Com podem observar tots els moodboards segueixen un esquema similar, les caselles on no hi ha objectes sempre solen ser les mateix. També cal observara que hi ha objectes que no tenen imatges, això pot complicar l'avaluació ja que no sabem com és l'objecte col·locat. En aquest punt vam decidir que suposaríem que l'objecte era correcte ja que en cas de suposar el contrari el moodboard ja seria incorrecte. Una millora de l'algorisme seria evitar els objectes que no tenen imatge.\\\\
-Així doncs el següent pas és donar aquests moodbards al expert i que ens digui quins objectes fallen a cada un i perquè fallen. Una vegada l'expert ha avaluat el resultat obtenim la imatge de la figura 25. L'expert ha marcat els objectes que estan malament i les observacions que ha fet sobre aquests.
+Així doncs el següent pas és donar aquests moodboards al expert i que ens digui quins objectes fallen a cada un i perquè fallen. Una vegada l'expert ha avaluat el resultat obtenim la imatge de la figura 25. L'expert ha marcat els objectes que estan malament i les observacions que ha fet sobre aquests.
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{avaluation}
@@ -991,11 +993,11 @@ Així doncs el següent pas és donar aquests moodbards al expert i que ens digui q
 \end{center}
 \end{figure}
 \\\\
-adfadfafd
-\newpage
-\subsection{Conclusions}
-\subsection{Línies de continuació}
-
+Com podem observar de les 10 imatges que s'han generat la majoria tenen algun element incorrecte o que no s'adequa al estil. L'expert a part de dir quins són els que estan malament també ens indica algunes de les raons per les quals aquests objectes són incorrectes o no s'adeqüen a l'estil. \\\\
+En aquest cas les imatges corresponen a l'estil de \textit{Popular Modern}, és a dir, popular modern. Així doncs, molts dels objectes que s'han col·locat no segueix aquest estil, aquesta línia de popular modern. La majoria són popular tradicional o tradicionals purament per tant, la col·locació d'aquests no es correcte a dins la imatge. \\\\
+Això pot ser degut a com es realitza el filtratge o com està implementada la base de dades, ja que en cap moment podem filtrar per estil que nosaltres volem ja que a dins la base de dades aquest paràmetre és inaccessible. Això provoca que la llista d'objectes que ens retorna sigui més gran i per tant contingui objectes amb estils diferents als que desitgem però que compleixen les altres propietats. Així doncs, la solució seria poder filtrar segons l'estil corresponen a la imatge per tal que els objectes que ens retornen concordin amb l'estil seleccionat.\\\\
+L'altre raó per la qual molts objectes s'han marcat malament és pels colors que el formen. La màquina no té en compte la relació de colors entre objectes, no estableix cap relació entre els objectes que es col·loquen ja que només s'analitzen les característiques d'aquests. Així doncs és normal que els colors dels objectes no tinguin relació quan en la generació prèvia de moodboards l'expert col·locava els objectes per tal de tenir coherència entre ells però alhora d'entrenar la màquina aquesta relació no s'analitza profundament.\\\
+Així doncs, és normal, que surtin objectes amb colors que no tenen relació tot i que el filtratge amb la base de dades hagi donat com a vàlids aquests objectes.
 Evaluation Quantitativa
 
 Evaluar models generatius és en general molt complicat.
@@ -1025,7 +1027,22 @@ Interficie grafica de la imatge.
 - Temps que triguen els humans a generar una graella amb RBM
     - Podries vendre-ho com una "help tool" que a un disenyador li genera 25 graelles i ell sols ha de triar
       quina li agrada més. I si vol variar alguna cosa de la graella.
-    
+\newpage
+\subsection{Conclusions}
+Amb la realització d'aquest projecte hem aprés que la realització d'una tasca manual, repetitiva i costosa de temps, com és la generació de moodboards, pot ser reemplaçada per una aplicació i una màquina automàtica tal que la combinació de les dues ens permeti agilitzar la tasca tant com es pugui.\\\\
+També hem après com dissenyar l'aplicació i satisfer les restriccions i les utilitats que havia de tenir per tal de poder fer més fàcil la tasca de la generació de moodboards. \\\\
+La part més important ha sigut la de crear la màquina ja que hem hagut de aprendre el funcionament bàsic del machine learning per tal de poder decidir quin tipus de màquina era millor per el problema que se'ns presentava. La creació de la màquina ens ha permès establir un sistema d'aprenentatge per tal de generar moodboards a partir dels creats anteriorment i ens ha permès automatitzar tota la tasca per tal que no es necessitessin aplicar els mètodes anteriors, que eren lents, per tal de generar les imatges.\\\\
+Els resultats que hem obtingut després de realitzar totes les proves que hem cregut necessàries no han sigut del tot correctes ni tampoc han sigut com esperaven. Tot i això, les resultats ens han permès deduir quines mancances tenia la màquina i quins eren els problemes que s'havien de solucionar. De totes maneres, també cal dir, que els resultats obtingut poder ser deguts a la falta de  dades ja que per aquest projecte no hem pogut disposar de més dades per culpa de la falta de temps i dedicació alhora de realitzar moodboards correctes per l'entrenament de la màquina.\\\\
+Tot i això, hem pogut desenvolupar correctament un sistema d'aprenentatge per a la realització d'unes tasques especifiques i hem pogut comprovar, encara que els resultats no fossin els ideals, que el funcionament era l'esperat. \\\\
+Finalment, durant la realització del projecte han anat apareixent canvis que han provocat certs canvis importants en la implementació de la màquina i s'han anat canviat especificacions que afectaven a les dades. A part d'això, finalment s'ha aconseguit establir uns estàndards  per tal de poder fer funcionar correctament la màquina i obtenir resultats encara que no fossin els ideals per tal de poder comprovar que s'havia realitzat la implementació correctament.\\\\
+Per acabar, el projecte ha suposat un repte tant per el seu desenvolupament com per la seva avaluació ja que en un principi es desconeixia com s'avaluaria el problema presentat ja que mai havia tractat un tema com aquest ni havia desenvolupat cap màquina d'aquest estil.\\\
+Així doncs, el projecte m'ha permès aprendre molt sobre el machine learning i la seva utilització i sobretot com afrontar problemes els quals poden ser reemplaçats per màquina automàtiques i com crear-ne per tal de poder obtenir l'objectiu proposat.
+\newpage
+\subsection{Línies de continuació}
+Un cop s'ha acabat aquest projecte podem millorar-lo i seguir-lo desenvolupant de vàries maneres. En primer lloc i el següent pas que s'hauria de fer per a continuar el projecte seria que un cop generats els moodboards s'editessin per tal de corregir els objectes que són incorrectes i així obtenir nous moodboards per entrenar la màquina. D'aquesta forma s'obtindria un volum més elevat de dades que beneficiaria a la màquina ja que l'entrenament seria més complex i més correcte.\\\\
+Una altra opció seria generar les màquines per a diferents estils, ja que en aquest projecte només l'hem creat per un estil concret i poder seria interessant tenir tantes màquina com estils per tal de generar qualsevol estil de moodboard que es desitgi. \\\\
+Una altra millora que es podria aplicar seria la de crear un RBM nou que a part de llegir els objectes també relacionés els objectes col·locats, és a dir, que establir normes mitjançant una xarxa neuronal per tal d'obtenir resultats més correctes. També és podria realitzar una ingesta per les imatges, és a dir, analitzant les imatges en comptes de la informació dels objectes i així obtenir directament imatges de la sortida de la màquina. \\\\
+Finalment una de les últimes millores que es podrien aplicar al projecte seria que tot estigués inclòs en l'aplicació, és a dir, que l'aplicació tingués ja implementades les màquines i que des de l'aplicació poguessin aprendre directament i generar els moodboards i mostrar-los. Això permetria un control sobre la visualització dels moodboards i sobre les dades d'entrenament ja que en tot moment es visualitzarien els objectes que es col·loquen i/o es generen.
 \normalfont
 
 \newpage
@@ -1039,6 +1056,9 @@ Interficie grafica de la imatge.
 
 \bibitem{pari} Geoffrey Hinton; Advanced Machine Learning, Lecture 4, Restricted Boltzmann Machines,  \newline \texttt{https://www.cs.toronto.edu/~hinton/csc2535/notes/lec4new.pdf}.
 
+\bibitem{pari} Documentation RBM sklearn,  \newline \texttt{http://scikit-learn.org/stable/modules/generated/sklearn.neural\_network.BernoulliRBM.html}.
+
+\bibitem{pari} Documentation OneHotEncoder sklearn,  \newline \texttt{http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html}.
 \end{thebibliography}
 \end{document} 
 
