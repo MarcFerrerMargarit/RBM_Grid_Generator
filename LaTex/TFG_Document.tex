@@ -164,7 +164,10 @@ Finalment, tot i que l'objectiu és crear un sistema automatitzat per a millorar 
 En primer lloc ens centrarem com generem els moodboards, amb quines eines i alguns exemples per tal de crear-los. Aquests moodboards seran els que posteriorment serviran per entrenar la màquina. També explicarem el funcionament de les eines i les diferencies amb el mètode "tradicional".\\\\
 Seguidament explicarem quin tipus de màquina farem, és a dir, el tipus d'algorisme d'aprenentatge automàtic que aplicarem, els motius pels quals hem decidit escollir aquest algorisme i quines són les seves propietats bàsiques per aquest sistema.\\\
 Després analitzarem com són les dades d'entrada, com a partir del moodboards generats obtenim, com transformem aquestes imatges per tal d'obtenir dades vàlides per a entrenar la màquina. També definirem com han de ser aquestes dades i com han de ser les dades que volem obtenir de sortida i com les transformarem en imatges de nou. \\\\
-I finalment analitzarem els resultats obtinguts i els avaluarem mitjançant diferents proves que realitzarem per comprovar la seva eficiència i els resultats envers els moodboards creats prèviament per experts.
+
+Per motius de confidencialitat la empresa no ha deixat publicar ni adjuntar el codi en aquesta memoria. De totes maneres, s'han inclos parts de codi on es pot veure com s'han entrenat els models i els preprocessos necessaris per a generar els inputs.
+
+Finalment, analitzarem els resultats obtinguts i els avaluarem mitjançant diferents proves que realitzarem per comprovar la seva eficiència i els resultats envers els moodboards creats prèviament per experts.
 \newpage
 
 \section{Moodboards}
@@ -419,7 +422,7 @@ Alguns dels més freqüents en aprenentatge supervisat:
 \end{enumerate}
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=\textwidth]{supervised}
+\includegraphics[width=.8\textwidth]{supervised}
 \caption{Diagrama d'un algorisme amb aprenetatge supervisat.}
 \end{center}
 \end{figure}
@@ -430,45 +433,22 @@ L'aprenentatge no supervisat té lloc quan no es disposa de dades etiquetades per
 Per exemple, les tasques de clustering, busquen agrupaments basats en similituds, però gens garanteix que aquestes tinguin algun significat o utilitat. A vegades, en explorar les dades sense un objectiu definit, es poden trobar correlacions esporàdiques curioses, però poc pràctiques. Per exemple, en la gràfica inferior, publicada a la web de Tyler Vigen Spurious Correlations, podem apreciar una forta correlació entre el consum per càpita de pollastre als Estats Units i les seves importacions de petroli.\\\\
 L'aprenentatge no supervisat se sol usar en problemes de clustering, agrupaments de co-ocurrència i profiling. Si embargament, els problemes que impliquen tasques de trobar similitud, predicció d'enllaços o reducció de dades, poden ser supervisats o no.
 \\\\
-Els tipus d'algorisme més habituals en aprenentatge no supervisat són:
-\begin{enumerate}
-\item Algorismes de clustering
-\item Anàlisi de components principals
-\item Descomposició en valors singulars (singular value decomposition)
-\item Anàlisi de components independents (Independent Component Analysis)
-\end{enumerate}
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=\textwidth]{unsupervised}
-\caption{Diagrama d'un algorisme amb aprenetatge no supervisat.}
-\end{center}
-\end{figure}
-\subsubsection{Aprenentatge per reforç}
-El mètode d'aprenentatge de reforç pretén utilitzar observacions recollides a partir de la interacció amb el medi ambient per prendre accions que maximitzin la recompensa o minimitzin el risc. L'algoritme d'aprenentatge de reforç (anomenat agent) contínuament aprèn de l'entorn d'una manera iterativa. En el procés, l'agent aprèn de les seves experiències sobre el medi ambient fins que explora tot el ventall d'estats possibles.
-\\\\
-L'aprenentatge de reforç és un tipus d'aprenentatge automàtic, i també una branca d'Intel·ligència Artificial. Permet que les màquines i els agents de programari determinin automàticament el comportament ideal en un context específic, per maximitzar el seu rendiment. Es requereix feedback simple de recompensa perquè l'agent aprengui el seu comportament; això es coneix com el senyal de reforç.
-\newpage
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=\textwidth]{reinforcement}
-\caption{Exemple del funcionament de l'algorisme.}
-\end{center}
-\end{figure}
+Els algorismes no supervisats es poden usar per diferents tasques. Una tasca força classica és  la de trobar grups dins a les dades.  Podem usar algorismes de clustering que ens permeten associar a dades uns representants (centroides dels clusters). Això pot ser util, per exemple, per a trobar grups de usuaris amb caracteristiques comuns. 
+Una altra tasca diferent és la de generar dades. En aquest treball ens centrem en usar models que permeten generar dades a partir de unes dades de entrenament, no en trobar grups a les dades. 
 
-Hi ha molts algoritmes diferents que s'ocupen d'aquest problema. De fet, l'educació de reforç es defineix per un tipus específic de problema, i totes les seves solucions es classifiquen com a algorismes d'aprenentatge de reforç. En el problema, se suposa que un agent decideix la millor acció per seleccionar en funció del seu estat actual. Quan es repeteix aquest pas, el problema es coneix com a procés de decisió de Markov.\\\\
-Per produir programes intel·ligents (també anomenats agents), l'aprenentatge de reforç passa pels següents passos:
-\begin{enumerate}
-\item L'agent l'observa l'estat d'entrada.
-\item La funció de presa de decisions s'utilitza per fer que l'agent realitzi una acció.
-\item Una vegada realitzada l'acció, l'agent rep recompensa o reforç des del medi ambient.
-\item S'emmagatzema la informació del parell d'acció estatal sobre la recompensa.
-\end{enumerate}
-Els principals algoritmes són:
-\begin{itemize}
-\item Q-Learning
-\item Diferència temporal (TD)
-\item Xarxes adversàries profundes
-\end{itemize}
+%\begin{enumerate}
+%\item Algorismes de clustering
+%\item Anàlisi de components principals
+%\item Descomposició en valors singulars (singular value decomposition)
+%%\item Anàlisi de components independents (Independent Component Analysis)
+%\end{enumerate}
+%\begin{figure}[h!]
+%\begin{center}
+%\includegraphics[width=\textwidth]{unsupervised}
+%\caption{Diagrama d'un algorisme amb aprenetatge no supervisat.}
+%\end{center}
+%\end{figure}
+
 \newpage
 \subsection{Plantejament de l'algoritme}
 Un cop ja tenim els coneixements bàsics del machine learning necessitem pensar en quin algoritme necessitem per tal de poder aplicar-lo al nostre problema i desenvolupar-lo correctament. \\\\
@@ -629,7 +609,7 @@ S'han proposat recentment nombrosos enfocaments basats en l'aprenentatge de CDs 
 \subsubsection{Avaluació d'una RBM}
 A continuació explicarem les formes d'avaluar una màquina de boltzamn restrictiva. Tenim tres formes diferents per realitzar l'avaluació. En primer lloc tenim l'avaluació  per probabilitat i mostreig rellevant d'importància.\\\\
 Una forma natural d'avaluar el rendiment d'un RBM entrenat és calcular la probabilitat del model i les probabilitats de realitzar mostres de dades de prova sota el RBM format. A més, tal com es comentarà al capítol 3 i es mostra en el document de l'autor (Cho et al., 2010), la probabilitat de les mostres de dades aleatòries també es pot utilitzar com a mesura de la bondat de les RBM.\\\\
-A causa de la restricció estructural, el resum explícit de les neurones amagades és força senzill (vegeu l'equació (4.8)), però, malauradament, la probabilitat d'una observació encara és intractable a causa de la constant de normalització. La constant de normalització només es pot computar exactament sumant exponencialment molts termes, i tret que la dimensionalitat del conjunt de dades sigui molt petita, és senzillament impossible. Per tant, en lloc de computar-ho exactament, cal utilitzar un mètode aproximat.\\\\
+A causa de la restricció estructural, el resum explícit de les neurones ocultes (hidden) és força senzill (vegeu l'equació (4.8)), però, malauradament, la probabilitat d'una observació encara és intractable a causa de la constant de normalització. La constant de normalització només es pot computar exactament sumant exponencialment molts termes, i tret que la dimensionalitat del conjunt de dades sigui molt petita, és senzillament impossible. Per tant, en lloc de computar-ho exactament, cal utilitzar un mètode aproximat.\\\\
 Per a l'estimació de la constant de normalització, aquesta tesi utilitza mostres d'importància recomenada (Annealed importance sampling, AIS) (Neal, 1998) que s'ha utilitzat amb èxit per calcular la constant de normalització de RBM (Salakhutdinov, 2009b).\\\\
 L'AIS es basa en un mètode de mostreig d'importància simple (SIS) que podria estimar la proporció de dues constants de normalització. Per a dues densitats de probabilitat ${P_A (x) = \frac{P_A^*(x)}{Z_A}}$ i ${P_B (x) = \frac{P_B^*(x)}{Z_B}}$, la relació de dues constants de normalització ${Z_A}$ i ${Z_B}$ es pot estimar mitjançant un mètode de mostreig de Monte Carlo sense cap biaix si és possible provar de ${P_A (\cdot)}$:
 \begin{equation}
@@ -681,7 +661,7 @@ El fet que la funció de destinació no es pugui calcular exactament durant l'apre
 Atès que l'aprenentatge es realitza utilitzant actualitzacions de gradients estocàstics, convergeix a una solució local.\\\\
 El problema és que no és factible comparar les diferents solucions analíticament, i triar el millor d'entre elles. Schulz et al. (2010) i Fischer and Igel (2010) han mostrat recentment que, depenent de la inicialització i els paràmetres d'aprenentatge, els RBM resultants varien molt, fins i tot en els petits conjunts de dades de joguines.\\\\
 Més problemàticament, els enfocaments més aproximats presentats en els apartats anteriors s'han demostrat que difereixen, si els paràmetres d'aprenentatge no s'han triat de manera adequada. L'ús d'un millor mètode de mostreig MCMC, p. Ex. el temperament paral·lel s'ha demostrat que evita millor el comportament divergent, però a llarg termini sense utilitzar la programació de tarifes d'aprenentatge apropiada, la probabilitat del registre fluctua molt (Desjardins et al., 2010b, 2009), cosa que no és desitjable.\\\\
-S'ha demostrat que RBM és un aproximador universal de manera que amb prou nombre de neurones ocultades pot modelar qualsevol distribució de probabilitat valorada discreta.\\\\
+S'ha demostrat que RBM és un aproximador universal de manera que amb prou nombre de neurones ocultades pot modelar qualsevol distribució de probabilitat discreta.\\\\
 Tanmateix, a la pràctica, el nombre de neurones ocultes sempre és limitat i, depenent dels procediments d'aprenentatge, no totes les neurones ocultes contribueixen al poder de representació de RBM.\\\\
 Per exemple, aquestes neurones ocultes sempre actives no tenen sentit, ja que els pesos associats a ells es poden incorporar a biaixos. A més, qualsevol neurona oculta inactiva sempre no té sentit, des de llavors, l'eliminació de la neurona oculta no afecta la capacitat de modelatge de RBM (vegeu la secció 2.3.3 per obtenir informació sobre la determinació de neurones ocultades sense sentit).\\\\
 Idealment, cada neurona oculta hauria de representar una característica "significativa" diferent, per exemple, una part típica de la imatge. Tanmateix, ens hem adonat que sovint les neurones amagades tendeixen a aprendre característiques que s'assemblen al biaix visible b. Aquest efecte és més destacat en la fase inicial d'aprenentatge i en el conjunt de dades en què els bits visibles són majoritàriament actius, com ara 1-MNIST on es va desplegar cada bit de conjunt de dades manuscrits MNIST.\\\\
@@ -732,6 +712,18 @@ Un cop tenim la implementació que usarem ara només ens queda preparar les dades 
 \section{Desenvolupament de l'algoritme aplicat al problema}
 Un cop ja tenim tots els elements que composen el nostre problema només ens falta explicar el desenvolupament d'aquest utilitzant les dades que ens proporcionen i com utilitzem aquestes per a crear una màquina i a generara resultats. \\\
 A continuació analitzarem les dades que rebem de l'aplicació, com es transformen per tal de ser aptes per la màquina, com funciona i com definim la màquina i com són les dades de sortida i com les transformem per tal de poder-les tornar a llegir amb l'aplicació.
+\subsection{Esquema del model}
+
+Tot seguit descriurem a alt nivell tots els passos pels quals passa una dada de entrada abans de arribar al model.
+
+POSAR DIAGRAMA
+
+dada de la eina -> ALGORITHM 3  -> ALGORITHM 4 -> OneHOtencoder -> RBM -> RBM.gibbs -> Algorithm5 -> Dada de sortida (nova graella)
+
+
+
+
+
 \subsection{Dades obtingudes de l'eina}
 El primer pas com hem mencionat anteriorment és la generació de moodboards a partir de l'eina creada. Les graelles resultants són imatges formades a partir d'altres imatges, són representacions visuals que en aquest cas no podem entrar directament a la màquina ja que les hem de descompondre d'alguna manera per tal que ens sigui més fàcil entendre la seva composició.\\\\
 Així doncs explicarem el format d'aquestes dades i quines dades hem obtingut en el nostre projecte.
@@ -971,9 +963,11 @@ Finalment, si apliquem aquest procediment a tots els elements del vector obtindr
 Aquest vector ja ens defineix el moodboard obtingut després de totes les transformacions. Per tant, ara per visualitzar aquest moodboard només l'hem de guardar en un fitxer i amb l'eina utilitzar la funció de visualitzar moodboards ja creats per tal de visualitzar correctament el moodboard obtingut de la màquina.
 \section{Resultats i conclusions i línies de continuació}
 Ara ja tenim totes les parts enllaçades i preparades per generar moodboards, l'ultim pas que ens queda és obtenir resultats, avaluar-los, treure'n conclusions i explicar les possibles línies de continuació  que existeixen per aquest projecte que hem desenvolupat.
-\subsection{Resultats}
+\subsection{Qualitat de les graelles generades}
 Avaluar models generatius com la màquina que em creat és molt complicat ja que no tenim un resultat estàndard per el resultat obtingut i no qualsevol persona pot detectar si aquell resultat és bo o dolent. Així doncs la nostra forma d'avaluar els nostres resultats serà utilitzant l'ajuda d'un expert per a valorar els moodboards obtinguts. \\\\
-Definirem tres tipus d'avaluació diferents per tal d'avaluar el nostre sistema creat. La primera avaluació serà una avaluació qualitativa. Es generaran 10 moodboars utilitzant la màquina i al eina respectivament i se'ls ensenyaran al expert i haurà de valorar per cada un d'ells quins són els objectes que fallen i perquè. D'aquesta forma obtindrem els moodboards més ben generats i els que més objectes incorrectes tenen. Aquesta avaluació ens permetrà tenir una primera idea si la màquina esta generant els moodboards correctament, és a dir, si conté objectes correctes i si és el cas, dels que s'han generat quina és la mitja de elements correctes.\\\\
+Definirem tres tipus d'avaluació diferents per tal d'avaluar el nostre sistema creat. La primera avaluació serà una avaluació qualitativa. Es generaran 10 moodboars utilitzant la màquina i al eina respectivament i se'ls ensenyaran al expert i haurà de valorar per cada un d'ells quins són els objectes que fallen i perquè. És important enfatitzar que degut a dificultats tecniques sols disposavem de 8 dades d'entrenament.
+
+ D'aquesta forma obtindrem els moodboards més ben generats i els que més objectes incorrectes tenen. Aquesta avaluació ens permetrà tenir una primera idea si la màquina esta generant els moodboards correctament, és a dir, si conté objectes correctes i si és el cas, dels que s'han generat quina és la mitja de elements correctes.\\\\
 També ens permetrà saber les causes dels objectes que han fallat i així intentar millorar la màquina per tal que tals objectes no siguin generats o que valori uns més que els altres. A continuació es mostren els moodboard generats.
 \begin{figure}[h!]
 \begin{center}
@@ -982,6 +976,10 @@ També ens permetrà saber les causes dels objectes que han fallat i així intentar
 \end{center}
 \end{figure}
 \\\\
+
+
+
+
 Com podem observar tots els moodboards segueixen un esquema similar, les caselles on no hi ha objectes sempre solen ser les mateix. També cal observara que hi ha objectes que no tenen imatges, això pot complicar l'avaluació ja que no sabem com és l'objecte col·locat. En aquest punt vam decidir que suposaríem que l'objecte era correcte ja que en cas de suposar el contrari el moodboard ja seria incorrecte. Una millora de l'algorisme seria evitar els objectes que no tenen imatge.\\\\
 Així doncs el següent pas és donar aquests moodboards al expert i que ens digui quins objectes fallen a cada un i perquè fallen. Una vegada l'expert ha avaluat el resultat obtenim la imatge de la figura 25. L'expert ha marcat els objectes que estan malament i les observacions que ha fet sobre aquests.
 \begin{figure}[h!]
@@ -998,7 +996,16 @@ En aquest cas les imatges corresponen a l'estil de \textit{Popular Modern}, és a
 Això pot ser degut a com es realitza el filtratge o com està implementada la base de dades, ja que en cap moment podem filtrar per estil que nosaltres volem ja que a dins la base de dades aquest paràmetre és inaccessible. Això provoca que la llista d'objectes que ens retorna sigui més gran i per tant contingui objectes amb estils diferents als que desitgem però que compleixen les altres propietats. Així doncs, la solució seria poder filtrar segons l'estil corresponen a la imatge per tal que els objectes que ens retornen concordin amb l'estil seleccionat.\\\\
 L'altre raó per la qual molts objectes s'han marcat malament és pels colors que el formen. La màquina no té en compte la relació de colors entre objectes, no estableix cap relació entre els objectes que es col·loquen ja que només s'analitzen les característiques d'aquests. Així doncs és normal que els colors dels objectes no tinguin relació quan en la generació prèvia de moodboards l'expert col·locava els objectes per tal de tenir coherència entre ells però alhora d'entrenar la màquina aquesta relació no s'analitza profundament.\\\
 Així doncs, és normal, que surtin objectes amb colors que no tenen relació tot i que el filtratge amb la base de dades hagi donat com a vàlids aquests objectes.
+\subsubsection{Possibles problemes}
+
+\begin{itemize}
+\item El nostre dataset de entrenament tenia tan sols 8 graelles.
+\item El filtratge de les dades de sortida és incorrecte.
+\end{itemize}
+
 Evaluation Quantitativa
+
+
 
 Evaluar models generatius és en general molt complicat.
 
@@ -1012,6 +1019,7 @@ Donem les graelles al expert i li preguntem quines son bones i quines no. Contem
 Evaluacio custom
 
 Podriem mirar de les graelles generades si els objectes son de color similar.
+
 
 Evaluation Qualitativa
 
@@ -1041,7 +1049,7 @@ Així doncs, el projecte m'ha permès aprendre molt sobre el machine learning i la
 \subsection{Línies de continuació}
 Un cop s'ha acabat aquest projecte podem millorar-lo i seguir-lo desenvolupant de vàries maneres. En primer lloc i el següent pas que s'hauria de fer per a continuar el projecte seria que un cop generats els moodboards s'editessin per tal de corregir els objectes que són incorrectes i així obtenir nous moodboards per entrenar la màquina. D'aquesta forma s'obtindria un volum més elevat de dades que beneficiaria a la màquina ja que l'entrenament seria més complex i més correcte.\\\\
 Una altra opció seria generar les màquines per a diferents estils, ja que en aquest projecte només l'hem creat per un estil concret i poder seria interessant tenir tantes màquina com estils per tal de generar qualsevol estil de moodboard que es desitgi. \\\\
-Una altra millora que es podria aplicar seria la de crear un RBM nou que a part de llegir els objectes també relacionés els objectes col·locats, és a dir, que establir normes mitjançant una xarxa neuronal per tal d'obtenir resultats més correctes. També és podria realitzar una ingesta per les imatges, és a dir, analitzant les imatges en comptes de la informació dels objectes i així obtenir directament imatges de la sortida de la màquina. \\\\
+Una altra millora que es podria aplicar seria la de crear un RBM nou que a part de llegir els objectes també relacionés els objectes col·locats, és a dir, que establir normes mitjançant una xarxa neuronal per tal d'obtenir resultats més correctes. També és podria realitzar una ingesta per les imatges, és a dir, passar com a input les imatges en comptes de la informació dels objectes i així obtenir directament imatges de la sortida de la màquina. Una altra opció seria passar com a input la imatge i la graella.  \\\\
 Finalment una de les últimes millores que es podrien aplicar al projecte seria que tot estigués inclòs en l'aplicació, és a dir, que l'aplicació tingués ja implementades les màquines i que des de l'aplicació poguessin aprendre directament i generar els moodboards i mostrar-los. Això permetria un control sobre la visualització dels moodboards i sobre les dades d'entrenament ja que en tot moment es visualitzarien els objectes que es col·loquen i/o es generen.
 \normalfont
 
