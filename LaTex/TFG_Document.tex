@@ -352,7 +352,7 @@ En realitat, l'origen i el format de les dades no és tan rellevant, ja que el ma
 \\\
 Podríem dir que les seves algoritmes es divideixen principalment en tres grans categories: supervised learning (aprenentatge supervisat), unsupervised learning (aprenentatge no supervisat) i Reinforcement learning (aprenentatge per reforç). A continuació, detallarem les diferències entre aquestes.
 \\\\
-Una vegada que comproves el fàcil i pràctic que resulta d'aplicar les tècniques de machine learning a problemes que creies serien impossibles, és quan comences a creure que podria resoldre pràcticament qualsevol problema * -sempre i quan hi hagi suficients dades-.\\\\
+Una vegada que comproves el fàcil i pràctic que resulta d'aplicar les tècniques de machine learning a problemes que creies serien impossibles, és quan comences a creure que podria resoldre pràcticament qualsevol problema, sempre i quan hi hagi suficients dades ja que la falta de dades pot provocar problemes al desenvolupament.\\\\
 Per al consumidor modern, el machine learning és un facilitador clau de moltes de les seves tasques quotidianes. Des serveis de traducció, a prediccions climàtiques, fins endevinar el que els usuaris volen amb base a les seves activitats recents; les prestacions que ofereix són incomparables.
 \\\
 Pel que fa als negocis, moltes companyies han començat a incorporar aquesta tecnologia als seus sistemes operatius, amb grans expectatives de millorar i automatitzar els seus processos.
@@ -425,10 +425,10 @@ Alguns dels més freqüents en aprenentatge supervisat:
 \subsubsection{Aprenentatge no supervisat}
 L'aprenentatge no supervisat té lloc quan no es disposa de dades etiquetades per a l'entrenament. Només coneixem les dades d'entrada, però no existeixen dades de sortida que corresponguin a un determinat input. Per tant, només podem descriure l'estructura de les dades, per intentar trobar algun tipus d'organització que simplifiqui l'anàlisi. Per això, tenen un caràcter exploratori.
 \\\\
-Per exemple, les tasques de clustering, busquen agrupaments basats en similituds, però gens garanteix que aquestes tinguin algun significat o utilitat. A vegades, en explorar les dades sense un objectiu definit, es poden trobar correlacions esporàdiques curioses, però poc pràctiques. Per exemple, en la gràfica inferior, publicada a la web de Tyler Vigen Spurious Correlations, podem apreciar una forta correlació entre el consum per càpita de pollastre als Estats Units i les seves importacions de petroli.\\\\
-L'aprenentatge no supervisat se sol usar en problemes de clustering, agrupaments de co-ocurrència i profiling. Si embargament, els problemes que impliquen tasques de trobar similitud, predicció d'enllaços o reducció de dades, poden ser supervisats o no.
+Per exemple, les tasques de clustering, busquen agrupaments basats en similituds, però gens garanteix que aquestes tinguin algun significat o utilitat. A vegades, en explorar les dades sense un objectiu definit, es poden trobar correlacions esporàdiques curioses, però poc pràctiques. \\\\
+L'aprenentatge no supervisat se sol usar en problemes de clustering, agrupaments de co-ocurrència i profiling. Tanmateix, els problemes que impliquen tasques de trobar similitud, predicció d'enllaços o reducció de dades, poden ser supervisats o no.
 \\\\
-Els algorismes no supervisats es poden usar per diferents tasques. Una tasca força classica és  la de trobar grups dins a les dades.  Podem usar algorismes de clustering que ens permeten associar a dades uns representants (centroides dels clusters). Això pot ser util, per exemple, per a trobar grups de usuaris amb caracteristiques comuns. 
+Els algorismes no supervisats es poden usar per diferents tasques. Una tasca força classica és  la de trobar grups dins a les dades.  Podem usar algorismes de clustering que ens permeten associar a dades uns representants (centroides dels clústers). Això pot ser útil, per exemple, per a trobar grups de usuaris amb característiques comuns. 
 Una altra tasca diferent és la de generar dades. En aquest treball ens centrem en usar models que permeten generar dades a partir de unes dades de entrenament, no en trobar grups a les dades. 
 
 %\begin{enumerate}
@@ -453,7 +453,8 @@ Les labels podríem dir que és l'output, el valor de sortida, el valor que obteni
 Les features són variables individuals independents que actuen com a entrada al sistema. Els models de predicció utilitzen funcions per fer prediccions. També es poden obtenir funcions noves a partir de funcions antigues mitjançant un mètode conegut com a enginyeria de característiques. Més simplement, podem considerar que una columna del conjunt de dades sigui una feature. De vegades, aquests també s'anomenen atributs. I la quantitat de funcions s'anomenen dimensions. \\\
 Aplicant això al nostre problema obtindríem que les labels serien els estils i les features les diferents graelles que generem a partir de l'eina. \\\\
 Els algoritmes de classificació esmentats anteriorment classifiquen features d'entrada, és a dir, un cop entrenada la màquina permet classificar qualsevol dada d'entrada i obtenir una label, classificar aquesta dada. Si apliquem aquest comportament al nostre problema, obtindríem que donada una graella la podríem classificar, podríem dir de l'estil que és, de l'estil que pertany, però això, no és el que nosaltres volem aconseguir.\\\\
-El que volem aconseguir és que donat un estil ens generi una graella nova que segueixi les normes d'aquell estil que ha après la màquina. Volem que les nostres features siguin els estils i les labels les graelles però això no pot funcionar, ja que les labels han de ser valors únics o classes i les nostres graelles són vectors amb vectors, és una llista de dues dimensions. Així doncs necessitem un algoritme que ens permeti generar valors. \\\\
+El que volem aconseguir és que donat un estil ens generi una graella nova que segueixi les normes d'aquell estil que ha après la màquina. Volem que les nostres features siguin els estils i les labels les graelles però això no pot funcionar, ja que les labels han de ser valors únics o classes i les nostres graelles són vectors amb vectors, és una llista de dues dimensions. Així doncs necessitem un algoritme que ens permeti generar valors.  \\\
+Així doncs la nostra primera premissa de fer aprenentatge supervisat queda anul·lada i em de partir de la premissa que necessitem desenvolupar l'algoritme utilitzant aprenentatge no supervisat.\\\\
 Dintre del machine learning hi ha uns algoritmes que ens permeten generar valor a partir dels valors d'entrada, aquests algoritmes són els algoritmes generatius i discriminatius.\\\\
 Els algoritmes generatius són un model per a generar valors aleatoris d'una dada observable, típicament donats alguns paràmetres ocults. Els algoritmes generadors contrasten amb els models discriminadors; un algoritme generador és un gran model probabilista de totes les variables, mentre que un algoritme discriminador proporciona un model sol per les variables etiquetades com a condicionals sobre les variables observades. \\\
 Per això un model generador pot ser utilitzat, per exemple, per simular (i.e. generar) valors de qualsevol variable en el model, mentre que un algoritme discriminador permet el mostreig únic de les variables condicionals. A la pràctica les dues classes són vistes com a complementàries o com diferents observacions del mateix procediment.\\\\
@@ -494,7 +495,7 @@ Els paràmetres de BM es poden obtenir a partir de les dades utilitzant l'estimac
 \begin{equation}
 \mathcal{L}(\theta) = \sum_{t=1}^N logP(v^{(t)}|\theta) =  \sum_{t=1}^N log \sum_h P(v^{(t)},h|\theta)
 \end{equation} 
-on les mostres ${v^{(t)}}$ s s'assumeixen que són independents entre si, i els estats h de les neurones amagades han de ser marginades.\\\\
+on les mostres ${v^{(t)}}$ s s'assumeixen que són independents entre si, i els estats h de les neurones ocultes han de ser marginades.\\\\
 El gradient de la probabilitat de registre s'obté prenent derivada parcial de ${\mathcal{L}(\theta)}$ respecte als paràmetres ${w_{ij}}$ 
 \[\frac{\partial\mathcal{L}}{\partial w_{ij}} = \frac{N}{2} [\langle x_ix_j \rangle_d - \langle x_ix_j \rangle_m] \]
 on una notació abreviada ${\langle\cdot\rangle_{P(\cdot)}}$ que denota l'expectativa calculada sobre la distribució de probabilitat ${P(\cdot)}$. A més, es van utilitzar ${d}$ i ${m}$ per designar dues distribucions de probabilitat ${P(h|\{v^{(t)}\},\theta)}$ i ${P(x|\theta)}$, respectivament. Són la probabilitat de les neurones ocultes quan les neurones visibles es subjecten a les mostres, i la probabilitat de totes les neurones sense cap neurona fixa. \\\\
@@ -659,7 +660,7 @@ Més problemàticament, els enfocaments més aproximats presentats en els apartats 
 S'ha demostrat que RBM és un aproximador universal de manera que amb prou nombre de neurones ocultades pot modelar qualsevol distribució de probabilitat discreta.\\\\
 Tanmateix, a la pràctica, el nombre de neurones ocultes sempre és limitat i, depenent dels procediments d'aprenentatge, no totes les neurones ocultes contribueixen al poder de representació de RBM.\\\\
 Per exemple, aquestes neurones ocultes sempre actives no tenen sentit, ja que els pesos associats a ells es poden incorporar a biaixos. A més, qualsevol neurona oculta inactiva sempre no té sentit, des de llavors, l'eliminació de la neurona oculta no afecta la capacitat de modelatge de RBM (vegeu la secció 2.3.3 per obtenir informació sobre la determinació de neurones ocultades sense sentit).\\\\
-Idealment, cada neurona oculta hauria de representar una característica "significativa" diferent, per exemple, una part típica de la imatge. Tanmateix, ens hem adonat que sovint les neurones amagades tendeixen a aprendre característiques que s'assemblen al biaix visible b. Aquest efecte és més destacat en la fase inicial d'aprenentatge i en el conjunt de dades en què els bits visibles són majoritàriament actius, com ara 1-MNIST on es va desplegar cada bit de conjunt de dades manuscrits MNIST.\\\\
+Idealment, cada neurona oculta hauria de representar una característica "significativa" diferent, per exemple, una part típica de la imatge. Tanmateix, ens hem adonat que sovint les neurones ocultes tendeixen a aprendre característiques que s'assemblen al biaix visible b. Aquest efecte és més destacat en la fase inicial d'aprenentatge i en el conjunt de dades en què els bits visibles són majoritàriament actius, com ara 1-MNIST on es va desplegar cada bit de conjunt de dades manuscrits MNIST.\\\\
 Es van obtenir RBM amb 36 neurones ocultes en 1-MNIST, que és un conjunt de dades molt dens en comparació amb el MNIST original.
 18 neurones ocultes no van poder aprendre cap característica útil, i són majoritàriament inactives.\\\\
 Les altres 18 neurones són, en la seva majoria, actives i, tal com s'esperava, s'han après unes característiques globals que s'assemblen una mica al biaix visible.\\\\
@@ -667,13 +668,13 @@ Fins i tot quan les dades de formació no són denses, amb la petita quantitat de 
 \subsection{Algorisme seleccionat a implementar en codi}
 Un cop ja sabem quin algorisme hem d'utilitzar per tal de poder desenvolupar el nostre problema, ara hem de decidir com serà implementat, és a dir, si crearem nosaltres l'algorisme des de zero o utilitzarem alguna llibreria o algorisme ja conegut. \\\\
 En aquest cas i després de fer molta investigació, en primer lloc es va decidir utilitzar el llenguatge de programació Python per tal de desenvolupar les parts essencials de l'algorisme. Python ens ofereix una gran quantitat de recursos per al machine learning i actualment juntament amb Scala són els principals llenguatges utilitzats per al desenvolupament de màquines.\\\
-Així doncs un cop escollit el llenguat ara falta decidir si implementar un RBM des de 0 o utilitzar alguna llibreria que ens permetés usar una implementació ja desenvolupada. \\\\
-Crear una màquina de zero suposa un gran esforç i treball i pot suposar que la màquina no estigui ben dissenyada o que els algorismes aplicats i fórmules siguin incorrectes. Així doncs es va decidir utilitzar una llibreria la qual ens permetia tenir un RBM ben creat i amb les característiques que buscàvem. La màquina que es va decidir utilitzar seria de la llibreria \textit{sklearn} la qual ens proporcionaria una màquina RBM anomenada \textit{BernoulliRBM.} \\\\
-Aquesta màquina es tracta d'una màquina de Boltzmann Restrictivaamb unitats visibles binàries i unitats ocultes binàries. Els paràmetres es calculen utilitzant la Probabilitat màxima estocàstica (SML), també coneguda com Persistent Contrastive Divergence (PCD). La complexitat del temps d'aquesta implementació és de ${O(d ** 2)}$ si assumim que el nombre de features és igual al nombre de components.\\\\
+Així doncs un cop escollit el llenguatge ara falta decidir si implementar un RBM des de 0 o utilitzar alguna llibreria que ens permeti usar una implementació ja desenvolupada. \\\\
+Crear una màquina des de zero suposa un gran esforç i treball i pot suposar que la màquina no estigui ben dissenyada o que els algorismes aplicats i fórmules siguin incorrectes. Així doncs es va decidir utilitzar una llibreria la qual ens permetia tenir un RBM ben creat i amb les característiques que buscàvem. La màquina que es va decidir utilitzar seria de la llibreria \textit{sklearn} la qual ens proporcionaria una màquina RBM anomenada \textit{BernoulliRBM}\cite{sklearnRBM}. \\\\
+Aquesta màquina es tracta d'una màquina de Boltzmann Restrictiva amb unitats visibles binàries i unitats ocultes binàries. Els paràmetres es calculen utilitzant la Probabilitat màxima estocàstica (SML), també coneguda com Persistent Contrastive Divergence (PCD). La complexitat del temps d'aquesta implementació és de ${O(d \ast \ast 2)}$ si assumim que el nombre de features és igual al nombre de components.\\\\
 A més aquesta implementació ens permet utilitzar diferents mètodes i funcions per tal d'obtenir resultats i/o entrenar la màquina. Aquest són els mètodes i funcions principals d'aquesta implementació:
 \begin{itemize}
 \item ${fit (X[,y])}$: ens permet entrenar la màquina a partir de les dades X.
-\item ${fit\_transform (X[,y])}$: ens permet entrenar la màquina a partir de les dades X i després transformar-la.
+\item ${fit\_transform (X[,y])}$: ens permet entrenar la màquina a partir de les dades X i després transformar-les.
 \item ${get\_params([deep])}$: obtenim els paràmetres del model que hem generat.
 \item ${gibbs(v)}$: s'executa un mostreig de Gibbs.
 \item ${partial\_fit(X[,y])}$: ens permet entrenar la màquina a partir de les dades X que han de contenir una part segmentada de les dades.
@@ -692,7 +693,7 @@ n_components=2, n_iter=10, random_state=None,verbose=0)
 \end{lstlisting}
 
 Com podem observar creem una llista de diferents elements els quals tots aquests són binaris, ja que la màquina només pot rebre entrades binàries. A continuació creem la màquina i li assignem el nombre de components i l'entrenem amb les dades d'entrada. A partir d'aquí podríem aplicar els altres mètodes per obtenir resultats o analitzar el seu funcionament.\\\
-Com podem observar al crear la màquina podem passar-li, especificar-li alguns paràmetres d'entrada. Aquests, definiran el seu comportament. Aquests paràmetres són els següents:
+Com podem observar al crear la màquina podem especificar-li alguns paràmetres d'entrada. Aquests, definiran el seu comportament. Aquests paràmetres són els següents:
 \begin{itemize}
 \item \textit{n\_components}: Estableix el nombre de unitats binàries ocultes.
 \item \textit{learning\_rate}: La velocitat d'aprenentatge de les actualitzacions de pes. Es recomana sintonitzar aquest hiperparametre. Els valors raonables es troben en el rang de 10 ** [0., -3.].
@@ -705,7 +706,7 @@ Aquests paràmetres no són obligatoris, es pot crear una màquina sense la necessi
 Un cop tenim la implementació que usarem ara només ens queda preparar les dades per la entrada a la màquina. En els següents apartats anirem explicant el desenvolupament de la màquina creada sobre les dades que li proporcionem i el seu funcionament.
 \newpage
 \section{Desenvolupament de l'algoritme aplicat al problema}
-Un cop ja tenim tots els elements que composen el nostre problema només ens falta explicar el desenvolupament d'aquest utilitzant les dades que ens proporcionen i com utilitzem aquestes per a crear una màquina i a generara resultats. \\\
+Un cop ja tenim tots els elements que composen el nostre problema només ens falta explicar el desenvolupament d'aquest utilitzant les dades que ens proporcionen i com utilitzem aquestes per a crear una màquina i generar resultats. \\\
 A continuació analitzarem les dades que rebem de l'aplicació, com es transformen per tal de ser aptes per la màquina, com funciona i com definim la màquina i com són les dades de sortida i com les transformem per tal de poder-les tornar a llegir amb l'aplicació.
 \subsection{Esquema del model}
 Tot seguit descriurem a alt nivell tots els passos pels quals passa una dada de entrada abans de arribar al model.
@@ -726,11 +727,11 @@ Tot seguit descriurem a alt nivell tots els passos pels quals passa una dada de 
 \item ${E_8 = [id_1, id_2, \cdot \cdot \cdot, id_{48}]}$
 \end{itemize}
 \subsection{Dades obtingudes de l'eina}
-El primer pas com hem mencionat anteriorment és la generació de moodboards a partir de l'eina creada. Les graelles resultants són imatges formades a partir d'altres imatges, són representacions visuals que en aquest cas no podem entrar directament a la màquina ja que les hem de descompondre d'alguna manera per tal que ens sigui més fàcil entendre la seva composició.\\\\
+El primer pas com hem mencionat anteriorment és la generació de moodboards a partir de l'eina creada. Les graelles resultants són imatges formades a partir d'altres imatges, són representacions visuals que en aquest cas no podem entrar directament a la màquina ja que les hem de descompondre d'alguna manera per tal que les podem utilitzar per entrenar la nostra màquina.\\\
 Així doncs explicarem el format d'aquestes dades i quines dades hem obtingut en el nostre projecte.
 \subsubsection{Format de les dades}
 Com hem dit, cada imatge que forma un moodboard representa un objecte, en aquest cas un moble. Així doncs, cada moble ha de ser identificable d'alguna manera. La forma que tenim per identificar els mobles és un ID que ens proporciona la base de dades per a cada un dels mobles disponibles que tenim, d'aquesta forma podem identificar els diferents mobles que composen una graella.\\\\
-Aixo ens permet obtenir un diccionari o una llista dels diferents ID que formen un moodboards que el podrem exportar d'una forma senzilla en un fitxer. Per tal d'obtenir aquesta llista, només necessitem recórrer el moodboard, començant des de la primera cel·la, i obtenir els ID d'aquelles objectes que es trobin a les caselles. En cas que no hi hagi cap objecte a la casell, posar un 0 per tal d'indicar que allà no hi ha cap objecte posat. L'algorisme 3 ens mostra el procediment a seguir.
+Aixo ens permet obtenir un diccionari o una llista dels diferents ID que formen un moodboard el qual podré ser exportar d'una forma senzilla en un fitxer. Per tal d'obtenir aquesta llista només necessitem recórrer el moodboard, començant des de la primera cel·la, i obtenir els ID, que es troben internament en l'aplicació, d'aquells objectes col·locats En cas que no hi hagi cap objecte a la casella, posarem un 0 per tal d'indicar que allà no hi ha cap objecte posat. L'algorisme 3 ens mostra el procediment a seguir.
 \begin{algorithm}
 \caption{Generació de una llista de IDs a partir dels elements col·locats al moodboard.}
 \begin{algorithmic} 
@@ -746,7 +747,7 @@ Aixo ens permet obtenir un diccionari o una llista dels diferents ID que formen 
 ${L}$ conté tots els ID del moodboard generat
 \end{algorithmic}
 \end{algorithm}
-\\\\ Un cop apliquem l'algorisme descrit anteriorment, algorisme 3, obtindrem una llista de ID que abans eren simples imatges i no ens proporcionaven res d'informació a part de la visual. Ara tenim una llista amb els ID el qual cada un d'ells és un objecte que s'ha col·locat al moodboard. Així doncs de moment hem passat d'una representació visual del objecte a una representació descriptiva formada per la llista dels identificadors dels objectes. \\\
+\\\\ Un cop apliquem l'algorisme descrit anteriorment, obtindrem una llista de ID, que abans eren simples imatges i no ens proporcionaven res d'informació a part de la visual. Ara tenim una llista amb els identificadors els quals cada un d'ells és un objecte que s'ha col·locat al moodboard. Així doncs de moment hem passat d'una representació visual del objecte a una representació descriptiva formada per la llista dels identificadors dels objectes. \\\
 A continuació es mostra un exemple d'un resultat obtingut:
 \begin{figure}[h!]
 \begin{center}
@@ -758,14 +759,14 @@ A continuació es mostra un exemple d'un resultat obtingut:
 Aquest resultat però no és el definitiu per entrenar a la màquina ja que aquests ID no ens donen informació sobre les característiques del objecte per tant necessitem realitzar una segona transformació per tal d'obtenir els ID que ens indicaran les característiques del color, material, forma... Així doncs hem de tornar-los a transformar per tal d'obtenir un diccionari amb totes les graelles plenes amb informació sobre els objectes. \\\\
 Tal i com hem explicat, volem generar moodboards d'un estil concret per tant, cada estil es regeix per unes característiques que els objectes compleixen. Així doncs necessitem obtenir aquestes característiques per tal de poder entrenar correctament la màquina.\\\\
 Aquestes característiques les obtindrem de la base de dades i ens descriuran aspectes dels objectes. Com que no podem entrenar la màquina utilitzant paraules haurem de convertir aquestes característiques en ID. Cada característica està associada a un ID concret i cada objecte conte una llista de ID que es pot obtenir mitjançant crides a la base dades.
-\\\ Així doncs necessitem aplicar una algorisme capaç d'obtenir un diccionari el qual contingui les cel·les del moodboard i cada una d'elles una llista de ID que són els que ens permetran identificar les característiques. Així aplicarem el següent algorisme, algorisme 4, per obtenir el resultat desitjat.
+\\\ Així doncs necessitem aplicar una algorisme capaç d'obtenir un diccionari el qual contingui les cel·les del moodboard i cada una d'elles una llista de ID que són els que ens permetran identificar les característiques. Per tal d'aconseguir aquesta transformació farem servir el següent algorisme:
 \begin{algorithm}
 \caption{Generació d'un diccionari amb les característiques dels objectes a partir de la llista de IDs.}
 \begin{algorithmic} 
 \STATE Crear un Diccionari ${D}$ tal que ${D = \{"style": [e_1, e_2, \cdot \cdot \cdot, e_{48}]\}}$ on ${e_x, x <= 48}$ correspon a les cel·les del moodboard i on ${e_x = [idc_1,idc_2, \cdot \cdot \cdot]}$.\\\ Llista ${L}$ conté tots els ID obtinguts prèviament del moodboard generat.
 \FOR{$i = 1 \cdot \cdot \cdot 48$} 
-\STATE {Obtenir llista ${C}$ de les característiques de l'element ${L_i}$ \\
-Llista ${LL}$ contindrà els ID de les característiques} 
+\STATE {Obtenir llista ${C}$ de les característiques de l'element ${L_i}$ mitjançant crides a la base de dades \\
+Llista temporal ${LL}$ contindrà els ID de les característiques per afegir-les al diccionari} 
 \FOR{${j = 1 \cdot \cdot \cdot M = length(C)}$}
 \STATE {Afegir ${C_j}$ a ${LL}$}
 \ENDFOR
@@ -785,13 +786,14 @@ ${D}$ conté una llista de totes els cel·les les qual cadascuna conté una llista 
 \\\\
 En aquest punt disposem d'un diccionari el qual ens permet saber a cada cel·la quines són les característiques del objecte que estava col·locat. Però aquest no es el format definitiu, ja que tal i com es va explicar, la màquina necessita una matriu com a dada d'entrada i en el nostre cas tenim un diccionari format per llistes que cada una conté una llista com a element i que cada una té una longitud diferent i la màquina necessita que cada element de la matriu, encara que siguin llistes, tinguin la mateixa longitud. \\\\
 El format ideal per a nosaltres seria el format que obtenim directament de l'eina però no ens serveix perquè no ens proporciona suficient informació per tant l'hem hagut de transformar per tal d'obtenir mes informació però ara ja no tenim el format desitjat ja que tenim un diccionari en el qual tenim una llista i cada element una llista de les característiques dels objectes.\\\
-Així doncs necessitem trobar una forma d'obtenir el format que desitgem que és una llista, que seran les diferents cel·les i que cada element contingui un identificador. \\\\
+Així doncs necessitem trobar una forma d'obtenir el format que desitgem, una llista on cada element contingui un identificador que correspondrà a un identificador d'una característica. \\\\
 Una forma de resoldre aquest problema seria descomponent cada graella del diccionari en múltiples graelles que continguin un identificador per element. 
-L'únic problema a resoldre aquí seria el cas del que les longituds són diferents ja que no tots els objectes tenen el mateix nombre de característiques. Així doncs hem de trobar una forma de solucionar aquest problema. La solució més senzilla i més ràpida d'aplicar és buscar l'objecte amb més nombre de característiques. Un cop tenim aquest valor, aquest ens definirà el nombre de graelles les quals hem de descompondre el diccionari, és a dir, suposem que l'objecte amb més característiques en té 10. Això vol dir que el màxim nombre de graelles noves que hem de obtenir és 10 per cada moodboard generat, ja que si en fem menys no hi hauran totes els característiques d'alguns objectes.\\\\
-Per tal d'obtenir aquest valor aplicarem un algorisme de cerca en tot el diccionari. Fins ara només hem suposat que tenim un moodboard generat al diccionari però podem tenir varis moodboards en ell, per tant, haurem de fer una recerca entre tots els elements del diccionari i anar guardant la longitud de cada cel·la fins a trobar la longitud màxima. Per dur a terme aquest algorisme, primer transformarem el nostre diccionari en una llista ben construïda. \\\
+L'únic problema a resoldre aquí seria el cas del que les longituds són diferents ja que no tots els objectes tenen el mateix nombre de característiques. Així doncs hem de trobar una forma de solucionar aquest problema. \\\
+La solució més senzilla i més ràpida d'aplicar és buscar l'objecte amb més nombre de característiques. Un cop tenim aquest valor, aquest ens definirà el nombre de graelles a descompondre el diccionari, és a dir, si suposem que l'objecte amb més característiques en té 10, això vol dir que el màxim nombre de graelles noves que hem de obtenir és 10 per cada moodboard generat, ja que si en fem menys no hi hauran totes els característiques d'alguns objectes i perdrem informació.\\\\
+Per tal d'obtenir aquest valor aplicarem un algorisme de cerca en tot el diccionari. Fins ara només hem suposat que el diccionari només conté un moodboard però en podem tenir varis, per tant, haurem de fer una recerca entre tots els elements del diccionari i anar guardant la longitud de cada cel·la fins a trobar la longitud màxima. Per dur a terme aquest algorisme, primer transformarem el nostre diccionari en una llista ben construïda. \\\
 Per tal de realitzar la transformació utilitzarem un \textit{Dataframe} a partir del qual ens organitzarà els elements en forma de taula. D'aquesta taula agafarem les \textit{values}, que correspondran a cada cel·la i les afegirem a una llista aixi obtindrem una llista on cada element serà una llista i aquesta tindrà com a elements les diferents característiques de cada objecte. \\\\
 \[input = [[id_1^1,id_2^1,_id_3^1, ...,id_{255}^1], [id_1^2,id_2^2,_id_3^2, ...,id_{255}^2], ..., [id_1^{48},id_2^{48},_id_3^{48}, ...,id_{255}^{48}]]\]
-Un cop ja tenim la llista apunt només necessitem aplicar el següent algorisme: \\\
+Un cop ja tenim la llista apunt només necessitem aplicar la següent funció: \\\
 \begin{lstlisting}[language=Python,basicstyle=\footnotesize\ttfamily]
 def getMaxLengthForElements(vector):
     maxLength = 0
@@ -802,7 +804,7 @@ def getMaxLengthForElements(vector):
                 maxLength = len(tmp[j])
     return maxLength
 \end{lstlisting}
-Aquest algorisme ens retornarà el numero màxim de graelles que hem de generar de nou per tal d'obtenir a cada posició de cada element un identificador diferent.\\\
+Aquesta funció ens retornarà el numero màxim de graelles que hem de generar de nou per tal d'obtenir a cada posició de cada element un identificador diferent.\\\
 Per a realitzar aquesta transformació hem de tenir en compte varis factors. El primer de tots hem de saber el nombre de moodboards que hem generat ja que haurem d'iterar sobre cada moodboard generat per transform-lo correctament. I el segon punt i el més important hem de tenir en compte com tractarem aquelles cel·les les quals, la seva longitud sigui menor que la longitud màxima. En aquests casos la solució plantejada és afegir un valor nul, és a dir, un valor que no aporti informació, en aquest cas el valor 0. Això provocara que el resultat contingui llistes en les quals molts elements són 0 però no ens importa ja que només ens centrarem en els identificadors que no són 0. L'algorisme aplicat per obtenir aquesta transformació és el següent:\\\\
 \begin{lstlisting}[language=Python,basicstyle=\footnotesize\ttfamily]
 def transformInputVector(vector, maxLength, length):
@@ -962,6 +964,7 @@ Finalment, si apliquem aquest procediment a tots els elements del vector obtindr
 \end{figure}
 \\
 Aquest vector ja ens defineix el moodboard obtingut després de totes les transformacions. Per tant, ara per visualitzar aquest moodboard només l'hem de guardar en un fitxer i amb l'eina utilitzar la funció de visualitzar moodboards ja creats per tal de visualitzar correctament el moodboard obtingut de la màquina.
+\newpage
 \section{Resultats i conclusions i línies de continuació}
 Ara ja tenim totes les parts enllaçades i preparades per generar moodboards, l'ultim pas que ens queda és obtenir resultats, avaluar-los, treure'n conclusions i explicar les possibles línies de continuació  que existeixen per aquest projecte que hem desenvolupat.
 \subsection{Qualitat de les graelles generades}
@@ -1017,17 +1020,17 @@ Finalment una de les últimes millores que es podrien aplicar al projecte seria q
 \newpage
 
 \begin{thebibliography}{25}
-\bibitem{pari} A Beginner\textsc{\char13}s Tutorial for Restricted Boltzmann Machines,  \newline \texttt{https://deeplearning4j.org/restrictedboltzmannmachine}.
+\bibitem{1} A Beginner\textsc{\char13}s Tutorial for Restricted Boltzmann Machines,  \newline \texttt{https://deeplearning4j.org/restrictedboltzmannmachine}.
 
-\bibitem{pari} Eric Yuan; Restricted Boltzmann Machine,  \newline \texttt{http://eric-yuan.me/rbm/}, 2014.
+\bibitem{2} Eric Yuan; Restricted Boltzmann Machine,  \newline \texttt{http://eric-yuan.me/rbm/}, 2014.
 
-\bibitem{pari} Restricted Boltzmann Machines (RBM),  \newline \texttt{http://deeplearning.net/tutorial/rbm.html}.
+\bibitem{3} Restricted Boltzmann Machines (RBM),  \newline \texttt{http://deeplearning.net/tutorial/rbm.html}.
 
-\bibitem{pari} Geoffrey Hinton; Advanced Machine Learning, Lecture 4, Restricted Boltzmann Machines,  \newline \texttt{https://www.cs.toronto.edu/~hinton/csc2535/notes/lec4new.pdf}.
+\bibitem{4} Geoffrey Hinton; Advanced Machine Learning, Lecture 4, Restricted Boltzmann Machines,  \newline \texttt{https://www.cs.toronto.edu/~hinton/csc2535/notes/lec4new.pdf}.
 
-\bibitem{pari} Documentation RBM sklearn,  \newline \texttt{http://scikit-learn.org/stable/modules/generated/sklearn.neural\_network.BernoulliRBM.html}.
+\bibitem{sklearnRBM} Documentation RBM sklearn,  \newline \texttt{http://scikit-learn.org/stable/modules/generated/sklearn.neural\_network.BernoulliRBM.html}.
 
-\bibitem{pari} Documentation OneHotEncoder sklearn,  \newline \texttt{http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html}.
+\bibitem{sklearnOnehotencoder} Documentation OneHotEncoder sklearn,  \newline \texttt{http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html}.
 \end{thebibliography}
 \end{document} 
 
