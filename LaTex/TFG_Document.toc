@@ -34,8 +34,8 @@
 \contentsline {subsection}{\numberline {5.5}Dades de sortida}{54}
 \contentsline {subsubsection}{\numberline {5.5.1}Dades obtingudes del RBM}{54}
 \contentsline {subsubsection}{\numberline {5.5.2}Creaci\'o de moodboards a partir de les dades}{56}
-\contentsline {section}{\numberline {6}Resultats i conclusions i l\IeC {\'\i }nies de continuaci\'o}{57}
-\contentsline {subsection}{\numberline {6.1}Qualitat de les graelles generades}{57}
-\contentsline {subsubsection}{\numberline {6.1.1}Possibles problemes}{59}
-\contentsline {subsection}{\numberline {6.2}Conclusions}{61}
-\contentsline {subsection}{\numberline {6.3}L\IeC {\'\i }nies de continuaci\'o}{62}
+\contentsline {section}{\numberline {6}Resultats i conclusions i l\IeC {\'\i }nies de continuaci\'o}{58}
+\contentsline {subsection}{\numberline {6.1}Qualitat de les graelles generades}{58}
+\contentsline {subsubsection}{\numberline {6.1.1}Possibles problemes}{60}
+\contentsline {subsection}{\numberline {6.2}Conclusions}{62}
+\contentsline {subsection}{\numberline {6.3}L\IeC {\'\i }nies de continuaci\'o}{63}

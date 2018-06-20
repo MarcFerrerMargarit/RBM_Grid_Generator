@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.5.8)  20 JUN 2018 15:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.5.8)  20 JUN 2018 17:51
 entering extended mode
 **./TFG_Document.tex
 (TFG_Document.tex
@@ -2041,7 +2041,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 942--952
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./Images/final_vector.png, id=338, 1032.10594pt x 30.1125pt>
+[55]
+<./Images/final_vector.png, id=341, 1032.10594pt x 30.1125pt>
 File: ./Images/final_vector.png Graphic file (type png)
 <use ./Images/final_vector.png>
 Package pdftex.def Info: ./Images/final_vector.png  used on input line 960.
@@ -2066,23 +2067,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 953--965
 
  []
 
-[55] [56 <./Images/finaldata.png> <./Images/final_vector.png>]
-<./Images/merge.jpg, id=348, 5390.72032pt x 1480.36935pt>
+[56 <./Images/finaldata.png> <./Images/final_vector.png>] [57]
+<./Images/merge.jpg, id=351, 5390.72032pt x 1480.36935pt>
 File: ./Images/merge.jpg Graphic file (type jpg)
 <use ./Images/merge.jpg>
 Package pdftex.def Info: ./Images/merge.jpg  used on input line 975.
 (pdftex.def)             Requested size: 424.02794pt x 116.44417pt.
-<./Images/avaluation.jpg, id=349, 2207.73193pt x 572.72032pt>
+<./Images/avaluation.jpg, id=352, 2207.73193pt x 572.72032pt>
 File: ./Images/avaluation.jpg Graphic file (type jpg)
 <use ./Images/avaluation.jpg>
 Package pdftex.def Info: ./Images/avaluation.jpg  used on input line 984.
 (pdftex.def)             Requested size: 424.05489pt x 110.00648pt.
-<./Images/avaluation1.jpg, id=350, 1989.36774pt x 450.71613pt>
+<./Images/avaluation1.jpg, id=353, 1989.36774pt x 450.71613pt>
 File: ./Images/avaluation1.jpg Graphic file (type jpg)
 <use ./Images/avaluation1.jpg>
 Package pdftex.def Info: ./Images/avaluation1.jpg  used on input line 985.
 (pdftex.def)             Requested size: 424.0631pt x 96.07678pt.
-<./Images/avaluation2.jpg, id=351, 1391.78032pt x 901.43225pt>
+<./Images/avaluation2.jpg, id=354, 1391.78032pt x 901.43225pt>
 File: ./Images/avaluation2.jpg Graphic file (type jpg)
 <use ./Images/avaluation2.jpg>
 Package pdftex.def Info: ./Images/avaluation2.jpg  used on input line 986.
@@ -2127,8 +2128,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 969--994
 
  []
 
-[57 <./Images/merge.jpg>] [58 <./Images/avaluation.jpg> <./Images/avaluation1.j
-pg> <./Images/avaluation2.jpg>] [59] [60]
+[58 <./Images/merge.jpg>] [59 <./Images/avaluation.jpg> <./Images/avaluation1.j
+pg> <./Images/avaluation2.jpg>] [60] [61]
 Underfull \hbox (badness 10000) in paragraph at lines 1002--1010
 
  []
@@ -2155,25 +2156,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 1002--1010
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 1002--1010
-
- []
-
-[61]
-Underfull \hbox (badness 10000) in paragraph at lines 1012--1017
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1012--1017
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1012--1017
 
  []
 
 [62]
+Underfull \hbox (badness 10000) in paragraph at lines 1012--1017
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1012--1017
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1012--1017
+
+ []
+
+[63]
 Overfull \hbox (151.20232pt too wide) in paragraph at lines 1029--1030
 \OT1/cmtt/m/n/12 http://scikit-learn.org/stable/modules/generated/sklearn.neura
 l[]network.BernoulliRBM.html\OT1/cmr/m/n/12 . 
@@ -2185,7 +2186,7 @@ Overfull \hbox (152.93132pt too wide) in paragraph at lines 1031--1032
 ocessing.OneHotEncoder.html\OT1/cmr/m/n/12 . 
  []
 
-[63] (TFG_Document.aux) ) 
+[64] (TFG_Document.aux) ) 
 Here is how much of TeX's memory you used:
  15963 strings out of 493303
  298814 string characters out of 3128915
@@ -2214,9 +2215,9 @@ a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users
 /mferrer/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt1
 0.pfb><C:/Users/mferrer/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
 sfonts/cm/cmtt12.pfb>
-Output written on TFG_Document.pdf (68 pages, 4761837 bytes).
+Output written on TFG_Document.pdf (69 pages, 4761557 bytes).
 PDF statistics:
- 428 PDF objects out of 1000 (max. 8388607)
+ 431 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  148 words of extra memory for PDF output out of 10000 (max. 10000000)
 
