@@ -99,14 +99,14 @@
 
 \section*{Abstract}
 
-Moodboards are used to represent objects that are formed by the composition of other objects and they try to obtain a result of cohesion among them and to generate a new image.
+Moodboards are used to represent objects that are formed by the composition of other objects and they try to obtain a result of cohesion among them and try to generate a new image.
 Machine learning allows us to train a machine so that it can generate the values with the data that we have entered previously, which must be correct data.
 \\\
-What we want to obtain is a combination between the two parts to achieve the generation of new images, with totally correct and cohesive objects and different from the images used to train the machine.
+What we want to obtain is a combination between the two parts to achieve the generation of new images, with correct and cohesive objects and different from the images used to train the machine.
 \\\
-So the objective of this project is to create a machine that allows us to create, from correct data, moodboards, generate correct moodboards without the need for a person to create them, design an automated system to replace a slow task And mechanics that are carried out by several people.
+So the objective of this project is to create a machine that allows us to create, from data, moodboards, generate correct it without the need of a person to create them, and design an automated system to replace a slow task and replace this task.
 \\\
-Apart from creating this system, it will also analyze its efficiency, with respect to the non-automated system and if the generation of these moodboards is correct, so we can establish whether the system created is efficient enough, fast and accurate at the time of Generate, in this case, moodboards.
+Apart from creating this system, we will also analyze its efficiency, with respect to the non-automated system and if the generation of these moodboards is correct, so we can establish whether the system created is efficient enough, fast and accurate generating moodboards.
 \\\
 Finally, these tests will be carried out by supervising expert people in order to improve the evaluation.
 
@@ -128,7 +128,7 @@ Finalment, aquestes proves es realitzaran mitjançant la supervisió de persones e
 
 Vull agrair a la empresa InteriorVista per donar-me l'oportunitat de realitzar aquest projecte i per tal de facilitar-me totes les eines i recursos necessaris per tal de poder desenvolupar i acabar el projecte.\\\
 També vull agrair al meu tutor a l'empresa, David Osuna, per proposar-me aquest projecte tant important i tant interessant per a realitzar i per ajudar-me en tots els dubtes que he tingut durant aquest temps.\\\
-I finalment vull agrair al meu tutor del treballa, David Buchaca, per haver-me ajudat  a organitzar el projecte i per haver-me ajudat a trobar eines i solucions per tal de resoldre els problemes que se'm presentaven al llarg del desenvolupament.
+I finalment vull agrair al meu tutor del treball, David Buchaca, per haver-me ajudat  a organitzar el projecte i per haver-me ajudat a trobar eines i solucions per tal de resoldre els problemes que se'm presentaven al llarg del desenvolupament.
 \newpage
 
 \tableofcontents
@@ -141,11 +141,11 @@ I finalment vull agrair al meu tutor del treballa, David Buchaca, per haver-me a
 
 Avui en dia, tot i que depenem de les màquines i dels programes per a realitzar tasques que poden ser pesades i lentes encara en queden moltes que es realitzen a mà. Moltes d'aquestes tasques en algun moment podrien ser automatitzades per tal que es puguin realitzar més ràpidament de forma menys pesada i probablement més precisa.
 \\\\
-Així doncs, amb projecte es vol aconseguir que una tasca que actualment costa temps, dedicació i concentració es transformi en una tasca més mecànica i més rapida de realitzar. L'objectiu del sistema que proposem en aquest treball és que la persona que l'hagi de realitzar  hi dediqui molt menys temps. Aquesta transformació que volem aconseguir, s'ha de realitzar partint de la tasca original i d'un conjunt de solucioncs de la tasca que el nostre programa usarà per ``apendre''.
+Així doncs, amb projecte es vol aconseguir que una tasca que actualment costa temps, dedicació i concentració es transformi en una tasca més mecànica i més rapida de realitzar. L'objectiu del sistema que proposem en aquest treball és que la persona que l'hagi de realitzar  hi dediqui molt menys temps. Aquesta transformació que volem aconseguir, s'ha de realitzar partint de la tasca original i d'un conjunt de solucions de la tasca que el nostre programa usarà per ``aprendre''.
 \\\\
 Aquesta tasca consisteix en la generació de moodboards. %Pero... \textbf{Què és un moodboard?}\\\
 Un moodboard és una combinació d'imatges relacionades entre elles que juntes formen una sola imatge. Normalment  els moodboards es fan servir per descriure combinacions de elements per a generar imatges de paisatges, d'aplicacions, decoració i creació d'habitacions etc... \\\\
-El treball proposa facilicar la tasca de la generació de moodboards. Actualment per generar moodboards es necessita fer una cerca de totes les imatges que es desitgen col·locar. Un cop triades s'han de col·locar de forma que formin un sol conjunt i anar-les editant per tal de generar una sola imatge. \\\
+El treball proposa facilitar la tasca de la generació de moodboards. Actualment per generar moodboards es necessita fer una cerca de totes les imatges que es desitgen col·locar. Un cop triades s'han de col·locar de forma que formin un sol conjunt i anar-les editant per tal de generar una sola imatge. \\\
 Aquest procés pot ser molt lent i tediós, ja que buscar totes les imatges necessàries costa temps. A més cal col·locar les imatges correctament i editar-les per tal que totes s'ajuntin i formin una sola imatge, cosa que encara augmenta més el tems total de generar un moodboard. \\\
 Aquest procés s'ha de millorar  per un altre de més ràpid conservant alguns aspectes. L'objectiu final és que tot sigui més mecànic i més ràpid. \\\\
 Com hem dit anteriorment poden haver-hi moodboards de molts tipus, però per aquest projecte ens centrarem amb els moodboards d'interiorisme, és a dir, els que defineixen una estança d'una casa, un dormitori, un bany, una cuina, etc.  Una de les dificultats de definir  una estança recau en triar elements que defineixin un estil de manera que el conjunt de elements de una estança tingui ``sentit'' i el conjunt sigui agradable per les persones. Nosaltres suposarem que cada moodboard pertanyerà a un estil determinat. %Així, cada moodboard serà una combinació de mobles i objectes que junts representaran l'estil i descriuran una zona de una casa.
@@ -155,12 +155,12 @@ Com hem dit anteriorment poden haver-hi moodboards de molts tipus, però per aque
 
 {\bf L'objectiu del treball és validar  si és possible crear un algorisme que faciliti la generació de moodboards usant Restricted Boltzmann Machines (RBM). }
 \\\\
-Usarem les  RBMs per a generar configuracions de moodboards de manera que un interiorista pugui començar a treballar desde un moodboard ``que tingui sentit'', sense necessitat de començar desde zero. Poder fer això tindria un gran impacte en reduir el temps de cerca dels mobles i objectes necessaris que es necessiten per a cada zona d'una casa, obtenint  moodboards d'una forma ràpida i eficient que tot i potser no tingui la qualitat per substituir el treball d'un interiorista pugui ser de prou qualitat com per a donar ja una bona feina feta.\\\\
-Per tal de poder crear aquest sistema utilitzarem tècniques de machine learning per tal de crear una màquina capaç d'aprendre i de generar a partir de les dades que ha après. D'aquesta forma podem estructurar el projecte en dues parts essencials. La primera part descriurà  la generació de moodboards mitjançant una interficia grafica. La segona  part descriurà la creació d'una màquina capaç de llegir els moodboards creats anteriorment i apendre a crearne de nous. 
+Usarem les  RBMs per a generar configuracions de moodboards de manera que un interiorista pugui començar a treballar des de un moodboard ``que tingui sentit'', sense necessitat de començar des de zero. Poder fer això tindria un gran impacte en reduir el temps de cerca dels mobles i objectes necessaris que es necessiten per a cada zona d'una casa, obtenint  moodboards d'una forma ràpida i eficient que tot i potser no tingui la qualitat per substituir el treball d'un interiorista pugui ser de prou qualitat com per a donar ja una bona feina feta.\\\\
+Per tal de poder crear aquest sistema utilitzarem tècniques de machine learning per tal de crear una màquina capaç d'aprendre i de generar a partir de les dades que ha après. D'aquesta forma podem estructurar el projecte en dues parts essencials. La primera part descriurà  la generació de moodboards mitjançant una interfície gràfica. La segona  part descriurà la creació d'una màquina capaç de llegir els moodboards creats anteriorment i aprendre a crear-ne de nous. 
 \\\\
 Com ja hem mencionat, farem servir tècniques de machine learning, és a dir algorismes d'aprenentatge automàtic. 
-L'aprenentatge automàtic és un camp de la intel·ligència artificial que està dedicat al disseny, l'anàlisi i el desenvolupament d'algorismes i tècniques que permeten que les màquines aprenguin a fer tasques a partir de dades. Es tracta de crear programes capaços de generalitzar comportaments a partir del reconeixement de patrons.  D'aquesta manera nosaltres el que volem fer és una màquina que sigui capaç de apendre de les moodboards que li donarem per després poder generar  noves dades. Un dels possibles problemes que es poden trobar al usar aquest tipus de màquines és que necessiten moltes dades per poder-se entrenar.\\\\
-Finalment, tot i que l'objectiu és crear un sistema automatitzat per a millorar la realització de la tasca de generació de moodbards també considerarem crucial analitzar com és de millor aquest sistema respecte de l'anterior. Per tal de saber-ho, al final de tot el projecte avaluarem el sistema mitjançant l'ajuda humana, en aquest cas, persones expertes que han generat molts de moodboards i que també han generat els correctes per entrenar la màquina i d'aquesta forma podrem validar les qualitats del sistema mitjançant diverses proves que s'explicaran més endavant.
+L'aprenentatge automàtic és un camp de la intel·ligència artificial que està dedicat al disseny, l'anàlisi i el desenvolupament d'algorismes i tècniques que permeten que les màquines aprenguin a fer tasques a partir de dades. Es tracta de crear programes capaços de generalitzar comportaments a partir del reconeixement de patrons.  D'aquesta manera nosaltres el que volem fer és una màquina que sigui capaç de aprendre de les moodboards que li donarem per després poder generar  noves dades. Un dels possibles problemes que es poden trobar al usar aquest tipus de màquines és que necessiten moltes dades per poder-se entrenar.\\\\
+Finalment, tot i que l'objectiu és crear un sistema automatitzat per a millorar la realització de la tasca de generació de moodboards també considerarem crucial analitzar com és de millor aquest sistema respecte de l'anterior. Per tal de saber-ho, al final de tot el projecte avaluarem el sistema mitjançant l'ajuda humana, en aquest cas, persones expertes que han generat molts de moodboards i que també han generat els correctes per entrenar la màquina i d'aquesta forma podrem validar les qualitats del sistema mitjançant diverses proves que s'explicaran més endavant.
 \newpage
 
 \subsection*{Estructura de la Memòria}
@@ -325,7 +325,7 @@ A continuació es mostra un esquema de seqüència dels passos a realitzar de compl
 \\\\
 \newpage
 \section{Desenvolupament del Machine Learning}
-La part més important de projecte no és el desenvolupament de l'eina i el seu funcionament, sinó que és la part del algorisme. L'algorisme és el que ens permetrà generar automàticament moodboards un cop aquest s'hagi entrenat i és el que ens permetrá, que la generació de moodboards sigui ràpida i automàtica.\\\\
+La part més important de projecte no és el desenvolupament de l'eina i el seu funcionament, sinó que és la part del algorisme. L'algorisme és el que ens permetrà generar automàticament moodboards un cop aquest s'hagi entrenat i és el que ens permetrà, que la generació de moodboards sigui ràpida i automàtica.\\\\
 Així doncs, a continuació explicarem en què es basa l'algorisme que realitzarem, explicant una mica d'introducció i història per posar en context. També explicarem els diferents tipus i quin d'ells s'ha escollit i com s'ha desenvolupat.
 \subsection{Introducció i antecedents}
 Parlar avui d'Intel·ligència Artificial no és una novetat. Ni per a la gent ni per a les empreses o governs.\\\
@@ -342,7 +342,7 @@ Com vam establir prèviament, és un camp de les ciències de la computació que, d'
 \\\\
 Si aquesta definició va resultar molt trivial, posem-d'aquesta manera: és la idea que hi ha algoritmes que poden donar-te troballes o conclusions rellevants obtingudes d'un conjunt de dades, sense que l'ésser humà hagi d'escriure instruccions o codis per això.
 \\\
-D'acord, però ¿què és un algoritme? Doncs no és altra cosa que una seqüència o sèrie d'instruccions, que representen la solució a un determinat problema.
+D'acord, però què és un algoritme? Doncs no és altra cosa que una seqüència o sèrie d'instruccions, que representen la solució a un determinat problema.
 \\\\
 El propòsit del machine learning és que les persones i les màquines treballin de la mà, aquestes màquines han de ser capaços d'aprendre com un humà ho faria. Precisament això és el que fan els algoritmes, permeten que les màquines executin tasques, tant generals com específiques.
 Si bé al principi les seves funcions eren bàsiques i es limitaven a filtrar emails, avui dia pot fer coses tan complexes com prediccions de trànsit en interseccions molt transitades, detectar càncer, mapejar llocs per generar projectes de construcció en temps real, i fins i tot, definir la compatibilitat entre dues persones.\\\
@@ -377,7 +377,7 @@ A més, se'ls garanteix sota contracte a les agències que siguin Adext Partners s
 \\\\
 Tot i que ja hem vist el que la IA és capaç d'aportar a les nostres activitats del dia a dia, com podria això beneficiar el món dels negocis?
 \\\\
-Bé, ja que les converses i comentaris d'una infinitat de consumidors digitals -el nombre dia amb dia segueix incrementando- li ofereixen a aquest tipus de tecnologies una quantitat d'informació aclaparadora, aquestes contínuament obtenen coneixements nous i detecten tendències més ràpid del que qualsevol humà podria fer-ho.
+Bé, ja que les converses i comentaris d'una infinitat de consumidors digitals -el nombre dia amb dia segueix incrementant- li ofereixen a aquest tipus de tecnologies una quantitat d'informació aclaparadora, aquestes contínuament obtenen coneixements nous i detecten tendències més ràpid del que qualsevol humà podria fer-ho.
 \\\\
 Si bé és cert que aquesta enorme quantitat de dades la tornarà molt més eficient, requerirà necessàriament de molt talent humà per perfeccionar-se, ja que finalment els ordinadors no tenen un domini tan elevat del llenguatge aplicat al raonament. O el que és, no són precisament hàbils per determinar contextos.
 \\\\
@@ -421,7 +421,7 @@ Alguns dels més freqüents en aprenentatge supervisat:
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=.8\textwidth]{supervised}
-\caption{Diagrama d'un algorisme amb aprenetatge supervisat.}
+\caption{Diagrama d'un algorisme amb aprenentatge supervisat.}
 \end{center}
 \end{figure}
 \newpage
@@ -431,7 +431,7 @@ L'aprenentatge no supervisat té lloc quan no es disposa de dades etiquetades per
 Per exemple, les tasques de clustering, busquen agrupaments basats en similituds, però gens garanteix que aquestes tinguin algun significat o utilitat. A vegades, en explorar les dades sense un objectiu definit, es poden trobar correlacions esporàdiques curioses, però poc pràctiques. \\\\
 L'aprenentatge no supervisat se sol usar en problemes de clustering, agrupaments de co-ocurrència i profiling. Tanmateix, els problemes que impliquen tasques de trobar similitud, predicció d'enllaços o reducció de dades, poden ser supervisats o no.
 \\\\
-Els algorismes no supervisats es poden usar per diferents tasques. Una tasca força classica és  la de trobar grups dins a les dades.  Podem usar algorismes de clustering que ens permeten associar a dades uns representants (centroides dels clústers). Això pot ser útil, per exemple, per a trobar grups de usuaris amb característiques comuns. 
+Els algorismes no supervisats es poden usar per diferents tasques. Una tasca força clàssica és  la de trobar grups dins a les dades.  Podem usar algorismes de clustering que ens permeten associar a dades uns representants (centroides dels clústers). Això pot ser útil, per exemple, per a trobar grups de usuaris amb característiques comuns. 
 Una altra tasca diferent és la de generar dades. En aquest treball ens centrem en usar models que permeten generar dades a partir de unes dades de entrenament, no en trobar grups a les dades. 
 
 %\begin{enumerate}
@@ -607,13 +607,13 @@ S'han proposat recentment nombrosos enfocaments basats en l'aprenentatge de CDs 
 \subsubsection{Avaluació d'una RBM}
 A continuació explicarem les formes d'avaluar una màquina de boltzamn restrictiva. Tenim tres formes diferents per realitzar l'avaluació. En primer lloc tenim l'avaluació  per probabilitat i mostreig rellevant d'importància.\\\\
 Una forma natural d'avaluar el rendiment d'un RBM entrenat és calcular la probabilitat del model i les probabilitats de realitzar mostres de dades de prova sota el RBM format. A més, la probabilitat de les mostres de dades aleatòries també es pot utilitzar com a mesura de la bondat del RBM.\\\\
-A causa de la restricció estructural, el resum explícit de les neurones ocultes (hidden) és força senzill (vegeu l'equació (4.8)), però, malauradament, la probabilitat d'una observació encara és intractable a causa de la constant de normalització. La constant de normalització només es pot computar exactament sumant exponencialment molts termes, i tret que la dimensionalitat del conjunt de dades sigui molt petita, és senzillament impossible. Per tant, en lloc de computar-ho exactament, cal utilitzar un mètode aproximat.\\\\
+A causa de la restricció estructural, el resum explícit de les neurones ocultes (hidden) és força senzill (vegeu l'equació (4.8)), però, malauradament, la probabilitat d'una observació encara és intractable a causa de la constant de normalització. La constant de normalització només es pot computar exactament sumant exponencialment molts termes, i tret que la dimensió del conjunt de dades sigui molt petita, és senzillament impossible. Per tant, en lloc de computar-ho exactament, cal utilitzar un mètode aproximat.\\\\
 Per a l'estimació de la constant de normalització, aquesta tesi utilitza mostres d'importància recomanada (Annealed importance sampling, AIS) que s'ha utilitzat amb èxit per calcular la constant de normalització del RBM \cite{salakhutdinov}.\\\\
-L'AIS es basa en un mètode de mostreig d'importància simple (SIS) que podria estimar la proporció de dues constants de normalització. Per a dues densitats de probabilitat ${P_A (x) = \frac{P_A^*(x)}{Z_A}}$ i ${P_B (x) = \frac{P_B^*(x)}{Z_B}}$, la relació de dues constants de normalització ${Z_A}$ i ${Z_B}$ es pot estimar mitjançant un mètode de mostreig de Monte Carlo sense cap biaix si és possible provar de ${P_A (\cdot)}$:
+L'AID es basa en un mètode de mostreig d'importància simple (SIS) que podria estimar la proporció de dues constants de normalització. Per a dues densitats de probabilitat ${P_A (x) = \frac{P_A^*(x)}{Z_A}}$ i ${P_B (x) = \frac{P_B^*(x)}{Z_B}}$, la relació de dues constants de normalització ${Z_A}$ i ${Z_B}$ es pot estimar mitjançant un mètode de mostreig de Monte Carlo sense cap biaix si és possible provar de ${P_A (\cdot)}$:
 \begin{equation}
 \frac{Z_B}{Z_A} = E_{P_A} [\frac{P_B^*(x)}{P_A^*(x)}] \approx \frac{1}{M} \sum^M_{i=1} \frac{P_B^*(x_i)}{P_A^*(x_i)}
 \end{equation}
-on ${X_i}$ són mostres de ${P_A(X)}$. La qualitat de l'aproximació en termes de la variància depèn molt de la proximitat de ${P_A( \cdot )}$ i ${P_B( \cdot )}$. Si ${P_A( \cdot )}$ no és una aproximació gairebé perfecte a PB, llavors la variància de l'estimació pot ser tan gran com l'infinit. Basat en SIS, AIS calcula la constant de normalització de la distribució del model calculant la ràtio de les constants de normalització de distribucions intermediàries consecutives que van des de l'anomenada distribució bàsica i la distribució de destinació. \\\\
+on ${X_i}$ són mostres de ${P_A(X)}$. La qualitat de l'aproximació en termes de la variància depèn molt de la proximitat de ${P_A( \cdot )}$ i ${P_B( \cdot )}$. Si ${P_A( \cdot )}$ no és una aproximació gairebé perfecte a PUB, llavors la variància de l'estimació pot ser tan gran com l'infinit. Basat en SIS, AIS calcula la constant de normalització de la distribució del model calculant la ràtio de les constants de normalització de distribucions intermediàries consecutives que van des de l'anomenada distribució bàsica i la distribució de destinació. \\\\
 La distribució base es tria de tal manera que la seva constant normativa ${Z_0}$ es pot calcular exactament i és possible recopilar mostres independents. Una selecció natural de la distribució base per a un RBM és un RBM amb zero pesos ${W}$. Això produeix la constant de normalització
 \begin{equation}
 Z_0 = \prod_i (1 + exp \{b_i\}) \prod_j (1 + exp \{c_j\})
@@ -622,7 +622,7 @@ on els índexs ${i}$ i ${j}$ passen per totes les neurones visibles i ocultes, re
 Mitjançant la computació del producte de les proporcions estimades de les constants de normalització intermèdia i ${Z_0}$, es pot estimar la constant de normalització del RBM objectiu. L'algoritme que implementa AIS es descriu en Algorisme 2.\\\\
 L'algoritme presentat descriu la construcció d'un RBM intermedis seguint el que va proposar Salakhutdinov \cite{salakhutdinov}. La distribució base està representada per un RBM amb pesos nuls, però els biaixos són idèntics als del RBM objectiu. No obstant això, cal tenir en compte que hi ha altres possibilitats per construir distribucions intermèdies i triar una distribució bàsica. Per exemple, en els capítols següents, la distribució base és un RBM amb dos pesos zero i biaixos zero, de manera que no cal que cada RBM intermedi mantingui el doble de neurones ocultes que el RBM objectiu.
 \begin{algorithm}
-\caption{ Estimació de la normalització constant per mostreig d'importància recomenada}
+\caption{ Estimació de la normalització constant per mostreig d'importància recomanada}
 \begin{algorithmic} 
 \STATE Crear una seqüència de temperatures ${T_k}$ tal que ${0 = T_0 < T_1 < \cdot \cdot \cdot < T_K = 1}$\\
 Crear un RBM base, ${R_0}$ amb paràmetres ${\theta_0 = (W_0,b,c)}$, on ${W_0 = 0}$ \\
@@ -1002,15 +1002,15 @@ Si analitzem la quantitat d'elements de tots els moodboards tenim que en els deu
 \end{itemize}
 \newpage
 \subsection{Conclusions}
-Amb el desenvolupament d'aquest projecte hem aprés que la realització d'una tasca manual, repetitiva i costosa de temps, com és la generació de moodboards, es pot millorar aplicant tecniques de Inteligencia Artificial.\\\\
-També hem après com dissenyar una aplicació en unity que dona una interficie gràfica per tal de poder fer més fàcil la tasca de la generació de moodboards als disenyadors. \\\\
-La part més important ha sigut crear la màquina amb capacitat d'aprenentatje ja que hem hagut de aprendre el funcionament bàsic del machine learning per tal de decidir quin tipus de màquina era millor pel problema descrit. La creació de la màquina ens ha permès establir un sistema d'aprenentatge per tal de generar moodboards a partir dels creats anteriorment i ens ha permès automatitzar tota la tasca per tal d'evitar que els disenyadors comencin a treballar desde una moodboard buida.\\\\
-Els resultats que hem obtingut després de realitzar totes les proves que hem cregut necessàries no han tingut la qualitat esperada. Tot i això, les resultats ens han permès  donar una eina que pot servir per a donar idees de moodboards inicials als disenyadors. 
+Amb el desenvolupament d'aquest projecte hem aprés que la realització d'una tasca manual, repetitiva i costosa de temps, com és la generació de moodboards, es pot millorar aplicant tècniques de Inteligencia Artificial.\\\\
+També hem après com dissenyar una aplicació en unity que dona una interfície gràfica per tal de poder fer més fàcil la tasca de la generació de moodboards als dissenyadors. \\\\
+La part més important ha sigut crear la màquina amb capacitat d'aprenentatge ja que hem hagut de aprendre el funcionament bàsic del machine learning per tal de decidir quin tipus de màquina era millor pel problema descrit. La creació de la màquina ens ha permès establir un sistema d'aprenentatge per tal de generar moodboards a partir dels creats anteriorment i ens ha permès automatitzar tota la tasca per tal d'evitar que els dissenyadors comencin a treballar des de una moodboard buida.\\\\
+Els resultats que hem obtingut després de realitzar totes les proves que hem cregut necessàries no han tingut la qualitat esperada. Tot i això, les resultats ens han permès  donar una eina que pot servir per a donar idees de moodboards inicials als dissenyadors. 
 \\\\
-És important remarcar que la qualitat dels resultats  pot ser deguda a la falta de entrenaent que disposavem. Per aquest projecte no hem pogut disposar de més dades per culpa de la falta de temps dels disenyadors de la empresa que no ens van proporcionar un nombre de moodboards  gaire elevat. En consequencia  l'entrenament de la màquina s'ha fet amb tant sols 8  dades (graelles) que són moltes menys de les que es fan servir per a projectes de aprenentatge automatic. \\\\
-Tot i això, hem pogut desenvolupar correctament un sistema d'aprenentatge per a la realització d'unes tasques especifiques i hem pogut comprovar, encara que els resultats no fossin els ideals, que el funcionament era acceptable.  S'ha intentat que la memoria plasmi la metodologia seguida i no es centri unicament en els resultats que están lluny de poder substituir a interioristes per a generar moodboards. \\\\
-Finalment, durant la realització del projecte han anat apareixent problemes que han provocat canvis importants en la implementació de la màquina i s'han anat canviat especificacions que afectaven a les dades.  Finalment s'han  deifinit uns estàndards  per tal de poder fer funcionar correctament la màquina i obtenir resultats (encara que no fossin els ideals) per tal de poder comprovar que s'havia realitzat la implementació correctament.\\\\
-Per acabar, el projecte ha suposat un repte tant per el seu desenvolupament com per la seva avaluació ja que en un principi es desconeixia com s'avaluaria el problema presentat ja que mai havia tractat un tema com aquest ni havia desenvolupat cap màquina d'aquest estil. A més la empresa no tenia cap idea clara de com evaluaria el projecte i pertant és dificil decidir si s'ha obtingut un resultat suficientment bo com per posar-ho en producció.\\\\ El projecte m'ha permès aprendre molt sobre el machine learning i la seva utilització. També m'ha forçat a apendre noves eines vitals per a la implementació eficient del model, com la llibreria numpy i scipy que han sigut importants per a poder codificar les dades com a matrius sparse i poder entrenar el model de manera eficient.
+És important remarcar que la qualitat dels resultats  pot ser deguda a la falta de entrenament que disposàvem. Per aquest projecte no hem pogut disposar de més dades per culpa de la falta de temps dels dissenyadors de la empresa que no ens van proporcionar un nombre de moodboards  gaire elevat. En conseqüència  l'entrenament de la màquina s'ha fet amb tant sols 8  dades (graelles) que són moltes menys de les que es fan servir per a projectes de aprenentatge automàtic. \\\\
+Tot i això, hem pogut desenvolupar correctament un sistema d'aprenentatge per a la realització d'unes tasques especifiques i hem pogut comprovar, encara que els resultats no fossin els ideals, que el funcionament era acceptable.  S'ha intentat que la memòria plasmi la metodologia seguida i no es centri únicament en els resultats que estan lluny de poder substituir a interioristes per a generar moodboards. \\\\
+Finalment, durant la realització del projecte han anat apareixent problemes que han provocat canvis importants en la implementació de la màquina i s'han anat canviat especificacions que afectaven a les dades.  Finalment s'han  definit uns estàndards  per tal de poder fer funcionar correctament la màquina i obtenir resultats (encara que no fossin els ideals) per tal de poder comprovar que s'havia realitzat la implementació correctament.\\\\
+Per acabar, el projecte ha suposat un repte tant per el seu desenvolupament com per la seva avaluació ja que en un principi es desconeixia com s'avaluaria el problema presentat ja que mai havia tractat un tema com aquest ni havia desenvolupat cap màquina d'aquest estil. A més la empresa no tenia cap idea clara de com avaluaria el projecte i reptant és difícil decidir si s'ha obtingut un resultat suficientment bo com per posar-ho en producció.\\\\ El projecte m'ha permès aprendre molt sobre el machine learning i la seva utilització. També m'ha forçat a aprendre noves eines vitals per a la implementació eficient del model, com la llibreria numpy i scipy que han sigut importants per a poder codificar les dades com a matrius sparse i poder entrenar el model de manera eficient.
 \newpage
 \subsection{Treball futur: Com millorar el projecte}
 Un cop s'ha acabat aquest projecte podem millorar-lo i seguir-lo desenvolupant de vàries maneres. En primer lloc i el següent pas que s'hauria de fer per a continuar el projecte seria que un cop generats els moodboards s'editessin per tal de corregir els objectes que són incorrectes i així obtenir nous moodboards per entrenar la màquina. D'aquesta forma s'obtindria un volum més elevat de dades que beneficiaria a la màquina ja que l'entrenament seria molt més correcte i les dades d'entrada més extenses.\\\\
