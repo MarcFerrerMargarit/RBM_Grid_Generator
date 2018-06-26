@@ -1,4 +1,4 @@
-\select@language {catalan}
+\babel@toc {catalan}{}
 \contentsline {section}{\numberline {1}Introducci\'o i objectius}{1}
 \contentsline {section}{\numberline {2}Moodboards}{4}
 \contentsline {subsection}{\numberline {2.1}Disseny dels moodboards}{4}
@@ -18,7 +18,10 @@
 \contentsline {subsection}{\numberline {4.2}M\`aquina de Boltzmann Restrictiva}{30}
 \contentsline {subsubsection}{\numberline {4.2.1}Entrenament M\`aquina de Boltzmann Restrictiva}{31}
 \contentsline {subsubsection}{\numberline {4.2.2}Avaluaci\'o d'una RBM}{34}
-\contentsline {subsubsection}{\numberline {4.2.3}Dificultats i solucions convencionals}{37}
+\contentsline {paragraph}{\numberline {4.2.2.1}Avaluaci\'o per probabilitat i mostreig rellevant d'import\`ancia}{35}
+\contentsline {paragraph}{\numberline {4.2.2.2}Precisi\'o de la classificaci\'o i altres mesures}{36}
+\contentsline {paragraph}{\numberline {4.2.2.3}Visualitzaci\'o directe i inspecci\'o de par\`ametres.}{37}
+\contentsline {subsubsection}{\numberline {4.2.3}Dificultats i solucions convencionals}{38}
 \contentsline {subsection}{\numberline {4.3}Algorisme seleccionat a implementar en codi}{39}
 \contentsline {section}{\numberline {5}Desenvolupament de l'algoritme aplicat al problema}{42}
 \contentsline {subsection}{\numberline {5.1}Esquema del model}{42}
@@ -28,11 +31,11 @@
 \contentsline {subsection}{\numberline {5.3}Dades d'entrament}{48}
 \contentsline {subsubsection}{\numberline {5.3.1}Format de les dades}{48}
 \contentsline {subsubsection}{\numberline {5.3.2}Creaci\'o del codificador i dades obtingudes}{50}
-\contentsline {subsection}{\numberline {5.4}Creaci\'o i entrenament del RBM}{51}
-\contentsline {subsubsection}{\numberline {5.4.1}Creaci\'o del RBM a partir de les dades}{51}
-\contentsline {subsubsection}{\numberline {5.4.2}Entrenament del RBM}{52}
+\contentsline {subsection}{\numberline {5.4}Creaci\'o i entrenament de la RBM}{51}
+\contentsline {subsubsection}{\numberline {5.4.1}Creaci\'o de la RBM a partir de les dades}{51}
+\contentsline {subsubsection}{\numberline {5.4.2}Entrenament de la RBM}{52}
 \contentsline {subsection}{\numberline {5.5}Dades de sortida}{54}
-\contentsline {subsubsection}{\numberline {5.5.1}Dades obtingudes del RBM}{54}
+\contentsline {subsubsection}{\numberline {5.5.1}Dades obtingudes de la RBM}{54}
 \contentsline {subsubsection}{\numberline {5.5.2}Creaci\'o de moodboards a partir de les dades}{56}
 \contentsline {section}{\numberline {6}Resultats i conclusions i l\IeC {\'\i }nies de continuaci\'o}{58}
 \contentsline {subsection}{\numberline {6.1}Qualitat de les graelles generades}{58}
