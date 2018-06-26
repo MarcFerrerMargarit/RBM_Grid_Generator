@@ -163,11 +163,13 @@ Per a millorar la velocitat de generació de moodboards el treball es centra en d
 \\\\
 Per tal de poder crear aquest sistema utilitzarem tècniques de machine learning per tal de crear una màquina capaç d'aprendre i de generar a partir de les dades que ha après. D'aquesta forma podem estructurar el projecte en dues parts essencials. La primera part descriurà  la generació de moodboards mitjançant una interficia grafica. La segona  part descriurà la creació d'una màquina capaç de llegir els moodboards creats anteriorment i apendre a crearne de nous. 
 \\\\
-Usarem les  RBMs per a generar configuracions de moodboards de manera que un interiorista pugui començar a treballar desde un moodboard ``que tingui sentit'', sense necessitat de començar desde zero. Poder fer això tindria un gran impacte en reduir el temps de cerca dels mobles i objectes necessaris que es necessiten per a cada zona d'una casa, obtenint  moodboards d'una forma ràpida i eficient que tot i potser no tingui la qualitat per substituir el treball d'un interiorista pugui ser de prou qualitat com per a donar ja una bona feina feta.
-\\\\
-Com ja hem mencionat, farem servir tècniques de machine learning, és a dir algorismes d'aprenentatge automàtic. 
-L'aprenentatge automàtic és un camp de la intel·ligència artificial que està dedicat al disseny, l'anàlisi i el desenvolupament d'algorismes i tècniques que permeten que les màquines aprenguin a fer tasques a partir de dades. Es tracta de crear programes capaços de generalitzar comportaments a partir del reconeixement de patrons.  D'aquesta manera nosaltres el que volem fer és una màquina que sigui capaç de apendre de les moodboards que li donarem per després poder generar  noves dades. Un dels possibles problemes que es poden trobar al usar aquest tipus de màquines és que necessiten moltes dades per poder-se entrenar.\\\\
-Finalment, tot i que l'objectiu és crear un sistema automatitzat per a millorar la realització de la tasca de generació de moodbards també considerarem crucial analitzar com és de millor aquest sistema respecte de l'anterior. Per tal de saber-ho, al final de tot el projecte avaluarem el sistema mitjançant l'ajuda humana, en aquest cas, persones expertes que han generat molts de moodboards i que també han generat els correctes per entrenar la màquina i d'aquesta forma podrem validar les qualitats del sistema mitjançant diverses proves que s'explicaran més endavant.
+Usarem les  RBMs per a generar configuracions de moodboards de manera que un interiorista pugui començar a treballar desde un moodboard ``que tingui sentit'', sense necessitat de començar desde zero. Poder fer això tindria un gran impacte en reduir el temps de cerca dels mobles i objectes necessaris que es necessiten per a cada zona d'una casa, obtenint  moodboards d'una forma ràpida i eficient que tot i potser no tingui la qualitat per substituir el treball d'un interiorista pugui ser de prou qualitat com per a donar ja una bona feina feta.\\\\
+%\\\\
+%Com ja hem mencionat, farem servir tècniques de machine learning, és a dir algorismes d'aprenentatge automàtic. 
+%L'aprenentatge automàtic és un camp de la intel·ligència artificial que està dedicat al disseny, l'anàlisi i el desenvolupament d'algorismes i tècniques que permeten que les màquines aprenguin a fer tasques a partir de dades. Es tracta de crear programes capaços de generalitzar comportaments a partir del reconeixement de patrons.  D'aquesta manera nosaltres el que volem fer és una màquina que sigui capaç de apendre de les moodboards que li donarem per després poder generar  noves dades. Un dels possibles problemes que es poden trobar al usar aquest tipus de màquines és que necessiten moltes dades per poder-se entrenar.
+Tot i que l'objectiu és crear un sistema automatitzat per a millorar la realització de la tasca de generació de moodbards també considerarem crucial analitzar com és de millor aquest sistema respecte de l'anterior. Per tal de saber-ho, al final de tot el projecte avaluarem el sistema mitjançant l'ajuda humana, en aquest cas, persones expertes que han generat molts de moodboards i que també han generat els correctes per entrenar la màquina i d'aquesta forma podrem validar les qualitats del sistema mitjançant diverses proves que s'explicaran més endavant.
+
+
 \\\
 \newpage
 \subsection*{Estructura de la Memòria}
@@ -176,13 +178,22 @@ Seguidament explicarem quin tipus de màquina farem servir, és a dir, el tipus d'
 Després analitzarem com són les dades d'entrada, com a partir del moodboards generats obtenim, com transformem aquestes imatges per tal d'obtenir dades vàlides per a entrenar la màquina. També definirem com han de ser aquestes dades i com han de ser les dades que volem obtenir de sortida i com les transformarem en imatges de nou. \\\\
 Per motius de confidencialitat la empresa no ha deixat publicar ni adjuntar el codi en aquesta memòria. De totes maneres, s'han inclòs parts de codi on es pot veure com s'han entrenat els models i els pre-processos necessaris per a generar els inputs. \\\\
 Finalment, analitzarem els resultats obtinguts i els avaluarem mitjançant diferents proves que realitzarem per comprovar la seva eficiència i els resultats envers els moodboards creats prèviament per experts.
-\newpage
 
+
+\subsection*{Eines de programació usades}
+Per  a poder realitzar aquest treball s'han usat les eines seguents:
+\begin{itemize}
+\item Unity i C per a fer la interficie grafica (EXPLICACIO BREU)
+\item Python per a fer el model de generació de moodboards (EXPLICACIO BREU)
+\end{itemize}
+
+\newpage
 \section{Moodboards}
 
 Abans de començar a explicar les dades, el funcionament de l'algorisme i els resultats ens hem de centrar en la primera part del projecte i una de les més importants, la generació de dades.\\\
 Com hem comentat a la introducció les nostres dades són moodboards que defineixen diferents estances d'un habitatge d'un estil concret. \\\
 A continuació explicarem com són els moodboards, és a dir, com estan formats els moodboards actuals i com seran els nostres moodboards que generarem amb la nostra eina. També explicarem com està dissenyada la nostra eina, amb quines eines de programació s'ha realitzat i com es creen moodboards seguin l'estàndard que hem decidit.
+
 \subsection{Disseny dels moodboards}
 
 Com bé ja hem explicat un moodboard és una combinació d'imatges relacionades entre elles que juntes formen una sola imatge. Aquesta imatge que formen és una imatge ben generada, és a dir, que hi ha cohesió amb tots els elements de forma que sembli una fotografia mentre que es tracta una composició de diferents objectes editats manualment mitjançant eines d'edició d'imatge per formar una sola imatge coherent i compacta, la qual mostrarà una habitació d'una casa.\\\\
@@ -399,9 +410,8 @@ Dintre del conjunt del Machine Learning poder distingir entre diferents tipus qu
 \begin{itemize}
 \item Aprenentatge supervisat
 \item Aprenentatge no supervisat
-\item Aprenentatge per reforç
 \end{itemize}
-A continuació s'analitzarà en profunditat cada un dels tipus anteriors. Seguidament mostra una imatge resum dels diferents tipus i un exemple de cada un. 
+A continuació es descriuen breument  el aprenentatge supervisat i el no supervisat. Seguidament mostra una imatge resum dels diferents tipus i un exemple de cada un. 
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=\textwidth]{typesML}
@@ -662,11 +672,11 @@ Per exemple, es poden visualitzar funcions del RBM formats en dígits manuscrits.
 En cas de biaixos ocults, els valors mateixos suggereixen si cada neurona oculta contribueix a la capacitat de modelització del RBM. Les neurones que tenen un gran biaix cj són la major part del temps actiu, i no són molt útils, ja que els pesos associats a ells es poden incorporar al biaix b. D'altra banda, les neurones ocultes que són majoritàriament inactives (p.Ex., Amb grans biaixos negatius ${c_j}$) o les activacions dels quals són independents de les dades també són inútils, ja que la capacitat d'aprenentatge del RBM no canvia encara que s'eliminin.\\\\
 Igual que altres mesures indirectes presentades anteriorment, la visualització i la inspecció dels valors dels paràmetres s'haurien de realitzar acuradament. No hi ha cap mesura objectiva per la qualitat de les funcions visualitzades, i les característiques visualitzades i els valors dels biaixos poden evolucionar lentament a través de l'entrenament.\\\\
 \subsubsection{Dificultats i solucions convencionals}
-El fet que la funció de destinació no es pugui calcular exactament durant l'aprenentatge dificulta l'entrenament dels RBM. És computacional inviable de saber quan l'aprenentatge ha convergit, o fins i tot no és fàcil dir si l'aprenentatge està passant realment. A més, no és possible utilitzar cap mètode de degradat avançat com el gradient de conjugat no lineal.\\\\
-Atès que l'aprenentatge es realitza utilitzant actualitzacions de gradients estocàstics, convergeix a una solució local.\\\\
-El problema és que no és factible comparar les diferents solucions analíticament, i triar el millor d'entre elles. S'ha mostrat recentment que, depenent de la inicialització i els paràmetres d'aprenentatge, els RBM resultants varien molt, fins i tot en els petits conjunts de dades de joguines.\\\\
-Més problemàticament, els enfocaments més aproximats presentats en els apartats anteriors s'han demostrat que difereixen, si els paràmetres d'aprenentatge no s'han triat de manera adequada. L'ús d'un millor mètode de mostreig MCMC, p. Ex. el temperament paral·lel s'ha demostrat que evita millor el comportament divergent, però a llarg termini sense utilitzar la programació de tarifes d'aprenentatge apropiada, la probabilitat del registre fluctua molt, cosa que no és desitjable.\\\\
-S'ha demostrat que un RBM és un aproximador universal de manera que amb prou nombre de neurones ocultades pot modelar qualsevol distribució de probabilitat discreta.\\\\
+El fet que la funció de destinació no es pugui calcular exactament durant l'aprenentatge dificulta l'entrenament dels RBM. És computacional inviable  saber quan l'aprenentatge ha convergit, o fins i tot no és fàcil dir si l'aprenentatge està passant realment. A més, en una RBM no és possible computar el gradient exacte de la funció que volem optimitzar. Per això recorrem a metodes de Markov Chain Monte Carlo, per a generar una aproximació al gradient cada cop que volem cambiar els pesos.\\\\
+%Atès que l'aprenentatge es realitza utilitzant actualitzacions de gradients estocàstics, convergeix a una solució local.\\\\
+%El problema és que no és factible comparar les diferents solucions analíticament, i triar el millor d'entre elles. S'ha mostrat recentment que, depenent de la inicialització i els paràmetres d'aprenentatge, els RBM resultants varien molt, fins i tot en els petits conjunts de dades.\\\\
+Un dels problemes de les RBMs és que no hi ha una única manera standard de entrelar-les. Els metodes aproximats presentats en els apartats anteriors s'han demostrat que difereixen, especialemnt si els paràmetres d'aprenentatge no s'han triat de manera adequada. L'ús d'un millor mètode de mostreig MCMC, (com el ``temperament paral·lel'') s'ha demostrat que evita millor el comportament divergent.\\\\
+Tot i els problemes explicats anteriorment, s'ha demostrat que una RBM és un aproximador universal de manera que amb suficients de neurones ocultes pot modelar qualsevol distribució de probabilitat discreta. \\\\
 Tanmateix, a la pràctica, el nombre de neurones ocultes sempre és limitat i, depenent dels procediments d'aprenentatge, no totes les neurones ocultes contribueixen al poder de representació del RBM.\\\\
 Per exemple, aquestes neurones ocultes sempre actives no tenen sentit, ja que els pesos associats a ells es poden incorporar a biaixos. A més, qualsevol neurona oculta inactiva sempre no té sentit, des de llavors, l'eliminació de la neurona oculta no afecta la capacitat de modelatge del RBM.\\\\
 Idealment, cada neurona oculta hauria de representar una característica "significativa" diferent, per exemple, una part típica de la imatge. Tanmateix, ens hem adonat que sovint les neurones ocultes tendeixen a aprendre característiques que s'assemblen al biaix visible b. Aquest efecte és més destacat en la fase inicial d'aprenentatge i en el conjunt de dades en què els bits visibles són majoritàriament actius, com ara 1-MNIST on es va desplegar cada bit de conjunt de dades manuscrits MNIST.\\\\
