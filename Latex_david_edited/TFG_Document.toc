@@ -9,36 +9,36 @@
 \contentsline {section}{\numberline {3}Desenvolupament del Machine Learning}{18}
 \contentsline {subsection}{\numberline {3.1}Introducci\'o i antecedents}{18}
 \contentsline {subsection}{\numberline {3.2}Tipus d'algoritmes}{22}
-\contentsline {subsubsection}{\numberline {3.2.1}Aprenentatge supervisat}{23}
-\contentsline {subsubsection}{\numberline {3.2.2}Aprenentatge no supervisat}{24}
-\contentsline {subsection}{\numberline {3.3}Plantejament de l'algoritme}{25}
-\contentsline {section}{\numberline {4}M\`aquina de Boltzmann(BM) i M\`aquina de Boltzmann Restrictiva (RBM)}{27}
-\contentsline {subsection}{\numberline {4.1}M\`aquina de Boltzmann}{27}
-\contentsline {subsubsection}{\numberline {4.1.1}Entrenament M\`aquina de Boltzmann}{28}
-\contentsline {subsection}{\numberline {4.2}M\`aquina de Boltzmann Restrictiva}{30}
-\contentsline {subsubsection}{\numberline {4.2.1}Entrenament M\`aquina de Boltzmann Restrictiva}{31}
-\contentsline {subsubsection}{\numberline {4.2.2}Avaluaci\'o d'una RBM}{34}
-\contentsline {paragraph}{\numberline {4.2.2.1}Avaluaci\'o per probabilitat i mostreig rellevant d'import\`ancia}{35}
-\contentsline {paragraph}{\numberline {4.2.2.2}Precisi\'o de la classificaci\'o i altres mesures}{36}
-\contentsline {paragraph}{\numberline {4.2.2.3}Visualitzaci\'o directe i inspecci\'o de par\`ametres.}{37}
-\contentsline {subsubsection}{\numberline {4.2.3}Dificultats i solucions convencionals}{38}
-\contentsline {subsection}{\numberline {4.3}Algorisme seleccionat a implementar en codi}{39}
-\contentsline {section}{\numberline {5}Desenvolupament de l'algoritme aplicat al problema}{42}
-\contentsline {subsection}{\numberline {5.1}Esquema del model}{42}
-\contentsline {subsection}{\numberline {5.2}Dades obtingudes de l'eina}{43}
-\contentsline {subsubsection}{\numberline {5.2.1}Format de les dades}{43}
-\contentsline {subsubsection}{\numberline {5.2.2}Dades obtingudes del projecte}{47}
-\contentsline {subsection}{\numberline {5.3}Dades d'entrament}{48}
-\contentsline {subsubsection}{\numberline {5.3.1}Format de les dades}{48}
-\contentsline {subsubsection}{\numberline {5.3.2}Creaci\'o del codificador i dades obtingudes}{50}
-\contentsline {subsection}{\numberline {5.4}Creaci\'o i entrenament de la RBM}{51}
-\contentsline {subsubsection}{\numberline {5.4.1}Creaci\'o de la RBM a partir de les dades}{51}
-\contentsline {subsubsection}{\numberline {5.4.2}Entrenament de la RBM}{52}
-\contentsline {subsection}{\numberline {5.5}Dades de sortida}{54}
-\contentsline {subsubsection}{\numberline {5.5.1}Dades obtingudes de la RBM}{54}
-\contentsline {subsubsection}{\numberline {5.5.2}Creaci\'o de moodboards a partir de les dades}{56}
-\contentsline {section}{\numberline {6}Resultats i conclusions i l\IeC {\'\i }nies de continuaci\'o}{58}
-\contentsline {subsection}{\numberline {6.1}Qualitat de les graelles generades}{58}
-\contentsline {subsubsection}{\numberline {6.1.1}Possibles problemes}{60}
-\contentsline {subsection}{\numberline {6.2}Conclusions}{62}
-\contentsline {subsection}{\numberline {6.3}Treball futur: Com millorar el projecte}{64}
+\contentsline {subsubsection}{\numberline {3.2.1}Aprenentatge supervisat}{22}
+\contentsline {subsubsection}{\numberline {3.2.2}Aprenentatge no supervisat}{23}
+\contentsline {subsection}{\numberline {3.3}Plantejament de l'algoritme}{24}
+\contentsline {section}{\numberline {4}M\`aquina de Boltzmann(BM) i M\`aquina de Boltzmann Restrictiva (RBM)}{26}
+\contentsline {subsection}{\numberline {4.1}M\`aquina de Boltzmann}{26}
+\contentsline {subsubsection}{\numberline {4.1.1}Entrenament M\`aquina de Boltzmann}{27}
+\contentsline {subsection}{\numberline {4.2}M\`aquina de Boltzmann Restrictiva}{29}
+\contentsline {subsubsection}{\numberline {4.2.1}Entrenament M\`aquina de Boltzmann Restrictiva}{30}
+\contentsline {subsubsection}{\numberline {4.2.2}Avaluaci\'o d'una RBM}{33}
+\contentsline {paragraph}{\numberline {4.2.2.1}Avaluaci\'o per probabilitat i mostreig rellevant d'import\`ancia}{33}
+\contentsline {paragraph}{\numberline {4.2.2.2}Precisi\'o de la classificaci\'o i altres mesures}{35}
+\contentsline {paragraph}{\numberline {4.2.2.3}Visualitzaci\'o directe i inspecci\'o de par\`ametres.}{36}
+\contentsline {subsubsection}{\numberline {4.2.3}Dificultats i solucions convencionals}{37}
+\contentsline {subsection}{\numberline {4.3}Algorisme seleccionat a implementar en codi}{38}
+\contentsline {section}{\numberline {5}Desenvolupament de l'algoritme aplicat al problema}{41}
+\contentsline {subsection}{\numberline {5.1}Esquema del model}{41}
+\contentsline {subsection}{\numberline {5.2}Dades obtingudes de l'eina}{42}
+\contentsline {subsubsection}{\numberline {5.2.1}Format de les dades}{42}
+\contentsline {subsubsection}{\numberline {5.2.2}Dades obtingudes del projecte}{46}
+\contentsline {subsection}{\numberline {5.3}Dades d'entrament}{47}
+\contentsline {subsubsection}{\numberline {5.3.1}Format de les dades}{47}
+\contentsline {subsubsection}{\numberline {5.3.2}Creaci\'o del codificador i dades obtingudes}{49}
+\contentsline {subsection}{\numberline {5.4}Creaci\'o i entrenament de la RBM}{50}
+\contentsline {subsubsection}{\numberline {5.4.1}Creaci\'o de la RBM a partir de les dades}{50}
+\contentsline {subsubsection}{\numberline {5.4.2}Entrenament de la RBM}{51}
+\contentsline {subsection}{\numberline {5.5}Dades de sortida}{53}
+\contentsline {subsubsection}{\numberline {5.5.1}Dades obtingudes de la RBM}{53}
+\contentsline {subsubsection}{\numberline {5.5.2}Creaci\'o de moodboards a partir de les dades}{55}
+\contentsline {section}{\numberline {6}Resultats i conclusions i l\IeC {\'\i }nies de continuaci\'o}{57}
+\contentsline {subsection}{\numberline {6.1}Qualitat de les graelles generades}{57}
+\contentsline {subsubsection}{\numberline {6.1.1}Possibles problemes}{59}
+\contentsline {subsection}{\numberline {6.2}Conclusions}{61}
+\contentsline {subsection}{\numberline {6.3}Treball futur: Com millorar el projecte}{63}
