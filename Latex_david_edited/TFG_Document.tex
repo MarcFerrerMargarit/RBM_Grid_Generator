@@ -463,7 +463,7 @@ A continuació explicarem d'una forma més detallada les màquines de Boltzmann i l
 La màquina Boltzmann (BM) és una xarxa neuronal recurrent estocàstica que consisteix en neurones binàries. La xarxa està totalment connectada i cada connexió entre dues neurones és simètrica, de manera que l'efecte d'una neurona en l'estat de l'altra és simètrica per a cada parell.\\\\
 La probabilitat d'un estat particular ${X = [x_1, x_2,...,x_d]^T}$ de la xarxa es defineix per l'energia de BM que es postula com 
 \[E (x | \theta) = -\sum_{i}\sum_{j>i}w_{ij}x_ix_j - \sum_{i}b_ix_i\]
-on ${\theta}$ indica paràmetres de la xarxa que consisteixen en una matriu de pes ${W = [w_{ij}]}$ i un vector de polarització ${b = [b_i]}$. ${w_{ij}}$ és el pes de les connexions sinàptiques entre les neurones i i j. Suposem que ${w_{ij}}$ = 0 i ${w_{ij}}$ = ${w_{ji}}$. La probabilitat d'un estat x és, doncs, 
+on ${\theta}$ indica paràmetres de la xarxa que consisteixen en una matriu de pes ${W = [w_{ij}]}$ i un vector de biax ${b = [b_i]}$. ${w_{ij}}$ és el pes de les connexions sinàptiques entre les neurones i i j.  La probabilitat d'un estat x es defineix com: 
 \begin{equation}
 P (x | \theta) = \frac{1}{Z}exp[-E(x|\theta)] 
 \end{equation}
@@ -475,16 +475,16 @@ on
 P(x_i = 1|(x_{\setminus i},W)) = \frac{1}{1 + exp(-\sum_{j\neq i}w_{ij}x_j - b_i)}
 \end{equation}
 on ${x_{\setminus i}}$ denota un vector ${[x_1,...,x_{i-1},x_{i+1},..., x_d]^T }$. \\\\
-Les neurones de BM solen estar dividides en visibles i ocultes ${x = [v^T, h^t]^T}$, on els estats v de les neurones visibles es subjecten a les dades observades, i els estats h de les neurones ocultes poden canviar lliurement. En aquest cas de tenir neurones visibles i ocultes, es pot calcular la probabilitat d'una configuració específica de les neurones visibles marginant les neurones ocultes.\\\\
+Les neurones de BM solen estar dividides en visibles i ocultes ${x = [v^T, h^t]^T}$, on els estats v de les neurones visibles es corresponen a les dades observades, i els estats h de les neurones ocultes poden canviar lliurement. En cas de tenir neurones visibles i ocultes, es pot calcular la probabilitat d'una configuració específica de les neurones visibles marginalitzant sobre les neurones ocultes (és a dir, sumant sobre totes les possibles configuracions de neurones ocultes).\\\\
 \subsubsection{Entrenament Màquina de Boltzmann}
-Els paràmetres de BM es poden obtenir a partir de les dades utilitzant l'estimació estàndard de màxima versemblança. Donat un conjunt de dades ${}$, la probabilitat de registre dels paràmetres de BM és 
+Els paràmetres de BM es poden obtenir a partir de les dades utilitzant l'estimació estàndard de màxima versemblança. Donat un conjunt de dades ${}$, la  funció de likelihood es defineix com
 \begin{equation}
 \mathcal{L}(\theta) = \sum_{t=1}^N logP(v^{(t)}|\theta) =  \sum_{t=1}^N log \sum_h P(v^{(t)},h|\theta)
 \end{equation} 
-on les mostres ${v^{(t)}}$ s s'assumeixen que són independents entre si, i els estats h de les neurones ocultes han de ser marginades.\\\\
+on les mostres ${v^{(t)}}$ s s'assumeixen que són independents entre si, i els estats h de les neurones ocultes han de ser marginalitzades.\\\\
 El gradient de la probabilitat de registre s'obté prenent derivada parcial de ${\mathcal{L}(\theta)}$ respecte als paràmetres ${w_{ij}}$ 
 \[\frac{\partial\mathcal{L}}{\partial w_{ij}} = \frac{N}{2} [\langle x_ix_j \rangle_d - \langle x_ix_j \rangle_m] \]
-on una notació abreviada ${\langle\cdot\rangle_{P(\cdot)}}$ que denota l'expectativa calculada sobre la distribució de probabilitat ${P(\cdot)}$. A més, es van utilitzar ${d}$ i ${m}$ per designar dues distribucions de probabilitat ${P(h|\{v^{(t)}\},\theta)}$ i ${P(x|\theta)}$, respectivament. Són la probabilitat de les neurones ocultes quan les neurones visibles es subjecten a les mostres, i la probabilitat de totes les neurones sense cap neurona fixa. \\\\
+on una notació abreviada ${\langle\cdot\rangle_{P(\cdot)}}$ que denota la esperança calculada sobre la distribució de probabilitat ${P(\cdot)}$. A més, es van utilitzar ${d}$ i ${m}$ per designar dues distribucions de probabilitat ${P(h|\{v^{(t)}\},\theta)}$ i ${P(x|\theta)}$, respectivament. Són la probabilitat de les neurones ocultes quan les neurones visibles es subjecten a les mostres, i la probabilitat de totes les neurones sense cap neurona fixa. \\\\
 Segons el signe de cada terme, els dos termes es poden anomenar la fase positiva i la fase negativa, respectivament. La fórmula d'actualització general d'un paràmetre ${w_{ij}}$ és 
 \begin{equation}
 w_{ij}\leftarrow w_{ij} + \eta [\langle x_ix_j \rangle_d - \langle x_ix_j \rangle_m]
@@ -498,7 +498,7 @@ i
 \begin{equation}
 c_{j}\leftarrow b_{j} + \eta [\langle h_j \rangle_d - \langle h_j \rangle_m]
 \end{equation} 
-on ${v_i}$, ${h_j}$, ${b_{i}}$ i ${c_{j}}$ denoten la i i la neurona visible, la ${j}$-oculta neurona, el $i{}$-biaix visible, i el ${j}$ biaix amagat.
+on ${v_i}$, ${h_j}$ denoten neurones les neurones visibles i ocultes respectivament i  ${b_{i}}$ i ${c_{j}}$ els biaxos de les neurones visibles i ocultes respectivament.
 \newpage
 Tot i que les regles d'activació i aprenentatge de la BM estan clarament formulades, hi ha limitacions pràctiques en l'ús de la BM. Especialment, les fórmules d'actualització basades en gradients (4.4) - (4.6) no són computacionalment factibles, ja que les distribucions requerides tant en les fases positives com negatives només es poden obtenir després de computar la constant de normalització ${Z(\theta)}$.\\\\
 \begin{algorithm}
@@ -510,8 +510,8 @@ Tot i que les regles d'activació i aprenentatge de la BM estan clarament formula
 \UNTIL{que es reculli el nombre suficient de mostres, o el mostreig de Gibbs hagi arribat a l'equilibri.}
 \end{algorithmic}
 \end{algorithm}\\\\
-La computació ${Z(\theta)}$, tanmateix, requereix sumar de forma exponencial moltes possibles configuracions de BM, i és senzillament impossible per a les BM grans.\\\\
-Un mètode obvi per evitar la computació de la constant de normalització és utilitzar els mètodes de mostreig Markov-Chain Monte-Carlo (MCMC) per calcular el gradient estocàstic. A causa de la simplicitat de la regla d'activació d'una única neurona donada als estats d'altres neurones, un simple mostreig de Gibbs és suficient per obtenir gradients estocàstics. \\\\
+La computació ${Z(\theta)}$, tanmateix, requereix fer un sumatori sobre un nombre exponencial de termes (les possibles configuracions de BM), i és senzillament impossible per a les BM ``grans''.\\\\
+Un mètode  per evitar la computació de la constant de normalització és utilitzar  mètodes de Monte-Carlo  que ens permeten aproximar  integrals (o sumes de molts termes) per sumes amb un nombre factible de termes.  A causa de la simplicitat de la regla d'activació d'una única neurona donada als estats d'altres neurones, un simple mostreig de Gibbs és suficient per obtenir gradients estocàstics. \\\\
 El mostreig de Gibbs es pot implementar fàcilment perquè la distribució condicional de l'estat d'una sola neurona a BM donada als estats de totes les altres neurones ve donada per (4.2). Una descripció senzilla sobre com realitzar el mostreig de Gibbs amb BM es descriu en Algorisme 1. \\\\
 Aquest enfocament pot reduir considerablement la càrrega computacional de les regles d'actualització de gradients. Si s'assumeix que la quantitat de mostres necessàries per explicar la distribució de probabilitat de tot l'espai estatal és prou menor que la mida de l'espai estatal, és a dir, el nombre de totes les combinacions possibles dels estats de les neurones, l'aprenentatge de BM ja no és computacional inviable.\\\\
 Tanmateix, també existeixen altres tipus de limitacions en l'ús del mostreig de Gibbs per a la formació de BM. El major problema es deu a la connectivitat completa de BM. Atès que cada neurona està connectada i influïda per totes les altres neurones, es necessiten tants passos com la quantitat de neurones per obtenir una mostra de l'estat de BM. Fins i tot quan les neurones visibles es mantenen subjectes a les dades de formació, el nombre de passos necessaris per a una sola mostra fresca encara és almenys el nombre de neurones ocultes. Això fa que les mostres successives de la cadena estiguin altament correlacionades entre elles i aquesta pobra barreja afecta el rendiment de l'aprenentatge. \\\\
@@ -551,17 +551,18 @@ b_{i}\leftarrow b_{i} + \eta_b[\langle v_i\rangle_d - \langle v_i  \rangle_m]
 c_{j}\leftarrow c_{j} + \eta_c[\langle v_i \rangle_d - \langle v_i \rangle_m]
 \end{equation} \\\\
 on s'utilitza la mateixa notació ${\langle \cdot \rangle_{P_{(\cdot)}}}$ que s'ha usat anteriorment. \\\\
-Encara que no hi ha un fons teòric rigorós sobre l'elecció de les taxes d'aprenentatge, tradicionalment, s'utilitzen taxes d'aprenentatge més petites per aprendre els dos biaixos.\\\\
-Atès que una RBM és un cas especial de BM, és possible utilitzar el mateix mostreig de Gibbs per aprendre. Gràcies a la seva estructura restringida, el mostreig de Gibbs es pot utilitzar de manera més eficient, ja que una capa, ja sigui visible o oculta, les neurones de l'altra capa es converteixen en independents mútuament (veure Figura 10). Aquesta possibilitat de la presa de mostres capaç permet la plena utilització de l'entorn informàtic paral·lel modern.\\\\
+%Encara que no hi ha un fons teòric rigorós sobre l'elecció de les taxes d'aprenentatge, tradicionalment, s'utilitzen taxes d'aprenentatge més petites per aprendre els dos biaixos.\\\\
+Atès que una RBM és un cas especial de BM, és possible utilitzar el mateix mostreig de Gibbs durant l' aprentatge. Gràcies a la seva estructura restringida, el mostreig de Gibbs es pot utilitzar de manera més eficient ja que les neurones de una capa sabent els valors de l'atra son independents (veure Figura 10). \\\\
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=\textwidth]{rbm_hidden}
 \caption{Visualització de la idea de com es realitza el mostreig de Gibbs en capes RBM.}
 \end{center}
 \end{figure}
-Tanmateix, a mesura que augmenta el nombre de neurones en una RBM, el mostreig de Gibbs hauria de recollir un nombre més gran de mostres per explicar correctament la distribució de probabilitat que representa la RBM. A més, a causa de la naturalesa de les mostres de Gibbs, les mostres encara podrien perdre alguns modes de la distribució.\\\\
-S'han proposat molts enfocaments per superar aquestes dificultats. Un enfocament popular és l'aprenentatge de divergència contrastiva (CD) com un mètode aproximat per a la formació dels models Product-of-Expert. L'equació (4.8) implica directament que una RBM és un cas especial de models PoE, i l'aprenentatge de CD pot ser utilitzat fàcilment per formar una RBM.\\\\
-L'aprenentatge de CD s'aproxima al veritable gradient reemplaçant l'expectativa sobre ${P(v,h | \theta)}$ amb una expectativa sobre una distribució ${P_n}$ que s'obté executant ${n}$ passos del mostreig de Gibbs a partir de la distribució empírica definida per les mostres d'entrenament. La figura 11 il·lustra les distribucions ${P_0}$ i ${P_n}$.
+Tanmateix, a mesura que augmenta el nombre de neurones en una RBM, el mostreig de Gibbs hauria de recollir un nombre més gran de mostres per explicar correctament la distribució de probabilitat que representa la RBM.% A més, a causa de la naturalesa de les mostres de Gibbs, les mostres encara podrien perdre alguns modes de la distribució.
+
+S'han proposat molts enfocaments per superar aquestes dificultats. Un enfocament popular és l'aprenentatge de de Contrastive Divergence (CD) com un mètode aproximat per a la formació del la fase negativa de la RBM. % L'equació (4.8) implica directament que una RBM és un cas especial de models PoE, i l'aprenentatge de CD pot ser utilitzat fàcilment per formar una RBM.\\\\
+L'aprenentatge de CD aproxima el calcul del gradient reemplaçant l'esperança sobre ${P(v,h | \theta)}$ amb una mostreig que s'obté executant ${n}$ passos de Gibbs. La figura 11 il·lustra les distribucions ${P_0}$ i ${P_n}$.
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=\textwidth]{cd}
@@ -574,8 +575,8 @@ Per als pesos, la fórmula d'aprenentatge dels CD, llavors, es defineix com
 w_{ij}\leftarrow w_{ij} + \eta[\langle x_i h_j\rangle_{P_0} - \langle x_i h_j \rangle_{P_n}]
 \end{equation}
 Cal assenyalar que el cas ${n = 0}$ produeix la distribució empírica ${P(h|\{v^{(t)}\},\theta)}$ utilitzada en la fase positiva, mentre que el cas${n = \infty}$ produeix la veritable distribució de la fase ${P(x|\theta)}$ \cite{carreira}. \\\\
-Com es pot preveure del fet que la direcció del gradient no és idèntica al gradient exacte, se sap que l'aprenentatge de CD està parcial \cite{carreira}. No obstant això, s'ha demostrat que l'aprenentatge en CD funciona bé a la pràctica. Una bona propietat del CD és que, en el cas que la distribució de dades sigui multimodal, les cadenes a partir de cada mostra de dades garanteix que les mostres que s'aproximen a la fase negativa tenen representants de diferents maneres.\\\\
-Tanmateix, aquest avantatge de l'aprenentatge de CD és el seu desavantatge alhora. Les mostres de ${P_n}$ no necessàriament expliquen tot l'espai estatal. Per tant, no s'exploren alguns dels modes de la distribució del model, i fins i tot després de l'aprenentatge s'ha convergit, la distribució del model conté els modes que no es troben en la distribució de dades definida pel conjunt de dades de formació. Aquest problema es mostra a la figura 12.
+Com que la direcció del gradient aproximat no és la del gradient exacte, se sap que l'aprenentatge de CD té alguns problemes \cite{carreira}. No obstant això, s'ha demostrat que l'aprenentatge en CD funciona bé a la pràctica. %Una bona propietat del CD és que, en el cas que la distribució de dades sigui multimodal, les cadenes a partir de cada mostra de dades garanteix que les mostres que s'aproximen a la fase negativa tenen representants de diferents maneres.\\\\
+EL problema de CD és que les mostres de ${P_n}$ no necessàriament exploren tot l'espai d' estats. Per tant al no explorar algunes modes de la distribució el model pot acabar quedant esbiaixat. Aquest problema es mostra a la figura 12.
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=\textwidth]{model}
@@ -583,10 +584,11 @@ Tanmateix, aquest avantatge de l'aprenentatge de CD és el seu desavantatge alhor
 \end{center}
 \end{figure}
 \\\\
-Per superar aquest problema, s'han proposat diferents enfocaments basats en l'aprenentatge de CD. Entre ells, l'aprenentatge persistent de divergència contrastiva (PCD) és l'extensió més senzilla de l'aprenentatge de CD.\\\\
-A cada pas d'actualització de gradients, l'aprenentatge de CD realitza el mostreig de Gibbs a partir de les mostres de dades de formació, mentre que l'aprenentatge de PCD comença el mostreig a partir de mostres model obtingudes en l'última actualització de degradat. D'aquesta manera, s'espera que les mostres del model exploren els modes de la distribució del model que no són pròxims a les mostres d'entrenament.\\\\
-Tanmateix, l'aprenentatge de PCD encara pateix els modes que falten en la distribució del model a mesura que avança l'aprenentatge. Es deu a la mala barreja del mostreig de Gibbs que produeix mostres altament correlacionades per actualitzacions successives de gradients. Aquest comportament fa que els enfocaments basats en l'aprenentatge en CD pateixin la divergència de la probabilitat si l'aprenentatge es realitza sense escollir manualment heurístiques d'aprenentatge com ara el calendari de tarifes d'aprenentatge, la decadència del pes i l'impuls.\\\\
-S'han proposat recentment nombrosos enfocaments basats en l'aprenentatge de CDs diferents de l'aprenentatge de la PCD. Per exemple, s'ha proposat un aprenentatge que amplia l'aprenentatge de la PCD mantenint uns pesos ràpids que ajuden a obtenir millors models de mostres.\\\\
+Per superar aquest problema, s'han proposat diferents enfocaments basats en l'aprenentatge de CD. Entre ells, Persistent Constrastive Divergence (PCD) que és l'extensió més senzilla de CD.\\\\
+A cada pas d'actualització de gradients, l'aprenentatge de CD realitza el mostreig de Gibbs a partir de les mostres de dades de formació, mentre que l'aprenentatge de PCD comença el mostreig a partir de mostres model obtingudes en l'última actualització. D'aquesta manera, s'espera que les mostres del model exploren les modes de la distribució del model que no són pròxims a les mostres d'entrenament.\ \\\
+%Tanmateix, l'aprenentatge de PCD encara pateix els modes que falten en la distribució del model a mesura que avança l'aprenentatge. Es deu a la mala barreja del mostreig de Gibbs que produeix mostres altament correlacionades per actualitzacions successives de gradients. %Aquest comportament fa que els enfocaments basats en l'aprenentatge en CD pateixin la divergència de la probabilitat si l'aprenentatge es realitza sense escollir manualment heurístiques d'aprenentatge com ara el calendari de tarifes d'aprenentatge, la decadència del pes i l'impuls.\\\\
+
+%Recentment s'han proposat nombrosos enfocaments basats en l'aprenentatge de CDs diferents de l'aprenentatge de la PCD. Per exemple, s'ha proposat un aprenentatge que amplia l'aprenentatge de la PCD mantenint uns pesos ràpids que ajuden a obtenir millors models de mostres.\\\\
 \subsubsection{Avaluació d'una RBM}
 A continuació explicarem les formes d'avaluar una màquina de boltzamn restrictiva. Tenim tres formes diferents per realitzar l'avaluació. 
 \begin{itemize}
@@ -596,7 +598,7 @@ A continuació explicarem les formes d'avaluar una màquina de boltzamn restrictiv
 \end{itemize}
 \paragraph{Avaluació per probabilitat i mostreig rellevant d'importància}
 Una forma natural d'avaluar el rendiment d'una RBM entrenada és calcular la probabilitat del model i les probabilitats de realitzar mostres de dades de prova sota la RBM formada. A més, la probabilitat de les mostres de dades aleatòries també es pot utilitzar com a mesura de la bondat de la RBM.\\\\
-A causa de la restricció estructural, el resum explícit de les neurones ocultes (hidden) és força senzill (vegeu l'equació (4.8)), però, malauradament, la probabilitat d'una observació encara és intractable a causa de la constant de normalització. La constant de normalització només es pot computar exactament sumant exponencialment molts termes, i tret que la dimensió del conjunt de dades sigui molt petita, és senzillament impossible. Per tant, en lloc de computar-ho exactament, cal utilitzar un mètode aproximat.\\\\
+A causa de la restricció estructural, el resum explícit de les neurones ocultes (hidden) és força senzill (vegeu l'equació (4.8)), però, malauradament, la probabilitat d'una observació encara és intractable a causa de la constant de normalització. La constant de normalització només es pot computar exactament sumant exponencialment molts termes, i tret que la RBM sigui molt petita, és senzillament impossible. Per tant, en lloc de computar-ho exactament, cal utilitzar un mètode aproximat.\\\\
 Per a l'estimació de la constant de normalització, aquesta tesi utilitza mostres d'importància recomanada (Annealed importance sampling, AIS) que s'ha utilitzat amb èxit per calcular la constant de normalització de la RBM \cite{salakhutdinov}.\\\\
 L'AIS es basa en un mètode de mostreig d'importància simple (SIS) que podria estimar la proporció de dues constants de normalització. Per a dues densitats de probabilitat ${P_A (x) = \frac{P_A^*(x)}{Z_A}}$ i ${P_B (x) = \frac{P_B^*(x)}{Z_B}}$, la relació de dues constants de normalització ${Z_A}$ i ${Z_B}$ es pot estimar mitjançant un mètode de mostreig de Monte Carlo sense cap biaix si és possible provar de ${P_A (\cdot)}$:
 \begin{equation}
@@ -632,8 +634,8 @@ La estimació de ${\frac{Z_K}{Z_0}}$ és ${\frac{1}{M} \sum_{m=1}^M u_m}$.
 \end{algorithm}
 \\\
 \paragraph{Precisió de la classificació i altres mesures}
-És evident que a partir dels treballs de recerca esmentats anteriorment utilitzant xarxes neurals profundes construïdes a partir de la pila de la RBM, les probabilitats d'activació oculta de la RBM entrenades en el conjunt de dades podrien millorar la precisió de classificació en comparació amb classificar el conjunt de dades en funció de les seves característiques brutes. Tanmateix, aquests enfocaments solen requerir l'afinació discriminativa que destrueix l'estructura generativa de la RBM.\\\\
-Afortunadament, els documents recents suggereixen que les probabilitats d'activació oculta de RBM que es van entrenar sense supervisió també ajuden a la tasca de classificació. Krizhevsky va utilitzar amb èxit un Gauss-Bernoulli RBM per extreure característiques d'imatges que ajuden a obtenir una alta precisió de classificació. A més, es va demostrar que les formes més sofisticades de RBM introduïdes recentment \cite{ranzato} van poder extreure característiques que són més útils per a la tasca de classificació.\\\\
+És evident que a partir dels treballs de recerca esmentats anteriorment utilitzant xarxes neurals profundes construïdes a partir de la pila de la RBM, les probabilitats d'activació oculta de la RBM entrenades en el conjunt de dades podrien millorar la precisió de classificació en comparació amb classificar el conjunt de dades en funció de les seves caracteristiques (o features) originals.\\\\
+Treballs recents suggereixen que les probabilitats d'activació oculta de RBM  entrenada sense supervisió també ajuden a la tasca de classificació. Krizhevsky va utilitzar amb èxit un Gauss-Bernoulli RBM per extreure característiques d'imatges que ajuden a obtenir una alta precisió de classificació. A més, es va demostrar que les formes més sofisticades de RBM introduïdes recentment \cite{ranzato} van poder extreure característiques que són més útils per a la tasca de classificació.\\\\
 A més, Coates et al. va mostrar que les característiques extretes pels models probabilístics apreses d'una manera no supervisada superen les contraparts supervisades, com ara xarxes neuronals convolucionals i la xarxa de conviccions profundes .
 Per tant, és convenient utilitzar la precisió de classificació de la RBM format com a mesura de rendiment.\\\\
 Addicionalment, gràcies a la seva estructura bipartida i al mostreig de Gibbs capaç, l'error de reconstrucció també es pot utilitzar com a mesura per a l'avaluació del rendiment. Es defineix un error de reconstrucció
