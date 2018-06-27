@@ -86,7 +86,7 @@
 
 \renewcommand{\arraystretch}{1.5}
 \begin{tabular}{ll}
-\textbf{\Large Director:} & \textbf{\Large David Buchaca } \\
+\textbf{\Large Director:} & \textbf{\Large David Buchaca Prats } \\
 \textbf{\Large Realitzat a:} & \textbf{\Large  Interiorvista   } \\
  & \textbf{\Large} \\
 \textbf{\Large Barcelona,} & \textbf{\Large 27 de juny de 2018 }
@@ -109,9 +109,9 @@ Machine learning allows us to train a machine so that it can generate the values
 \\\
 What we want to obtain is a combination between the two parts to achieve the generation of new images, with correct and cohesive objects and different from the images used to train the machine.
 \\\
-So the objective of this project is to create a machine that allows us to create, from data, moodboards, generate correct it without the need of a person to create them, and design an automated system to replace a slow task and replace this task.
+So the objective of this project is to create a machine that allows us to create moodboards and generate correct it without the need of a person to create them, and design an automated system to replace a slowly non automated task.
 \\\
-Apart from creating this system, we will also analyze its efficiency, with respect to the non-automated system and if the generation of these moodboards is correct, so we can establish whether the system created is efficient enough, fast and accurate generating moodboards.
+Apart from creating this system, we will also analyze it's efficiency, between the non-automated system and the automated system, so we can establish whether the system created is efficient enough, fast and accurate generating moodboards.
 \\\
 Finally, these tests will be carried out by supervising expert people in order to improve the evaluation.
 
@@ -229,7 +229,7 @@ A partir d'aquest punt ja tenim una solució que ens permet generar moodboards de
 
 Per tal de poder aplicar el mètode anteriorment explicat necessitem alguna eina que ens permeti accedir a tots els objectes disponibles d'una forma fàcil per tal de poder crear moodboards seguint la graella prèviament definida. Així doncs necessitem crear una eina per realitzar aquesta tasca. \\\\
 Aquesta eina que volem desenvolupar ha de ser fàcil de fer servir, intuïtiva i ràpida. Partint d'això s'ha de decidir quines tecnologies utilitzar per desenvolupar-la. En aquest cas, com que ja s'havien creat altres eines per altres coses es va decidir aplicar les mateixes tecnologies que en aquest cas són utilitzar Unity i el llenguatge de programació C sharp.\\\\
-Aquestes dues tecnologies combinades ens permetran desenvolupar una eina capaç de generar moodboards d'una forma ràpida i eficient.\\\\
+Aquestes dues tecnologies combinades ens permetran desenvolupar una eina capaç de generar moodboards d'una forma ràpida i eficient.\\\
 En primer lloc tenim la part de Unity que ens permetrà crear tot el disseny de la interfície i les interaccions necessàries perquè l'usuari pugui col·locar els objectes i així generar moodboards. També ens permetrà visualitzar tots els objectes i tota la informació que necessitem per a la generació. \\\\
 I en segon lloc la part de C Sharp que controlarà tot la lògica que hi ha darrere de la interfície. Però el paper més important és la connexió amb la base de dades. Els objectes que tenim disponibles, la seva informació, la graella creada i tots els moodboards generats es guarden en una base de dades que es troba en un servidor. Així doncs per tal de poder accedir a aquesta informació, s'han realitzat crides constants per obtenir-la i això se n'encarrega la part lògica de l'aplicació. \\\\
 Pensant en un esquema model-vista-controlador (MVC), la part de model i vista correspondrien a Unity mentre que tota la part del controlador seria gestionada per fitxers, scripts, amb C Sharp els quals s'han de comunicar amb la base de dades per tal de proporciona la informació necessària per a mostrar tots els objectes, la graella i altres funcions que ja explicarem.
@@ -344,7 +344,7 @@ Si bé sembla una qüestió d'allò més naturalitzada per aquests dies, fins fa no m
 Avui en dia, es parla i s'aplica per qüestions tan bàsiques com l'ús del homebanking, veure pel·lícules en streaming o escoltar música.\\\
 Cada vegada més, es llegeix i es comenta sobre intel·ligència artificial en mitjans massius de comunicació, amb tota facilitat. Fins i tot, comença a guanyar un espai dintre del pressupost propi de les empreses al país: la recerca per la reducció dels costos i l'augment de la productivitat vénen impulsant l'avanç en l'ús de solucions que involucren robots capaços de conversar amb els clients i de sistemes que analitzen milers de dades en pocs segons.\\\\
 Dins de l'ampli espectre que abasta la intel·ligència artificial, es troba Machine Learning. Però que és el Machine Learnig?
-\\\\
+\\\
 El machine learning, conegut com aprenentatge automàtic, va néixer com una idea ambiciosa de la IA en la dècada dels 60. Per ser més exactes, va ser una subdisciplina de la IA, producte de les ciències de la computació i les neurociències. \\\\
 El que aquesta branca pretenia estudiar era el reconeixement de patrons (en els processos d'enginyeria, matemàtiques, computació, etc.) i l'aprenentatge per part de les computadores. En les albors de la IA, els investigadors estaven àvids per trobar una forma en la qual els ordinadors poguessin aprendre únicament des de dades. \\\\
 Va succeir amb el pas dels anys que el machine learning començar a enfocar-se en diferents assumptes, com ara el raonament probabilístic, investigació basada en l'estadística, recuperació d'informació, i va continuar aprofundint cada vegada més en el reconeixement de patrons (tots aquests assumptes aplicats a processos d'enginyeria, matemàtiques, computació i altres camps relacionats amb objectes físics o abstractes).\\\\
@@ -406,7 +406,6 @@ Per exemple, un detector de spam, analitza l'històric de missatges, veient que f
 L'aprenentatge supervisat se sol usar en problemes de classificació, com a identificació de dígits, diagnòstics, o detecció de frau d'identitat. També s'usa en problemes de regressió, com a prediccions meteorològiques, d'expectativa de vida, de creixement, etc. Aquests dos tipus principals d'aprenentatge supervisat, classificació i regressió, es distingeixen pel tipus de variable objectiu. En els casos de classificació, és de tipus categòric, mentre que, en els casos de regressió, la variable objectiu és de tipus numèric.
 \\\\
 Alguns dels més freqüents en aprenentatge supervisat:
-\\\
 \begin{enumerate}
 \item Arbres de decisió
 \item Classificació de Naïve Bayes
@@ -455,15 +454,15 @@ Tenim diferents tipus de models generatius. Els més coneguts són els següents:
 \item Latent Dirichlet Allocation
 \item Restricted Boltzman machine
 \end{itemize}
-Després d'investigar entre totes les diferents opcions, vam arribar a la conclusió que la millor opció era utilitzar una Màquina de Boltzmann Restrictiva (RBM) que ens permetria generar graelles a partir de les graelles ja generades anteriorment. Aquest tipus de màquina té algunes restriccions a l'hora d'entrar les dades, ja que han de seguir un format específic, a continuació explicarem com funciona aquest tipus d'algoritme i les seves característiques.
+Després d'investigar entre totes les diferents opcions, vam arribar a la conclusió que la millor opció era utilitzar una Restricted Boltzmann machine (RBM) que ens permetria generar graelles a partir de les graelles ja generades anteriorment. Aquest tipus de màquina té algunes restriccions a l'hora d'entrar les dades, ja que han de seguir un format específic, a continuació explicarem com funciona aquest tipus d'algoritme i les seves característiques.
 \newpage
-\section{Màquina de Boltzmann(BM) i Màquina de Boltzmann Restrictiva (RBM)}
-A continuació explicarem d'una forma més detallada les màquines de Boltzmann i la seva variant, que és la que utilitzarem, la màquina de Boltzmann Restrictiva. Bàsicament ens centrarem en com entrenar i avaluar les màquines utilitzant el gradient estocàstic i analitzar les seves dificultats. També analitzarem els seus avantatges i inconvenients.
-\subsection{Màquina de Boltzmann}
+\section{Boltzmann machine(BM) i Restricted Boltzmann machine (RBM)}
+A continuació explicarem d'una forma més detallada les màquines de Boltzmann i la seva variant, que és la que utilitzarem, la Restricted Boltzmann machine. Bàsicament ens centrarem en com entrenar i avaluar les màquines utilitzant el gradient estocàstic i analitzar les seves dificultats. També analitzarem els seus avantatges i inconvenients.
+\subsection{Boltzmann machine}
 La màquina Boltzmann (BM) és una xarxa neuronal recurrent estocàstica que consisteix en neurones binàries. La xarxa està totalment connectada i cada connexió entre dues neurones és simètrica, de manera que l'efecte d'una neurona en l'estat de l'altra és simètrica per a cada parell.\\\\
 La probabilitat d'un estat particular ${X = [x_1, x_2,...,x_d]^T}$ de la xarxa es defineix per l'energia de BM que es postula com 
 \[E (x | \theta) = -\sum_{i}\sum_{j>i}w_{ij}x_ix_j - \sum_{i}b_ix_i\]
-on ${\theta}$ indica paràmetres de la xarxa que consisteixen en una matriu de pes ${W = [w_{ij}]}$ i un vector de biax ${b = [b_i]}$. ${w_{ij}}$ és el pes de les connexions sinàptiques entre les neurones i i j.  La probabilitat d'un estat x es defineix com: 
+on ${\theta}$ indica paràmetres de la xarxa que consisteixen en una matriu de pes ${W = [w_{ij}]}$ i un vector de biaix ${b = [b_i]}$. ${w_{ij}}$ és el pes de les connexions sinàptiques entre les neurones i i j.  La probabilitat d'un estat x es defineix com: 
 \begin{equation}
 P (x | \theta) = \frac{1}{Z}exp[-E(x|\theta)] 
 \end{equation}
@@ -476,7 +475,7 @@ P(x_i = 1|(x_{\setminus i},W)) = \frac{1}{1 + exp(-\sum_{j\neq i}w_{ij}x_j - b_i
 \end{equation}
 on ${x_{\setminus i}}$ denota un vector ${[x_1,...,x_{i-1},x_{i+1},..., x_d]^T }$. \\\\
 Les neurones de BM solen estar dividides en visibles i ocultes ${x = [v^T, h^t]^T}$, on els estats v de les neurones visibles es corresponen a les dades observades, i els estats h de les neurones ocultes poden canviar lliurement. En cas de tenir neurones visibles i ocultes, es pot calcular la probabilitat d'una configuració específica de les neurones visibles marginalitzant sobre les neurones ocultes (és a dir, sumant sobre totes les possibles configuracions de neurones ocultes).\\\\
-\subsubsection{Entrenament Màquina de Boltzmann}
+\subsubsection{Entrenament Boltzmann machine}
 Els paràmetres de BM es poden obtenir a partir de les dades utilitzant l'estimació estàndard de màxima versemblança. Donat un conjunt de dades ${}$, la  funció de likelihood es defineix com
 \begin{equation}
 \mathcal{L}(\theta) = \sum_{t=1}^N logP(v^{(t)}|\theta) =  \sum_{t=1}^N log \sum_h P(v^{(t)},h|\theta)
@@ -498,7 +497,7 @@ i
 \begin{equation}
 c_{j}\leftarrow b_{j} + \eta [\langle h_j \rangle_d - \langle h_j \rangle_m]
 \end{equation} 
-on ${v_i}$, ${h_j}$ denoten neurones les neurones visibles i ocultes respectivament i  ${b_{i}}$ i ${c_{j}}$ els biaxos de les neurones visibles i ocultes respectivament.
+on ${v_i}$, ${h_j}$ denoten neurones les neurones visibles i ocultes respectivament i  ${b_{i}}$ i ${c_{j}}$ els biaixos de les neurones visibles i ocultes respectivament.
 \newpage
 Tot i que les regles d'activació i aprenentatge de la BM estan clarament formulades, hi ha limitacions pràctiques en l'ús de la BM. Especialment, les fórmules d'actualització basades en gradients (4.4) - (4.6) no són computacionalment factibles, ja que les distribucions requerides tant en les fases positives com negatives només es poden obtenir després de computar la constant de normalització ${Z(\theta)}$.\\\\
 \begin{algorithm}
@@ -516,8 +515,8 @@ El mostreig de Gibbs es pot implementar fàcilment perquè la distribució condicio
 Aquest enfocament pot reduir considerablement la càrrega computacional de les regles d'actualització de gradients. Si s'assumeix que la quantitat de mostres necessàries per explicar la distribució de probabilitat de tot l'espai estatal és prou menor que la mida de l'espai estatal, és a dir, el nombre de totes les combinacions possibles dels estats de les neurones, l'aprenentatge de BM ja no és computacional inviable.\\\\
 Tanmateix, també existeixen altres tipus de limitacions en l'ús del mostreig de Gibbs per a la formació de BM. El major problema es deu a la connectivitat completa de BM. Atès que cada neurona està connectada i influïda per totes les altres neurones, es necessiten tants passos com la quantitat de neurones per obtenir una mostra de l'estat de BM. Fins i tot quan les neurones visibles es mantenen subjectes a les dades de formació, el nombre de passos necessaris per a una sola mostra fresca encara és almenys el nombre de neurones ocultes. Això fa que les mostres successives de la cadena estiguin altament correlacionades entre elles i aquesta pobra barreja afecta el rendiment de l'aprenentatge. \\\\
 Una altra limitació d'aquest enfocament és que les distribucions multi modals són problemàtiques per al mostreig de Gibbs \cite{salakhutdinov}. A causa de la naturalesa del mostreig de components, les mostres poden perdre alguns modes de distribució.
-\subsection{Màquina de Boltzmann Restrictiva}
-Per superar les limitacions pràctiques imposades a la màquina general Boltzmann com el problema del mostreig ineficient, Smolensky va proposar una versió estructuralment restringida de la màquina Boltzmann anomenada Restringit Boltzmann Machine (RBM). Una RBM es construeix eliminant les connexions laterals entre les neurones visibles i les neurones ocultes. Per tant, una neurona visible només tindria vores connectades a les neurones ocultes, i una neurona oculta només tindria vores connectades a les neurones visibles. Ara, l'estructura d'una RBM es pot dividir en dues capes amb vores interconnectats. La relació entre BM i RBM s'il·lustra a la figura 9. 
+\subsection{Restricted Boltzmann machine}
+Per superar les limitacions pràctiques imposades a la màquina general Boltzmann com el problema del mostreig ineficient, Smolensky va proposar una versió estructuralment restringida de la màquina Boltzmann anomenada Restricted Boltzmann Machine (RBM). Una RBM es construeix eliminant les connexions laterals entre les neurones visibles i les neurones ocultes. Per tant, una neurona visible només tindria vores connectades a les neurones ocultes, i una neurona oculta només tindria vores connectades a les neurones visibles. Ara, l'estructura d'una RBM es pot dividir en dues capes amb vores interconnectats. La relació entre BM i RBM s'il·lustra a la figura 9. 
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=\textwidth]{boltzmann1}
@@ -539,7 +538,7 @@ Atès que cada neurona oculta és independent una de l'altra donada totes les neur
 P(v|\theta) = \frac{1}{Z(\theta)}exp(b^tv)\prod_{j=1}^{n_h}(1 + exp(c_j + \sum_{i=1}^{n_v}w_{ij}v_i))
 \end{equation}
 on ${n_v}$ i ${n_h}$ són el número de neurones visibles i invisibles respectivament.
-\subsubsection{Entrenament Màquina de Boltzmann Restrictiva}
+\subsubsection{Entrenament Restricted Boltzmann machine}
 D'aquesta forma les regles d'aprenentatge d'una RBM passen a ser:
 \begin{equation}
 w_{ij}\leftarrow w_{ij} + \eta_w[\langle v_i h_j\rangle_d - \langle v_i h_j \rangle_m]
@@ -552,17 +551,18 @@ c_{j}\leftarrow c_{j} + \eta_c[\langle v_i \rangle_d - \langle v_i \rangle_m]
 \end{equation} \\\\
 on s'utilitza la mateixa notació ${\langle \cdot \rangle_{P_{(\cdot)}}}$ que s'ha usat anteriorment. \\\\
 %Encara que no hi ha un fons teòric rigorós sobre l'elecció de les taxes d'aprenentatge, tradicionalment, s'utilitzen taxes d'aprenentatge més petites per aprendre els dos biaixos.\\\\
-Atès que una RBM és un cas especial de BM, és possible utilitzar el mateix mostreig de Gibbs durant l' aprentatge. Gràcies a la seva estructura restringida, el mostreig de Gibbs es pot utilitzar de manera més eficient ja que les neurones de una capa sabent els valors de l'atra son independents (veure Figura 10). \\\\
+Atès que una RBM és un cas especial de BM, és possible utilitzar el mateix mostreig de Gibbs durant l' aprenentatge. Gràcies a la seva estructura restringida, el mostreig de Gibbs es pot utilitzar de manera més eficient ja que les neurones de una capa sabent els valors de l'altra són independents (veure Figura 10). 
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=\textwidth]{rbm_hidden}
 \caption{Visualització de la idea de com es realitza el mostreig de Gibbs en capes RBM.}
 \end{center}
 \end{figure}
+\\\\
 Tanmateix, a mesura que augmenta el nombre de neurones en una RBM, el mostreig de Gibbs hauria de recollir un nombre més gran de mostres per explicar correctament la distribució de probabilitat que representa la RBM.% A més, a causa de la naturalesa de les mostres de Gibbs, les mostres encara podrien perdre alguns modes de la distribució.
-
+\\\\
 S'han proposat molts enfocaments per superar aquestes dificultats. Un enfocament popular és l'aprenentatge de de Contrastive Divergence (CD) com un mètode aproximat per a la formació del la fase negativa de la RBM. % L'equació (4.8) implica directament que una RBM és un cas especial de models PoE, i l'aprenentatge de CD pot ser utilitzat fàcilment per formar una RBM.\\\\
-L'aprenentatge de CD aproxima el calcul del gradient reemplaçant l'esperança sobre ${P(v,h | \theta)}$ amb una mostreig que s'obté executant ${n}$ passos de Gibbs. La figura 11 il·lustra les distribucions ${P_0}$ i ${P_n}$.
+L'aprenentatge de CD aproxima el calcul del gradient reemplaçant l'esperança sobre ${P(v,h | \theta)}$ amb una mostreig que s'obté executant ${n}$ passos de Gibbs. La figura 11 il·lustra les distribucions ${P_0}$ i ${P_n}$.\\\\
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=\textwidth]{cd}
@@ -634,13 +634,13 @@ La estimació de ${\frac{Z_K}{Z_0}}$ és ${\frac{1}{M} \sum_{m=1}^M u_m}$.
 \end{algorithm}
 \\\
 \paragraph{Precisió de la classificació i altres mesures}
-És evident que a partir dels treballs de recerca esmentats anteriorment utilitzant xarxes neurals profundes construïdes a partir de la pila de la RBM, les probabilitats d'activació oculta de la RBM entrenades en el conjunt de dades podrien millorar la precisió de classificació en comparació amb classificar el conjunt de dades en funció de les seves caracteristiques (o features) originals.\\\\
+És evident que a partir dels treballs de recerca esmentats anteriorment utilitzant xarxes neurals profundes construïdes a partir de la pila de la RBM, les probabilitats d'activació oculta de la RBM entrenades en el conjunt de dades podrien millorar la precisió de classificació en comparació amb classificar el conjunt de dades en funció de les seves característiques (o features) originals.\\\\
 Treballs recents suggereixen que les probabilitats d'activació oculta de RBM  entrenada sense supervisió també ajuden a la tasca de classificació. Krizhevsky va utilitzar amb èxit un Gauss-Bernoulli RBM per extreure característiques d'imatges que ajuden a obtenir una alta precisió de classificació. A més, es va demostrar que les formes més sofisticades de RBM introduïdes recentment \cite{ranzato} van poder extreure característiques que són més útils per a la tasca de classificació.\\\\
 A més, Coates et al. va mostrar que les característiques extretes pels models probabilístics apreses d'una manera no supervisada superen les contraparts supervisades, com ara xarxes neuronals convolucionals i la xarxa de conviccions profundes .
 Per tant, és convenient utilitzar la precisió de classificació de la RBM format com a mesura de rendiment.\\\\
 Addicionalment, gràcies a la seva estructura bipartida i al mostreig de Gibbs capaç, l'error de reconstrucció també es pot utilitzar com a mesura per a l'avaluació del rendiment. Es defineix un error de reconstrucció
 \[\mathcal{E}(X) = \parallel x-x_1 \parallel_2\]
-Tanmateix, aquestes mesures no reflecteixen directament la veritable qualitat de la RBM, ja que l'entrenament no maximitza ni minimitza cap d'aquestes mesures. Per tant, per a la resta d'aquesta tesi, els experiments valoren principalment la RBM format per la probabilitat del model i les probabilitats de les mostres de prova donades el model.\\\\
+Tanmateix, aquestes mesures no reflecteixen directament la veritable qualitat de la RBM, ja que l'entrenament no maximitza ni minimitza cap d'aquestes mesures. Per tant, per a la resta d'aquesta tesi, els experiments valoren principalment la RBM format per la probabilitat del model i les probabilitats de les mostres de prova donades el model.
 \paragraph{Visualització directe i inspecció de paràmetres.}
 Una manera d'analitzar la qualitat d'un model entrenat és mirar les característiques (les ponderacions ${w_{ij}}$) i els termes de polarització ${c_j}$ corresponents a diferents neurones ocultes de la RBM modelat. Especialment ajuda quan es formen mostres de dades consisteixen en imatges que es poden visualitzar fàcilment.\\\\
 Per exemple, es poden visualitzar funcions de la RBM formats en dígits manuscrits. Cada característica o filtre s'assembla a una part de dígits o una combinació de parts de dígits. Quan l'aprenentatge falla, és fàcil observar característiques degenerades que són sorolloses funcions globals.\\\\
@@ -664,7 +664,7 @@ Un cop ja sabem quin algorisme hem d'utilitzar per tal de poder desenvolupar el 
 En aquest cas i després de fer molta investigació, en primer lloc es va decidir utilitzar el llenguatge de programació Python per tal de desenvolupar les parts essencials de l'algorisme. Python ens ofereix una gran quantitat de recursos per al machine learning i actualment juntament amb Scala són els principals llenguatges utilitzats per al desenvolupament de màquines.\\\
 Així doncs un cop escollit el llenguatge ara falta decidir si implementar una RBM des de 0 o utilitzar alguna llibreria que ens permeti usar una implementació ja desenvolupada. \\\\
 Crear una màquina des de zero suposa un gran esforç i treball i pot suposar que la màquina no estigui ben dissenyada o que els algorismes aplicats i fórmules siguin incorrectes. Així doncs es va decidir utilitzar una llibreria la qual ens permetia tenir una RBM ben creada i amb les característiques que buscàvem. La màquina que es va decidir utilitzar seria de la llibreria \textit{sklearn} la qual ens proporcionaria una màquina RBM anomenada \textit{BernoulliRBM}\cite{sklearnRBM}. \\\\
-Aquesta màquina es tracta d'una màquina de Boltzmann Restrictiva amb unitats visibles binàries i unitats ocultes binàries. Els paràmetres es calculen utilitzant la Probabilitat màxima estocàstica (SML), també coneguda com Persistent Contrastive Divergence (PCD). La complexitat del temps d'aquesta implementació és de ${O(d \ast \ast 2)}$ si assumim que el nombre de features és igual al nombre de components.\\\\
+Aquesta màquina es tracta d'una Restricted Boltzmann machine amb unitats visibles binàries i unitats ocultes binàries. Els paràmetres es calculen utilitzant la Probabilitat màxima estocàstica (SML), també coneguda com Persistent Contrastive Divergence (PCD). La complexitat del temps d'aquesta implementació és de ${O(d \ast \ast 2)}$ si assumim que el nombre de features és igual al nombre de components.\\\\
 A més aquesta implementació ens permet utilitzar diferents mètodes i funcions per tal d'obtenir resultats i/o entrenar la màquina. Aquest són els mètodes i funcions principals d'aquesta implementació:
 \begin{itemize}
 \item ${fit (X[,y])}$: ens permet entrenar la màquina a partir de les dades X.
@@ -720,7 +720,7 @@ Tot seguit descriurem a alt nivell tots els passos pels quals passa una dada de 
 \item ${E_7 = [[id_1^1,id_2^1,_id_3^1, ...,id_{255}^1], [id_1^2,id_2^2,_id_3^2, ...,id_{255}^2], ..., [id_1^{48},id_2^{48},_id_3^{48}, ...,id_{255}^{48}]]}$
 \item ${E_8 = [id_1, id_2, \cdot \cdot \cdot, id_{48}]}$
 \end{itemize}
-\subsection{Dades obtingudes de l'eina}
+\subsection{Dades obtingudes de l'aplicació}
 El primer pas com hem mencionat anteriorment és la generació de moodboards a partir de l'eina creada. Les graelles resultants són imatges formades a partir d'altres imatges, són representacions visuals que en aquest cas no podem entrar directament a la màquina ja que les hem de descompondre d'alguna manera per tal que les podem utilitzar per entrenar la nostra màquina.\\\
 Així doncs explicarem el format d'aquestes dades i quines dades hem obtingut en el nostre projecte.
 \subsubsection{Format de les dades}
@@ -782,7 +782,7 @@ En aquest punt disposem d'un diccionari el qual ens permet saber a cada cel·la q
 El format ideal per a nosaltres seria el format que obtenim directament de l'eina però no ens serveix perquè no ens proporciona suficient informació per tant l'hem hagut de transformar per tal d'obtenir mes informació però ara ja no tenim el format desitjat ja que tenim un diccionari en el qual tenim una llista i cada element una llista de les característiques dels objectes.\\\
 Així doncs necessitem trobar una forma d'obtenir el format que desitgem, una llista on cada element contingui un identificador que correspondrà a un identificador d'una característica. \\\\
 Una forma de resoldre aquest problema seria descomponent cada graella del diccionari en múltiples graelles que continguin un identificador per element. 
-L'únic problema a resoldre aquí seria el cas del que les longituds són diferents ja que no tots els objectes tenen el mateix nombre de característiques. Així doncs hem de trobar una forma de solucionar aquest problema. \\\
+L'únic problema a resoldre aquí seria el cas del que les longituds són diferents ja que no tots els objectes tenen el mateix nombre de característiques. Així doncs hem de trobar una forma de solucionar aquest problema. \\\\
 La solució més senzilla i més ràpida d'aplicar és buscar l'objecte amb més nombre de característiques. Un cop tenim aquest valor, aquest ens definirà el nombre de graelles a descompondre el diccionari, és a dir, si suposem que l'objecte amb més característiques en té 10, això vol dir que el màxim nombre de graelles noves que hem de obtenir és 10 per cada moodboard generat, ja que si en fem menys no hi hauran totes els característiques d'alguns objectes i perdrem informació.\\\\
 Per tal d'obtenir aquest valor aplicarem un algorisme de cerca en tot el diccionari. Fins ara només hem suposat que el diccionari només conté un moodboard però en podem tenir varis, per tant, haurem de fer una recerca entre tots els elements del diccionari i anar guardant la longitud de cada cel·la fins a trobar la longitud màxima. Per dur a terme aquest algorisme, primer transformarem el nostre diccionari en una llista ben construïda. \\\
 Per tal de realitzar la transformació utilitzarem un \textit{Dataframe} a partir del qual ens organitzarà els elements en forma de taula. D'aquesta taula agafarem les \textit{values}, que correspondran a cada cel·la i les afegirem a una llista aixi obtindrem una llista on cada element serà una llista i aquesta tindrà com a elements les diferents característiques de cada objecte. 
@@ -799,7 +799,8 @@ def getMaxLengthForElements(vector):
     return maxLength
 \end{lstlisting}
 Aquesta funció ens retornarà el numero màxim de graelles que hem de generar de nou per tal d'obtenir a cada posició de cada element un identificador diferent.\\\
-Per a realitzar aquesta transformació hem de tenir en compte varis factors. El primer de tots hem de saber el nombre de moodboards que hem generat ja que haurem d'iterar sobre cada moodboard generat per transform-lo correctament. I el segon punt i el més important hem de tenir en compte com tractarem aquelles cel·les les quals, la seva longitud sigui menor que la longitud màxima. En aquests casos la solució plantejada és afegir un valor nul, és a dir, un valor que no aporti informació, en aquest cas el valor 0. Això provocara que el resultat contingui llistes en les quals molts elements són 0 però no ens importa ja que només ens centrarem en els identificadors que no són 0. La funció per obtenir aquesta transformació és la següent:
+Per a realitzar aquesta transformació hem de tenir en compte varis factors. El primer de tots hem de saber el nombre de moodboards que hem generat ja que haurem d'iterar sobre cada moodboard generat per transform-lo correctament. \\\ I el segon punt i el més important hem de tenir en compte com tractarem aquelles cel·les les quals, la seva longitud sigui menor que la longitud màxima. En aquests casos la solució plantejada és afegir un valor nul, és a dir, un valor que no aporti informació, en aquest cas el valor 0.\\\ Això provocara que el resultat contingui llistes en les quals molts elements són 0 però no ens importa ja que només ens centrarem en els identificadors que no són 0. La funció per obtenir aquesta transformació és la següent:
+\newpage
 \begin{lstlisting}[language=Python,basicstyle=\footnotesize\ttfamily]
 def transformInputVector(vector, maxLength, length):
     output = []
@@ -827,7 +828,7 @@ Un exemple d'una graella generada a partir de la descomposició en vàries graelle
 \end{center}
 \end{figure}
 \\\ El número de llistes que obtindríem com aquestes seria igual a la longitud màxima que hem obtingut multiplicat pel nombre de moodboards que hem generat. D'aquesta forma, realitzant tot el procés obtindríem el format correcte de les nostres dades per tal d'entrenar la màquina.
-\\\\Resumint, l'objectiu de la primera part del tractament de les dades és convertir les imatges obtingudes a identificadors que ens permetin classificar els objectes segons les seves característiques. Per tal d'aconseguir això primer hem de transformar aquestes imatges, en aquest cas utilitzant l'eina i la base de dades, en una llista de identificador. El següent pas és a partir d'aquests identificadors obtenir un diccionari on cada element estigui format per una llista, que seran les 48 cel·les del moodboard, on cada element contingui una llista de tots els identificadors de les característiques del objecte que es trobava a la cel·la i així obtenir un format de dades més precís i descriptiu. I l'últim pas a realitzar és descompondre aquest diccionari en llistes, de forma que obtinguem que cada element de cada llista sigui un identificador d'una característica d'un objecte, és a dir, descompondre cada moodboard en tantes llistes, com sigui necessari fins a obtenir un identificador a cada element.
+\\\\Resumint, l'objectiu de la primera part del tractament de les dades és convertir les imatges obtingudes a identificadors que ens permetin classificar els objectes segons les seves característiques. Per tal d'aconseguir això primer hem de transformar aquestes imatges, en aquest cas utilitzant l'eina i la base de dades, en una llista de identificador. El següent pas és a partir d'aquests identificadors obtenir un diccionari on cada element estigui format per una llista, que seran les 48 cel·les del moodboard, on cada element contingui una llista de tots els identificadors de les característiques del objecte que es trobava a la cel·la i així obtenir un format de dades més precís i descriptiu. I l'últim pas a realitzar és descompondre aquest diccionari en llistes, de forma que obtinguem que cada element de cada llista sigui un identificador d'una característica d'un objecte, és a dir, descompondre cada moodboard en tantes llistes, com sigui necessari fins a obtenir un identificador a cada element. \\\\
 \subsubsection{Dades obtingudes del projecte}
 Ara que ja sabem com és el format de les nostre dades explicarem quines són les dades que hem obtingut al utilitzar l'eina durant el procés de desenvolupament del projecte.\\\
 En primer lloc es va demanar als experts la creació d'alguns moodboards d'un estil concret. En aquest cas l'estil s'anomenava Popular Modern. Es van crear 8 moodboards totalment diferents.\\\\
@@ -839,7 +840,7 @@ Cada màquina necessita un format especific per tal de llegir correctament les da
 \subsubsection{Format de les dades}
 Un cop ja tenim les dades d'entrada transformades necessitem comprovar que la màquina que crearem és capaç de llegir-les. En el nostre cas crearem una RBM i segons la descripció que hem explicat anteriorment, el format de les nostres dades és el correcte però com que utilitzarem una implementació d'una llibreria, aquesta màquina té una sèrie de restriccions sobre les dades d'entrenament per a la màquina. \\\
 La més important és que les dades han de ser binàries, és a dir, cada element, cada ID ha de estar en forma de llista de binaris. Tot i que el format de les nostres dades podria funcionar en altres màquines que utilitzen el mateix algorisme, en el nostre cas necessitem transformar-les per tal que la nostra implementació funcioni correctament. En aquest punt, les dades de les quals disposem no es troben en aquest format per tant necessitem trobar alguna forma de convertir-les.\\\\
-Les dades que tenim son dades categòriques, és a dir, són variables que contenen valors d'etiqueta, a cada característica li assignem un número. Així doncs, una solució al problema seria codificar cada un dels ID que tenim en binari però aquesta solució no seria optima ja que hauríem de fer una màquina que pogués descodificar cada un d'ells per tal de poder entendre el valor que li estem entrant i inclús en alguns casos no podríem entrar certes dades si el número a codificar fos molt llarg.\\\\
+Les dades que tenim són dades categòriques, és a dir, són variables que contenen valors d'etiqueta, a cada característica li assignem un número. Així doncs, una solució al problema seria codificar cada un dels ID que tenim en binari però aquesta solució no seria optima ja que hauríem de fer una màquina que pogués descodificar cada un d'ells per tal de poder entendre el valor que li estem entrant i inclús en alguns casos no podríem entrar certes dades si el número a codificar fos molt llarg.\\\\
 La solució més òptima i més assequible és utilitzar els denominats \textit{One Hot Vectors}. Aquests tipus de vectors són un grup de bits entre els quals les combinacions vàlides de valors són només aquelles amb un sol bit alt(1) i tots els altres valors amb bits baixos(0). És a dir, ens permet codificar qualsevol número en forma d'una llista que serà tant llarga com el número més alt i que contindrà tots els valors 0 excepte la posició en la qual representi el valor a codificar.\\\\
 Un exemple fàcil per a veure el funcionament d'aquests vectors és aplicar al nostre cas. Disposem de 262 característiques diferents a la nostre base de dades per tant si volem codificar un identificador d'una característica concreta, per exemple l'identificador 10, el codificarem de la següent manera:
 \[10 = [0_1,0_2, \cdot \cdot \cdot, 1_{10}, 0_{11}, \cdot \cdot \cdot, 0_{262}]\]
@@ -869,6 +870,7 @@ Aplicant això al nostre cas podem fer servir les dos formes ja que la matriu és 
 \caption{Creació del codificador de les dos forma. A dalt amb matrius denses i a baix amb \textit{sparse matrix}}
 \end{center}
 \end{figure}
+\\\\
 Com podem observar, el resultat final és una matriu del mateix nombre de files que la matriu anterior però ara els elements són més grans ja que multipliquem cada element per 262. També podem podem observar que utilitzant \textit{sparse matrix} el temps es redueix. En aquest cas el temps és molt petit però es pot observar una diferència. Així doncs el millor mètode és fer servir \textit{sparse matrix}. \\\\
 El contingut de la nostre matriu serà per a cada fila una successió de 0 i 1, al tractar-se d'una \textit{sparse matrix} si la mostrem per pantalla només veurem aquelles posicions que contenen un valor diferent a 0.
 Ara ja tenim les dades llestes per entrar a la màquina i entrenar-la però primer de tot hem de crear-la d'acord a les dades que tenim.
@@ -877,7 +879,7 @@ Un cop ja tenim les dades transformades per l'entrenament de la màquina només en
 \subsubsection{Creació de la RBM a partir de les dades}
 En apartats anterior hem vist com crear una RBM estàndard utilitzant la llibreria. Però ara ja tenim les dades i necessitem trobar els paràmetres adients per tal que la creació d'aquesta màquina sigui la correcte o la més adient per al nostre problema. \\\
 Els principals camps que definirem seran el \textit{n\_components}, \textit{learning\_rate} i \textit{n\_iter}.\\\\
-Per començar hem de definir el nombre de unitats ocultes que tindrà la nostra màquina. Hi ha vàries formes de trobar el número perfecte de unitats ocultes aplicant formules però en el nostre cas hem decidit que aquest nombre serà el valor total de les característiques disponibles que en aquest cas es 262, així disposem d'una unitat oculta per a cada un dels valors de les dades. \\\\
+Per començar hem de definir el nombre de unitats ocultes que tindrà la nostra màquina. \\\ Hi ha vàries formes de trobar el número perfecte de unitats ocultes aplicant formules però en el nostre cas hem decidit que aquest nombre serà el valor total de les característiques disponibles que en aquest cas es 262, així disposem d'una unitat oculta per a cada un dels valors de les dades. \\\\
 Un cop ja tenim el nombre de components decidit hem de decidir la velocitat d'aprenentatge. Tal i com es va explicar anteriorment ha d'estar en el rang de 10**[0., -3.], així doncs a partir de la documentació de la llibreria \cite{sklearnRBM} i partir d'alguns exemples que també es trobaven a la documentació vam poder establir un valor relativament correcte per a la nostre màquina.\\\\
  Es va establir un valor de 0.01. Aquest valor és una funció que el que defineix és com de ràpid canvien el pesos dels valors al llarg del aprenentatge. Si aquest valor és massa alt, és possible que es perdi el punt 0 del pendent i si es massa baix pot provocar que es tardi molt a arribar aquest punt.\\\\
  Finalment queda definir el nombre d'iteracions. Ja es sap que en una màquina d'aquest tipus, cada iteració pot durar molt de temps per tant no volíem que tardes molt a realitzar totes les iteracions. En un principi vam establir unes 10 iteracions per tal de comprovar el temps i la seva eficiència. Finalment, a partir dels resultats es va establir un valor de 20 iteracions.\\\\
@@ -1019,7 +1021,7 @@ Finalment una de les últimes millores que es podrien aplicar al projecte seria q
 \normalfont
 
 \newpage
-
+\addcontentsline{toc}{section}{Referències}
 \begin{thebibliography}{25}
 \bibitem{1} A Beginner\textsc{\char13}s Tutorial for Restricted Boltzmann Machines,  \newline \texttt{https://deeplearning4j.org/restrictedboltzmannmachine}.
 
@@ -1029,14 +1031,14 @@ Finalment una de les últimes millores que es podrien aplicar al projecte seria q
 
 \bibitem{4} Geoffrey Hinton; Advanced Machine Learning, Lecture 4, Restricted Boltzmann Machines,  \newline \texttt{https://www.cs.toronto.edu/~hinton/csc2535/notes/lec4new.pdf}.
 
-\bibitem{sklearnRBM} Documentation RBM sklearn,  \newline \texttt{http://scikit-learn.org/stable/modules/generated/sklearn.neural\_network.BernoulliRBM.html}.
+\bibitem{sklearnRBM} Documentation RBM sklearn,  \newline \texttt{http://scikit-learn.org/stable/modules/generated/sklearn.neural\\\ \_network.BernoulliRBM.html}.
 
-\bibitem{sklearnOnehotencoder} Documentation OneHotEncoder sklearn,  \newline \texttt{http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html}.
+\bibitem{sklearnOnehotencoder} Documentation OneHotEncoder sklearn,  \newline \texttt{http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing. \\\ OneHotEncoder.html}.
 
 \bibitem{salakhutdinov}Salakhutdinov, R. Learning Deep Generative Models. \newline \texttt{https://www.cs.cmu.edu/~rsalakhu/papers/annrev.pdf}.
 
 \bibitem{leroux} Representational power of restricted Boltzmann machines and
-deep belief networks \newline \texttt{http://www.iro.umontreal.ca/~lisa/publications2/index.php/attachments/single/22}
+deep belief networks \newline \texttt{http://www.iro.umontreal.ca/~lisa/publications2/index.php/ \\\ attachments/single/22}
 
 \bibitem{carreira} Carreira-Perpiñán, M. A. and Hinton, G. E. On Contrastive Divergence Learning \newline \texttt{http://www.cs.toronto.edu/~fritz/absps/cdmiguel.pdf}
 
