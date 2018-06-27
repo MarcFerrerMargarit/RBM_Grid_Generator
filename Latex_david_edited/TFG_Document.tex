@@ -181,7 +181,7 @@ Per  a poder realitzar aquest treball s'han usat les eines següents:
 \end{itemize}
 
 \newpage
-\section{Moodboards}
+\section{Interfície gràfica per a moodboards}
 
 Abans de començar a explicar les dades, el funcionament de l'algorisme i els resultats ens hem de centrar en la primera part del projecte i una de les més importants, la generació de dades.\\\
 Com hem comentat a la introducció les nostres dades són moodboards que defineixen diferents estances d'un habitatge d'un estil concret. \\\
@@ -225,7 +225,7 @@ Cada casella d'aquesta graella tindrà internament, és a dir, d'una forma que no 
 \end{figure}
 A partir d'aquest punt ja tenim una solució que ens permet generar moodboards de forma ràpida encara que el resultat no sigui el mateix que utilitzant la primera tècnica descrita. Tot i això, en aquest cas preferim velocitat a l'hora de generar que més cohesió, ja que tampoc tenim forma que un cop la màquina generi graelles pugui editar aquestes imatges per tal que s'assemblin al model de la primera tècnica. A partir d'ara necessitem una forma de poder col·locar els objectes disponibles a la graella d'una forma senzilla i eficient.\\\
 \newpage
-\subsection{Desenvolupament de l'eina}
+\subsection{Desenvolupament de la interfície gràfica i l'aplicació en Unity}
 
 Per tal de poder aplicar el mètode anteriorment explicat necessitem alguna eina que ens permeti accedir a tots els objectes disponibles d'una forma fàcil per tal de poder crear moodboards seguint la graella prèviament definida. Així doncs necessitem crear una eina per realitzar aquesta tasca. \\\\
 Aquesta eina que volem desenvolupar ha de ser fàcil de fer servir, intuïtiva i ràpida. Partint d'això s'ha de decidir quines tecnologies utilitzar per desenvolupar-la. En aquest cas, com que ja s'havien creat altres eines per altres coses es va decidir aplicar les mateixes tecnologies que en aquest cas són utilitzar Unity i el llenguatge de programació C sharp.\\\\
@@ -335,14 +335,14 @@ A continuació es mostra un esquema de seqüència dels passos a realitzar de compl
 \end{figure}
 \\\\
 \newpage
-\section{Desenvolupament del Machine Learning}
+\section{Introducció al Machine Learning}
 La part més important de projecte no és el desenvolupament de l'eina i el seu funcionament, sinó que és la part del algorisme. L'algorisme és el que ens permetrà generar automàticament moodboards un cop aquest s'hagi entrenat i és el que ens permetrà, que la generació de moodboards sigui ràpida i automàtica.\\\\
 Així doncs, a continuació explicarem en què es basa l'algorisme que realitzarem, explicant una mica d'introducció i història per posar en context. També explicarem els diferents tipus i quin d'ells s'ha escollit i com s'ha desenvolupat.
-\subsection{Introducció i antecedents}
+\subsection{Història del Machine Learning}
 Parlar avui d'Intel·ligència Artificial no és una novetat. Ni per a la gent ni per a les empreses o governs.\\\
 Si bé sembla una qüestió d'allò més naturalitzada per aquests dies, fins fa no molts anys enrere, parlar d'intel·ligència artificial era un assumpte distant, difícil d'abordar, reservat només per a entesos.\\\\
-Avui en dia, es parla i s'aplica per qüestions tan bàsiques com l'ús del homebanking, veure pel·lícules en streaming o escoltar música. Fins als cercadors com Google o Yahoo la utilitzen. I a les xarxes socials, els exemples de Facebook i Twitter lideren el segment.\\\
-Cada vegada més, es llegeix i es comenta sobre intel·ligència artificial en mitjans massius de comunicació, amb tota facilitat. Fins i tot, comença a guanyar un espai dintre del pressupost propi de les empreses al país: la recerca per la reducció dels costos i l'augment de la productivitat vénen impulsant l'avanç en l'ús de solucions que involucren robots capaços de conversar amb els clients i de sistemes que analitzen milers de dades en pocs segons. En alguns casos, el volum de recursos destinats a aquest segment està previst que augmenti en més de cinc vegades en 2018, en relació a l'aplicat l'any passat.\\\\
+Avui en dia, es parla i s'aplica per qüestions tan bàsiques com l'ús del homebanking, veure pel·lícules en streaming o escoltar música.\\\
+Cada vegada més, es llegeix i es comenta sobre intel·ligència artificial en mitjans massius de comunicació, amb tota facilitat. Fins i tot, comença a guanyar un espai dintre del pressupost propi de les empreses al país: la recerca per la reducció dels costos i l'augment de la productivitat vénen impulsant l'avanç en l'ús de solucions que involucren robots capaços de conversar amb els clients i de sistemes que analitzen milers de dades en pocs segons.\\\\
 Dins de l'ampli espectre que abasta la intel·ligència artificial, es troba Machine Learning. Però que és el Machine Learnig?
 \\\\
 El machine learning, conegut com aprenentatge automàtic, va néixer com una idea ambiciosa de la IA en la dècada dels 60. Per ser més exactes, va ser una subdisciplina de la IA, producte de les ciències de la computació i les neurociències. \\\\
@@ -352,8 +352,6 @@ Això va ocasionar que en els 90 es separés de la IA per convertir-se en una disc
 Com vam establir prèviament, és un camp de les ciències de la computació que, d'acord a Arthur Samuel el 1959, li dóna a les computadores l'habilitat d'aprendre sense ser explícitament programades.
 \\\\
 Si aquesta definició va resultar molt trivial, posem-d'aquesta manera: és la idea que hi ha algoritmes que poden donar-te troballes o conclusions rellevants obtingudes d'un conjunt de dades, sense que l'ésser humà hagi d'escriure instruccions o codis per això.
-\\\
-D'acord, però què és un algoritme? Doncs no és altra cosa que una seqüència o sèrie d'instruccions, que representen la solució a un determinat problema.
 \\\\
 El propòsit del machine learning és que les persones i les màquines treballin de la mà, aquestes màquines han de ser capaços d'aprendre com un humà ho faria. Precisament això és el que fan els algoritmes, permeten que les màquines executin tasques, tant generals com específiques.
 Si bé al principi les seves funcions eren bàsiques i es limitaven a filtrar emails, avui dia pot fer coses tan complexes com prediccions de trànsit en interseccions molt transitades, detectar càncer, mapejar llocs per generar projectes de construcció en temps real, i fins i tot, definir la compatibilitat entre dues persones.\\\
@@ -392,10 +390,7 @@ Si bé és cert que aquesta enorme quantitat de dades la tornarà molt més eficient
 \\\\
 El que significa que perquè el machine learning es desenvolupi en aquestes àrees, els experts en cada camp de treball hauran de trobar el temps per entrenar a les màquines i anar incorporant paulatinament a cada un dels processos que desitgin afinar.
 \\\\
-Finalment, com succeeix amb totes les tecnologies, els negocis hauran de començar per entendre els principis bàsics d'aquesta tecnologia, per poder usar-la a favor seu. També s'estima que aquesta -com molts altres derivats de la IA- transformarà per complet el món com el coneixem.
-\\\\
-Com podem observar això només reflecteix una petita introducció al intricat món del machine learning. En una època on emergeixen tecnologies innovadores cada vegada que parpellegem, és fàcil perdre en l'allau d'informació i nous conceptes.
-\newpage
+Finalment s'estima que aquesta -com molts altres derivats de la IA- transformarà per complet el món com el coneixem. Com podem observar això només reflecteix una petita introducció al intricat món del machine learning. En una època on emergeixen tecnologies innovadores cada vegada que parpellegem, és fàcil perdre en l'allau d'informació i nous conceptes.
 \subsection{Tipus d'algoritmes}
 Dintre del conjunt del Machine Learning poder distingir entre diferents tipus que ens definiran diferents tipus d'algoritmes a aplicar durant el desenvolupament d'una màquina. Els principals tipus que tractarem per aquest projecte són els següents:
 \begin{itemize}
@@ -440,8 +435,6 @@ Una altra tasca diferent és la de generar dades. En aquest treball ens centrem e
 %\caption{Diagrama d'un algorisme amb aprenetatge no supervisat.}
 %\end{center}
 %\end{figure}
-
-\newpage
 \subsection{Plantejament de l'algoritme}
 Un cop ja tenim els coneixements bàsics del machine learning necessitem pensar en quin algoritme necessitem per tal de poder aplicar-lo al nostre problema i desenvolupar-lo correctament. \\\\
 Pel nostre problema disposarem de dades d'entrada no etiquetades, que seran les graelles de cada estil.  És a dir, les dades d'entrada seran vectors que definiran graelles així un estil pot tenir diferents graelles.\\\
